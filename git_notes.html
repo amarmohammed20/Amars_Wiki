@@ -36,9 +36,23 @@
           <li>When running a <b>git log</b> command you see a long string of text and numbers called SHA (Simple Hashing Algorithm) <br>See image <img src="C:\Users\SEISMI020\Desktop\Git Practice\SHA.jpg" alt="git SHA (Simple Hashing Algorithm)"> <br> using the command git revert SHA enable to to revert back to that commited file in git. <b>git revert SHA</b>This can be the first 5 charecters of the SHA code <br>if you find that the revert you just did was wrong you can use the command to revert this revert <b>git revert HEAD</b>, HEAD meaning use the most recent SHA </li>
       </ul>
     <h2>Day 3</h2>
-    <p>The below is what I have learned on the second day</p>
+    <p>The below is what I have learned on the third day</p>
       <ul>
-          <li></li>
+          <li>each developer has a local repo on thier own machine. Another developer is called a remote repo. <br> Both repos have full copies of the repository. You would normally pull from the other developers repo recieving all thier commits and that you can start adding to your new local repo.</li>
+          <li>The better way to work is to have a central repo and people push commits to the repo. <br> <img src="C:\Users\SEISMI020\Desktop\Git Practice\central repo commit.jpg" alt="pushing a commit to a central repo">. <br> Other developers will pull from the central repo to work locally on thier local repo ready to than commit and push to the central repo <br> <img src="C:\Users\SEISMI020\Desktop\Git Practice\central repo commit pull.jpg" alt="pulling a commit from a central repo"></li>
+          <li>To get started with pulling a repo you need to clone the repo. Get to the right directory. <br> command is <b>git clone DIRECTORY TARGETDIRECTORY</b> DONT USE SPACES IN YOUR DIRECTORY NAMES. The below is an example of cloning a local directory <br> <img src="C:\Users\SEISMI020\Desktop\Git Practice\Clone Test.jpg" alt="Test clone"> </li>
+          <li>You can create a text file called <b>.igitignore</b> which allows to ignore file when cloning a repo <a href="https://www.pluralsight.com/guides/how-to-use-gitignore-file">A little info!</a> </li>
+          <li>when you create a clone repo it automatically creates a link in the cloned repo called origin the command to check is <b>git remote</b> <br> You can pull changes from the original repo by using the command <b>git pull</b> on the command you dont have to state the remote name as this time you are pulling from the original repo  </li>
+          <li>To add a remote to a repo to another repo so you can pull you use the comman <b>git remote add REMOTENAME URL</b>. <br> Example <img src="C:\Users\SEISMI020\Desktop\Git Practice\New Remote.jpg" alt="">. <br> when running a pull with the new remote we get a error asking us to state a branch <br> You can use the command which is <b>git pull REMOTENAME BRANCH</b> this example the default branch created is master </li>
+          <li>when you work with other you can use a github repo. create a repo on your local machine and a empty repo in github. <br> create a remote on your machine and use the url for the empty repo in github, ready for you to push your commits up to the github repo. </li>
+          <li>Once in git hub you can create a new repo ready for you to use when creating the new remote. <br> command being <b>git remote add REMOTENAME REPOURL</b> </li>
+          <li>Perform a push to push the local repo to the git hub repo. command <b>git push REMOTENAME BRANCH</b> the defualt branch created is master <br> if you use -u in the command moving forward you wont have to specify a remote name or branch, command <b>git push -u REMOTENAME BRANCH</b></li>
+      </ul>
+     <p>Summary of the course</p>
+      <ul>
+        <li><img src="C:\Users\SEISMI020\Desktop\Git Practice\recap 1.jpg" alt=""></li> 
+        <li><img src="C:\Users\SEISMI020\Desktop\Git Practice\recap 2.jpg" alt=""></li>
+        <li><img src="C:\Users\SEISMI020\Desktop\Git Practice\recap 3.jpg" alt=""></li> 
       </ul>
   </body>
 </html>
