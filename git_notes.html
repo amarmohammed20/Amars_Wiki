@@ -54,5 +54,18 @@
         <li><img src="C:\Users\SEISMI020\Desktop\Git Practice\recap 2.jpg" alt=""></li>
         <li><img src="C:\Users\SEISMI020\Desktop\Git Practice\recap 3.jpg" alt=""></li> 
       </ul>
+    <h2>Day 4</h2>
+    <p>Git branches and merging branches, source of today <a href="https://www.youtube.com/watch?v=QV0kVNvkMxc">The Net Ninja</a></p>
+      <ul>
+        <li>By default one branch is created which is the master branch, also comiting to the master branch</li>
+        <li>A new branch is created normally when you want to try a new feature. <br> You wouldnt normally want to disturb the code in the master branch. <br> The new branch can be deleted if not required or things go wrong and the master branch is not affected</li>
+        <li>When you make a branch you copy the code from the last commit, making it the first commit in the new branch</li>
+        <li>Normally a developer would work on one branch and another developer would work on another branch. When complete both would merge into the master branch</li>
+        <li>Code to create a new branch <b>git branch BRANCHNAME</b>. This creates a new branch <br> If you want to see all the branches the code is <b>git branch -a</b> You will see a list of branches. The one with a * means you are on that branch</li>
+        <li>The code to move onto another branch is <b>git checkout BRANCHNAME</b>. You will get a confirmation message</li>
+        <li>To delete a branch the command is <b>git branch -d BRANCHNAME</b></li>
+        <li>Start of by being on the branch you want to merge into. <br> the code is <b>git merge BRANCHNAME</b> </li>
+        <li>dealing with a conflict - Git will warn you and the code file will also have comments on. <br> Simply resolve the conflict with the other user edit the code file and commit again.</li>
+      </ul>
   </body>
 </html>
