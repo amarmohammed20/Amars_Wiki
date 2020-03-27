@@ -32,7 +32,67 @@
     <p>Start things of with a recap and than proceed</p>
       <ul>
         <li>Start things of with a challange to build a word game, Your gona ask for an adjective, verb and noun and than make a story out of this. <br> see javascript file for the game <a href="js_e1_260320.html">JS_E1_260320</a></li>
-      
+      <h3>Conditional Statements</h3>
+         <li>An example of a conditional formatting is were in the previous excercise you asked for a name, the condition can be that it has to be a string</li>
+         <li>example of this would be the code <br>
+        const answer = prompt('which planet is closet to the sun?'); <br>
+        if (answer.toUpperCase === 'MERCURY') { <br>
+          console.log("That's Correct"); <br>
+        } else { <br>
+             console.log("thats incorrect"); <br>
+             } <br>
+         --- You can add a .toUpperCase to answer in the if statement ensuring that answer inserted is always in capitals <br>
+          </li>
+      <h3>Comparison Operators</h3>
+          <li>Here are just some comparison Operators Comparison <br> <img src="C:\Users\SEISMI020\Desktop\Git Practice\Operators.jpg" alt=""> </li>
+          <li>In Javascript when using the comparison's, Javascript reacts true and false.</li>
+          <li>Booleans return true or false. All conditions returna true or false value. true and false are not strings no '' <br>
+          <img src="C:\Users\SEISMI020\Desktop\Git Practice\boolean example.jpg" alt=""></li>
+          <li>you can also use a else if in a if statement. You only use else if if the first else is false.</li>
+          <li>add two conditions to a if statement <br>
+          && means something and something <br></li>
+          <li>When using the or operator <b>||</b> you have to have full conditions on both sides</li>
+          <li>Document your code - Consider other developers. <br> To leave a comment use <b>//</b> or multi line comment <b>/* */</b> or in line - after code <b>//</b> <br>
+          Use comments when you are doing something complex <br>
+          You can also comment out code</li>
+          <li>A challange to build a quiz game, ask 5 questions and depending on the score you get a trophy <br> see javascript file for the game <a href="js_e2_260320.html">JS_E2_260320</a></li>
+      </ul>
+      <h2>Day 3</h2>
+    <p>Javascript Numbers</p>
+      <ul>
+        <li>Data types for javascript: <br>
+          Strings - series of number and letters enclosed in ""
+          Boolean - is either is true of false
+          Numbers - Numeric data types, counting and calculating</li>
+        <li>a Interger is a whole number, either positive or negative number. It has no decimal places </li>
+        <li>Floating point numbers are used to represent fractional values and include a decimal point.</li>
+        <li>This is an integer value -- scientific notation uses the letter 'e' to represent an exponential value.</li>
+        <p>Developers frequently use numbers for performing calculations; you'll likely spend a lot of time working with numbers in JavaScript. If you create a game, for example, you'll need to keep track of a player's score. If you build an eCommerce site, you'll need to figure out the total cost of items in a visitor's shopping cart. And if you want to calculate the number of days until your next birthday, you'll need to use numbers and do some math.</p>
+        <li>Arithmetic Operators - JavaScript lets you perform most mathematical calculations, including addition, subtraction, multiplication, and division.</li>
+        <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. <br>
+        There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value. <br>
+         <img src="C:\Users\SEISMI020\Desktop\Git Practice\short hand.jpg" alt=""></li>
+        <li>Time excercise <a href="js_e3_270320.html">js_e3_270320</a></li>
+        <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
+        <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
+        <li>To convert a string to a number you can use <b>parseInt</b> <br>
+          Example <b>const fruit = parseInt(melons) + parseInt(oranges);</b>
+          Melons and orange have been given numbers by the user through a propmt</li>
+        <li><b>parseFloat</b> is like the above but for decimal numbers</li>
+        <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
+        <p>Random Numbers</p>
+        <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
+        <li>Javascript objects have many properties example is <b>object.length</b></li>
+        <li>Javascript objects have many meathods example is <b>object.toUppercase()</b></li>
+        <li> <a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math Object</a> Meathods and Properties </li>
+        <li>Example of a math meathod <b>Math.round(2.2)</b> this rounds the number up</li>
+        <li>Create a random number using Javascript <b>Math.random()</b> This returns a decimal place number between 0 and 1 but never 1</li>
+        <li>To get Math.random() to return a random number between 1 and 6 you do <b>Math.random() * 6;</b></li>
+        <li>Math.floor() rounds the number down and Math.ceil() rounds the number up <br>
+          Both pass the whole number if the number is not a decimal place</li>
+        <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
+        <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
+        
       </ul>
   </body>
 </html>
