@@ -44,10 +44,10 @@
          --- You can add a .toUpperCase to answer in the if statement ensuring that answer inserted is always in capitals <br>
           </li>
       <h3>Comparison Operators</h3>
-          <li>Here are just some comparison Operators Comparison <br> <img src="C:\Users\SEISMI020\Desktop\Git Practice\Operators.jpg" alt=""> </li>
+          <li>Here are just some comparison Operators Comparison <br> <img src="C:\Users\SEISMI020\Desktop\CodingPractice\Operators.jpg" alt=""> </li>
           <li>In Javascript when using the comparison's, Javascript reacts true and false.</li>
           <li>Booleans return true or false. All conditions returna true or false value. true and false are not strings no '' <br>
-          <img src="C:\Users\SEISMI020\Desktop\Git Practice\boolean example.jpg" alt=""></li>
+          <img src="C:\Users\SEISMI020\Desktop\CodingPractice\boolean example.jpg" alt=""></li>
           <li>you can also use a else if in a if statement. You only use else if if the first else is false.</li>
           <li>add two conditions to a if statement <br>
           && means something and something <br></li>
@@ -57,7 +57,7 @@
           You can also comment out code</li>
           <li>A challange to build a quiz game, ask 5 questions and depending on the score you get a trophy <br> see javascript file for the game <a href="js_e2_260320.html">JS_E2_260320</a></li>
       </ul>
-      <h2>Day 3</h2>
+    <h2>Day 3</h2>
     <p>Javascript Numbers</p>
       <ul>
         <li>Data types for javascript: <br>
@@ -71,7 +71,7 @@
         <li>Arithmetic Operators - JavaScript lets you perform most mathematical calculations, including addition, subtraction, multiplication, and division.</li>
         <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. <br>
         There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value. <br>
-         <img src="C:\Users\SEISMI020\Desktop\Git Practice\short hand.jpg" alt=""></li>
+         <img src="C:\Users\SEISMI020\Desktop\CodingPractice\short hand.jpg" alt=""></li>
         <li>Time excercise <a href="js_e3_270320.html">js_e3_270320</a></li>
         <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
         <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
@@ -92,7 +92,92 @@
           Both pass the whole number if the number is not a decimal place</li>
         <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
         <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
-        
+      </ul>
+      <h2>Day 4</h2>
+       <p>Continue Javascript Numbers</p>
+      <ul>
+        <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
+        <li>Excercise <a href="js_e4_280320.html">JS_E4_280320</a></li>
+        <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
+        <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
+      </ul>
+      <h1>Javascript Functions help in video <a href= "https://www.youtube.com/watch?v=xjAu2Y2nJ34">Dev Ed</a></h1>
+          <ul>
+            <li>Functions are a repetable set of insturctions you can over and over again</li>
+              <li>You setup your function and than you can call it when ever you like</li>
+              <li>Decalre a fuction <br>
+              <b>function goToCoffeeShop() { <br>
+                 <br>
+                  }</b></li>
+              <li>A function name cant have spaces or start with a number but you can use letters and number and dollar sign</li>
+              <li>The () after a function are called parentheses</li>
+              <li>Remember to close the syntax and call the function code <b>FUNCTIONNAME();</b> </li>
+              <li>Math.floor() and Math.random() are also function as they have (), these are built in functions</li>
+              <li>Example of a function <br>
+              <img src="C:\Users\SEISMI020\Desktop\CodingPractice\Function Example.jpg" alt=""></li>
+              <li>A function can return a value, this can be used in a alert or variable Example <br>
+              <img src="Function%20return%20value.jpg" alt=""></li>
+              <li>To return a value from a function use <b>return</b> in the function <br>
+              Example <b>return random number</b>, random number being a variable <br>
+              When I call this value from the function I still use () example <b>console.log( getRandomNumber () ); </b></li>
+              <li>The below image is an exmaple of a function that looks in the html for a value in the Info ID <br>
+                  <img src="Function%20with%20condition.jpg" alt=""></li>
+              <li>A return in a function can only return one thing</li>
+          <p>Passing information into a function</p>
+            <li>You can send information into a function, these are called arguments. <br>
+                You have to add a parameter into the function example <b>function goToCoffeeShop(drink)</b>. Parameter being drink</li>
+            <li>Example below - You are using the parameter drink and the alert give a message using that parameter. When calling the function you give that drink parameter a value Iced Tea.<br>
+                <img src="pass%20param%20function.jpg" alt=""></li>
+            <li>Another example - Upper is the parameter and this determines what the max random number can be. We pass many different numbers through the function<br>
+                <img src="pass%20param%20function%202.jpg" alt=""></li>
+            <li>You can pass more than one paramter into a function, see exmaple below <br>
+                <img src="pass%202%20param%20to%20function.jpg" alt=""></li>
+            <li>Its not neat to pass to many arguments into a function, you can use something like an array</li>
+            <li>Variables created in a function and they dont interact with any variable outside that function</li>
+            <li>variables outside of a function are part of the global scope. Variables in the function and global scope dont interact.<br>
+              <img src="variable%20functions.jpg" alt=""></li>
+         <p>Function Declarations Vs. Function Expressions</p>
+            <li>An anonymous function is a function without a name after the function keyword. Dont forget to add a ; after the closing } as it is a variable example <br>
+              <img src="anonymous%20function%20example.jpg" alt=""></li>
+            <li>The JavaScript engine moves function declarations to the top of their scope before code execution. This behavior is called: hoisting</li>
+            <li>Function declarations load before any other code is loaded. See example <br>
+              <img src="function%20dec%20loading%20first%20example.jpg" alt=""> </li>
+            <li>Function expressions dont work like function declarations. The code runs from the top down and errors if the wrong way
+              <img src="error%20for%20function%20expression%20example.jpg" alt=""> <br>
+              <img src="error%20for%20function%20expression.jpg" alt=""> <br>
+                The right layout <br>
+                <img src="correct%20function%20expression%20example.jpg" alt=""> </li>
+            <li>Summary for function declaration and fuction expression <br>
+              <b>Function Decalration</b> <br> <img src="function%20dec.jpg" alt=""> <br>
+              <b>Function Expression</b> <br> <img src="Function%20expression.jpg" alt=""></li>
+         <p>Arrow Functions</p>
+            <li>Arrow function expressions - Here you remove the function word in a function expression and add <b>=></b> after the () <br>
+              <img src="arrow%20function%20example.jpg" alt=""></li>
+            <li>First change a function declaration to a function expression, putting the function in a varaible <br>
+              Than remove the word function after the const/let variable and add => after the paranthasis () <br>
+              <img src="arrow%20function%20example%202.jpg" alt=""></li>
+            <li>Example of arrow function without return and {} while returning a value - <img src="another%20arrow%20function.jpg" alt=""></li>
+            <li>Arrow functions are anonymous as they dont have a name and you call or referrence the function using the variable name</li>
+            <li>Arrow functions are not hosted to the top of the code, they are only ran when the code reaches them</li>
+            <li>Arrow functions are not meant to replace function decalaration or expressions just newer syntax</li>
+            <li>Example one parameter - <img src="arrow%201%20param.jpg" alt=""></li>
+            <li>Example multiple parameter - <img src="arrow%20multiple%20param.jpg" alt=""></li>
+            <li>Example arrow function one line statement - <img src="arrow%20one%20line%20statement.jpg" alt=""></li>
+            <li>Single-line Functions with No Parameters - <img src="single%20line%20function%20with%20no%20params.jpg" alt=""> </li>
+            <li>If a paramter isnt passed to a function you will get <b>undefined!</b>. Means there is no value</li>
+            <li>To assign a default value to for your paramter for the function - <b>function sayGreeting(name = "student")</b>
+              <img src="Defualt%20value%20function%20param.jpg" alt=""></li>
+            <li>If you have placed mutiple defualt value for multiple parameters and you want to define only one paramter use undefined to blank out the other paramters.</li>
+            <li>There is a standard syntax you can use to document functions -- it's known as <a href = "https://jsdoc.app/index.html">JSDoc</a>, and the format looks like this:</li>
+            <li><img src="Javascript%20commenting.jpg" alt=""></li>
+            <li><img src="Javascript%20commenting%202.jpg" alt=""></li>
+            <li>The Power of JSDoc - <br>
+                Besides its descriptive format, the JSDoc tool itself has other useful and powerful features. JSDoc is also a documentation generator for JavaScript. <br>
+                For example, when you add documentation comments directly to your source code, JSDoc can scan your code and generate an HTML documentation website for you. However, you'll need to install special tools to run this feature -- you'll learn about some of these tools later in your JavaScript learning journey.</li>
+            <li><b>isNaN()</b> can be used to check if a value is a number, normally in a if statement. It returns a boolean value true or false.</li>
+            <li><b>throw Error</b> can be used instead of console.log to print a custom error to the console log. <br>
+              <img src="Throw%20error%20example.jpg" alt=""></li>
+          
       </ul>
   </body>
 </html>
