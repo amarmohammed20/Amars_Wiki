@@ -2,7 +2,8 @@
 <html>
   <body>
     <h1> The Javascript page, recording all my notes in my Javascript learning </h1>
-      <p>Some notes on Javascript providing a understanding. 
+      <p>Some notes on Javascript providing a understanding.
+      <br>Always use DRY when coding <b>Dont Repeat Yourself</b>
       <br>Built into the browser
       <br>Lots of tools to make life easier
       <br>Lots of data types <a href="https://www.w3schools.com/js/js_datatypes.asp">Data Types</a>
@@ -176,8 +177,56 @@
                 For example, when you add documentation comments directly to your source code, JSDoc can scan your code and generate an HTML documentation website for you. However, you'll need to install special tools to run this feature -- you'll learn about some of these tools later in your JavaScript learning journey.</li>
             <li><b>isNaN()</b> can be used to check if a value is a number, normally in a if statement. It returns a boolean value true or false.</li>
             <li><b>throw Error</b> can be used instead of console.log to print a custom error to the console log. <br>
-              <img src="Throw%20error%20example.jpg" alt=""></li>
-          
-      </ul>
+              <img src="Throw%20error%20example.jpg" alt=""></li>          
+        </ul>
+      <h1>Javascript Arrays, Loops and Objects</h1>
+        <p>Simplify Repetitive Tasks with Loops</p>
+        <ul>
+            <li>Loops enable you to repeat a task, like multiple random number or mutiple questions until you get the right answer</li>
+            <li>Arrays enable you collect a lot of information in one place, like a list of 100 random numbers</li>
+            <li>A loop repeats a certain number of actions a certain number of times or until a certain condition is true</li>
+        <p>While Loops - a loop that runs until the condition is no longer true</p>
+            <li>An example of a while loop - Below is the exmaple explained <br>
+                The variable counter is 0 and counts the time the while loop is ran
+                The condition in the while loop is keep running until you get to 100. <b>counter less than 100</b><br>
+                so the function is ran and everytime it runs it adds one to the variable counter <b>counter += 1;</b>
+                <img src="Example%20of%20a%20while%20Loop.jpg" alt=""></li>
+            <li>Another example of a while loop with a condition using a function <br>
+                <img src="Example%20of%20a%20while%20Loop%202.jpg" alt=""></li>
+            <li>A while loop complex example <br>
+                <img src="A%20while%20loop%20complex%20example.jpg" alt=""> <br>
+                <img src="A%20while%20loop%20complex%20example%20code.jpg" alt=""> <br>
+                <img src="A%20while%20loop%20complex%20example%20front%20end%20result.jpg" alt=""></li>
+            <li>The while loop condition has to be true for the loop to run</li>
+            <li>Something has to happen in the loop for it to stop running, normally the loop updates a variable that breaks the condition</li>
+        <p>Do while loop - like the while loop but will always run the code block once as the condition is after the code block<br>
+            Good to be used to collect a users email address. The loop would run wihtout checking any conditions and than keep running until it has a valid email address <br>
+            <img src="do%20while%20loop.jpg" alt=""></p>
+            <li>Below is a example of a do while. It asks a users to insert a number and keep going until the user get the right random number recording the number of tried <br>
+                <img src="do%20while%20loop%20example.jpg" alt=""></li>
+        <p>For loop - Normally used to run a particular numbe rof times, most parts simliar to a while and do while loop</p>
+            <li>Normally used when looking through an array.</li>
+            <li>for loop vs while loop example <br>
+                <img src="while%20loop%20vs%20for%20loop.jpg" alt=""></li>
+            <li>The for loop is normally written like below, also in my previous experience you use <b>i</b> <br>
+                <img src="for%20loop%20using%20i.jpg" alt=""></li>
+            <li>In the example below you have a variable that is updated everytime the loop is ran. the for loop is structured through: <br>
+                assigning a value to i <br>
+                setting a condition, i has to be less than or equal to 10 <br>
+                and everytime the loop is ran 1 is added to i through += <br>
+                Thank inside the {} a update is performed dynamically updating the variable outside the loop <br>
+                Finally the variable outside the loop is written to the page <br>
+                <img src="i%20loop%20example.jpg" alt=""></li>
+            <li>Another example were you have to log every number from 4 to 156 in the console log <br>
+                <img src="i%20loop%20example%202.jpg" alt=""></li>
+            <li>Exit condition on a loop - when something is no longer true. <br>
+                You can also use a break statement, example below were the while condition is always true but the break will stop the loop after the right answer<br>
+                <img src="break%20example.jpg" alt=""></li>
+            <li>The below example is were we want the user to guess the random number in 10 guesses also capturing if they gues sit right before <br>
+                <img src="10%20guess%20example.jpg" alt=""></li>
+            <li><b>In for loops try to use let when defining the variable i</b></li>
+            <li>Excercise for using loops and clenaing up code <a       href="js_e5_310320.html">js_e5_310320.html</a></li> 
+        </ul>
+      <p></p>
   </body>
 </html>
