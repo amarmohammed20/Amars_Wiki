@@ -6,11 +6,17 @@
     <h2>The installation process</h2>
     <p>To complete the installation porcess on a widnows machine you simply follow this <a href="https://www.youtube.com/watch?v=F53rDUwiAbU">video</a> up to minute 12:43 and than follow the instrcutions below:</p>
     <ul>
+        <li><b>Make sure your directory is not called cypress</b></li>
         <li>At this point you should be ready to run cypress, your command screen should something like this: <br>
           <img src="cypress%20install.jpg" alt=""></li>
         <li>In the command line navigate into your working cypress directory and go further into the folders - node_modules - .bin <br>
             Your command line cd will look something like this <b>C:\Users\SEISMI020\Desktop\CypressDir\node_modules\.bin</b> </li>
         <li>Once inside the directory inside the command line run the command <b>cypress open</b></li>
+        <br>
+        <br>
+        <li>If you are having the below issue you have to edit the <b>package.json</b> file as shown below 
+          <li>Error message is - EEXIST: file already exists - cannot start server on Windows - <a href="https://github.com/cypress-io/cypress/issues/1099">FIX</a> <br>
+          <img src="cypress intial run error fix.jpg" alt=""> <br> </li>
     <p>Now at this point you will have cypress open and installed. </p>
     </ul>
   </body>
