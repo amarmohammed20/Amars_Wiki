@@ -6,8 +6,10 @@
       <br>Always use DRY when coding <b>Dont Repeat Yourself</b>
       <br>Built into the browser
       <br>Lots of tools to make life easier
-      <br>Lots of data types <a href="https://www.w3schools.com/js/js_datatypes.asp">Data Types</a>
-      <br>You can write stright to the html using <b>document.getElementByID("output")</b>. There is a div in the html with the id output.  
+      <br>Lots of data types <a href="https://www.w3schools.com/js/js_datatypes.asp" target="_blank">Data Types</a>
+      <br>You can write stright to the html using <b>document.getElementByID("output")</b>. There is a div in the html with the id output.
+      <br>When working with numbers, strings, and booleans, you learned that you could not change (or manipulate) the value of a constant through reassignment. 
+      <br>The same goes for any value of a constant variable. You cannot reassign objects and arrays, either.
       </p>
     <h2>Usefull notes</h2>
         <ul>
@@ -24,7 +26,7 @@
           <li>If you start a string with " end with ", can also use ' <br> How to decide on which one will determine what is in your string example if you use I'm than use "</li>
           <li>If you use a \ infront of a ' than javascript will treat this as a normal charector</li>
           <li>If you want to write a string on mutiple lines use a \ at the end of each line</li>
-          <li>Javascript has many properties that make it easier to perform simple tasks <a href="https://www.w3schools.com/js/js_object_properties.asp"> Properties</a> <br> Example = passphrase.length give you the length of the variable passphrase <br> passphrase is a object and length is the property.</li>
+          <li>Javascript has many properties that make it easier to perform simple tasks <a href="https://www.w3schools.com/js/js_object_properties.asp" target="_blank"> Properties</a> <br> Example = passphrase.length give you the length of the variable passphrase <br> passphrase is a object and length is the property.</li>
           <li>A meathod is something you can do to a string <br> Example = toUpperCase()</li>
           <li><b>Properties are like nouns. They have a value or state. Methods are like verbs. They perform actions.</b></li>
           <li></li>
@@ -32,7 +34,7 @@
     <h2>Day 2</h2>
     <p>Start things of with a recap and than proceed</p>
       <ul>
-        <li>Start things of with a challange to build a word game, Your gona ask for an adjective, verb and noun and than make a story out of this. <br> see javascript file for the game <a href="js_e1_260320.html">JS_E1_260320</a></li>
+        <li>Start things of with a challange to build a word game, Your gona ask for an adjective, verb and noun and than make a story out of this. <br> see javascript file for the game <a href="js_e1_260320.html" target="_blank">JS_E1_260320</a></li>
       <h3>Conditional Statements</h3>
          <li>An example of a conditional formatting is were in the previous excercise you asked for a name, the condition can be that it has to be a string</li>
          <li>example of this would be the code <br>
@@ -44,7 +46,7 @@
              } <br>
          --- You can add a .toUpperCase to answer in the if statement ensuring that answer inserted is always in capitals <br>
           </li>
-      <h3>Comparison Operators</h3>
+        <h3>Comparison Operators</h3>
           <li>Here are just some comparison Operators Comparison <br> <img src="images/Operators.jpg" alt=""> </li>
           <li>In Javascript when using the comparison's, Javascript reacts true and false.</li>
           <li>Booleans return true or false. All conditions returna true or false value. true and false are not strings no '' <br>
@@ -59,50 +61,50 @@
           <li>A challange to build a quiz game, ask 5 questions and depending on the score you get a trophy <br> see javascript file for the game <a href="js_e2_260320.html">JS_E2_260320</a></li>
       </ul>
     <h2>Day 3</h2>
-    <p>Javascript Numbers</p>
-      <ul>
-        <li>Data types for javascript: <br>
-          Strings - series of number and letters enclosed in ""
-          Boolean - is either is true of false
-          Numbers - Numeric data types, counting and calculating</li>
-        <li>a Interger is a whole number, either positive or negative number. It has no decimal places </li>
-        <li>Floating point numbers are used to represent fractional values and include a decimal point.</li>
-        <li>This is an integer value -- scientific notation uses the letter 'e' to represent an exponential value.</li>
-        <p>Developers frequently use numbers for performing calculations; you'll likely spend a lot of time working with numbers in JavaScript. If you create a game, for example, you'll need to keep track of a player's score. If you build an eCommerce site, you'll need to figure out the total cost of items in a visitor's shopping cart. And if you want to calculate the number of days until your next birthday, you'll need to use numbers and do some math.</p>
-        <li>Arithmetic Operators - JavaScript lets you perform most mathematical calculations, including addition, subtraction, multiplication, and division.</li>
-        <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. <br>
-        There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value. <br>
-         <img src="images/short hand.jpg" alt=""></li>
-        <li>Time excercise <a href="js_e3_270320.html">js_e3_270320</a></li>
-        <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
-        <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
-        <li>To convert a string to a number you can use <b>parseInt</b> <br>
-          Example <b>const fruit = parseInt(melons) + parseInt(oranges);</b>
-          Melons and orange have been given numbers by the user through a propmt</li>
-        <li><b>parseFloat</b> is like the above but for decimal numbers</li>
-        <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
-        <p>Random Numbers</p>
-        <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
-        <li>Javascript objects have many properties example is <b>object.length</b></li>
-        <li>Javascript objects have many meathods example is <b>object.toUppercase()</b></li>
-        <li> <a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math">Math Object</a> Meathods and Properties </li>
-        <li>Example of a math meathod <b>Math.round(2.2)</b> this rounds the number up</li>
-        <li>Create a random number using Javascript <b>Math.random()</b> This returns a decimal place number between 0 and 1 but never 1</li>
-        <li>To get Math.random() to return a random number between 1 and 6 you do <b>Math.random() * 6;</b></li>
-        <li>Math.floor() rounds the number down and Math.ceil() rounds the number up <br>
-          Both pass the whole number if the number is not a decimal place</li>
-        <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
-        <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
-      </ul>
+      <p>Javascript Numbers</p>
+        <ul>
+          <li>Data types for javascript: <br>
+            Strings - series of number and letters enclosed in ""
+            Boolean - is either is true of false
+            Numbers - Numeric data types, counting and calculating</li>
+          <li>a Interger is a whole number, either positive or negative number. It has no decimal places </li>
+          <li>Floating point numbers are used to represent fractional values and include a decimal point.</li>
+          <li>This is an integer value -- scientific notation uses the letter 'e' to represent an exponential value.</li>
+          <p>Developers frequently use numbers for performing calculations; you'll likely spend a lot of time working with numbers in JavaScript. If you create a game, for example, you'll need to keep track of a player's score. If you build an eCommerce site, you'll need to figure out the total cost of items in a visitor's shopping cart. And if you want to calculate the number of days until your next birthday, you'll need to use numbers and do some math.</p>
+          <li>Arithmetic Operators - JavaScript lets you perform most mathematical calculations, including addition, subtraction, multiplication, and division.</li>
+          <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. <br>
+          There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value. <br>
+          <img src="images/short hand.jpg" alt=""></li>
+          <li>Time excercise <a href="js_e3_270320.html" target="_blank">js_e3_270320</a></li>
+          <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
+          <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
+          <li>To convert a string to a number you can use <b>parseInt</b> <br>
+            Example <b>const fruit = parseInt(melons) + parseInt(oranges);</b>
+            Melons and orange have been given numbers by the user through a propmt</li>
+          <li><b>parseFloat</b> is like the above but for decimal numbers</li>
+          <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
+          <p>Random Numbers</p>
+          <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
+          <li>Javascript objects have many properties example is <b>object.length</b></li>
+          <li>Javascript objects have many meathods example is <b>object.toUppercase()</b></li>
+          <li> <a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Object</a> Meathods and Properties </li>
+          <li>Example of a math meathod <b>Math.round(2.2)</b> this rounds the number up</li>
+          <li>Create a random number using Javascript <b>Math.random()</b> This returns a decimal place number between 0 and 1 but never 1</li>
+          <li>To get Math.random() to return a random number between 1 and 6 you do <b>Math.random() * 6;</b></li>
+          <li>Math.floor() rounds the number down and Math.ceil() rounds the number up <br>
+            Both pass the whole number if the number is not a decimal place</li>
+          <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
+          <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
+        </ul>
       <h2>Day 4</h2>
        <p>Continue Javascript Numbers</p>
-      <ul>
-        <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
-        <li>Excercise <a href="js_e4_280320.html">JS_E4_280320</a></li>
-        <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
-        <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
-      </ul>
-      <h1>Javascript Functions help in video <a href= "https://www.youtube.com/watch?v=xjAu2Y2nJ34">Dev Ed</a></h1>
+        <ul>
+          <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
+          <li>Excercise <a href="js_e4_280320.html" target="_blank">JS_E4_280320</a></li>
+          <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
+          <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
+        </ul>
+      <h2>Javascript Functions help in video <a href= "https://www.youtube.com/watch?v=xjAu2Y2nJ34" target="_blank">Dev Ed</a></h2>
           <ul>
             <li>Functions are a repetable set of insturctions you can over and over again</li>
               <li>You setup your function and than you can call it when ever you like</li>
@@ -179,13 +181,13 @@
             <li><b>throw Error</b> can be used instead of console.log to print a custom error to the console log. <br>
               <img src="images/Throw%20error%20example.jpg" alt=""></li>          
         </ul>
-      <h1>Javascript Arrays, Loops and Objects</h1>
+      <h2>Javascript Arrays, Loops and Objects</h2>
         <p>Simplify Repetitive Tasks with Loops</p>
         <ul>
             <li>Loops enable you to repeat a task, like multiple random number or mutiple questions until you get the right answer</li>
             <li>Arrays enable you collect a lot of information in one place, like a list of 100 random numbers</li>
             <li>A loop repeats a certain number of actions a certain number of times or until a certain condition is true</li>
-        <p>While Loops - a loop that runs until the condition is no longer true</p>
+          <p>While Loops - a loop that runs until the condition is no longer true</p>
             <li>An example of a while loop - Below is the exmaple explained <br>
                 The variable counter is 0 and counts the time the while loop is ran
                 The condition in the while loop is keep running until you get to 100. <b>counter less than 100</b><br>
@@ -199,12 +201,12 @@
                 <img src="images/A%20while%20loop%20complex%20example%20front%20end%20result.jpg" alt=""></li>
             <li>The while loop condition has to be true for the loop to run</li>
             <li>Something has to happen in the loop for it to stop running, normally the loop updates a variable that breaks the condition</li>
-        <p>Do while loop - like the while loop but will always run the code block once as the condition is after the code block<br>
+          <p>Do while loop - like the while loop but will always run the code block once as the condition is after the code block<br>
             Good to be used to collect a users email address. The loop would run wihtout checking any conditions and than keep running until it has a valid email address <br>
             <img src="images/do%20while%20loop.jpg" alt=""></p>
             <li>Below is a example of a do while. It asks a users to insert a number and keep going until the user get the right random number recording the number of tried <br>
                 <img src="images/do%20while%20loop%20example.jpg" alt=""></li>
-        <p>For loop - Normally used to run a particular numbe rof times, most parts simliar to a while and do while loop</p>
+          <p>For loop - Normally used to run a particular numbe rof times, most parts simliar to a while and do while loop</p>
             <li>Normally used when looking through an array.</li>
             <li>for loop vs while loop example <br>
                 <img src="images/while%20loop%20vs%20for%20loop.jpg" alt=""></li>
@@ -227,7 +229,7 @@
             <li><b>In for loops try to use let when defining the variable i</b></li>
             <li>Excercise for using loops and clenaing up code <a href="js_e5_310320.html">js_e5_310320.html</a></li> 
         </ul>
-      <p>Arrays in Javascript - A data structure a way to store data</p>
+      <h2>Arrays in Javascript - A data structure a way to store data</h2>
         <ul>
             <li>A variable is a simple array it holds one bit of data</li>
             <li>An array can hold strings, number or any sort of data types</li>
@@ -269,9 +271,94 @@
               To get a value from within one array it would look like <b>grades[2][0]</b>. This says get the first value in the third array</li>
             <li>A two dimensional array that hold a playlist of songs with the artists <br>
               <img src="Images/two dimensional array playlist.jpg" alt=""></li>
-      
-      
-        
         </ul>
+        <h2>Day 5</h2>
+          <p>Objects in Javascript</p>
+            <ul>
+              <li>Javascript is commonly known as a object oriented software, strings, booleans, functions and so on are either objects or treated as objects</li>
+              <li>An object is something that either has a property or a meathod</li>
+              <li>Example - an array is a object as it has properties such as .length or meathods such as .push</li>
+              <li>A key or property is like a variable and the value for that key or property is like a value for a variable</li>
+              <li>Example for for a object in a variable <br>
+                <b>var student = {};</b> <br>
+                <img src="Images/Object Example.jpg" alt=""></li>
+              <li>When adding values in a object you dont use a ; - Example <b>name : "Sarah",</b></li>
+              <li>You can add everything to an object, string, number, boolean, array and so on</li>
+              <li>To access a property of a object you use a key. <br>
+                <img src="Images/accessing a object V1.jpg" alt=""> <br>
+                <img src="Images/accessing a object V2.jpg" alt=""></li>
+              <li>To assign a new value to a property in a object you use <b>person.name = "Bobby";</b>. Name is the key and person is the object <br>
+                <img src="Images/assign a value to a key in the object.jpg" alt=""></li>
+              <li>To create a new property on an object you use <b>person.country = "Brazil";</b>. Person is the object and country will be the new property</li>
+              <li>An object can be seen as a package of variables</li>
+              <li>a return would normally only return one value but when returning a object you can return all the values of the object</li>
+              <li>The loop used for an object is called <b>a for in loop</b>. This loops through each key and property in the object</li>
+              <li>An example of a for in loop. <b>for</b> and <b>var</b> and <b>in</b> cant be changed but propName is just like i in for loops<br>
+                <img src="Images/for in loop example.jpg" alt=""></li>
+              <li>Another for in loop example <br>
+                <img src="Images/for in loop example V2.jpg" alt=""> <br>
+                <img src="Images/for in loop example V2 console.jpg.jpg" alt=""></li>
+              <li>Remember, const does not prevent the arrays and objects assigned to variables from being modified; it only prevents the variable itself from being reassigned or overwritten completely. <br>
+                  For example, attempting to override person to equal another object literal throws an error. Person being the const variable</li>
+              <li>If you hve an array or object assigned to a const variable you can override the variable itself but you can add to the object or array</li>
+              <li>Example of converting a two dimentional array into object making it easier to call out <br>
+                <img src="Images/Array to object example.jpg" alt=""> <br>
+                <img src="Images/Array to object single line example.jpg" alt=""> <br>
+                <img src="Images/Array to object function change.jpg" alt=""></li>
+              <li>JSON stands for javascript object notation - used a lot with ajax to exchange data with a server and web browser <br>
+                <img src="Images/Example of json.jpg" alt=""></li>            
+            </ul>
+        <p>The Treehouse Javascript course is now complete I will have to use <a href="https://www.codewars.com/" target="_blank">Code Wars</a> to practice what I have learned</p>
+      <h2>The landscape of Javascript</h2>
+        <p>JavaScript is everywhere and used in all phases of development from software to hardware. <br>
+          This course walks you through the modern landscape of JavaScript, and what it means to learn and program with JavaScript in 2018 and beyond.</p>
+          <ul>
+            <li>Javascript can run just about anywhere in both software and hardware</li>
+            <li>Javascript started out in the browser in 1995</li>
+            <li>Netscape was the browser that incoprated more than text and images with user interaction. <br>
+              The program used in netscape for interaction in the browser was called scheme</li>
+            <li>Scheme never took of becuase the developer was actually asked to start working on <b>Mocha</b> which is now javascript</li>
+            <li>It went from Mocha to <b>LiveScript</b> to than <b>JavaScript</b>.</li>
+            <li>What is being covered in this section <br>
+              <img src="Images/Landscape of Javascript.jpg" alt=""> <br>
+              notes - JavaScript's design decisions were mostly influenced by programming languages such as Self and Scheme. <br>
+              The object-oriented and prototype-based programming language Self inspired JavaScript’s prototypal inheritance, and Scheme likely influenced its functional and imperative styles of programming.</li>
+            <li>Javascript started out in the browser now is included in anything that requires user interaction.</li>
+            <li>The website <a href="http://lookbook.wedze.com/winter-2017-2018/" target="_blank">lookbook.wedze.com</a> is a good example of javascript in a website.</li>
+            <li>Air bnb, Tesla and instagram and just some app that use javascript</li>
+            <li>Javascript is good when running on IOT device. <a href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">IOT Explained</a> <br>
+              IOT is a physical device with an onn/off switch that can connect to the internet and with other IOT devices</li>
+            <li>To run javascript outside of the browser <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank">Node.js</a> and <a href="https://nodejs.org/en/" target="_blank">nodejs.org</a></li>
+            <li>After the browser netscape had javascript other browsers like IE implements something like JScript <br>
+              This made cross browser compatability difficult for developers</li>
+            <li>In 1996 netscape standardize things submittied to ecma international which was industry standard</li>
+            <li>You can have different flavours of javascript <br>
+              Plain Javascript <img src="Images/Plain javascript.jpg" alt=""></li>
+            <li>Moving forward now a new release of ECMAScript javascript get release every year</li>
+            <li>You also have type checkers for Javascript. <a href="https://www.youtube.com/watch?v=U0U2zeG2SBI" target="_blank">Info Video</a> <br>
+              <img src="Images/Typecheckers for JavaScript.jpg" alt=""></li>
+            <li><a href="https://www.typescriptlang.org/" target="_blank">Type script</a> is a type of type checker built by Microsoft. Essentially a layer around JavaScript. <br>
+              The browser doesnt understand type script so it needs to get compiled to javaScript code</li>
+            <li><a href="https://jquery.com/" target="_blank">jQuery</a> is a JavaScript library used to add interactivity to web pages. <br>
+              It's a commonly used tool found in tens of millions of sites and apps all over the web and popular front-end frameworks. <br>
+              <a href="https://www.youtube.com/watch?v=hMxGhHNOkCU" target="_blank">J Query explained</a></li>
+            <li>JavaScript is a dynamic/scripting lanuage, this runs at run time. browsers have a built in interpreter/JavaScript engine for JavaScript. <br>
+              <img src="Images/Javascript browser engines.jpg" alt=""></li>
+            <li>JIT Just In Time compliers are used in browsers, coverts JS code for browsers and machines on the fly</li>
+            <li>Text editors that are good are <a href="https://www.sublimetext.com/" target="_blank">Sublime</a>, <a href="https://atom.io/" target="_blank">Atom</a> and <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> </li>
+            <li>Linters and Formatters are useful to setup in text editors - making sure indentation and syntax is correct: <br>
+              Linters - <a href="https://eslint.org/" target="_blank">ESLint</a>.<a href="https://github.com/prettier/prettier/issues/2364" target="_blank">Difference between Prettier and ESLint</a> <br>
+              Code Formatters - <a href="https://prettier.io/" target="_blank">Prettier</a>. <a href="https://prettier.io/docs/en/comparison.html" target="_blank">Difference between ESLint and Prettier</a> </li>
+            <li>Node.js is another common JavaScript runtime environment</li>
+            <li>Before starting your javascript project creating a build system would be good, see what is included <br>
+              <img src="Images/Package Managers.jpg" alt=""></li>
+              <img src="Images/Module Bundlers.jpg" alt=""></li>
+              <img src="Images/Compilers.jpg" alt=""></li>
+              <img src="Images/Task Runners.jpg" alt=""></li>
+            <li>Common frameworks for javascript,<a href="https://reactjs.org/" target="_blank">React</a> , <a href="https://vuejs.org/" target="_blank">Vue</a> and <a href="https://angular.io/" target="_blank">Angular</a> <br>
+              A CLI is a command line interface for these frameworks</li>
+            <li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/" target="_blank">Get Started with Debugging JavaScript in Chrome DevTools</a></li>
+
+          </ul>
   </body>
 </html>

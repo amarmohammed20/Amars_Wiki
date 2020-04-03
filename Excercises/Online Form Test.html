@@ -1,0 +1,47 @@
+<!--This is a test run to build a online html registration form. In stages
+Basic HTML with three questions and holds the answers
+Submit the form and its answers to an email address
+Apply some colour CSS to the form
+Use ajax to connect to a api
+build a api
+use nodejs to push the data over the api to a database
+
+Resources:
+Build guide - https://www.youtube.com/watch?v=E5MEzC0prd4 
+Input type - https://www.w3schools.com/html/html_form_input_types.asp
+-->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Online Registration Form</title>
+    <link href="onlineformstylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+    <main></main>
+
+    <form action="onlineform.js" method="POST">
+      Insert your contact email address for updates: <br>
+        <input type="text" name="email" placeholder="Your email address..."> <br>
+      Select what gender you are: <br>
+        Male: <input type="radio" name="gender" value="Male" checked> <br>
+        Female: <input type="radio" name="gender" value="Female"> <br>
+      
+      Enter a message you would like to provide: <br>
+        <textarea name="message" placeholder="Sell your sell!!!"> </textarea> <br>
+
+      Select your favorite colour: <br>
+        <select name="colour">
+          <option value="no colour">none</option>
+          <option value="orange">orange</option>
+          <option value="blue">blue</option>
+          <option value="green">green</option>
+        </select> <br>
+
+        <button type="submit" name="submit"> Submit</button>
+    </form>
+
+    <script src=></script>   
+  </body>
+</html>

@@ -1,0 +1,23 @@
+form {
+    width: 300px;
+    background-color: aqua;
+}
+
+input {
+    width: 100%;
+}
+
+textarea {
+    resize: vertical;
+    max-height: 100px;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 4px rgba(250, 3, 3, 0.5);
+    border: 1px solid #ddd;
+}
+
+::placeholder {
+    color: red;
+    opacity: 1;
+}
