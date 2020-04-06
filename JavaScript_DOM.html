@@ -3,10 +3,12 @@
   <body>
     <h1> Javascript and the DOM </h1>
       <p>Ref Points <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank">Mozilla DOM</a></p>
+      <p>Use the MDN website to look for help or see what is relevant today <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a>. Also shows browser compatability</p>
+      <p>You can also use <a href="http://caniuse.com/#" target="_blank">can I use</a> to get browser compatability</p>
     <h2>The Browser Environment</h2>
         <ul>
             <li>Wikipedia is an exmaple of a website that doesnt have any javascript just text, links and images</li>
-            <li><a href="https://www.codepen.io">Code pen</a> is a website that displays JavaScript. repsonsingto clicks of a mouse on the screen</li>
+            <li><a href="https://www.codepen.io" target="_blank">Code pen</a> is a website that displays JavaScript. repsonsingto clicks of a mouse on the screen</li>
             <li>Javascript will act upon actions</li>
             <li>A web page has many elements on a page, example would be a number on the codepen calcualtor. Once clicked on the element is manipulated or changed.</li>
             <li>THe dom standard for document object model - The dom is were all these actions take place.</li>
@@ -22,8 +24,91 @@
               <img src="Images/DOM structure Illustration.jpg" alt=""> </li>
             <li>Javascript uses the above relationships to alter and chnage the structure and actions of the DOM website</li>
             <li><img src="Images/JS can do with DOM.jpg" alt=""></li>
-
         </ul>
+    <h2>Getting a handle on the DOM</h2>
+      <ul>
+        <li>To get JavaScript to interact with the DOM you reach out to the elements ID <br>
+          <img src="Images/html element with ID.jpg" alt=""></li>
+        <li>You can use the meathod .addEventListener() to listen out for things like mouse clicks and so on. <a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp" target="_blank">HTML DOM addEventListener() Method</a></li>
+        <li>In the code <b style="color:red">.addEventListener("click", () => { <br>
+          myHeading.style.color = "red"; <br>
+        }); </b>. <br>
+        The above code changes the heading in the HTML which has the ID myHeading to red when clicked on.</li>
+        <li>A break down of the below example: 
+          On the first line we select the element<br>
+          Next we take our selection and add our call event listener meathod, telling the browser to act when the headline is clicked.<br>
+          We finally tell the browser to manipulate the heading and change to to the colour red when clicked<br>
+          <img src="Images/HTML element DOM example.png" alt=""></li>
+        <li>document is a global variable representing the current web page, getElementById() belongs to document and looks through the webpage for the element you call out by ID </li>
+        <li>Below is a example of adding a button/Element to a HTML page, than giving it a ID so we can call it out to give it a action <br>
+          <img src="Images/New element on HTML with ID.jpg" alt="">
+          The below image shows that we are looking for the myButton element and when clicked the heading changed colour to red <br>
+          <img src="Images/New element on HTML Javascript.jpg" alt=""> </li>
+        <li>In the HTML you can add a input field what accepts a value. to get that value you use .value. Example <b style="color:red">myTextInput.value</b>. MyTextInput is the element ID </li>
+        <li>Below is an example of Javascript were you can use input text to determine what colour you make the heading <br>
+          <img src="Images/HTML input field value capture.jpg" alt=""></li>
+        <li>If you dont have a ID against a HTML element you can use <b>document.getElementsByTagName()</b>. The difference is elements as this will normally capture multiple elements not a single <br>
+          <img src="Images/Element vs Elements.jpg" alt=""></li>
+        <li>The below is an exmaple of of the document.getElementsByTagName("p"). it finds only one p tag and selects the first one use [0] <br>
+          <img src="Images/Elements Example.jpg" alt=""> <br>
+          The code <b>myParagraph[0].style.color = "blue"</b>. This changes the the first paragraph element to blue.</li>
+        <li><img src="Images/Elements Example 2.jpg" alt=""></li>
+        <li><b style = "color:red">document.getElementsByClassName()</b>. This lets you choose a element that has a class assigned to it. class normally used by CSS<br>
+          <img src="Images/Elements by class name example.jpg" alt=""></li>
+        <li>Both document.getElementsByClass() and document.getElementsByTagName() bring back a HTML collection. Use the [] to select which one?</li>
+        <li>Both <b>document.querySelectorAll()</b> and <b>document.querySelector()</b> are used to return the first element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</li>
+        <li>document.querySelector() vs document.getElementsBy()? Here is the <a href="https://beamtic.com/getelementbyid-vs-queryselector" target="_blank">difference</a></li>
+        <li>Example - How would you select the first element in the DOM with its HTML title attribute set to "MyTitle"? - <b style = "color:red">document.querySelector("[title=MyTitle]");</b></li>
+        <li><b style = "color:red"> NEED MORE PRACTICE ON document.querySelector/all()</b></li>
+        <li>To select a p tag with a class you use example - <b>document.querySelector("p.description");</b></li>
+      </ul>
+    
+    <h2>Making Changes to the DOM</h2>
+      <ul>
+        <li>These are two DOM element properties <b>Element.textContent</b> & <b>Element.innerHTML</b>. Each have thier own approach to the dom</li>
+        <li>Example of textContent is <b>myHeading.textContent</b> this in the console brings back what is in the variable myHeading which is a h1 element </li>
+        <li>Example of textContent using a input element <br>
+          <img src="Images/textContent example.jpg" alt=""> <br>
+          <img src="Images/textContent example part 2.jpg" alt=""> <br>
+          <img src="Images/textContent result.jpg" alt="">
+        <li>The Element.innerHTML gets or sets the HTML or XML markup contained within the element <br>
+          To insert the HTML into the document rather than replace the contents of an element, use the method insertAdjacentHTML()</li>
+        <li>Am exmaple of a .innerHTML were you change the list within the li tags of the HTML <br>
+          <img src="Images/InnerHTML console example.jpg" alt=""></li>
+        <li>The Element.attributes - attributes are like a href attribute on a link and on a input element there is a type attribute of text. <br>
+          An example would be <b>input.type</b>, this would look at the input element and bring back the attribute type which would be text</li>
+        <li>To change the input element attribute from text to checkbox you would do <b>input.type = "checkbox"</b>. This will change the input box to a checkbox</li>
+        <li>If you want to set a Elements class dont use Elements.class it wont work. Use <b style = "color:red">Element.className</b> Example - newParagraph.className = 'panel'</li>
+        <li>Example of changing the text content to a element by ID to a variable called inputValue. <b>document.getElementById('link').textContent = inputValue;</b></li>
+        <li>Example of inline style elements using css directly in HTML which overrides the attached CSS style sheet. <br>
+          <img src="Images/Example of a inline css style element.jpg" alt=""> </li>
+        <li>Below is an example were we have created a button to hide everything in the div element. Button has the ID of toggleList <br>
+          First in the JavaScript decalre the variables for the div and button, selecting the elements. Using document.getElementById("toggleList"); and document.querySelector(".list") <br>
+          <img src="Images/hide div example.jpg" alt=""> <br>
+          <img src="Images/hide div example js.jpg" alt=""> <br>
+          The below JS has been updated to check if the inline class of the .list element is none and than depending on that the text in the button will change and the div will change. <br>
+          <img src="Images/hide div example with if in js.jpg" alt=""></li>
+          <li>You can create a new element in your HTML using JavaScript the code would be <b>document.createElement("div")</b>. This creates a new div element. Example of creating a list item <br>
+            <img src="Images/create element.jpg" alt=""> This doesnt add a item yet but the new item is stored </li>
+          <li>To add the newly created element you use <b style = "color:red">Node.appendchild()</b>. In the brackets you pass in your new child element</li>
+          <li>Nodes belong to the DOM and elements belong to HTML. <a href="https://teamtreehouse.com/community/js-dom-node-vs-element" target="_blank">difference</a></li>
+          <li>Below is an example of appending a new element created to an exisiting element. a new item to the list items <br>
+            <img src="Images/appendchild example.jpg" alt=""> <br>
+            <img src="Images/appendchild browser example.jpg" alt=""> <br>
+            Above the value entererd into the input field isnt cleared after adding to the new element. To clear use <b>addItemInput.value = "";</b>. </li>
+          <li>To remove a element from a page - <b>Node.removeChild()</b> place the child element in the ()</li>
+          <li>To select the last element in a group of elements you can use <b style = "color:red">document.querySelector("li:last-child");</b>. This picks the last li in the HTML</li>
+      </ul>
+    
+    <h2>Responding to User Interaction</h2>
+      <ul>
+        <li></li>
+      </ul>
+
+        
+      
+
+  
     
   </body>
 </html>
