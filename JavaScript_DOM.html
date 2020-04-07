@@ -102,7 +102,39 @@
     
     <h2>Responding to User Interaction</h2>
       <ul>
-        <li></li>
+        <li>Events are like moving moving your mouse and clicking, browsers listen to these events. You normally trigger lots of events without knowing it</li>
+        <li>JavaScript was built to listen to these <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">events</a> and than act, below are just some actions that can be down on the browser <br>
+          <img src="Images/Actions on browser.jpg" alt=""> <br>
+          These events can happen on keyboard mobile devices and many more</li>
+        <li>Functions in JS can be treated like a string numbers or any other Data Type. </li>
+        <li>Example of an anonymous Functions - This is a function within a function <br>
+          <img src="Images/anonymous function.jpg" alt=""></li>
+        <li>An exmaple of why you would use this would be if you want to load a message after a certain amout of time. This is called a call back function <br>
+          <img src="Images/call back function.jpg" alt=""></li>
+        <li>You use <b style = "color:red">EventTarget.addEventListener()</b> to listen to an event and than select a element of the whole document itself. <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank">More Info</a></li>
+        <li>The below example shows use of event listner. It looks at the first list item and when hoovered over it changes to uppcase and when the mouse moves away it changes back to lowercase <br>
+          <img src="Images/addEventListner example.jpg" alt=""></li>
+        <li>Now to make this action occur on all the list items we place the current code into a for loop <br>
+          <img src="Images/addEventListner for loop example.jpg" alt=""></li>
+        <li>The below image is a tree structure of the document DOM. When a event occurs anywhere it travels up to the parent right the way to the document <br>
+          <img src="Images/Event Tree.jpg" alt=""> <br>
+          This is called bubbling, the event bubbles to the to pof the tree.</li>
+        <li>Based on the previous example of changing a list item to upper case. Instead of doing a loop through each one you can add the event lisnter to the parent <br>
+          The other benifit to this is that the eventlisnter will be applied to new list items whe added. This wont be the case in the last example. </li>
+        <li>The below image shows the event lisnter with the addiiton of event. event records the element you have clicked as currently we have applied the listner to the DIV itself. <br>
+          We have than done a if statment using <b>event.target.tagName</b> to select the correct tag name which is li within the selected div <br>
+          <img src="Images/addEventListner with event example.jpg" alt=""></li>
+      </ul>
+      
+    <h2>Traversing the DOM</h2>
+      <ul>
+        <li>DOM traversal if were you have referrence to one element but you need to get hold of another element nearby</li>
+        <li>Traversal DOM is how to move from one element to an other, selecting one element based on its relationship to another element</li>
+        <li>To get a referrence to a parents node you can use <b>Element.parentNode</b></li>
+        <li>Below shows you an example of how to get a parent node to later use it to remove a paragraph. <br>
+          <img src="Images/Parent Node Prop example.jpg" alt=""></li>
+        <li>The below code displays getting hold of a element from a class in a li called .remove_me. Than getting hold of its parent and than removing the element from the dom <br>
+          <img src="Images/remove element using parent node.jpg" alt=""></li>
       </ul>
 
         

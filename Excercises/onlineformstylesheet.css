@@ -1,3 +1,13 @@
+.pageTitle{
+    background-color: grey;
+    text-align: center;
+}
+
+.address{
+    background-color: grey;
+    text-align: center;
+}
+
 form {
     width: 300px;
     background-color: aqua;
