@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1> <a href="https://www.youtube.com/watch?v=RDo3hBL1rfA" target="_blank">Ajax Basics</a></h1>
+      <p></p>
+      
+    <h2>Ajax Concepts</h2>
+      <ul>
+        <li>Ajax stands for Asynchronous JavaScript and XML. </li>
+        <li>Ajax lets you update HTML without loading a new webpage</li>
+        <li>Google Maps is a good example as it allows you to search for location and navigate all doing this quickly without loading a new HTML page <br>
+          Loading new content without loading new web pages</li>
+        <li>reddit is a website that has many posts, you can vote for a post to be shown higher. This click of a button to vote sends a message to the reddit server
+          <img src="Images/reddit ajax example.jpg" alt="">
+        </li>
+        <li>Normally when you require more information or submit a form a new web page is created or required. Ajax is quicker and faster and lets you get that information from a webserver</li>
+        <li><img src="Images/Ajax and browser diagram.jpg" alt=""> <br>
+          With ajax not the whole page of information is brought back just what is required. Javascript is used to apply this information to the parts of the webpage</li>
+        <li>The internet is made up of browsers or clients making requests from servers and servers providing responses.</li>
+        <li>You can see Ajax working within the console by clicking the cox in the console and selecting <b>Log XMLHttpRequests</b> <br>
+          <img src="Images/console Ajax requests.jpg" alt=""> <br>
+          You see the above image using GET api requests from a server to pull information</li>
+        <li>You will need to know Php, Ruby, Python, Cold Fusion and a few others for the server side.</li>
+        <li>Ajax has been around for a long time first introduced by Microsoft in 1999 with IE 5. Also known as XHR</li>
+        <li>Javascript is used to make Ajax happen - for both request and response <br>
+            Ajax uses Asynchronous technology to keep loading the html while getting the response from the server <br></li>
+        <li>What is one characteristic of "asynchronous" AJAX requests? - Call backs for multiple AJAX requests may not run in the order the requests were sent<br>
+          Yes. Servers may take longer to respond to certain requests, so callbacks run in the order in which the responses return.</li>
+        <li>Web browsers use XMLHttpRequest Object to manage AJAX requests</li>
+        <li>How Ajax works <br>
+          <img src="Images/How Ajax Works.jpg" alt=""></li>
+        <li>To get ajax working you will need a web server running on your machine</li>
+        <li>Below is a simple AJAX Example</li>
+          <ul>
+            <li>Create an XMLHTTP Request object, each AJAX request will need one variable each - <b>var xhr = new XMLHttpRequest();</b>. <br>
+              This is created in the HTML page between the script tags. The variable can be called whatever you want.</li>
+            <li>Create a call back function, this is the code that runs when the server sends the reponse. Ajax comes with its own set of JS events. <br>
+              We use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/onreadystatechange" target="_blank">xhr.onreadystatechange</a>, xhr is the variable we defined above. This again goes in the HTML between the script tags. <br>
+              readystatechange is the event handler and we use the attribute <b>readyState</b>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/readyState" target="_blank">readyState</a> has different stages and these are represented by numbers 0 to 4. <br>
+              Create some space in the HTML to place the response, this could be a div tag with a ID which you can call the element later. <b style = "color:red">Dont forget to use innerHTML when getting hold of the element.</b> <br>
+              so your element code should look something like <b style = "color:red">document.getElementById("ajax").InnerHTML = xhr.responseText;</b>. We are here storing the response text and storing inside the DIV <br></li>
+            <li>Open a request - xhr.open("GET", "sidebar.html");. This uses a get meathod to pull information and sidebar.html is just another html file. Open just gets ready for a request but doesnt actually make the request </li>
+            <li>Send the request - <b style = "color:red">xhr.send();</b>. This actually sends the request</li>
+            <li><img src="Images/Ajax html example.jpg" alt=""></li>
+            <li>The below images shows the above example but this time the ajax is ran on a click of a button, the button disappears after the ajax request is ran</li>
+            <li><img src="Images/Ajax html example.jpg" alt=""></li>
+          </ul>
+        <li>You need to specify the meathod you would like to use to send the request and URL you are sending the request to. AJAX has two main meathods POST and GET </li>
+        <li>GET meathod is mainly used to recieve data and POST meathod is used when you are sending data that is going to be saved like a email being used for a sign up form</li>
+        <li>The GET meathod uses the URL to perform the query and is not as secure as the POST meathod. <a href="https://www.w3schools.com/tags/ref_httpmethods.asp" target="_blank">Difference between the two</a></li>
+        <li style = "color:red">The general rule of Thumb is use a GET meathod when requesting data and POST when sending data to be stored</li>
+        <li>Two common data interchange formats are XML and JSON. This is data being sent from the server back to the website that made the AJAX request</li>
+        <li>XML - extensible markup lanuage - Like HTML and uses tags. You can make up XML tags. <br>
+          <img src="Images/XML Tag Example.jpg" alt=""> </li>
+        <li><a href="https://www.w3schools.com/whatis/whatis_json.asp">JSON </a>is the perfered method to use and works well with JS</li>
+        <li>AJAX is not a API it can only be used for other pages on your web server</li>
+        <li>AJAX will only work on the same server and only on HTTP. Cant speak to other servers and cant speak to HTTPS protocol even if its your own server <br>
+          You canr also switch from the standard port of 80 for HTTP to another port. You also cant switch hosts.</li>
+        <li>The way around the above point is to use a web proxy - A script will be required which will be created in PHP and RUBY</li>
+        <li><a href="https://www.w3schools.com/js/js_json_jsonp.asp" target="_blank">JSONP</a> - JSON with Padding. <br>
+          <img src="Images/JSONP.jpg" alt=""></li>
+        <li>JSONP can link to jQuery, you rather link to the jQuery library to save space and resource. The purpose of jQuery is to make it much easier to use JavaScript on your website. <a href="https://www.w3schools.com/jquery/jquery_intro.asp" target="_blank"></a> <br>
+          <b style = "color:red">jQuery link</b> - <a href="https://www.w3schools.com/jquery/jquery_get_started.asp" target = "_blank">Google CDN Link</a></li>
+        <li><a href="https://www.html5rocks.com/en/tutorials/cors/" target = "_blank">CORS</a> can be used to make AJAX requests across domains <br>
+          CORS does require some setup on the server but can deal with lots of complex authentication</li>
+        <li style = "color:red">AJAX ONLY WORKS ON A SERVER NOT LOCALLY ON A MACHINE</li>
+
+
+      </ul>
+        
+  </body>
+</html>
