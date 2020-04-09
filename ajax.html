@@ -64,9 +64,33 @@
         <li><a href="https://www.html5rocks.com/en/tutorials/cors/" target = "_blank">CORS</a> can be used to make AJAX requests across domains <br>
           CORS does require some setup on the server but can deal with lots of complex authentication</li>
         <li style = "color:red">AJAX ONLY WORKS ON A SERVER NOT LOCALLY ON A MACHINE</li>
-
-
       </ul>
+
+    <h2>Programming Ajax</h2>
+     <ul>
+       <li>For a successful response you would need the Ajax readyState to be 4 and the .status to be 200. Other status codes are errors.</li>
+       <li>You could use a alert that will display the error sent back from .status. <br style = "color:red">alert(xhr.statusText); <br>
+        <img src="Images/Ajax alert example.jpg" alt=""></li>
+      <li>JASON is commonly used with Javascript when usng AJAX.</li>
+      <li>You can store JSON in an array - This is no the best way as you dont know what the values in the array mean and are for</li>
+      <li>The preffered way to use JSON is to use Object notation, object notation are key values pairs like objects previously explained in JavaScript <br>
+        The below images shows an object. An object uses properties and that a value for the property. name and phone are properties <br>
+        <img src="Images/Object Example for JSON.jpg" alt=""></li>
+      <li style = "color:red">The different with objects for JSON are the property have to have double quotes " and strings also require double quotes</li>
+      <li>An online tool to check is a josn file is valid is <a href="www.jsonlint.com" target = "_blank">JSONLint</a></li>
+      <li>The response from the server could be formatted in plain, HTML or JSON but the borwser sees all this as plain text</li>
+      <li>So to convert the server repsonse from text to something meaningful we have to do <a href="https://developer.mozilla.org/en-US/docs/Glossary/Parse" target = "_blank">Parsing</a></li>
+      <li>To part the JSON file into JS format you use <b style = "color:red">JSON.parse(xhr.responseText);</b></li>
+      <li>The below is a AJAX request that pulls in JSON information with parsing - The below creates an array of objects <br>
+        <img src="Images/parse jason AJAX.jpg" alt=""></li>
+      <li>The below example displays how we use a JSON file to build up HTML to be placed in a div. The json file has an array of objects name and properties which are .name and .inoffice <br>
+        <img src="Images/parse jason AJAX 2.jpg" alt=""></li>
+      
+     </ul>
+
+
+
+      
         
   </body>
 </html>
