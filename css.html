@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>CSS Basic</a></h1>
+      <p>Useful resource <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target = "_blank">MDN CSS</a></p>
+      
+    <h2>CSS Basics - Getting started</h2>
+      <ul>
+        <li>CSS stands for cascading style sheets - core technology to designing a website. The presentation of the website</li>
+        <li>CSS resource <a href="https://www.webplatform.org/docs/css/" target = "_blank"></a>Webplatofrm.org</li>
+        <li>The three meathods you can apply CSS to a website <br>
+          <ul>
+            <li>Inline style - Write the CSS in the HTML file inside the tag. Not good practice. Inline style will override all other style applied<br>
+              <img src="Images/Css inline style.jpg" alt=""></li>
+            <li>Internal styles - Placed in the HTML documents in the head tag and placed in style tags. A inline style will override this. The HTML file becomes to big and the css is realoded after every refresh<br>
+              <img src="Images/Internal Style CSS.jpg" alt=""></li>
+            <li>External CSS - This is an external .css file which is managed seperatley. Need to link the file to the HTML - link tag with rel= which is relationship which is stylesheet and href <br>
+              <img src="Images/External CSS Style.jpg" alt=""></li>
+          </ul>
+        </li>
+        <li>You can also import a style sheet - This is placed on the HTML in the head tags inbetween style tags. Example @import ""; <br>
+          You can also and is preferred to place the import in the .css stylesheet which is seperate. </li>
+      </ul>
+
+    <h2>CSS - Basic Selectors</h2>
+      <ul>
+        <li>A css selector is created of two parts, the property and the value <br>
+          <img src="Images/CSS selector.jpg" alt=""></li>
+        <li>A selector lets us target HTML elements. </li>
+        <li>A universal selector selects every element on the page at once, overriding all other css. * {} <br>
+          <img src="Images/css universal selector.jpg" alt=""> </li>
+        <li>A type selector lets you select a element type on the page, also called html selectors. Example p {}. Wrtie these in the order they appear in the HTML file to keep things neat <br>
+          <img src="Images/css type selector.jpg" alt="">  </li>
+        <li>ID selector, this is were you place a ID in the HTML tag and than call is out in the external CSS file using #. Example #primary-content {} <br>
+          An element can only have one ID and only one element can have the same ID name</li>
+        <li>ID's can also be used as anchor elements for the page. You can call the ID as an anchor through a href</li>
+        <li>Class selectors - A class is like a ID but an ID is used for one element and a class is used for many elements <br>
+          To call a class selector you use . Example .primary-content . Multiple elements can share the same class. <br>
+          An example of were this might be used is we could have multiple divs that require the same formatting. We use a class once instead of multiple ID's</li>
+        <li>You can add multiple classes in a HTML element which means that in the css file you can have one class that done the common things that most elements need, like font.</li>
+        <li>ID's carry more weight than classes as they point to a particular element. </li>
+        <li>You can use descendant selectors in CSS to capture the decendants of a element you are applying style to. An example for the span selector which is a child of the header <br>
+          <img src="Images/css descendant selector.jpg" alt=""> <br>
+          descendant selectors can be used with classes and ID's</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank"> Pseudo-Classes</a> are similiar to classes but specifies a special state of the selected element(s). <br>
+          For example, :hover can be used to change a button's color when the user's pointer hovers over it. <br>
+          <img src="Images/css pseudo-class.jpg" alt=""> <br>
+          <img src="Images/css 2 pseudo-class.jpg" alt=""><br>
+          Pseudo-Classes can be applied to any HTML elements</li>
+        <li>To comment in CSS you use /* */ - Shortcut is control /</li>
+      </ul>
+
+    <h2>CSS - Values and Units</h2>
+      
+      
+        
+  </body>
+</html>
