@@ -47,11 +47,97 @@
           <img src="Images/css pseudo-class.jpg" alt=""> <br>
           <img src="Images/css 2 pseudo-class.jpg" alt=""><br>
           Pseudo-Classes can be applied to any HTML elements</li>
+        <li>You can group two css selectors - <b> .main-header, h1</b></li>
         <li>To comment in CSS you use /* */ - Shortcut is control /</li>
       </ul>
 
     <h2>CSS - Values and Units</h2>
+      <ul>
+        <li><img src="Images/CSS values structure.jpg" alt=""></li>
+        <li>CSS has many data types - <a href="https://wiki.developer.mozilla.org/en-US/docs/tag/CSS%20Data%20Type" type="_blank">MDN CSS data types</a></li>
+        <li>Some length units for layout and screen size. px dont scale better to use % values. The two types are called relative and absaloute length values</li>
+        <li>The CSS pixel "px" unit is an abstract reference unit. the px value will automatically scale up for a device that is higher resolution. <br>
+          <img src="Images/css px example.jpg" alt=""></li>
+        <li>We can use a percentage unit. This unit adjusts and is fluid. </li>
+        <li>Using a % for font size the font size will be that percentage bigger than the default size of 16px - Example 150% would be 24px</li>
+        <li>em unit is a font relative unit - 1em is equal to the font-size value of the parent element - 1em = 16px - 3em - 48px <br>
+          The below calcualtion is for em values. 16eing 1em the standard font size for the browser. the result being the em value <br>
+          <img src="Images/css em calculation.jpg" alt=""> <br>
+          <a href="http://pxtoem.com/" target="_blank">Conversion calculator</a></li>
+        <li>You have to be careful of <a href="https://teamtreehouse.com/community/trying-to-wrap-my-head-around-the-compounding-effect-can-someone-try-and-explain-it-using-a-different-approach" target="_blank">Compounding</a> affect of em units</li>
+        <li>rem unit is similiar to a em unit but are not affected by compounding. They are only relative to the standard 16px font size that comes with HTML</li>
+        <li><img src="Images/which one to use.jpg" alt=""></li>
+        <li>Color Values, a <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank">resource MDN</a> <br>
+           Key word value(blue) <br>
+           RGB(red, green, blue) also known as a hex value - Examples - #ff0088 - rgb(255, 255, 255). To show some transparency you use a alpha value rgba(255, 255, 255, .5). .5 is 50%  </li>
+        <li>Text properties could be things like text-align: centre; - text-transform: uppercase; - </li>
+        <li>Font properties - <a href="http://www.cssfontstack.com/" target="_blank">MDN Resource</a> <br>
+          Ensure to have the font saved on the computer of linked. <br>
+          You can have multiple fonts asking the computer to use the font font it has access to. <br>
+          <img src="Images/css Multiple fonts.jpg" alt=""> <br>
+          If a font is made up of more than one work you have to use "". Example "Helvetica Neue".</li>
+        <li>Line height can be used to space out lines - line-height: - Can accept many units but should use a unit like word - 1.5 - This line height will adjust to the font size <br>
+          Short hand can be used - font: normal 1em/1.5 Helvetica - The order is important - <a href="https://css-tricks.com/snippets/css/font-shorthand/" target="_blank"></a> Resource</li>
+      </ul>
+
+    <h2>CSS - Box Model</h2>
+      <ul>
+        <li>The box model is the amount of space each element takes up on the page. <br>
+          <img src="Images/CSS box model.jpg" alt=""></li>
+        <li>A block element takes up the full width of the element and creates a new line before and after the element. Examples of some of these elements are - div, p, h and li </li>
+        <li>Inline elements only take up the width they need to and always stay inline. examples, anchor, images and span. </li>
+        <li>The box is made up of 4 elements - content, padding, border and margin <br>
+          <img src="Images/CSS box explained.jpg" alt=""></li>
+        <li>Padding can be set in two ways - px and . Below is padding long hand and short hand <br>
+          <img src="Images/padding long hand.jpg" alt=""> <br>
+          Top - Right - Bottom - Left <img src="Images/padding short hand.jpg" alt=""></li>
+        <li>Best to use % values for padding, makes this fluid</li>
+        <li>Borders - border-width: - Ensure to also apply a border style. Also set the border a color. </li>
+        <li>margin accepts % and length. Border, margin and padding use the short hand - Top - Right - Bottom - Left <br>
+          margin is applied outside of the box. margin: auto; sets all the margins for the lement to be equal</li>
+        <li>Display property can override the default values. The keyword values are - none (disappears), block(for divs, p , h. changes inline to block), inline(opposite of block, a element)  and inline block()</li>
+        <li>block covers the full width and inline goes inline with other text</li>
+        <li>You also have <b>display: inline-block</b>. This works as a block which is inline with other text. You can now adding margins</li>
+      </ul>
+
+    <h2>CSS - Floats</h2>
+      <ul>
+        <li>Float positioning - very common, used to take the lement out of its position allowing you to wrap other elemnts around it</li>
+        <li>Floats have a common issue as it will display on top of other content, this is becuase it is taken out of the normal structure of the page. <br>
+          To resolve this use <b>overflow: auto;</b>. Do this to the element above. A better way to do this is - <br>
+          instead of the above use <b>clear: both;</b> See image - give the parent element the class group. <br>
+          <img src="Images/float clear fix.jpg" alt=""></li>
+        <li></li>
+      </ul>
+
+    <h2>CSS - Media Query Basics</h2>
+      <ul>
+        <li>some info <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries" target="_blank">CSS media queries - MDN</a>, also <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Media_queries#Media_features" target="_blank">Media features</a>, <a href="https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en" target="_blank">Window Resizer - Resize browser window to emulate various screen resolutions</a></li>
+        <li>This is used to handle different sizes and deifferent devices. This allow you to respond and adapt.</li>
+        <li>A style block containing one or more conditions. <b>@media ()</b> <br>
+          There are a few media types - all(all devices) and so on. <br>
+          <b>@media all ()</b>. Inside the () write an expression you are checking for. No ; after the last argument in the ()</li>
+        <li>multiple media queries - <br>
+          <img src="Images/m media queries.jpg" alt=""></li>
+      </ul>
       
+    <h2>CSS - Fundamental Concepts</h2>
+      <ul>
+        <li>Cascading means whats detemrines which style is determined to the element</li>
+        <li><img src="Images/cascade resolve issue.jpg" alt=""></li>
+        <li>The above picture demonstrates a issue were we have applied a style to the same element in two places <br>
+          <img src="Images/cascade explained.jpg" alt=""></li>
+        <li>Importance - depends on the origin of the style sheet. The external style sheet we write has more importance than both user agent styles and user styles</li>
+        <li>Specificity - decides which styles are applied. Styles that are applied to more specific selectors first. <br>
+          <img src="Images/Specificity example.jpg" alt=""> <br>
+          The above example would be slategrey as it comes from a ID and is the last mentioned <br>
+          <img src="Images/Specificity example 2.jpg" alt=""> <br>
+          The above exmaple is tomamto as it is a inline style</li>
+        <li>If two style sheets were linked in the header the last one would take priority <br>
+          <img src="Images/two style sheets.jpg" alt=""></li>
+        <li>Inheritance in CSS - This means styles are taken from parent elements. </li>
+        <li>Go out and practice!!! - Be and active learner - Also use <a href="www.codepen.io" target="_blank">Code Pen</a></li>
+      </ul>
       
         
   </body>
