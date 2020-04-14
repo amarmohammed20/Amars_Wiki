@@ -138,6 +138,55 @@
         <li>Inheritance in CSS - This means styles are taken from parent elements. </li>
         <li>Go out and practice!!! - Be and active learner - Also use <a href="www.codepen.io" target="_blank">Code Pen</a></li>
       </ul>
+
+    <h2>CSS Flexbox</h2>
+      <ul>
+        <li></li>
+      </ul>
+
+    <h2>CSS Grids</h2>
+    <p>CSS Grid Layout provides a built-in, more efficient way of designing grid-based layouts in the browser. <br>
+       It brings a new set of properties, functions and flexible units that let you control the exact placement and sizing of grid components.</p>
+      <ul>
+        <li>Keep design organised and positioning. Above we have used inline blocks and floats and tables to achieve this but Grids are a better way</li>
+        <li>Can build layouts faster - Grid is your layout system <br>
+          <img src="Images/Flex vs grid.jpg" alt=""></li>
+        <li>Resource - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout" target="_blank">CSS Grid Layout - MDN</a> and 
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Relationship_of_Grid_Layout" target="_blank">Relationship of grid layout to other layout methods</a> and
+          <a href="http://labs.jensimmons.com/" target="_blank">Intro to CSS Grid - Jen Simmons</a><br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank">Basic concepts of grid layout - MDN</a></li>
+        <li>Grid containers - <img src="Images/Grid Container.jpg" alt=""><br>
+          Grid Items - <img src="Images/Grid Items.jpg" alt=""> </li>
+        <li>The below is a example were the main element is the container and the article tags are the items <br>
+          <img src="Images/Grid container and items example.jpg" alt=""> <br>
+          <img src="Images/grid illustration.jpg" alt=""></li>
+        <li>Grids use grid lines <br>
+          <img src="Images/Grid Columns and Rows.jpg" alt=""></li>
+        <li>Grid and Flexbox each have thier specialties; they are complementary layout tools</li>
+        <li>Below is a example to explain grids - The HTML and the css. This examples shows HTML in the body with the div that has a class called grid <br>
+          <img src="Images/Grid HTML example.jpg" alt=""></li>
+        <li>First set a HTML element with the class grid(You can name it whatever you want) that will hold all within the grid. <br>
+          The main css properties you will apply to the class is <b style="color: red;">display: grid;</b>. <br>
+          By defualt the grid container places its items in a single column. </li>
+        <li>Grid tracks - What are they? - You use the <b style="color: red;">grid-template-columns</b> property to set the grid tracks <br>
+          <img src="Images/Grid Tracks.jpg" alt=""> <br>
+          Each value in the track list specifes the size of a column or row. Below creates three columns 200px wide <br>
+          <img src="Images/Three tracks.jpg" alt=""><br>
+          <img src="Images/Three tracks browser.jpg" alt=""></li>
+        <li>Grid rows - you use <b style="color: red;">grid-template-rows</b> to set the rows in a grid</li>
+        <li>If you add more items to the html the grid-templates-columns will be followed everything going into three columns</li>
+        <li>Add Gutters Between Rows and Columns - CSS Grid gives you control over the spaces (or gutters) between columns and rows. You separate grid tracks using the grid-row-gap and grid-column-gap properties. <br>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-row-gap" target="_blank">grid-row-gap - MDN</a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-column-gap" target="_blank">grid-column-gap - MDN</a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-gap" target="_blank">grid-gap - MDN</a></li>
+        <li>To create a gutter in the grid you can use <b style="color: red;">grid-column-gap</b> and <b style="color: red;">grid-row-gap</b>. <br>
+          This simply means you will get spacing between the columns and rows <br>
+          <img src="Images/grid gutters css.jpg" alt=""> <br>
+          <img src="Images/grid gutters browser.jpg" alt=""></li>
+        <li>The short hand is <b style="color: red;">grid-gap:</b>. The first value is the row and the second is the column. One value is for both columns and rows</li>
+        <li>for each column you need two lines so for column 1 you need lines 1 and 2. Same for rows. You can places items in particular boxes in the grid<br>
+          <img src="Images/grid lines index.jpg" alt=""></li>
+      </ul>
       
         
   </body>

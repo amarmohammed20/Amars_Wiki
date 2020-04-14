@@ -37,6 +37,58 @@
           <img src="Images/CPS callback.jpg" alt="">
         </li>
         <li>Example - <a href=""></a></li>
+        <li>Debugging resource - <a href="https://teamtreehouse.com/library/breaking-on-events-and-basic-stepping" target="_blank">Breaking on Events and Basic Stepping</a>, <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#event-listeners" target="_blank">Event listener breakpoints</a>, <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/reference#call-stack" target="_blank">View the current call stack</a></li>
+      </ul>
+      
+    <h2>Asynchronous JavaScript with Promises</h2>
+      <ul>
+        <li>This is the better way to do things over call backs. </li>
+        <li>A promise represents the eventual completion of a Asynchronous operation. A value that might be avalible yet like data from a server</li>
+        <li>A example of a Asynchronous call back is ordering a takeaway and you leave your detials. You have ordered and they will deliver but you are always waiting for a call back <br>
+          This example you are a few issues, the number you gave might be wrong, the order could be wrong and so on</li>
+        <li>A Asynchronous <b> promise</b> is the same as above but this time you go to the shop and pay and when you pay you are given a pager. You will now be alearted when things are ready or if there is a issue</li>
+        <li>A promise is better as you will always get a value. That value might be the result you are looking for but it will be informative and will be returned.</li>
+        <li>The states a promise can be in - pending(The default state of a promise) - fulfilled(The operation completed successfully) - rejected(The operation failed)</li>
+        <li><img src="Images/working with a promise.jpg" alt=""></li>
+        <li>The below is a empty promise that takes into account the three states, you dont see pending as its default. setTmeout is used to allow you to do other things while the call back runs <br>
+          <img src="Images/Promise Example.jpg" alt=""></li>
+        <li><b>then()</b> and <b>catch()</b>are meathods you can use on the promise. <br>
+          .then() is use to get the successful value out to the console <br>
+          <img src="Images/Promise Example then.jpg" alt=""></li>
+        <li>Using the .catch() meathod you can deal with a rejection. </li>
+        <li style="color: red;">Always remember to add a resolve and reject so your promise doesnt fail silently. <br>
+          <img src="Images/promise resolve and reject.jpg" alt=""></li>
+        <li>Below example uses a if statement for resolve and reject <br>
+          <img src="Images/promise if statement.jpg" alt=""></li>
+        <li>Review <br>
+          <img src="Images/Promise Review.jpg" alt=""> <br>
+          <img src="Images/names functions.jpg" alt=""><br>
+          <img src="Images/promise chaining 1.jpg" alt=""><br>
+          <img src="Images/promise chaining 2.jpg" alt=""> </li>
+        <li>Promises provide can keep track of many Asynchronous requests. <b>Promise.all()</b> accepts a array </li>
+        <li>Promise.all is a all or nothing operation. It will reject if any of the promises fail.</li>
+        <li>finally is a new addition to promises and is called once a promise if fully settled, happening regardfull success or failure of the promise - Example <br>
+          <img src="Images/promise finally example.jpg" alt=""></li>
+        <li>finally call back nesting requires you to jump out when following and is a little messy. Promises use a chain of functions to provide the result <br>
+          .then - .catch - .finally</li>
+        <li>fetch API allow you to use javascript promises to allow you to handle results from the server. The global fetch meathod <b>fetch()</b> </li>
+        <li>The fetch meathod enables you to remove the xhr AJAX typical code as below <br>
+          <img src="Images/fetch meathod.jpg" alt=""></li>
+        <li>The fetch meathod itself returns a promise. </li>
+        <li>Below is a example function that displays using fetch to get a promise <br>
+          <img src="Images/fetch promise function.jpg" alt=""></li>
+      </ul>
+
+    <h2>Exploring Async/Await</h2>
+      <ul>
+        <li>Async await is the new way jaavscript deals with promises. no .than required<br>
+          <img src="Images/async await example.jpg" alt=""> </li>
+        <li>Async await explination <br>
+          <img src="Images/await details for async.jpg" alt=""></li>
+        <li>An async function always returns a promise <br>
+          That promise resolves with the value returned by the async function, or rejects with an error thrown from within the function</li>
+        <li>Async/await is not meant to replace promises -- it's actually syntactic sugar for creating functions that return and wait for promises.</li>
+        <li>the most common way to catch errors <a href="https://www.youtube.com/watch?v=BztW_u6HDbs" target="_blank">try / catch with Promises</a></li>
       </ul>
 
 
