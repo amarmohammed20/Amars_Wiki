@@ -188,6 +188,37 @@
           <img src="Images/grid lines index.jpg" alt=""></li>
       </ul>
       
+    <h2>Flexible Sized CSS Grids</h2>
+    <p>Grid Layout introduces new features that adapt content to available space and intelligently size and position items within a grid container. <br>
+       This supports responsive design and makes it easier to create layouts that work in a variety of different browser sizes, without the use of media queries.</p>
+
+      <ul>
+        <li>Flexible Sized grids support responsive design. <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#The_fr_Unit" target="_blank">fr</a> is used design the size of the columns ensuring they are responsive</li>
+        <li>This also iradicates the need of media querys, <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank"> media query</a></li>
+        <li>The below example displays that the first and second column is a fixed width but the middle column is flexible and will expand to the remaining space <br>
+          <img src="Images/fr example.jpg" alt=""></li>
+        <li>If you have three columns with the same width you can use <b style="color: red;">grid-template-columns: repeat(3, 1fr);</b></li>
+        <li>You can use min and max to determine the columns and rows (tracks). <br>
+          The function accepts two values, the first being min and the second being max. <b style="color: red;">minmax(200px, 300px)</b>. You can use fr for max value <br>
+          The repeat can be used for the above <br>
+          <img src="Images/repeat minmax.jpg" alt=""></li>
+        <li>When the browser becomes to small we need the containers to wrap onto the next line. info on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/repeat#Values" target="_blank">repeat</a></li>
+        <li>the below exmaple will move columns to the next line while keeping a min and max for all columns <br>
+          <img src="Images/auto fill repeat.jpg" alt=""></li>
+        <li>replacing auto-fill above to auto-fit you wont be left with white spacing and you will have the responsive action</li>
+        <li>To conclude were you would stipulate the number of columns at the start of the repeat so place auto-fit</li>
+        <li>You can face a problem when you data is dynamic on the site and you end up needing more columns than you have specified <br>
+          <img src="Images/grid size auto expansion.jpg" alt=""></li>
+        <li>We have previously been speaking about explicit grids, were we determine columns but to ensure the grid can grow we use implicit grids <br>
+          <img src="Images/implicit grid.jpg" alt=""></li>
+        <li>implicit rows are auto sized and the amount/size of the content determines there size</li>
+        <li>To determine the size of the implicit row you can use <br>
+          <img src="Images/implicit tracks.jpg" alt=""></li>
+        <li>The function in css for the above is <b style="color: red;">grid-auto-rows: 250px;</b>. Any implicit row will be this size now</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows" target="_blank">grid-auto-rows</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns" target="_blank">grid-auto-columns</a></li>
+        <li>In summary you have explicit and implicit columns and rows. explicit you decide all the sizes and implicit you set one size and any new columns or rows they follow that size, otherwise they take the size of the content. </li>
+      </ul>
+      
         
   </body>
 </html>
