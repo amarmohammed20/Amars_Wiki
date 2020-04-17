@@ -3,14 +3,88 @@
   <body>
     <h1> <a href="https://www.youtube.com/watch?v=PFmuCDHHpwk" target="_blank">Object-oriented Programming in JavaScript</a></h1>
       <p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank">MDN Object-oriented JavaScript</a></p>
+      <p style="color: red;">Its important to understand the difference between <a href="https://www.youtube.com/watch?v=O3JSPhwKowA" target="_blank">object vs object literals</a></p>
       
     <h2>What is Object-Oriented JavaScript</h2>
       <ul>
         <li>This is more advanced JS, working mainly with objects that ties into a framework like react of angular</li>
         <li><b style="color: red;">Inherticance and Prototypes are not covered these need to be covered later</b></li>
-        <li>A object is a package of information that you want to use in your code, contains properties and functions</li>
+        <li>A object is a package of information that you want to use in your code and its functions are called meathods, contains properties and functions</li>
         <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript" target="_blank">meathods</a> are used to allow you to do something with your object </li>
-        <li></li>
+        <li>The below exmaple is were the house is the object and the rest are its properties <br>
+          <img src="Images/Object Example House.jpg" alt=""> <br>
+          <img src="Images/Object Example Radio.jpg" alt=""></li>
+        <li>Objects are a easy way to store data, used as containers. Another example of using a object as a storage container <br>
+          <img src="Images/Object Example Containers.jpg" alt=""></li>
+        <li>We have used objects before as they are like arrays and interarcting with the DOM. we use meathods to update and remove from an array of interact with the DOM</li>
+      </ul>
+
+    <h2>Object Basics</h2>
+      <ul>
+        <li>An example of a object literal which was covered in JavaScript <br>
+          <img src="Images/Object Literal.jpg" alt=""></li>
+        <li>This is an example of .notation were we can find the length of an array by using a method <br>
+          <img src="Images/array . notation.jpg" alt=""></li>
+        <li>Object Literals Referring to Themselves <br>
+          Many times, when writing methods for objects, you might want to refer to one of that object's properties. For example, consider the following code: <br>
+          <img src="Images/objects literal 1.jpg" alt=""> <br>
+          I may want to add a method to this object literal called printName() that will log both the first and last name properties of the teacher variable to the console. To access the value of these properties inside the method, I'll use the this keyword instead of the variable name. <br>
+          This way, you'll always be access the property values attached to that particular object: <br>
+          <img src="Images/objects literal 2.jpg" alt=""></li>
+        <li>When calling a method use () at the end - <b style="color: red;">ernie.bark</b>. ernie being a variable and bark being a property which is a function to the console</li>
+        <li>So the above is .noatation but we can also use bracket notation. Bracket notation - <b style="color: red;">ernie['name']</b>. This brings back the value of the property </li>
+        <li>JSON and Bracket Notation <br>
+          <img src="Images/JSON and bracket notation.jpg" alt=""></li>
+        <li>Object Literals are a great way to make objects. </li>
+        <li>You can update a property in a object like you update a varaible - Example - <b style="color: red;">ernie.age = 2;</b>. This changes the property age in the object to 2</li>
+        <li>To add a property to the object we use - <b style="color: red;">ernie.color = 'black';</b>. This adds the property color to the object</li>
+
+        <h3>Working with Classes</h3>
+          <li>Some object literal examples <br>
+            <img src="Images/Object Literal examples.jpg" alt=""></li>
+          <li>A class solves the problem were you create many objects with the same properties - A class has a base set of properties and meathods, these are than avalible to any object created of that class type </li>
+          <li><img src="Images/JS class.jpg" alt=""></li>
+          <li>Class was released in ES2015 and is also called <a href="https://frontendmasters.com/courses/javascript-hard-parts/class-syntactic-sugar/" target="_blank">Syntactic Sugar</a> </li>
+          <li><img src="Images/syntax sugar.jpg" alt=""></li>
+          <li>To create a class it will be <b style="color: red;">class Pet {}</b>. To capatilise a class in javascript is common and pet can be anyword you use.</li>
+          <li>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Class_body_and_method_definitions" style="color: red;">constructor</a> method goes at the top of a class, its a special method were you outline the properties your class will have. Like a blue print <br>
+            <img src="Images/class constructor.jpg" alt=""></li>
+          <li>In the constructor you use a this.property. You pass a value to the property later - understanding <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" style="color: red;">this</a></li>
+          <li>Class with a constructor method. The properties are assigned but the values will be passed into the class once the objects are defined <br>
+            <img src="Images/Class constructor example.jpg" alt=""></li>
+          <li>To pass objects to the above properties using a new object is as below <br>
+            <img src="Images/object for new class.jpg" alt=""></li>
+          <li>You can also add a method (function) to a class, as below: . When adding a method/function in a class we dont use the function keyword so its <b style="color: red;">speak() {}</b><br>
+            <img src="Images/method in a constructor.jpg" alt=""></li>
+      </ul>
+
+    <h2>Getters and Setters</h2>
+      <p>Create properties with dynamic values using getters in JavaScript</p>
+      <ul>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">JavaScript Date Object</a> - Universal Time is not your current, local time. It's a global time standard based on the earth's rotation. The local time where you live is converted from Universal Time. <br> In JavaScript, you may have to make conversions from UTC to local time. </li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get" target="_blank">Getters</a> & <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set" target="_blank">Setter</a> are both methods enabling you to update create or retrieve object properties.</li>
+        <li>We can update properties in objects through .notation as well as through using methods like setters and getters</li>
+        <li>Getters and setters allow you to use logic when updating properties within a object</li>
+        <li>Getter methods are used to dynamically create and retrieve a property method.</li>
+        <li>Getter example - <b style="color: red;">get activity() {}</b>. Activity is the name of the function which is used to add a property to a class. In this get I will be using a if statement to decide what the value of the new property should be. <br>
+          The below example shows a new property being added inside the constructor of the class which a javascript new.Date()(Brings back the date) and .getHours()(Brings back the hour of the day) <br>
+          <img src="Images/Getter example.jpg" alt=""></li>
+        <li>The Getter method never attaches the property but can be accessed when requested.</li>
+        <li>The setter syntax is as - <b style="color: red;">set owner() {}</b>. This is creating a new property in the class for the object</li>
+        <li>A setter method is used when you need to: Add logic when updating a property value.</li>
+        <li>A setter always recieves one parameter when called </li>
+        <li style="color: red;"> The name of a property can never be the same as a Getter or Setter</li>
+        <li>To apply a value to the new property for the setter you - <b style="color: red;">ernie.owner= 'Ashley';</b>. Ernie is the class, owner is the new property and Ashley is the value </li>
+        <li><img src="Images/Setter example.jpg" alt=""> <br>
+          The above returned undefined. This is because we have to create a Getter for _owner <br>
+          <img src="Images/Setter example 2.jpg" alt=""></li>
+        <li>See excercise for <a href="Excercises/getter setter excercise.js">Getter and Setter</a></li>
+        <li>A objects property can be another object, below is the new class to be used as a porperty for another object. The setter used is to ensure the phone number doesnt have any spaces or special charecters <br>
+          <img src="Images/class for a property in a object.jpg" alt=""> <br>
+          below is the new class being added to the object ernie with the parameters passed to it <br>
+          <img src="Images/class for a property in a object 2.jpg" alt=""> <br>
+          <img src="Images/class for a property in a object 3.jpg" alt=""></li>
+          <li></li>
       </ul>
       
    

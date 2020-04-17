@@ -218,7 +218,46 @@
         <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-rows" target="_blank">grid-auto-rows</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/grid-auto-columns" target="_blank">grid-auto-columns</a></li>
         <li>In summary you have explicit and implicit columns and rows. explicit you decide all the sizes and implicit you set one size and any new columns or rows they follow that size, otherwise they take the size of the content. </li>
       </ul>
-      
+
+    <h2>Further with CSS Grid Layout</h2>
+    <p>Alternate methods for positioning items on the grid, and tools, features and concepts that will make you a stronger developer of grid layouts.</p>
+      <ul>
+        <li>Firefox has a very good tool for grids - <a href="https://developer.mozilla.org/en-US/docs/Tools/Page_Inspector/How_to/Examine_grid_layouts" target="_blank">CSS Grid Inspector: Examine grid layouts</a></li>
+        <li>Right click and inspect element <img src="Images/Firefox Grid inspector.jpg" alt=""></li>
+        <li>Line base placement control what goes into what part of the grid - <b style="color: red;">grid-column-start: ;</b> and <b style="color: red;">grid-column-end: ;</b> <br>
+          The start is the grid line we want to start from and end is the grid line we want to end. </li>
+        <li>The below example makes the header take up the full width of the top of the page <br>
+          <img src="Images/Grid line element placement.jpg" alt=""> <br>
+          <img src="Images/Grid line element placement css.jpg" alt=""></li>
+        <li>In this example we need to ensure the footer doesnt leave any white space at the bottom so we use <a href="https://css-tricks.com/fun-viewport-units/" target="_blank">View point - vh</a> <br>
+          <img src="Images/Grid line element placement css 2.jpg" alt=""></li>
+        <li><img src="Images/Grid Line Placement summary.jpg" alt=""></li>
+        <li>Negative grid lines <br>
+          <img src="Images/negative grid lines.jpg" alt=""></li>
+        <li>A example of a negative grid line being used. This is to make the header go across the full width of the page ignoring the number of grid lines, the <b>grid-column-end</b> has to be negative 1 <br>
+          This also means if new columns we added the header would still strech across the full width of the screen <br>
+          <img src="Images/negative grid line example.jpg" alt=""></li>
+        <li>This also works for rows in the same way</li>
+        <li>short hand for both grid-row/column-start and grid-row/column-end is <b style="color: red;">grid-column: 1 / -1;</b>. Start is the first number and end is the last number</li>
+        <li><a href="https://alligator.io/css/css-grid-layout-span-keyword/" target="_blank">Span Keyword</a>- If you’re placing items onto their parent grid with grid-column or grid-row, you can use the span keyword to avoid specifying end lines when items should span more than one column or row</li>
+        <h3 style="text-align: center;">***PLACING ELEMENTS INTO NAMED GRID AREA***</h3>
+        <li>You can create named grid areas and than place elements of HTML into these areas <br>
+          <img src="Images/Grid Template Areas.jpg" alt=""></li>
+        <li>Naming the <a href="https://developer.mozilla.org/en-US/docs/Glossary/Grid_areas" target="_blank">grid area</a> - <b>grid-area: header;</b> - header can be what ever you want to call it</li>
+        <li>Once all are names you add them to the class - <b>grid-template-areas: "" "" "";</b>. If you have two column tracks place the element in twice <br>
+        <img src="Images/Grid Template Areas css.jpg " alt=""> <br>
+        <img src="Images/firefox nightly grid inspector.jpg" alt=""></li>
+        <li><img src="Images/Grid Template Areas css 2.jpg" alt=""> <br>
+            <img src="Images/Grid Template Areas browser 2.jpg" alt=""></li>
+        <li>Mobile view grid, this will keep for the format but adjust the size <br>
+          <img src="Images/Grid for mobile view.jpg" alt=""> <br>
+          <img src="Images/Grid for mobile view browser.jpg" alt=""></li>
+        <li>Media query used to size for a normal screen 768px and bigger <br>
+          <img src="Images/Grid for desktop view browser.jpg" alt=""> <br>
+          <img src="Images/Grid for Desktop view.jpg" alt=""></li>
+        <li>Grid and Flexboxes - A grid layouts content in two dimentions rows and columns and a flexbox lays out content in one dimension.</li>
+
+      </ul>      
         
   </body>
 </html>
