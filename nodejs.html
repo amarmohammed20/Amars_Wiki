@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1> <a href="https://www.youtube.com/watch?v=pU9Q6oiQNd0&t=309s" target="_blank">Node JS Overview</a></h1>
+      <p><a href="https://www.youtube.com/watch?v=klen07C1M-c" target="_blank">Differences Between JavaScript & Node.js</a></p>
+      <p><a href="https://nodejs.org/en/download/" target="_blank">Download Node JS</a></p>
+      <p><a href="https://venturebeat.com/2012/01/24/why-walmart-is-using-node-js/" target="_blank">Wallmart</a> case study on how NodeJS helped</p>
+      <p><a href="https://www.youtube.com/watch?v=-00ImeLt9ec" target="_blank">Paypal</a> case study with NodeJS</p>
+      <p>Node JS has a common data type called <a href="https://nodejs.org/en/knowledge/advanced/buffers/how-to-use-buffers/" target="_blank">buffer</a></p>
+      
+    <h2>What is a Node JS?</h2>
+      <ul>
+        <li>JS in the server side using nodeJS. Good for real time application sending lots of information simultaneously</li>
+        <li><a href="https://aws.amazon.com/cloud9/" target="_blank">cloud9</a> is a cloud web app that enables you to construct all your code in the web and keep it save were ever you are</li>
+        <li>Node JS is simply a runtime environment for JS outside of the browser, for the backend or servers. JS only runs in the browser. </li>
+        <li>JS give you access to the window object in the browser that lets you see all the prebuilt JS methods and stores all your variables. <br>
+             NodeJS has something similar called global. This shows some of the same methods and some different</li>
+        <li>Creating a Hello world with NodeJS - NodeJS requires a installation and runs in the command line</li>
+          <ul>
+            <li>In the temrinal start with <b>node -v</b> which should return with the version of node JS you have. NOdejs is backward compatible</li>
+            <li>To run a JS file in node JS in the terminal ensure your file has the JS extention. Simply just type in the command line type <b>node FILENAME</b> and hit enter</li>
+            <li>To clear the console just type clear and hit enter</li>
+            <li><img src="Images/nodejs hello world.jpg" alt=""></li>
+            <li>node JS lets you type JS in the terminal just type <b>node</b> in the terminal and you will see just > on the left, meaning that you can now write JS in the terminal <br>
+              consloe.log(Logs information) consloe.error(Logs a error) consloe.dir(Prints information from a JS object) <br>
+              <img src="Images/node js terminal js.jpg" alt=""></li>
+            <li>Use <b>control d</b> to exit out of the repel</li>
+          </ul>
+        <li>Host objects cannot be ran in nodeJS/Terminal as they are only for the host but native objects can be like string, array, number and so on <br>
+          <img src="Images/Host objects.jpg" alt=""> <br>
+          <img src="Images/Host and native objects.jpg" alt=""></li>
+        <li>Node.JS has its own host objects and below are just some <br>
+          <img src="Images/Node JS Host objects.jpg" alt=""></li>
+      </ul>
+      
+    <h2>Why use Node JS?</h2>
+      <ul>
+        <li>nodeJS lets you runs mutliple processes at once even if the first doesnt complete right away, saving resource. Other lanuages run one process at a time but not NodeJS <br>
+          <img src="Images/NodeJS process diagram.jpg" alt=""></li>
+        <li>Resources - <a href="http://nodejs.org/api/" target="_blank">Node Documentation Site</a> & <a href="http://nodejs.org/api/documentation.html#documentation_stability_index" target="_blank">Stability Index</a> & <a href="https://nodejs.org/api/https.html#https_https_get_options_callback" target="_blank">https.get</a> </li>
+        <li>Node JS <a href="https://nodejs.org/api/" target="_blank">Apis</a> - </li>
+      </ul>
+
+    <h2>Building a command line application</h2>
+      <ul>
+        <li><img src="Images/Four p's problem solving.jpg" alt=""></li>
+        <li>Application <a href="Excercises/nodejs/app.js"></a></li>
+        <li>You can use call back functions to handle events. Two types of events - User events and System Event</li>
+        <li>User Event <br>
+          <img src="Images/User Event.jpg" alt=""></li>
+        <li>System Event <br>
+          <img src="Images/System Event.jpg" alt=""> <br>
+          Another system event is the ready state change of a Ajax request - The different stages of the request trigger the handler <br>
+          <img src="Images/System Event Ajax.jpg" alt=""> </li>
+        <li><a href="https://www.w3schools.com/nodejs/nodejs_events.asp" target="_blank">System events</a>in Node.JS <br>
+          <img src="Images/System Event in Node JS.jpg" alt=""></li>
+        <li>The <a href="https://www.freecodecamp.org/news/do-you-want-a-better-understanding-of-buffer-in-node-js-check-this-out-2e29de2968e8/" target="_blank">Buffer</a>class was introduced as part of the Node.js API to make it possible to manipulate or interact with streams of binary data. <br>
+           When something is sent over the internet it is sent in packets not in one go. In Nodejs you will see multiple streams in buffers as it is non blocking. </li>
+        <li>To convert a buffer to a string use the <b>.toString()</b> <br>
+          <img src="Images/buffer to string.jpg" alt=""></li>
+        <li>In Nodejs you will get a data event and once completed you will get a end event</li>
+        <li>The global object we can access the current version of node and arguments passed in to the command line is process</li>
+        <li>The command line arguments can be accessed through the property <b>argv</b> on the `process` object</li>
+      </ul>
+
+    <h2>Handling Errors in NodeJs</h2>
+      <ul>
+        <li><a href="https://nodejs.org/api/stream.html#stream_event_error" target="_blank">NodeJs Errors</a> The 'error' event is emitted if an error occurred while writing or piping data. The listener callback is passed a single Error argument when called. <br>
+          The stream is closed when the 'error' event is emitted unless the autoDestroy option was set to false when creating the stream. <br>
+          After 'error', no further events other than 'close' should be emitted (including 'error' events).</li>
+        <li><img src="Images/nodejs error.jpg" alt=""></li>
+        <li>The above catches a error once the api has been ran. If the API cant even run for some reason we need to catch that with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch" target="_blank">try...catch</a></li>
+        <li>The two common error types, exceptions and admitted events</li>
+        <li>Below is shown how you can catch a error while the string from the json is being parsed <br>
+          <img src="Images/parse error catch.jpg" alt=""></li>
+        <li><img src="Images/HTTP Status COdes.jpg" alt=""></li>
+        <li>You can use a if statement to catch anything that is not a status code 200. You can also import the http module from nodejs which will cover the error code to soemthing meaningful <br>
+          <img src="Images/Http code error module.jpg" alt=""></li>
+        <li><a href="https://nodejs.org/api/modules.html#modules_module_exports" target="_blank">module.exports</a> is a object created by the Module system. <br>
+          The code for the module export is <b>module.exports.get = get;</b>. .get is the function that is being called</li>
+      </ul>
+   
+  </body>
+</html>
