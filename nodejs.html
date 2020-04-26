@@ -10,15 +10,107 @@
       
     <h2>What is a Node JS?</h2>
       <ul>
-        <li>JS in the server side using nodeJS. Good for real time application sending lots of information simultaneously</li>
-        <li><a href="https://aws.amazon.com/cloud9/" target="_blank">cloud9</a> is a cloud web app that enables you to construct all your code in the web and keep it save were ever you are</li>
-        <li>Node JS is simply a runtime environment for JS outside of the browser, for the backend or servers. JS only runs in the browser. </li>
-        <li>JS give you access to the window object in the browser that lets you see all the prebuilt JS methods and stores all your variables. <br>
+        <li>Node Js is a runtime and not a framework like express - it is not a LANGUAGE, essentially allowing you to run Javascript code on the server side <br>
+          <img src="Images/nodejs explained.jpg" alt=""> </li>
+        <li>Node JS is JS in the server side. Good for real time applications sending lots of information simultaneously</li>
+        <li><a href="https://aws.amazon.com/cloud9/" target="_blank">cloud9</a> is a cloud web app that enables you to construct all your code in the web and keep it safe where ever you are</li>
+        <li>The best projects for Node JS <br>
+          <img src="Images/Node JS Projects.jpg" alt=""></li>
+        <li>When installing NodeJS you also get <a href="https://www.w3schools.com/whatis/whatis_npm.asp" target="_blank"></a> npm which is called Node Package Manager. <br>
+          NPM is used to install thirdparty packages or modules such as frameworks, libaries and tools <br>
+          <img src="Images/NPM explained.jpg" alt=""></li>
+        <li>When you install a package it gets stored in a folder called node_modules. Also dependancies that are required for what you have installed will be listed in the <b>package.json</b> file.</li>
+        <li>When installing something using npm if you place the -g after install it will install it across you system not just you application. <br>
+          <img src="Images/node local and global install.jpg" alt=""></li>
+        <li>Modules are a big part of node, node comes with lots of <a href="https://www.w3schools.com/nodejs/ref_modules.asp" target="_blank">core modules</a> <br>
+          You can also have modules that you install with npm. <br>
+          You can also create your own modules which are files that have a export. Allowing you to include variables and function from one file in another </li>
+        <li>To link a core or custom module it is done as below. Path being the core module and myFile being the custom module</li>
+        <li>node has a <a href="https://nodejs.dev/how-to-use-the-nodejs-repl" target="_blank">repl</a> allowing you to directly write javascript into you command line. </li>
+        
+    <h2>Using Node JS with <a href="https://www.youtube.com/watch?v=fBNz5xF-Kx4" target="_blank">Traversy Media</a></h2>
+      <ul>
+        <li>When starting out with working with Node JS create a package.json file by uisng the command in your terminal (Be in the correct path) - <b>npm init</b></li>
+        <li>Keep everything default through the setup of the package.json file</li>
+        <li>The main purpose of the package.json file is to store all of your dependancies. So when you move to another environment you move this file and simply run <b>npm install</b> <br>
+        Remember not to move the node_modules folder as all will be reinstalled using the package.json file.</li>
+        <li>You will also get a <a href="https://nodejs.dev/the-package-lock-json-file" target="_blank">package-lock.json</a> file that will record all the dependacies and the associated versions</li>
+        <li>Example of installing a third module that generates random ID's. <br>
+          <img src="Images/uuid install.jpg" alt=""> <br>
+          The updated package.json file below: <br>
+          <img src="Images/uuid install package.json update.jpg" alt=""></li>
+        <li>You can install dev dependancies which are modoules used in the development process not in production - <a href="https://www.npmjs.com/package/nodemon" target="">nodemon</a> is one which is used for hot reloading. </li>
+        <li>Start out with a .js file normally index.js is used but you can name it what ever you want. Create a console.log and print that using the terminal - <b>node FILENAME</b><br>
+          The environment I am using is VS code with the internal terminal</li>
+        <li>Normally you are going to have multiple files and these other files are basically modules. These other files could be classes, functions and other JS performing particular actions</li>
+        <li>Example of a JS file that has a object in that can be used in our index.js file through using a module.export <br>
+          <img src="Images/moduleExport.jpg" alt=""></li>
+        <li>To connect the other file which is now a module you place it in a variable normally a const. Example <b>const person = require('./person');</b> <br>
+          This is actually a core module called <a href="https://nodejs.org/api/path.html" target="_blank">path</a> module in node js</li>
+        <li>The core Nodejs modules can be found <a href="https://nodejs.org/dist/latest-v14.x/docs/api/" target="_blank">HERE</a>, with documentation</li>
+        <li>Core modules dont have to be installed through npm just have to be assigned to a variable. Example - <b>const path = require('path');</b></li>
+        <li>Some examples of the path module, methods from the path module being used. __filename is the current file <br>
+          <img src="Images/Path module.jpg" alt=""></li>
+        <li>Below example is were you can create a new folder in the current directory, while also capturing any errors <br>
+          <img src="Images/node js make folder.jpg" alt=""></li>
+        <li>The below code will create a file in the specified directory and write to it Hello world. This process overrides anything in the file <br>
+          <img src="Images/node js make file.jpg" alt=""></li>
+        <li>You can apend to that exisiting file using <a href="https://nodejs.org/dist/latest-v14.x/docs/api/fs.html#fs_fs_appendfile_path_data_options_callback" target="_blank">fs.appendFile</a> </li>
+        <li>You can read the data in a file but you have to ensure you specify, path, folder, file name, data type and use two parameters for the function error and data <br>
+          <img src="Images/node js read file.jpg" alt=""></li>
+        <li>Above are just some methods you can do with the FS module in Node JS. <b style="color: red;">The ability to convert the Node JS into action is import</b> </li>
+        <li>Another example of a core Node Js module is the <a href="https://nodejs.org/dist/latest-v14.x/docs/api/os.html" target="_blank">OS module</a> - giveing you information on your operating system <br>
+          <img src="Images/node js OS Module.jpg" alt=""></li>
+        <li>Another example is the URL module - The url module provides utilities for URL resolution and parsing. Below .host gets the port name as well <br>
+          <img src="Images/node js URL.jpg" alt=""></li>
+      </ul>
+
+        <h3>Using <a href="https://nodejs.org/dist/latest-v14.x/docs/api/events.html" target="_blank">Events</a>in Node Js</h3>
+        <p>Much of the Node.js core API is built around an idiomatic asynchronous event-driven architecture in which certain kinds of objects (called "emitters") emit named events that cause Function objects ("listeners") to be called.</p>
+        <ul>
+          <li>Example of a event module  - <br>
+            <img src="Images/NodeJs event emitter.jpg" alt=""></li>
+        </ul>
+
+        <h3>Creating a server using the <a href="https://nodejs.org/dist/latest-v14.x/docs/api/http.html" target="_blank">HTTP</a> module in Node Js</h3>
+        <p>Below we will be creating a basic web server using the HTTP module </p>
+        <ul>
+          <li>Example of a Http server running sending a message to the browser saying Hello World on port 5000  - The most simple way to do this, a better server we can load html and css.<br>
+            <img src="Images/Node JS Server.jpg" alt=""> <br>
+            <img src="Images/Node JS Server Browser.jpg" alt=""> <br>
+          To stop the server from running do a control C</li>
+          <li>Working with <a href="https://expressjs.com/" target="_blank"></a> makes setting up a server and working with nodeJS a lot easier</li>
+          <li></li>
+        </ul>
+        
+        <h3>Creating a server using the <a href="https://nodejs.org/dist/latest-v14.x/docs/api/http.html" target="_blank">HTTP</a> module in Node Js</h3>
+        <p>Below we will be creating a more advanced web server using the HTTP module, enabling us to pull in css files also. </p>
+          <ul>
+            <li>Example for this is <a href="Excercises/nodejs/ExampleServer/index.js">index.js</a></li>
+          </ul>
+
+      <br>
+      <br>
+
+
+        <h3>Summary of the using Node JS</h3>
+        <p>Bring toghether all what we have learnt above to create a server to run html and css and javascript</p>
+          <ul>
+            <li>See the file <a src="Excercises/nodejs/ExampleServer/index.js" target="_blank">index.js</a>. This is a example of loading a file with attached css</li>
+            <li>If the above example was like a rest api we would be serving json instead of html <br>
+              <img src="Images/Rest API Users.jpg" alt=""></li>
+            <li>To have a basic HTTP server to open up one plain HTML page here is an example <a href="Excercises/nodejs/basicHttpServer.js"></a></li>
+          </ul>
+        
+        <li>JS gives you access to the window objects in the browser that lets you see all the prebuilt JS methods and stores all your variables. <br>
              NodeJS has something similar called global. This shows some of the same methods and some different</li>
+             <br>
         <li>Creating a Hello world with NodeJS - NodeJS requires a installation and runs in the command line</li>
           <ul>
-            <li>In the temrinal start with <b>node -v</b> which should return with the version of node JS you have. NOdejs is backward compatible</li>
-            <li>To run a JS file in node JS in the terminal ensure your file has the JS extention. Simply just type in the command line type <b>node FILENAME</b> and hit enter</li>
+            <li>In the temrinal start with <b>node -v</b> which should return with the version of node JS you have. Nodejs is backward compatible <br>
+              <img src="Images/node and npm check version.jpg" alt=""></li>
+            <li>To run a JS file in Node JS in the terminal ensure your are in the location of the file which has the JS extention. - cd FILEPATH <br>
+               Simply just type in the command line type <b>node FILENAME</b> and hit enter</li>
             <li>To clear the console just type clear and hit enter</li>
             <li><img src="Images/nodejs hello world.jpg" alt=""></li>
             <li>node JS lets you type JS in the terminal just type <b>node</b> in the terminal and you will see just > on the left, meaning that you can now write JS in the terminal <br>
@@ -30,11 +122,13 @@
           <img src="Images/Host objects.jpg" alt=""> <br>
           <img src="Images/Host and native objects.jpg" alt=""></li>
         <li>Node.JS has its own host objects and below are just some <br>
-          <img src="Images/Node JS Host objects.jpg" alt=""></li>
+          <img src="Images/Node JS Host objects.jpg" alt=""> </li>
       </ul>
       
     <h2>Why use Node JS?</h2>
       <ul>
+        <li><img src="Images/Why use Node JS.jpg" alt=""></li>
+        <li><img src="Images/Why use Node JS 2.jpg" alt=""></li>
         <li>nodeJS lets you runs mutliple processes at once even if the first doesnt complete right away, saving resource. Other lanuages run one process at a time but not NodeJS <br>
           <img src="Images/NodeJS process diagram.jpg" alt=""></li>
         <li>Resources - <a href="http://nodejs.org/api/" target="_blank">Node Documentation Site</a> & <a href="http://nodejs.org/api/documentation.html#documentation_stability_index" target="_blank">Stability Index</a> & <a href="https://nodejs.org/api/https.html#https_https_get_options_callback" target="_blank">https.get</a> </li>
@@ -78,6 +172,15 @@
           <img src="Images/Http code error module.jpg" alt=""></li>
         <li><a href="https://nodejs.org/api/modules.html#modules_module_exports" target="_blank">module.exports</a> is a object created by the Module system. <br>
           The code for the module export is <b>module.exports.get = get;</b>. .get is the function that is being called</li>
+      </ul>
+
+    <h2>Creating a command line weather Application</h2>
+      <ul>
+        <li>An example of a API is <a href="https://www.wunderground.com/" target="_blank">Weather Underground. This is free for developers to use</a></li>
+        <li>You are given a API key - A form of Identification when connecting to the API. The API provider can monitor throttle and usage. <br>
+          <img src="Images/API Key Descrip.jpg" alt=""> <br>
+          <img src="Images/API URL.jpg" alt=""></li>
+        <li></li>
       </ul>
    
   </body>
