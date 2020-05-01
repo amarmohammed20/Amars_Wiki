@@ -390,7 +390,34 @@
               <li>By removing the break in the switch statement if the case is meet the action will be applied and than unexpected things will occur. This is why this is sometimes seen as a bad choice</li>
               <li>A switch statement does not have a else statement so it uses a default statement <br>
                 <img src="Images/Switch default example.jpg" alt=""></li>
+            </ul>
+          
+          <h3>Ternary Operator</h3>
+          <p>MDN info on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">Ternary</a> operator</p>
+            <ul>
+              <li><img src="Images/Ternary Operator.jpg" alt=""></li>
+              <li><img src="Images/Ternary Operator Expressions.jpg" alt=""></li>
+              <li>The first expression determines which of the next two operators are used. This is everything before the ?</li>
+              <li>The below example checks that anything before the ? is true and than the left of the : is run otherwise the right of the : is run <br>
+                <img src="Images/Ternary Example.jpg" alt=""></li>
+              <li>A ternary can also be used in a variable, so the result in the calcualtion in the varaible is returned. <br>
+                <img src="Images/Ternary Variable.jpg" alt=""></li>
+            </ul>
 
+          <h3>Short circuit evaluation</h3>
+            <ul>
+              <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators" target="_blank">Logical Operators</a></li>
+              <li>Short Circuit evaluation - Stopping code execution as soon as possible</li>
+              <li>The below example shows that the console log will never print chicken as the false short circuits the console log. JavaScript works from the left looking for a false of a failed expression <br>
+                <img src="Images/Short Circuit Example.jpg" alt=""></li>
+              <li>This example below shows the above example but better checking condition and then executing the console log. It wount run as false will short circuit this <br>
+                <img src="Images/Short Circuit Example 2.jpg" alt=""></li>
+              <li>The below example uses the || operator which is or. This will return the true as the first condition is true <br>
+                <img src="Images/Short Circuit Example 3.jpg" alt=""></li>
+              <li>Below a short circuit is used in a function ensuring that the parameter start is always defined. This is done through a variable saying start is the number passed in or 1
+                <img src="Images/Short Circuit Function Example.jpg" alt=""></li>
+              <li>In ES2015 you can simply assign the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters" target="_blank">default value in the paramter</a> of the function <br>
+                <img src="Images/ES2015 default value parameter function.jpg" alt=""></li>
             </ul>
   </body>
 </html>
