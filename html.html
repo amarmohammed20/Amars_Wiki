@@ -4,20 +4,24 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>HTML Basics</title>
+            <link rel="stylesheet" href="style.css">
+            <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
         </head>
         <body>
             <div class="wrapper">
                 <header>
-                    
+                    <h1>The Basics Of HTML</h1>
                 </header>
 
                     <main>    
                         <section class="openingSection">
-                            <h1>HTML Basics</h1> 
+                            <h2>HTML Basics</h2> 
                             <p>More info can be found on <a href="https://www.w3schools.com/html/html_basic.asp" target="_blank">W3 Schools</a></p>
                             <p>Best elements to choose in HTML <a href="https://www.youtube.com/watch?v=-4xutCTxBbc" target="_blank">Lynda.com</a></p>
                             <p>It is fine to use multiple h1 tags on a page <a href="https://www.youtube.com/watch?v=WsgrSxCmMbM" target="_blank">Google Webmasters</a></p>
                             <p>A list of all the HTML elements you will need <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN</a></p>
+                            <p>It is important to understand the difference between asthetics and semantics. HTML is used for semantics telling the internet important things and css is used for asthetics</p>
+                            <p>The difference between a span and div element is that a div is a block level element and a span is a inline element</p>
                         </section> 
 
                         <section class="section">
@@ -135,6 +139,119 @@
                                 <h3>Using multiple header and footer elements</h3>
                                 <p>You can use multiple footer and header elements in one page. You nest footers inside other elements to contain footer information for that section of the page. Nested headers represent introductory content for a section of the page.</p>
                                     <ul>
+                                        <li>You can have multiple footer elements. The typical example would be one footer tag in the body for the main footer for the page and than you can have a footer in another element which will be a footer for that section.</li>
+                                        <li><img src="Images/multiple footer html.jpg" alt=""></li>
+                                        <li><img src="Images/multiple footer browser.jpg" alt=""></li>
+                                        <li>The same comcept for multiple footer tags apply to multiple header tags, not head tags. </li>
+                                        <li><img src="Images/multiple headerhtml.jpg" alt=""></li>
+                                        <li><img src="Images/multiple Header browser.jpg" alt=""></li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>Images, Text and Links</h3>
+                                <p>To display an image or link to another page in your site, you need to understand where the file "live" within the folder structure of the site. In this video, we'll look at examples of how to adjust your file paths based on the directory a file is in.</p>
+                                    <ul>
+                                        <li>For links and images you use a file path telling the page were the image lives so it can be retrieved.</li>
+                                        <li>To link to a file you can use a a element and a href inside that element</li>
+                                        <li>in a file path ../ brings you back one level of the file path</li>
+                                        <li>To add a image we use the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img" target="_blank"></a> img element with a href and a file path</li>
+                                        <li>The alt attribute used with a image tell the internet/search engine what the image is, a short description</li>
+                                        <li>The img element will inherit the default size of the image given by the image until specified in css</li>
+                                        <li>Tool Tip - You can use a title attribute in the image element that will provide a description when hoovering over the image
+                                            <br><img src="Images/image title.jpg" alt=""></li>
+                                        <li>You can caption a image by using a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure" target="_blank">figure</a> element and inside that figure element you use a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption" target="_blank">figcaption</a> element 
+                                            <br><img src="Images/image figure.jpg" alt="">
+                                            <br><img src="Images/image figure browser.jpg" alt=""></li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>Creating Breaks in Content</h3>
+                                <p>Learn to create line breaks in your content using <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br" target="_blank">br</a>, and thematic breaks with <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr" target="_blank">hr</a>.</p>
+                                    <ul>
+                                        <li>br element forces a break in the content</li>
+                                        <li>You dont need a closing tag for a br element</li>
+                                        <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address" target="_blank">address</a> element is used to display an address</li>
+                                        <li>The hr element seperates different topics in one section by displaying a horizontal line</li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>Add Meaning to Words with Text Level Elements</h3>
+                                <p>Sometimes you'll want to give a piece of text emphasis or importance. HTML provides semantic elements, like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong" target="_blank">strong</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em" target="_blank">em</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small" target="_blank">small</a>, for formatting text. Other elements like <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span" target="_blank">span</a> are used to mark up text just for styling purposes.</p>
+                                    <ul>
+                                        <li>strong element is used to show important parts of text</li>
+                                        <li>em tags apply emphasis to text and sets the text to italic. </li>
+                                        <li>The small tag is used for fine print things legal disclaimers and so on</li>
+                                        <li>The span element is like the div element it has no semantic meaning. It allows you to lace styling to a section of text</li>
+                                    </ul>
+                            </article>
+                        </section>
+
+                        <section>
+                            <h2>Going Further with HTML</h2>
+                            <p>You'll also learn to work with special HTML characters, comment your code, and explore tips and resources that will help you go forward with HTML.</p>
+                            <article>
+                                <h3>Linking to Section of a Web page</h3>
+                                <p>Learn to use anchor elements and id attributes to navigate to specific sections of a web page.</p>
+                                    <ul>
+                                        <li>Linking to parts of the page requires you to use a id attribute, than you link to the id. To link to a id you do #contact. Contact being the id</li>
+                                        <li>id's are the unique and only should be applied to one element.</li>
+                                        <li>To link to a id in another part of a different page add #ID( What ever the id is) at the en dof the path in the link </li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>Root Relative Paths</h3>
+                                <p>Root-relative paths are commonly used when building and testing sites directly on the web or on a local web server.</p>
+                                    <ul>
+                                        <li>Commonly used by developers who are testing on the web.</li>
+                                        <li>/ is the root folder of the path. You can do /#ID and this will take you to the section of the page</li>
+                                        <li>If you are working on files on your local machine and you are not running a server this will not work</li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>Link to Email</h3>
+                                <p>Learn to create "mailto" links that auto-launch a user's default email program with pre-filled 'subject', 'to' and 'from' fields.</p>
+                                    <ul>
+                                        <li>It is possible to create links or buttons that, when clicked, open a new outgoing <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Creating_hyperlinks#E-mail_links" target="_blank">email</a> message rather than linking to a resource or page. This is done using the <a> element and the mailto: URL scheme.</li>
+                                        <li>You can build a email link that does all the work adding a to address, cc, subject and text, see <a href="https://css-tricks.com/snippets/html/mailto-links/" target="_blank">HERE</a></li>
+                                        <li>The mailto command lives within a a element and inside a href attribute.</li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>HTML Entities and Reserved Characters</h3>
+                                <p>Certain characters are reserved for use in HTML code only. If you use reserved characters in your content, the browser will interpret them as HTML code, and the characters will not appear in your content as expected.</p>
+                                    <ul>
+                                        <li>To display a reserved character you have to use a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Entity" target="_blank">entity</a> </li>
+                                        <li>All the HTML reserved charecters and related entaties can be seen here <a href="https://dev.w3.org/html5/html-author/charref" target="_blank">Character entity chart</a></li>
+                                        <li>The HTML <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre" target="_blank">pre</a> element represents preformatted text which is to be presented exactly as written in the HTML file. The text is typically rendered using a non-proportional ("monospace") font. Whitespace inside this element is displayed as written.</li>
+                                        <li>To apply more space between words you can use the entity &nbsp; nbsp</li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>Adding Developer Notes with HTML Comments</h3>
+                                <p>Developers use comments in their code to make parts of it easier to understand. HTML lets you write comments in the code that are ignored by the browser.</p>
+                                    <ul>
+                                        <li><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started#HTML_comments" target="_blank">MDN</a> information on HTML comments</li>
+                                        <li>Comments are used to provide information to other developers. Elaborating on more complex code.</li>
+                                    </ul>
+                            </article>
+
+                            <article>
+                                <h3>Working on a Website Project Locally</h3>
+                                <p>You'll often work on websites locally on your own computer, using a text editor. In this video, you'll download the project files from Workspaces to your local drive, then open and preview the files.</p>
+                                    <ul>
+                                        <li>You can use a number of text editors, below are just a few:</li>
+                                            <ul>
+                                                <li><a href="https://atom.io/" target="_blank">Atom</a></li>
+                                                <li><a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a></li>
+                                                <li><a href="https://www.sublimetext.com/" target="_blank">Sublime Text</a></li>
+                                            </ul>
                                         <li></li>
                                     </ul>
                             </article>
