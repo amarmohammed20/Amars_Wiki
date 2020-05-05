@@ -1,113 +1,216 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>JavaScript Basics</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  </head>
   <body>
-    <h1> The Javascript page, recording all my notes in my Javascript learning </h1>
-      <p>Important to learn the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">objects</a> for JavaScript, it will open many doors</p>
-      <p>You can use the <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc" target="_blank">JSONView</a>plugin in chrome to make .json webpages look better to understand</p>
-      <p>Some notes on Javascript providing a understanding.
-      <br>Always use DRY when coding <b>Dont Repeat Yourself</b>
-      <br>How to document in JS <a href="http://usejsdoc.org/" target="_blank">JS Doc</a>
-      <br>Built into the browser
-      <br>Lots of tools to make life easier
-      <br>Lots of data types <a href="https://www.w3schools.com/js/js_datatypes.asp" target="_blank">Data Types</a>
-      <br>You can write stright to the html using <b>document.getElementByID("output")</b>. There is a div in the html with the id output.
-      <br>When working with numbers, strings, and booleans, you learned that you could not change (or manipulate) the value of a constant through reassignment. 
-      <br>The same goes for any value of a constant variable. You cannot reassign objects and arrays, either.
-      <br>To link a javascript file to a HTML file user <b style = "color:red">script src="" /script</b>. Include the brackets around.
-      </p>
-    <h2>Usefull notes</h2>
-        <ul>
-            <li><b>q</b> is used to quit out of a command</li>
-        </ul>
-    <h2>Day 1</h2>
-    <p>Javascript has three types of variables Const, Let and var</p>
-      <ul>
-          <li>To reassign a value in javascript you can use +=</li>
-          <li>const variables - The value of the variable should remain constant. Once assigned a value you cant later down the code assign another value</li>
-          <li>let variables lets you update the value of the variable but never reassign the value.</li>
-          <li>var variables - You are able to assign a value to a variable at anytime, even when a variable has been assigned a value earlier on </li>
-          <li>Javascript has the data type string, example "Hello world!"</li>
-          <li>If you start a string with " end with ", can also use ' <br> How to decide on which one will determine what is in your string example if you use I'm than use "</li>
-          <li>If you use a \ infront of a ' than javascript will treat this as a normal charector</li>
-          <li>If you want to write a string on mutiple lines use a \ at the end of each line</li>
-          <li>Javascript has many properties that make it easier to perform simple tasks <a href="https://www.w3schools.com/js/js_object_properties.asp" target="_blank"> Properties</a> <br> Example = passphrase.length give you the length of the variable passphrase <br> passphrase is a object and length is the property.</li>
-          <li>A meathod is something you can do to a string <br> Example = toUpperCase()</li>
-          <li><b>Properties are like nouns. They have a value or state. Methods are like verbs. They perform actions.</b></li>
-          <li></li>
-      </ul>
-    <h2>Day 2</h2>
-    <p>Start things of with a recap and than proceed</p>
-      <ul>
-        <li>Start things of with a challange to build a word game, Your gona ask for an adjective, verb and noun and than make a story out of this. <br> see javascript file for the game <a href="js_e1_260320.html" target="_blank">JS_E1_260320</a></li>
-      <h3>Conditional Statements</h3>
-         <li>An example of a conditional formatting is were in the previous excercise you asked for a name, the condition can be that it has to be a string</li>
-         <li>example of this would be the code <br>
-        const answer = prompt('which planet is closet to the sun?'); <br>
-        if (answer.toUpperCase === 'MERCURY') { <br>
-          console.log("That's Correct"); <br>
-        } else { <br>
-             console.log("thats incorrect"); <br>
-             } <br>
-         --- You can add a .toUpperCase to answer in the if statement ensuring that answer inserted is always in capitals <br>
-          </li>
-        <h3>Comparison Operators</h3>
-          <li>Here are just some comparison Operators Comparison <br> <img src="images/Operators.jpg" alt=""> </li>
-          <li>In Javascript when using the comparison's, Javascript reacts true and false.</li>
-          <li>Booleans return true or false. All conditions returna true or false value. true and false are not strings no '' <br>
-          <img src="images/boolean example.jpg" alt=""></li>
-          <li>you can also use a else if in a if statement. You only use else if if the first else is false.</li>
-          <li>add two conditions to a if statement <br>
-          && means something and something <br></li>
-          <li>When using the or operator <b>||</b> you have to have full conditions on both sides</li>
-          <li>Document your code - Consider other developers. <br> To leave a comment use <b>//</b> or multi line comment <b>/* */</b> or in line - after code <b>//</b> <br>
-          Use comments when you are doing something complex <br>
-          You can also comment out code</li>
-          <li>A challange to build a quiz game, ask 5 questions and depending on the score you get a trophy <br> see javascript file for the game <a href="js_e2_260320.html">JS_E2_260320</a></li>
-      </ul>
-    <h2>Day 3</h2>
-      <p>Javascript Numbers</p>
-        <ul>
-          <li>Data types for javascript: <br>
-            Strings - series of number and letters enclosed in ""
-            Boolean - is either is true of false
-            Numbers - Numeric data types, counting and calculating</li>
-          <li>a Interger is a whole number, either positive or negative number. It has no decimal places </li>
-          <li>Floating point numbers are used to represent fractional values and include a decimal point.</li>
-          <li>This is an integer value -- scientific notation uses the letter 'e' to represent an exponential value.</li>
-          <p>Developers frequently use numbers for performing calculations; you'll likely spend a lot of time working with numbers in JavaScript. If you create a game, for example, you'll need to keep track of a player's score. If you build an eCommerce site, you'll need to figure out the total cost of items in a visitor's shopping cart. And if you want to calculate the number of days until your next birthday, you'll need to use numbers and do some math.</p>
-          <li>Arithmetic Operators - JavaScript lets you perform most mathematical calculations, including addition, subtraction, multiplication, and division.</li>
-          <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. <br>
-          There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value. <br>
-          <img src="images/short hand.jpg" alt=""></li>
-          <li>Time excercise <a href="js_e3_270320.html" target="_blank">js_e3_270320</a></li>
-          <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
-          <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
-          <li>To convert a string to a number you can use <b>parseInt</b> <br>
-            Example <b>const fruit = parseInt(melons) + parseInt(oranges);</b>
-            Melons and orange have been given numbers by the user through a propmt</li>
-          <li><b>parseFloat</b> is like the above but for decimal numbers</li>
-          <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
-          <p>Random Numbers</p>
-          <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
-          <li>Javascript objects have many properties example is <b>object.length</b></li>
-          <li>Javascript objects have many meathods example is <b>object.toUppercase()</b></li>
-          <li> <a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Object</a> Meathods and Properties </li>
-          <li>Example of a math meathod <b>Math.round(2.2)</b> this rounds the number up</li>
-          <li>Create a random number using Javascript <b>Math.random()</b> This returns a decimal place number between 0 and 1 but never 1</li>
-          <li>To get Math.random() to return a random number between 1 and 6 you do <b>Math.random() * 6;</b></li>
-          <li>Math.floor() rounds the number down and Math.ceil() rounds the number up <br>
-            Both pass the whole number if the number is not a decimal place</li>
-          <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
-          <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
-        </ul>
-      <h2>Day 4</h2>
-       <p>Continue Javascript Numbers</p>
-        <ul>
-          <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
-          <li>Excercise <a href="js_e4_280320.html" target="_blank">JS_E4_280320</a></li>
-          <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
-          <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
-        </ul>
+    <div class="wrapper">
+      <header>
+        <h1>JavaScript Basics</h1>
+      </header>
+
+        <main>
+          <section class="openingSection">
+            <h2> General Pointers </h2>
+              <p>Important to learn the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">objects</a> for JavaScript, it will open many doors</p>
+              <p>You can use the <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc" target="_blank">JSONView</a>plugin in chrome to make .json webpages look better to understand</p>
+              <p> Always use <a href="https://www.codementor.io/@joshuaaroke/dry-code-vs-wet-code-89xjwv11w" target="_blank">DRY</a> when coding <b>Dont Repeat Yourself</b></p>
+              <p> How to document in JS <a href="http://usejsdoc.org/" target="_blank">JS Doc</a></p>
+              <p> JavaScript has lots of <a href="https://www.w3schools.com/js/js_datatypes.asp" target="_blank">Data Types</a></p>
+              <p> You can manipulate the DOM which are elements in your HTML using JavaScript </p> 
+          </section>
+
+          <section class="section">
+            <h2>JavaScript Variables</h2>
+            <p>Javascript has three types of variables Const, Let and var</p>
+              <ul>
+                  <li>To reassign a value in javascript you can use +=</li>
+                  <li>const variables - The value of the variable should remain constant. Once assigned a value you cant later down the code assign another value</li>
+                  <li>let variables lets you update the value of the variable but never reassign the value.</li>
+                  <li>var variables - You are able to assign a value to a variable at anytime, even when a variable has been assigned a value earlier on </li>
+                  <li>Javascript has the data type string, example "Hello world!"</li>
+                  <li>If you start a string with " end with ", can also use ' <br> How to decide on which one will determine what is in your string example if you use I'm than use "</li>
+                  <li>If you use a \ infront of a ' than javascript will treat this as a normal charector</li>
+                  <li>If you want to write a string on mutiple lines use a \ at the end of each line</li>
+                  <li>Javascript has many properties that make it easier to perform simple tasks <a href="https://www.w3schools.com/js/js_object_properties.asp" target="_blank"> Properties</a> <br> Example = passphrase.length give you the length of the variable passphrase <br> passphrase is a object and length is the property.</li>
+                  <li>A meathod is something you can do to a string <br> Example = toUpperCase()</li>
+                  <li><b>Properties are like nouns. They have a value or state. Methods are like verbs. They perform actions.</b></li>
+                  <li>A challange to build a word game, Your gona ask for an adjective, verb and noun and than make a story out of this. <br> see javascript file for the game <a href="js_e1_260320.html" target="_blank">JS_E1_260320</a></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Conditional Statements - If else</h2>
+            <p>You can change what your program does by adding decision-making to it. Programmers make a program react to different situations using JavaScript conditional statements.</p>
+              <ul>
+                <li>To apply conditions you can use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">if else</a> statement</li>
+                <li>An example of a if statement and if else statement is as below:
+                  <br><img src="Images/if else statement.jpg" alt=""></li>
+                <li>More information on <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals" target="_blank">condiitons</a> in JavaScript</li>
+                <li>It is best practice to place this type of code/syntax into a function to it can be ran multiple times if required</li>
+                <li>Something to be careful of is when checking conditions ensure that the answers are expected as the comparision is case sensative. Also ensure that numbers as seen as number not strings.</li>
+                <li>A video explaining if else statements <a href="https://www.youtube.com/watch?v=IsG4Xd6LlsM" target="_blank">Mosh if else</a></li>
+                <li>Typically you open and close returns with { but the below also works
+                  <br><img src="Images/if statement with no brackets.jpg" alt=""></li>
+              </ul>
+
+            <h2>Conditional Statements - switch and Case</h2>
+            <p>The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.</p>
+            <ul>
+              <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">Switch Statement</a></li>
+              <li>Were in a if statment we place the argument first here we place the argument in switch statements</li>
+              <li>Below example we are shown that the parameter is day which is defined earlier as a variable. Than the argument case and if meet the console is logged and breaks takes us out of the switch statment <br><img src="Images/Switch example.jpg" alt=""></li>
+              <li>By removing the break in the switch statement if the case is meet the action will be applied and than unexpected things will occur. This is why this is sometimes seen as a bad choice</li>
+              <li>A switch statement does not have a else statement so it uses a default statement <br>
+                <img src="Images/Switch default example.jpg" alt=""></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Comparison Operators</h2>
+            <ul>
+              <li>Here are just some comparison Operators Comparison <br> <img src="images/Operators.jpg" alt=""> </li>
+              <li>In Javascript when using the comparison's, Javascript reacts true and false.</li>
+              <li>Booleans return true or false. All conditions return a true or false value. true and false are not strings no '' <br>
+              <img src="images/boolean example.jpg" alt=""></li>
+              <li>you can also use a else if in a if statement. You only use else if if the first else is false.</li>
+              <li>add two conditions to a if statement <br>
+              && means something and something <br></li>
+              <li>When using the or operator <b>||</b> you have to have full conditions on both sides</li>
+              <li>Document your code - Consider other developers. <br> To leave a comment use <b>//</b> or multi line comment <b>/* */</b> or in line - after code <b>//</b> <br>
+              Use comments when you are doing something complex <br>
+              You can also comment out code</li>
+              <li>A challange to build a quiz game, ask 5 questions and depending on the score you get a trophy <br> see javascript file for the game <a href="js_e2_260320.html">JS_E2_260320</a></li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Javascript Numbers</h2>
+            <p>Numbers in JavaScript are as straightforward as they sound; you don’t need any special syntax for numbers, you write them straight into JavaScript.</p>
+              <ul>
+                <li>Data types for javascript: <br>
+                  Strings - series of number and letters enclosed in ""
+                  Boolean - is either is true of false
+                  Numbers - Numeric data types, counting and calculating</li>
+                <li>a Interger is a whole number, either positive or negative number. It has no decimal places </li>
+                <li>Floating point numbers are used to represent fractional values and include a decimal point.</li>
+                <li>This is an integer value -- scientific notation uses the letter 'e' to represent an exponential value.</li>
+                <p>Developers frequently use numbers for performing calculations; you'll likely spend a lot of time working with numbers in JavaScript. If you create a game, for example, you'll need to keep track of a player's score. If you build an eCommerce site, you'll need to figure out the total cost of items in a visitor's shopping cart. And if you want to calculate the number of days until your next birthday, you'll need to use numbers and do some math.</p>
+                <li>Arithmetic Operators - JavaScript lets you perform most mathematical calculations, including addition, subtraction, multiplication, and division.</li>
+                <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. <br>
+                There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value. <br>
+                <img src="images/short hand.jpg" alt=""></li>
+                <li>Time excercise <a href="js_e3_270320.html" target="_blank">js_e3_270320</a></li>
+                <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
+                <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
+                <li>To convert a string to a number you can use <b>parseInt</b> <br>
+                  Example <b>const fruit = parseInt(melons) + parseInt(oranges);</b>
+                  Melons and orange have been given numbers by the user through a propmt</li>
+                <li><b>parseFloat</b> is like the above but for decimal numbers</li>
+                <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
+                <p>Random Numbers</p>
+                <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
+                <li>Javascript objects have many properties example is <b>object.length</b></li>
+                <li>Javascript objects have many meathods example is <b>object.toUppercase()</b></li>
+                <li> <a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Object</a> Meathods and Properties </li>
+                <li>Example of a math meathod <b>Math.round(2.2)</b> this rounds the number up</li>
+                <li>Create a random number using Javascript <b>Math.random()</b> This returns a decimal place number between 0 and 1 but never 1</li>
+                <li>To get Math.random() to return a random number between 1 and 6 you do <b>Math.random() * 6;</b></li>
+                <li>Math.floor() rounds the number down and Math.ceil() rounds the number up <br>
+                  Both pass the whole number if the number is not a decimal place</li>
+                <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
+                <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
+                <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
+                <li>Excercise <a href="js_e4_280320.html" target="_blank">JS_E4_280320</a></li>
+                <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
+                <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Javascript Functions</h2>
+            <p>JavaScript functions let you create reusable chunks of code. They make programming faster, easier, and less error-prone. They are also one of the essential concepts in JavaScript programming. </p>
+              <ul>
+                <li>Informative video <a href= "https://www.youtube.com/watch?v=xjAu2Y2nJ34" target="_blank">Dev Ed</a></li>
+                <li>Functions are a repetable set of insturctions you can over and over again</li>
+                <li>You setup your function and than you can call it when ever you like</li>
+                <li>A function name cant have spaces or start with a number but you can use letters and number and dollar sign</li>
+                <li>The () after a function are called parentheses</li>
+                <li>Remember to close the syntax and call the function once completed, example <b>FUNCTIONNAME();</b> </li>
+                <li>Math.floor() and Math.random() are also function as they have (), these are built in functions</li>
+                <li>Example of a function
+                  <br><img src="images/Function Example.jpg" alt=""></li>
+                <li>A function can return a value, this can be used in a alert or variable Example <br>
+                <img src="images/Function%20return%20value.jpg" alt=""></li>
+                <li>To return a value from a function use <b>return</b> in the function
+                  <br>Example <b>return random</b>, random being a variable. When I call this value from the function I still use () example <b>console.log( getRandomNumber () ); </b></li>
+                <li>The below image is an exmaple of a function that looks in the html for a value in the Info ID
+                  <br><img src="images/Function%20with%20condition.jpg" alt=""></li>
+                <li>A return in a function can only return one thing</li>
+              </ul>
+
+              <h3>Passing information into a function</h3>
+                <ul>
+                  <li>You can send information into a function, these are called arguments. You have to add a parameter into the function example <b>function goToCoffeeShop(drink)</b>. Parameter being drink</li>
+                  <li>Example below - You are using the parameter drink and the alert give a message using that parameter. When calling the function you give that drink parameter a value Iced Tea.
+                    <br><img src="images/pass%20param%20function.jpg" alt=""></li>
+                  <li>Another example - Upper is the parameter and this determines what the max random number can be. We pass many different numbers through the function
+                    <br><img src="images/pass%20param%20function%202.jpg" alt=""></li>
+                  <li>You can pass more than one paramter into a function, see exmaple below
+                    <br><img src="images/pass%202%20param%20to%20function.jpg" alt=""></li>
+                  <li>Its not neat to pass to many arguments into a function, you can use something like an array</li>
+                  <li>Variables created in a function and they dont interact with any variable outside that function</li>
+                  <li>variables outside of a function are part of the global scope. Variables in the function and global scope dont interact.
+                    <br><img src="images/variable%20functions.jpg" alt=""></li>
+                </ul>
+
+              <h3>Function Declarations Vs. Function Expressions</h3>
+              <p>An anonymous function is a function without a name after the function keyword. Dont forget to add a ; after the closing } as it is a variable example <p>
+                <ul>
+                  <li>Below is a example of a anonymous function
+                    <br><img src="images/anonymous%20function%20example.jpg" alt=""></li>
+                  <li>The JavaScript engine moves function declarations to the top of their scope before code execution. This behavior is called: hoisting</li>
+                  <li>Function declarations load before any other code is loaded. See example <br>
+                    <img src="images/function%20dec%20loading%20first%20example.jpg" alt=""> </li>
+                  <li>Function expressions dont work like function declarations. The code runs from the top down and errors if the wrong way
+                    <br><img src="images/error%20for%20function%20expression%20example.jpg" alt="">
+                    <br><img src="images/error%20for%20function%20expression.jpg" alt="">
+                    <br>The right layout
+                    <br><img src="images/correct%20function%20expression%20example.jpg" alt=""> </li>
+                  <li>Summary for function declaration and fuction expression <br>
+                    <br><b>Function Decalration</b> <br> <img src="images/function%20dec.jpg" alt="">
+                    <br><b>Function Expression</b> <br> <img src="images/Function%20expression.jpg" alt=""></li>
+                </ul>  
+              
+            
+         <p>Arrow Functions</p>
+            <li>Arrow function expressions - Here you remove the function word in a function expression and add <b>=></b> after the () <br>
+              <img src="images/arrow%20function%20example.jpg" alt=""></li>
+            <li>First change a function declaration to a function expression, putting the function in a varaible <br>
+              Than remove the word function after the const/let variable and add => after the paranthasis () <br>
+              <img src="images/arrow%20function%20example%202.jpg" alt=""></li>
+            <li>Example of arrow function without return and {} while returning a value - <img src="images/another%20arrow%20function.jpg" alt=""></li>
+            <li>Arrow functions are anonymous as they dont have a name and you call or referrence the function using the variable name</li>
+            <li>Arrow functions are not hosted to the top of the code, they are only ran when the code reaches them</li>
+            <li>Arrow functions are not meant to replace function decalaration or expressions just newer syntax</li>
+            <li>Example one parameter - <img src="images/arrow%201%20param.jpg" alt=""></li>
+            <li>Example multiple parameter - <img src="images/arrow%20multiple%20param.jpg" alt=""></li>
+            <li>Example arrow function one line statement - <img src="images/arrow%20one%20line%20statement.jpg" alt=""></li>
+            <li>Single-line Functions with No Parameters - <img src="images/single%20line%20function%20with%20no%20params.jpg" alt=""> </li>
+            <li>If a paramter isnt passed to a function you will get <b>undefined!</b>. Means there is no value</li>
+            <li>To assign a default value to for your paramter for the function - <b>function sayGreeting(name = "student")</b>
+              <img src="images/Defualt%20value%20function%20param.jpg" alt=""></li>
+            <li>If you have placed mutiple defualt value for multiple parameters and you want to define only one paramter use undefined to blank out the other paramters.</li>
+            <li>There is a standard syntax you can use to document functions -- it's known as <a href = "https://jsdoc.app/index.html">JSDoc</a>, and the format looks like this:</li>
+            <li><img src="images/Javascript%20commenting.jpg" alt=""></li>
+            <li><img src="images/Javascript%20commenting%202.jpg" alt=""></li>
+              </ul>
+          </section>
+
       <h2>Javascript Functions help in video <a href= "https://www.youtube.com/watch?v=xjAu2Y2nJ34" target="_blank">Dev Ed</a></h2>
           <ul>
             <li>Functions are a repetable set of insturctions you can over and over again</li>
@@ -118,7 +221,7 @@
                   }</b></li>
               <li>A function name cant have spaces or start with a number but you can use letters and number and dollar sign</li>
               <li>The () after a function are called parentheses</li>
-              <li>Remember to close the syntax and call the function code <b>FUNCTIONNAME();</b> </li>
+              <li>Remember to close the syntax and call the function code, example <b>FUNCTIONNAME();</b> </li>
               <li>Math.floor() and Math.random() are also function as they have (), these are built in functions</li>
               <li>Example of a function <br>
               <img src="images/Function Example.jpg" alt=""></li>
@@ -380,17 +483,6 @@
                 Below is a example of multi way, going through all the conditions looks to see which one is the first one meet? <br>
                 <img src="Images/Multi way.jpg" alt=""></li>
             </ul>
-          <h3>Switch Statements</h3>
-            <ul>
-              <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">Switch Statement</a></li>
-              <li>The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.</li>
-              <li>Were in a if statment we place the argument first here we place the argument in switch statements</li>
-              <li>Below example we are shown that the parameter is day which is defined earlier as a variable. Than the argument case and if meet the console is logged and breaks takes us out of the switch statment <br>
-                <img src="Images/Switch example.jpg" alt=""></li>
-              <li>By removing the break in the switch statement if the case is meet the action will be applied and than unexpected things will occur. This is why this is sometimes seen as a bad choice</li>
-              <li>A switch statement does not have a else statement so it uses a default statement <br>
-                <img src="Images/Switch default example.jpg" alt=""></li>
-            </ul>
           
           <h3>Ternary Operator</h3>
           <p>MDN info on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">Ternary</a> operator</p>
@@ -418,6 +510,8 @@
                 <img src="Images/Short Circuit Function Example.jpg" alt=""></li>
               <li>In ES2015 you can simply assign the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters" target="_blank">default value in the paramter</a> of the function <br>
                 <img src="Images/ES2015 default value parameter function.jpg" alt=""></li>
-            </ul>
+              </ul>
+      </main>
+    </div>    
   </body>
 </html>
