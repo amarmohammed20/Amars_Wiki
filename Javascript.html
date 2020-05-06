@@ -22,6 +22,7 @@
               <p> How to document in JS <a href="http://usejsdoc.org/" target="_blank">JS Doc</a></p>
               <p> JavaScript has lots of <a href="https://www.w3schools.com/js/js_datatypes.asp" target="_blank">Data Types</a></p>
               <p> You can manipulate the DOM which are elements in your HTML using JavaScript </p> 
+              <p><a href="https://www.youtube.com/watch?v=Nqv6UkTROak" target="_blank">JSDoc</a> besides its descriptive format, the JSDoc tool itself has other useful and powerful features. JSDoc is also a documentation generator for JavaScript.</p>
           </section>
 
           <section class="section">
@@ -44,8 +45,10 @@
           </section>
 
           <section>
-            <h2>Conditional Statements - If else</h2>
+            <h2>Conditional Statements</h2>
             <p>You can change what your program does by adding decision-making to it. Programmers make a program react to different situations using JavaScript conditional statements.</p>
+
+            <h3>Conditional Statements - If Statement</h3>
               <ul>
                 <li>To apply conditions you can use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">if else</a> statement</li>
                 <li>An example of a if statement and if else statement is as below:
@@ -58,7 +61,7 @@
                   <br><img src="Images/if statement with no brackets.jpg" alt=""></li>
               </ul>
 
-            <h2>Conditional Statements - switch and Case</h2>
+            <h3>Conditional Statements - switch and Case</h3>
             <p>The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.</p>
             <ul>
               <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">Switch Statement</a></li>
@@ -184,203 +187,162 @@
                   <li>Summary for function declaration and fuction expression <br>
                     <br><b>Function Decalration</b> <br> <img src="images/function%20dec.jpg" alt="">
                     <br><b>Function Expression</b> <br> <img src="images/Function%20expression.jpg" alt=""></li>
-                </ul>  
+                </ul>
+                
+              <h3>Arrow Functions</h3>
+              <p>Arrow functions were introduced in ES6. Arrow functions allow us to write shorter function syntax:
+                <br><img src="Images/arrow function basics.jpg" alt=""></p>
+                <ul>
+                  <li>Arrow function expressions - Here you remove the function word in a function expression and add <b>=></b> after the ()
+                    <br><img src="images/arrow%20function%20example.jpg" alt=""></li>
+                  <li>First change a function declaration to a function expression, putting the function in a varaible
+                    <br>Than remove the word function after the const/let variable and add => after the paranthasis ()
+                    <br><img src="images/arrow%20function%20example%202.jpg" alt=""></li>
+                  <li>Example of arrow function without return and {} while returning a value - <img src="images/another%20arrow%20function.jpg" alt=""></li>
+                  <li>Arrow functions are anonymous as they dont have a name and you call or referrence the function using the variable name</li>
+                  <li>Arrow functions are not hosted to the top of the code, they are only ran when the code reaches them</li>
+                  <li>Arrow functions are not meant to replace function decalaration or expressions just newer syntax</li>
+                  <li>Example one parameter - <img src="images/arrow%201%20param.jpg" alt=""></li>
+                  <li>Example multiple parameter - <img src="images/arrow%20multiple%20param.jpg" alt=""></li>
+                  <li>Example arrow function one line statement - <img src="images/arrow%20one%20line%20statement.jpg" alt=""></li>
+                  <li>Single-line Functions with No Parameters - <img src="images/single%20line%20function%20with%20no%20params.jpg" alt=""> </li>
+                  <li>If a paramter isnt passed to a function you will get <b>undefined!</b>. Means there is no value</li>
+                  <li>To assign a default value to for your paramter for the function - <b>function sayGreeting(name = "student")
+                    </b><img src="images/Defualt%20value%20function%20param.jpg" alt=""></li>
+                  <li>If you have placed mutiple defualt value for multiple parameters and you want to define only one paramter use undefined to blank out the other paramters.</li>
+                  <li>There is a standard syntax you can use to document functions -- it's known as <a href = "https://jsdoc.app/index.html">JSDoc</a>, and the format looks like this:</li>
+                  <li><img src="images/Javascript%20commenting.jpg" alt=""></li>
+                  <li><img src="images/Javascript%20commenting%202.jpg" alt=""></li>
+                </ul>
               
-            
-         <p>Arrow Functions</p>
-            <li>Arrow function expressions - Here you remove the function word in a function expression and add <b>=></b> after the () <br>
-              <img src="images/arrow%20function%20example.jpg" alt=""></li>
-            <li>First change a function declaration to a function expression, putting the function in a varaible <br>
-              Than remove the word function after the const/let variable and add => after the paranthasis () <br>
-              <img src="images/arrow%20function%20example%202.jpg" alt=""></li>
-            <li>Example of arrow function without return and {} while returning a value - <img src="images/another%20arrow%20function.jpg" alt=""></li>
-            <li>Arrow functions are anonymous as they dont have a name and you call or referrence the function using the variable name</li>
-            <li>Arrow functions are not hosted to the top of the code, they are only ran when the code reaches them</li>
-            <li>Arrow functions are not meant to replace function decalaration or expressions just newer syntax</li>
-            <li>Example one parameter - <img src="images/arrow%201%20param.jpg" alt=""></li>
-            <li>Example multiple parameter - <img src="images/arrow%20multiple%20param.jpg" alt=""></li>
-            <li>Example arrow function one line statement - <img src="images/arrow%20one%20line%20statement.jpg" alt=""></li>
-            <li>Single-line Functions with No Parameters - <img src="images/single%20line%20function%20with%20no%20params.jpg" alt=""> </li>
-            <li>If a paramter isnt passed to a function you will get <b>undefined!</b>. Means there is no value</li>
-            <li>To assign a default value to for your paramter for the function - <b>function sayGreeting(name = "student")</b>
-              <img src="images/Defualt%20value%20function%20param.jpg" alt=""></li>
-            <li>If you have placed mutiple defualt value for multiple parameters and you want to define only one paramter use undefined to blank out the other paramters.</li>
-            <li>There is a standard syntax you can use to document functions -- it's known as <a href = "https://jsdoc.app/index.html">JSDoc</a>, and the format looks like this:</li>
-            <li><img src="images/Javascript%20commenting.jpg" alt=""></li>
-            <li><img src="images/Javascript%20commenting%202.jpg" alt=""></li>
-              </ul>
           </section>
 
-      <h2>Javascript Functions help in video <a href= "https://www.youtube.com/watch?v=xjAu2Y2nJ34" target="_blank">Dev Ed</a></h2>
-          <ul>
-            <li>Functions are a repetable set of insturctions you can over and over again</li>
-              <li>You setup your function and than you can call it when ever you like</li>
-              <li>Decalre a fuction <br>
-              <b>function goToCoffeeShop() { <br>
-                 <br>
-                  }</b></li>
-              <li>A function name cant have spaces or start with a number but you can use letters and number and dollar sign</li>
-              <li>The () after a function are called parentheses</li>
-              <li>Remember to close the syntax and call the function code, example <b>FUNCTIONNAME();</b> </li>
-              <li>Math.floor() and Math.random() are also function as they have (), these are built in functions</li>
-              <li>Example of a function <br>
-              <img src="images/Function Example.jpg" alt=""></li>
-              <li>A function can return a value, this can be used in a alert or variable Example <br>
-              <img src="images/Function%20return%20value.jpg" alt=""></li>
-              <li>To return a value from a function use <b>return</b> in the function <br>
-              Example <b>return random number</b>, random number being a variable <br>
-              When I call this value from the function I still use () example <b>console.log( getRandomNumber () ); </b></li>
-              <li>The below image is an exmaple of a function that looks in the html for a value in the Info ID <br>
-                  <img src="images/Function%20with%20condition.jpg" alt=""></li>
-              <li>A return in a function can only return one thing</li>
-          <p>Passing information into a function</p>
-            <li>You can send information into a function, these are called arguments. <br>
-                You have to add a parameter into the function example <b>function goToCoffeeShop(drink)</b>. Parameter being drink</li>
-            <li>Example below - You are using the parameter drink and the alert give a message using that parameter. When calling the function you give that drink parameter a value Iced Tea.<br>
-                <img src="images/pass%20param%20function.jpg" alt=""></li>
-            <li>Another example - Upper is the parameter and this determines what the max random number can be. We pass many different numbers through the function<br>
-                <img src="images/pass%20param%20function%202.jpg" alt=""></li>
-            <li>You can pass more than one paramter into a function, see exmaple below <br>
-                <img src="images/pass%202%20param%20to%20function.jpg" alt=""></li>
-            <li>Its not neat to pass to many arguments into a function, you can use something like an array</li>
-            <li>Variables created in a function and they dont interact with any variable outside that function</li>
-            <li>variables outside of a function are part of the global scope. Variables in the function and global scope dont interact.<br>
-              <img src="images/variable%20functions.jpg" alt=""></li>
-         <p>Function Declarations Vs. Function Expressions</p>
-            <li>An anonymous function is a function without a name after the function keyword. Dont forget to add a ; after the closing } as it is a variable example <br>
-              <img src="images/anonymous%20function%20example.jpg" alt=""></li>
-            <li>The JavaScript engine moves function declarations to the top of their scope before code execution. This behavior is called: hoisting</li>
-            <li>Function declarations load before any other code is loaded. See example <br>
-              <img src="images/function%20dec%20loading%20first%20example.jpg" alt=""> </li>
-            <li>Function expressions dont work like function declarations. The code runs from the top down and errors if the wrong way
-              <img src="images/error%20for%20function%20expression%20example.jpg" alt=""> <br>
-              <img src="images/error%20for%20function%20expression.jpg" alt=""> <br>
-                The right layout <br>
-                <img src="images/correct%20function%20expression%20example.jpg" alt=""> </li>
-            <li>Summary for function declaration and fuction expression <br>
-              <b>Function Decalration</b> <br> <img src="images/function%20dec.jpg" alt=""> <br>
-              <b>Function Expression</b> <br> <img src="images/Function%20expression.jpg" alt=""></li>
-         <p>Arrow Functions</p>
-            <li>Arrow function expressions - Here you remove the function word in a function expression and add <b>=></b> after the () <br>
-              <img src="images/arrow%20function%20example.jpg" alt=""></li>
-            <li>First change a function declaration to a function expression, putting the function in a varaible <br>
-              Than remove the word function after the const/let variable and add => after the paranthasis () <br>
-              <img src="images/arrow%20function%20example%202.jpg" alt=""></li>
-            <li>Example of arrow function without return and {} while returning a value - <img src="images/another%20arrow%20function.jpg" alt=""></li>
-            <li>Arrow functions are anonymous as they dont have a name and you call or referrence the function using the variable name</li>
-            <li>Arrow functions are not hosted to the top of the code, they are only ran when the code reaches them</li>
-            <li>Arrow functions are not meant to replace function decalaration or expressions just newer syntax</li>
-            <li>Example one parameter - <img src="images/arrow%201%20param.jpg" alt=""></li>
-            <li>Example multiple parameter - <img src="images/arrow%20multiple%20param.jpg" alt=""></li>
-            <li>Example arrow function one line statement - <img src="images/arrow%20one%20line%20statement.jpg" alt=""></li>
-            <li>Single-line Functions with No Parameters - <img src="images/single%20line%20function%20with%20no%20params.jpg" alt=""> </li>
-            <li>If a paramter isnt passed to a function you will get <b>undefined!</b>. Means there is no value</li>
-            <li>To assign a default value to for your paramter for the function - <b>function sayGreeting(name = "student")</b>
-              <img src="images/Defualt%20value%20function%20param.jpg" alt=""></li>
-            <li>If you have placed mutiple defualt value for multiple parameters and you want to define only one paramter use undefined to blank out the other paramters.</li>
-            <li>There is a standard syntax you can use to document functions -- it's known as <a href = "https://jsdoc.app/index.html">JSDoc</a>, and the format looks like this:</li>
-            <li><img src="images/Javascript%20commenting.jpg" alt=""></li>
-            <li><img src="images/Javascript%20commenting%202.jpg" alt=""></li>
-            <li>The Power of JSDoc - <br>
-                Besides its descriptive format, the JSDoc tool itself has other useful and powerful features. JSDoc is also a documentation generator for JavaScript. <br>
-                For example, when you add documentation comments directly to your source code, JSDoc can scan your code and generate an HTML documentation website for you. However, you'll need to install special tools to run this feature -- you'll learn about some of these tools later in your JavaScript learning journey.</li>
-            <li><b>isNaN()</b> can be used to check if a value is a number, normally in a if statement. It returns a boolean value true or false.</li>
-            <li><b>throw Error</b> can be used instead of console.log to print a custom error to the console log. <br>
-              <img src="images/Throw%20error%20example.jpg" alt=""></li>          
-        </ul>
-      <h2>Javascript Arrays, Loops and Objects</h2>
-        <p>Simplify Repetitive Tasks with Loops</p>
-        <ul>
-            <li>Loops enable you to repeat a task, like multiple random number or mutiple questions until you get the right answer</li>
-            <li>Arrays enable you collect a lot of information in one place, like a list of 100 random numbers</li>
-            <li>A loop repeats a certain number of actions a certain number of times or until a certain condition is true</li>
-          <p>While Loops - a loop that runs until the condition is no longer true</p>
-            <li>An example of a while loop - Below is the exmaple explained <br>
-                The variable counter is 0 and counts the time the while loop is ran
-                The condition in the while loop is keep running until you get to 100. <b>counter less than 100</b><br>
-                so the function is ran and everytime it runs it adds one to the variable counter <b>counter += 1;</b>
-                <img src="images/Example%20of%20a%20while%20Loop.jpg" alt=""></li>
-            <li>Another example of a while loop with a condition using a function <br>
-                <img src="images/Example%20of%20a%20while%20Loop%202.jpg" alt=""></li>
-            <li>A while loop complex example <br>
-                <img src="images/A%20while%20loop%20complex%20example.jpg" alt=""> <br>
-                <img src="images/A%20while%20loop%20complex%20example%20code.jpg" alt=""> <br>
-                <img src="images/A%20while%20loop%20complex%20example%20front%20end%20result.jpg" alt=""></li>
-            <li>The while loop condition has to be true for the loop to run</li>
-            <li>Something has to happen in the loop for it to stop running, normally the loop updates a variable that breaks the condition</li>
-          <p>Do while loop - like the while loop but will always run the code block once as the condition is after the code block<br>
-            Good to be used to collect a users email address. The loop would run wihtout checking any conditions and than keep running until it has a valid email address <br>
-            <img src="images/do%20while%20loop.jpg" alt=""></p>
-            <li>Below is a example of a do while. It asks a users to insert a number and keep going until the user get the right random number recording the number of tried <br>
-                <img src="images/do%20while%20loop%20example.jpg" alt=""></li>
-          <p>For loop - Normally used to run a particular numbe rof times, most parts simliar to a while and do while loop</p>
-            <li>Normally used when looking through an array.</li>
-            <li>for loop vs while loop example <br>
-                <img src="images/while%20loop%20vs%20for%20loop.jpg" alt=""></li>
-            <li>The for loop is normally written like below, also in my previous experience you use <b>i</b> <br>
-                <img src="images/for%20loop%20using%20i.jpg" alt=""></li>
-            <li>In the example below you have a variable that is updated everytime the loop is ran. the for loop is structured through: <br>
-                assigning a value to i <br>
-                setting a condition, i has to be less than or equal to 10 <br>
-                and everytime the loop is ran 1 is added to i through += <br>
-                Thank inside the {} a update is performed dynamically updating the variable outside the loop <br>
-                Finally the variable outside the loop is written to the page <br>
-                <img src="images/i%20loop%20example.jpg" alt=""></li>
-            <li>Another example were you have to log every number from 4 to 156 in the console log <br>
-                <img src="images/i%20loop%20example%202.jpg" alt=""></li>
-            <li>Exit condition on a loop - when something is no longer true. <br>
-                You can also use a break statement, example below were the while condition is always true but the break will stop the loop after the right answer<br>
-                <img src="images/break%20example.jpg" alt=""></li>
-            <li>The below example is were we want the user to guess the random number in 10 guesses also capturing if they gues sit right before <br>
-                <img src="images/10%20guess%20example.jpg" alt=""></li>
-            <li><b>In for loops try to use let when defining the variable i</b></li>
-            <li>Excercise for using loops and clenaing up code <a href="js_e5_310320.html">js_e5_310320.html</a></li> 
-        </ul>
-      <h2>Arrays in Javascript - A data structure a way to store data</h2>
-        <ul>
-            <li>A variable is a simple array it holds one bit of data</li>
-            <li>An array can hold strings, number or any sort of data types</li>
-            <li>You can add an remove from an array as you go along.</li>
-            <li>Example of an array <b>var shopping = ["milk", 2, "Hello"];</b></li>
-                <img src="images/basic%20array.jpg" alt="">
-            <li>To print a array its like printing a variable becuas eit is a variable</li>
-            <li>To call a item within an array you use index. <b>The first item in the array is 0</b></li>
-            <li>Example of calling out an itme in an array <br>
-                <img src="images/Calling%20item%20in%20array.jpg" alt=""></li>
-            <li>If you call a item for example [4] and there are only three items in an array you will return undefined</li>
-            <li>You can use properties to find details for your array. example <b>numbers.length</b>. Numbers being an array variable</li>
-            <li>You can add a anohter value to a 6 value array. <b>numbers[ numbers.length ] = 7;</b></li>
-            <li>You can add a value to an array using a push meathod. <b>numbers.push(8, 9);</b>. numbers being the array and the array having 7 values inside</li>
-            <li>You can add a value to the start of an array using a unshift meathod. <b>numbers.unshift( 0 );</b>.</li>
-            <li>To print an array in javascript you can use <b>printList( playList );</b>. Playlist being the array variable</li>
-            <li>To remove the first value from an array you use the command <b>numbers.shift();</b> <br>
-              .shift also retrieves the first item in the array and you can save this in a variable - Example <b>var lastItem = numbers.shift();</b></li>
-            <li>To remove the last value from an array you use the command <b>numbers.pop();</b> <br>
-              .pop also retrieves the last item in the array and you can save this in a variable - Example <b>var lastItem = numbers.pop();</b></li>
-            <li>Example of a array and for loop working toghther <br>
-              <img src="images/Example of for loop and array.jpg" alt=""></li>
-            <li>The join meathod is used with an array, enabling you to display all the value in one go from the array. 
-              Exmaple is <b>var daysString = daysInWeek.join(",");</b>. This says use , to join all the values in the array <br>
-              <img src="images/join for an array.jpg" alt=""> </li>
-            <li>The concat meathod is used with multiple arrays, enabling you to joing different arrays toghther. 
-              Exmaple is <b> var allStudents = currentStudents.concat( newStudents );</b>. This says concat the currentStudents array with the newStudents array. <br>
-              The arrays still exisit as they stand but concat simply makes a new variable with them both in <br>
-              <img src="images/concat for an array.jpg" alt=""> </li>
-            <li>You can use the meathod indexOf for an array to tell you the position of a item in the array <br>
-              Example - <b>var position = fruit.indexOf("Apple");</b>. The result for the variable would be 0 as Apple is first in the array <br>
-              <img src="images/indexOf for an array.jpg" alt=""></li>
-            <li>For the indexOf meathod if you as for the position of a item that isnt in the array you get back <b>-1</b></li>
-            <li>To check for something in an array you can use <b>if (inStock.includes(search) === true)</b>. Search is what is typed in the prompt and includes brings back boolean</li>
-            <li>array example excercise <a href="Excercises/js_e6_010420.html"></a></li>
-            <li>A two dimensional array is an array that holds other arrays, dont forgot the , after the arrays - Example: <br>
-              <img src="Images/two dimensional array.jpg" alt=""> <br>
-              First array is at index 0, second index 2 and so on. Just like a normal array <br>
-              To get a value from within one array it would look like <b>grades[2][0]</b>. This says get the first value in the third array</li>
-            <li>A two dimensional array that hold a playlist of songs with the artists <br>
-              <img src="Images/two dimensional array playlist.jpg" alt=""></li>
-            <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">Array.prototype.filter()</a> method creates a new array with all elements that pass the test implemented by the provided function. <br>
-              <img src="Images/Array filter method.jpg" alt=""> </li>
-        </ul>
+          <section>
+          <h2>Javascript Arrays, Loops and Objects</h2>
+          <p>JavaScript supports different kinds of loops:</p>
+            <ul>
+              <li>for - loops through a block of code a number of times</li>
+              <li><a href="https://www.w3schools.com/jsref/jsref_forin.asp" target="_blank">for/in</a> - loops through the properties of an object</li>
+              <li><a href="https://www.w3schools.com/jsref/jsref_forin.asp" target="_blank">for/of</a> - loops through the values of an iterable object</li>
+              <li><a href="https://www.w3schools.com/jsref/jsref_forin.asp" target="_blank">while</a> - loops through a block of code while a specified condition is true</li>
+              <li><a href="https://www.w3schools.com/jsref/jsref_forin.asp" target="_blank">do/while</a> - loops through a block of code once, and then repeats the loop while a specified condition is true</li>
+            </ul>
+
+            <h3>Simplify Repetitive Tasks with Loops</h3>
+            <p>Storing, tracking and handling data is a large part of computer programming. Arrays provide a method for storing multiple values into a single variable. That makes an array a convenient way to pass around a list of items. In this course, you'll learn how to create arrays and use loops to access their contents. You'll also learn some advanced methods that make working with arrays easier.</p>
+              <ul>
+                <li>Loops enable you to repeat a task, like multiple random number or mutiple questions until you get the right answer</li>
+                <li>Arrays enable you collect a lot of information in one place, like a list of 100 random numbers</li>
+                <li>A loop repeats a certain number of actions a certain number of times or until a certain condition is true</li>
+              </ul>
+
+              <h3>While Loops</h3>
+              <p>A <a href="Loops can execute a block of code as long as a specified condition is true." target="_blank"></a> loop that runs until the condition is no longer true</p>
+                <ul>
+                  <li>The syntax for the while loop is as below, condition and then the code block to run.
+                    <br><img src="Images/while loops syntax.jpg" alt=""></li>
+                  <li>An example of a while loop - Below is the example explained
+                    <br>The variable counter is 0 and counts the time the while loop is ran
+                    <br>The condition in the while loop is keep running until you get to 100. <b>counter less than 100</b><br>
+                    <br>so the function is ran and everytime it runs it adds one to the variable counter <b>counter += 1;</b>
+                      <img src="images/Example%20of%20a%20while%20Loop.jpg" alt=""></li>
+                  <li>Another example of a while loop with a condition using a function <br>
+                      <img src="images/Example%20of%20a%20while%20Loop%202.jpg" alt=""></li>
+                  <li>A while loop complex example <br>
+                      <img src="images/A%20while%20loop%20complex%20example.jpg" alt=""> <br>
+                      <img src="images/A%20while%20loop%20complex%20example%20code.jpg" alt=""> <br>
+                      <img src="images/A%20while%20loop%20complex%20example%20front%20end%20result.jpg" alt=""></li>
+                  <li>The while loop condition has to be true for the loop to run</li>
+                  <li>Something has to happen in the loop for it to stop running, normally the loop updates a variable that breaks the condition, variable being i</li>
+                </ul>  
+              
+              
+              <h3>Do while loop</h3>
+              <p><a href="https://www.w3schools.com/jsref/jsref_dowhile.asp" target="_blank"></a> Do while loop - This loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested
+                <br>Good to be used to collect a users email address. The loop would run wihtout checking any conditions and than keep running until it has a valid email address <br>
+                <img src="images/do%20while%20loop.jpg" alt=""></p>
+                <ul>
+                  <li>Below is a example of a do while. It asks a users to insert a number and keep going until the user get the right random number recording the number of tried attempts <br><img src="images/do%20while%20loop%20example.jpg" alt=""></li>
+                </ul>
+            
+                
+              <h3>For loop</h3>
+              <p>The loop will continue to run as long as the condition is true. It will only stop when the condition becomes false.</p>
+                <ul>
+                  <li>Normally used when looking through an array.</li>
+                  <li>for loop vs while loop example <br>
+                      <img src="images/while%20loop%20vs%20for%20loop.jpg" alt=""></li>
+                  <li>The for loop is normally written like below, also in my previous experience you use <b>i</b> <br>
+                      <img src="images/for%20loop%20using%20i.jpg" alt=""></li>
+                  <li>In the example below you have a variable that is updated everytime the loop is ran. the for loop is structured through: <br>
+                      assigning a value to i <br>
+                      setting a condition, i has to be less than or equal to 10 <br>
+                      and everytime the loop is ran 1 is added to i through += <br>
+                      Thank inside the {} a update is performed dynamically updating the variable outside the loop <br>
+                      Finally the variable outside the loop is written to the page <br>
+                      <img src="images/i%20loop%20example.jpg" alt=""></li>
+                  <li>Another example were you have to log every number from 4 to 156 in the console log <br>
+                      <img src="images/i%20loop%20example%202.jpg" alt=""></li>
+                  <li>Exit condition on a loop - when something is no longer true. <br>
+                      You can also use a break statement, example below were the while condition is always true but the break will stop the loop after the right answer<br>
+                      <img src="images/break%20example.jpg" alt=""></li>
+                  <li>The below example is were we want the user to guess the random number in 10 guesses also capturing if they gues sit right before <br>
+                      <img src="images/10%20guess%20example.jpg" alt=""></li>
+                  <li><b>In for loops try to use let when defining the variable i</b></li>
+                  <li>Excercise for using loops and clenaing up code <a href="js_e5_310320.html">js_e5_310320.html</a></li>
+                </ul>
+          </section>
+
+          <section>
+            <h2>Arrays in Javascript</h2>
+            <p>JavaScript <a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank"></a> arrays are used to store multiple values in a single variable</p>
+              <ul>
+                <li>A variable is a simple array it holds one bit of data</li>
+                <li>An array can hold strings, number or any sort of data types</li>
+                <li>You can add an remove from an array as you go along.</li>
+                <li>Example of an array <b>var shopping = ["milk", 2, "Hello"];</b></li>
+                    <img src="images/basic%20array.jpg" alt="">
+                <li>To print a array its like printing a variable becuas eit is a variable</li>
+                <li>To call a item within an array you use index. <b>The first item in the array is 0</b></li>
+                <li>Example of calling out an itme in an array <br>
+                    <img src="images/Calling%20item%20in%20array.jpg" alt=""></li>
+                <li>If you call a item for example [4] and there are only three items in an array you will return undefined</li>
+                <li>You can use properties to find details for your array. example <b>numbers.length</b>. Numbers being an array variable</li>
+                <li>You can add a anohter value to a 6 value array. <b>numbers[ numbers.length ] = 7;</b></li>
+                <li>You can add a value to an array using a push meathod. <b>numbers.push(8, 9);</b>. numbers being the array and the array having 7 values inside</li>
+                <li>You can add a value to the start of an array using a unshift meathod. <b>numbers.unshift( 0 );</b>.</li>
+                <li>To print an array in javascript you can use <b>printList( playList );</b>. Playlist being the array variable</li>
+                <li>To remove the first value from an array you use the command <b>numbers.shift();</b> <br>
+                  .shift also retrieves the first item in the array and you can save this in a variable - Example <b>var lastItem = numbers.shift();</b></li>
+                <li>To remove the last value from an array you use the command <b>numbers.pop();</b> <br>
+                  .pop also retrieves the last item in the array and you can save this in a variable - Example <b>var lastItem = numbers.pop();</b></li>
+                <li>Example of a array and for loop working toghther <br>
+                  <img src="images/Example of for loop and array.jpg" alt=""></li>
+                <li>The join meathod is used with an array, enabling you to display all the value in one go from the array. 
+                  Exmaple is <b>var daysString = daysInWeek.join(",");</b>. This says use , to join all the values in the array <br>
+                  <img src="images/join for an array.jpg" alt=""> </li>
+                <li>The concat meathod is used with multiple arrays, enabling you to joing different arrays toghther. 
+                  Exmaple is <b> var allStudents = currentStudents.concat( newStudents );</b>. This says concat the currentStudents array with the newStudents array. <br>
+                  The arrays still exisit as they stand but concat simply makes a new variable with them both in <br>
+                  <img src="images/concat for an array.jpg" alt=""> </li>
+                <li>You can use the meathod indexOf for an array to tell you the position of a item in the array <br>
+                  Example - <b>var position = fruit.indexOf("Apple");</b>. The result for the variable would be 0 as Apple is first in the array <br>
+                  <img src="images/indexOf for an array.jpg" alt=""></li>
+                <li>For the indexOf meathod if you as for the position of a item that isnt in the array you get back <b>-1</b></li>
+                <li>To check for something in an array you can use <b>if (inStock.includes(search) === true)</b>. Search is what is typed in the prompt and includes brings back boolean</li>
+                <li>array example excercise <a href="Excercises/js_e6_010420.html"></a></li>
+                <li>A two dimensional array is an array that holds other arrays, dont forgot the , after the arrays - Example: <br>
+                  <img src="Images/two dimensional array.jpg" alt=""> <br>
+                  First array is at index 0, second index 2 and so on. Just like a normal array <br>
+                  To get a value from within one array it would look like <b>grades[2][0]</b>. This says get the first value in the third array</li>
+                <li>A two dimensional array that hold a playlist of songs with the artists <br>
+                  <img src="Images/two dimensional array playlist.jpg" alt=""></li>
+                <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">Array.prototype.filter()</a> method creates a new array with all elements that pass the test implemented by the provided function. <br>
+                  <img src="Images/Array filter method.jpg" alt=""> </li>
+            </ul>
+          </section>
+
+        
         <h2>Day 5</h2>
           <p>Objects in Javascript</p>
             <ul>
