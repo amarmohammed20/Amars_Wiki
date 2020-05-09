@@ -25,10 +25,64 @@
               <p><a href="https://www.youtube.com/watch?v=Nqv6UkTROak" target="_blank">JSDoc</a> besides its descriptive format, the JSDoc tool itself has other useful and powerful features. JSDoc is also a documentation generator for JavaScript.</p>
           </section>
 
+          <section>
+            <h2>The landscape of Javascript</h2>
+            <p>JavaScript is everywhere and used in all phases of development from software to hardware.</p>
+              <ul>
+                <li>Javascript can run just about anywhere in both software and hardware</li>
+                <li>Javascript started out in the browser in 1995</li>
+                <li>Netscape was the browser that incoprated more than text and images with user interaction. <br>
+                  The program used in netscape for interaction in the browser was called scheme</li>
+                <li>Scheme never took of becuase the developer was actually asked to start working on <b>Mocha</b> which is now javascript</li>
+                <li>It went from Mocha to <b>LiveScript</b> to than <b>JavaScript</b>.</li>
+                <li>What is being covered in this section <br>
+                  <img src="Images/Landscape of Javascript.jpg" alt=""> <br>
+                  notes - JavaScript's design decisions were mostly influenced by programming languages such as Self and Scheme. <br>
+                  The object-oriented and prototype-based programming language Self inspired JavaScript’s prototypal inheritance, and Scheme likely influenced its functional and imperative styles of programming.</li>
+                <li>Javascript started out in the browser now is included in anything that requires user interaction.</li>
+                <li>The website <a href="http://lookbook.wedze.com/winter-2017-2018/" target="_blank">lookbook.wedze.com</a> is a good example of javascript in a website.</li>
+                <li>Air bnb, Tesla and instagram and just some app that use javascript</li>
+                <li>Javascript is good when running on IOT device. <a href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">IOT Explained</a> <br>
+                  IOT is a physical device with an onn/off switch that can connect to the internet and with other IOT devices</li>
+                <li>To run javascript outside of the browser <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank">Node.js</a> and <a href="https://nodejs.org/en/" target="_blank">nodejs.org</a></li>
+                <li>After the browser netscape had javascript other browsers like IE implements something like JScript <br>
+                  This made cross browser compatability difficult for developers</li>
+                <li>In 1996 netscape standardize things submittied to ecma international which was industry standard</li>
+                <li>You can have different flavours of javascript <br>
+                  Plain Javascript <img src="Images/Plain javascript.jpg" alt=""></li>
+                <li>Moving forward now a new release of ECMAScript javascript get release every year</li>
+                <li>You also have type checkers for Javascript. <a href="https://www.youtube.com/watch?v=U0U2zeG2SBI" target="_blank">Info Video</a> <br>
+                  <img src="Images/Typecheckers for JavaScript.jpg" alt=""></li>
+                <li><a href="https://www.typescriptlang.org/" target="_blank">Type script</a> is a type of type checker built by Microsoft. Essentially a layer around JavaScript. <br>
+                  The browser doesnt understand type script so it needs to get compiled to javaScript code</li>
+                <li><a href="https://jquery.com/" target="_blank">jQuery</a> is a JavaScript library used to add interactivity to web pages. <br>
+                  It's a commonly used tool found in tens of millions of sites and apps all over the web and popular front-end frameworks. <br>
+                  <a href="https://www.youtube.com/watch?v=hMxGhHNOkCU" target="_blank">J Query explained</a></li>
+                <li>JavaScript is a dynamic/scripting lanuage, this runs at run time. browsers have a built in interpreter/JavaScript engine for JavaScript. <br>
+                  <img src="Images/Javascript browser engines.jpg" alt=""></li>
+                <li>JIT Just In Time compliers are used in browsers, coverts JS code for browsers and machines on the fly</li>
+                <li>Text editors that are good are <a href="https://www.sublimetext.com/" target="_blank">Sublime</a>, <a href="https://atom.io/" target="_blank">Atom</a> and <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> </li>
+                <li>Linters and Formatters are useful to setup in text editors - making sure indentation and syntax is correct: <br>
+                  Linters - <a href="https://eslint.org/" target="_blank">ESLint</a>.<a href="https://github.com/prettier/prettier/issues/2364" target="_blank">Difference between Prettier and ESLint</a> <br>
+                  Code Formatters - <a href="https://prettier.io/" target="_blank">Prettier</a>. <a href="https://prettier.io/docs/en/comparison.html" target="_blank">Difference between ESLint and Prettier</a> </li>
+                  <li><a href="https://gist.github.com/bradtraversy/aab26d1e8983d9f8d79be1a9ca894ab4" target = "_blank">Installation(Github)</a> and setup of the prettier <a href="https://www.youtube.com/watch?v=SydnKbGc7W8" target = "_blank">ESLint in VS</a></li>
+                <li>Node.js is another common JavaScript runtime environment</li>
+                <li>Before starting your javascript project creating a build system would be good, see what is included <br>
+                  <img src="Images/Package Managers.jpg" alt=""></li>
+                  <img src="Images/Module Bundlers.jpg" alt=""></li>
+                  <img src="Images/Compilers.jpg" alt=""></li>
+                  <img src="Images/Task Runners.jpg" alt=""></li>
+                <li>Common frameworks for javascript,<a href="https://reactjs.org/" target="_blank">React</a> , <a href="https://vuejs.org/" target="_blank">Vue</a> and <a href="https://angular.io/" target="_blank">Angular</a> <br>
+                  A CLI is a command line interface for these frameworks</li>
+                <li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/" target="_blank">Get Started with Debugging JavaScript in Chrome DevTools</a></li>
+              </ul>
+          </section>
+
           <section class="section">
             <h2>JavaScript Variables</h2>
             <p>Javascript has three types of variables Const, Let and var</p>
               <ul>
+                  <li>The let and const variables were introduced in ES6</li>
                   <li>To reassign a value in javascript you can use +=</li>
                   <li>const variables - The value of the variable should remain constant. Once assigned a value you cant later down the code assign another value</li>
                   <li>let variables lets you update the value of the variable but never reassign the value.</li>
@@ -62,7 +116,7 @@
               </ul>
 
             <h3>Conditional Statements - switch and Case</h3>
-            <p>The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.</p>
+            <p>The switch statement was introduced in ES6 and evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.</p>
             <ul>
               <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">Switch Statement</a></li>
               <li>Were in a if statment we place the argument first here we place the argument in switch statements</li>
@@ -342,137 +396,98 @@
             </ul>
           </section>
 
-        
-        <h2>Day 5</h2>
-          <p>Objects in Javascript</p>
-            <ul>
-              <li>Javascript is commonly known as a object oriented software, strings, booleans, functions and so on are either objects or treated as objects</li>
-              <li>An object is something that either has a property or a meathod</li>
-              <li>Example - an array is a object as it has properties such as .length or meathods such as .push</li>
-              <li>A key or property is like a variable and the value for that key or property is like a value for a variable</li>
-              <li>Example for for a object in a variable <br>
-                <b>var student = {};</b> <br>
-                <img src="Images/Object Example.jpg" alt=""></li>
-              <li>When adding values in a object you dont use a ; - Example <b>name : "Sarah",</b></li>
-              <li>You can add everything to an object, string, number, boolean, array and so on</li>
-              <li>To access a property of a object you use a key. <br>
-                <img src="Images/accessing a object V1.jpg" alt=""> <br>
-                <img src="Images/accessing a object V2.jpg" alt=""></li>
-              <li>To assign a new value to a property in a object you use <b>person.name = "Bobby";</b>. Name is the key and person is the object <br>
-                <img src="Images/assign a value to a key in the object.jpg" alt=""></li>
-              <li>To create a new property on an object you use <b>person.country = "Brazil";</b>. Person is the object and country will be the new property</li>
-              <li>An object can be seen as a package of variables</li>
-              <li>a return would normally only return one value but when returning a object you can return all the values of the object</li>
-              <li>The loop used for an object is called <b>a for in loop</b>. This loops through each key and property in the object</li>
-              <li>An example of a for in loop. <b>for</b> and <b>var</b> and <b>in</b> cant be changed but propName is just like i in for loops<br>
-                <img src="Images/for in loop example.jpg" alt=""></li>
-              <li>Another for in loop example <br>
-                <img src="Images/for in loop example V2.jpg" alt=""> <br>
-                <img src="Images/for in loop example V2 console.jpg.jpg" alt=""></li>
-              <li>Remember, const does not prevent the arrays and objects assigned to variables from being modified; it only prevents the variable itself from being reassigned or overwritten completely. <br>
-                  For example, attempting to override person to equal another object literal throws an error. Person being the const variable</li>
-              <li>If you hve an array or object assigned to a const variable you can override the variable itself but you can add to the object or array</li>
-              <li>Example of converting a two dimentional array into object making it easier to call out <br>
-                <img src="Images/Array to object example.jpg" alt=""> <br>
-                <img src="Images/Array to object single line example.jpg" alt=""> <br>
-                <img src="Images/Array to object function change.jpg" alt=""></li>
-              <li>JSON stands for javascript object notation - used a lot with ajax to exchange data with a server and web browser <br>
-                <img src="Images/Example of json.jpg" alt=""></li>            
-            </ul>
-        <p>The Treehouse Javascript course is now complete I will have to use <a href="https://www.codewars.com/" target="_blank">Code Wars</a> to practice what I have learned</p>
-      
-        <h2>The landscape of Javascript</h2>
-        <p>JavaScript is everywhere and used in all phases of development from software to hardware. <br>
-          This course walks you through the modern landscape of JavaScript, and what it means to learn and program with JavaScript in 2018 and beyond.</p>
-          <ul>
-            <li>Javascript can run just about anywhere in both software and hardware</li>
-            <li>Javascript started out in the browser in 1995</li>
-            <li>Netscape was the browser that incoprated more than text and images with user interaction. <br>
-              The program used in netscape for interaction in the browser was called scheme</li>
-            <li>Scheme never took of becuase the developer was actually asked to start working on <b>Mocha</b> which is now javascript</li>
-            <li>It went from Mocha to <b>LiveScript</b> to than <b>JavaScript</b>.</li>
-            <li>What is being covered in this section <br>
-              <img src="Images/Landscape of Javascript.jpg" alt=""> <br>
-              notes - JavaScript's design decisions were mostly influenced by programming languages such as Self and Scheme. <br>
-              The object-oriented and prototype-based programming language Self inspired JavaScript’s prototypal inheritance, and Scheme likely influenced its functional and imperative styles of programming.</li>
-            <li>Javascript started out in the browser now is included in anything that requires user interaction.</li>
-            <li>The website <a href="http://lookbook.wedze.com/winter-2017-2018/" target="_blank">lookbook.wedze.com</a> is a good example of javascript in a website.</li>
-            <li>Air bnb, Tesla and instagram and just some app that use javascript</li>
-            <li>Javascript is good when running on IOT device. <a href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">IOT Explained</a> <br>
-              IOT is a physical device with an onn/off switch that can connect to the internet and with other IOT devices</li>
-            <li>To run javascript outside of the browser <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank">Node.js</a> and <a href="https://nodejs.org/en/" target="_blank">nodejs.org</a></li>
-            <li>After the browser netscape had javascript other browsers like IE implements something like JScript <br>
-              This made cross browser compatability difficult for developers</li>
-            <li>In 1996 netscape standardize things submittied to ecma international which was industry standard</li>
-            <li>You can have different flavours of javascript <br>
-              Plain Javascript <img src="Images/Plain javascript.jpg" alt=""></li>
-            <li>Moving forward now a new release of ECMAScript javascript get release every year</li>
-            <li>You also have type checkers for Javascript. <a href="https://www.youtube.com/watch?v=U0U2zeG2SBI" target="_blank">Info Video</a> <br>
-              <img src="Images/Typecheckers for JavaScript.jpg" alt=""></li>
-            <li><a href="https://www.typescriptlang.org/" target="_blank">Type script</a> is a type of type checker built by Microsoft. Essentially a layer around JavaScript. <br>
-              The browser doesnt understand type script so it needs to get compiled to javaScript code</li>
-            <li><a href="https://jquery.com/" target="_blank">jQuery</a> is a JavaScript library used to add interactivity to web pages. <br>
-              It's a commonly used tool found in tens of millions of sites and apps all over the web and popular front-end frameworks. <br>
-              <a href="https://www.youtube.com/watch?v=hMxGhHNOkCU" target="_blank">J Query explained</a></li>
-            <li>JavaScript is a dynamic/scripting lanuage, this runs at run time. browsers have a built in interpreter/JavaScript engine for JavaScript. <br>
-              <img src="Images/Javascript browser engines.jpg" alt=""></li>
-            <li>JIT Just In Time compliers are used in browsers, coverts JS code for browsers and machines on the fly</li>
-            <li>Text editors that are good are <a href="https://www.sublimetext.com/" target="_blank">Sublime</a>, <a href="https://atom.io/" target="_blank">Atom</a> and <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> </li>
-            <li>Linters and Formatters are useful to setup in text editors - making sure indentation and syntax is correct: <br>
-              Linters - <a href="https://eslint.org/" target="_blank">ESLint</a>.<a href="https://github.com/prettier/prettier/issues/2364" target="_blank">Difference between Prettier and ESLint</a> <br>
-              Code Formatters - <a href="https://prettier.io/" target="_blank">Prettier</a>. <a href="https://prettier.io/docs/en/comparison.html" target="_blank">Difference between ESLint and Prettier</a> </li>
-              <li><a href="https://gist.github.com/bradtraversy/aab26d1e8983d9f8d79be1a9ca894ab4" target = "_blank">Installation(Github)</a> and setup of the prettier <a href="https://www.youtube.com/watch?v=SydnKbGc7W8" target = "_blank">ESLint in VS</a></li>
-            <li>Node.js is another common JavaScript runtime environment</li>
-            <li>Before starting your javascript project creating a build system would be good, see what is included <br>
-              <img src="Images/Package Managers.jpg" alt=""></li>
-              <img src="Images/Module Bundlers.jpg" alt=""></li>
-              <img src="Images/Compilers.jpg" alt=""></li>
-              <img src="Images/Task Runners.jpg" alt=""></li>
-            <li>Common frameworks for javascript,<a href="https://reactjs.org/" target="_blank">React</a> , <a href="https://vuejs.org/" target="_blank">Vue</a> and <a href="https://angular.io/" target="_blank">Angular</a> <br>
-              A CLI is a command line interface for these frameworks</li>
-            <li><a href="https://developers.google.com/web/tools/chrome-devtools/javascript/" target="_blank">Get Started with Debugging JavaScript in Chrome DevTools</a></li>
-          </ul>
+          <section>
+            <h2>Objects in Javascript</h2>
+            <p>In real life, a car is an object. A car has properties like weight and color, and methods like start and stop:
+              <br><img src="Images/object illustration.jpg" alt=""></p>
+              <ul>
+                <li>Javascript is commonly known as a object oriented software, strings, booleans, functions and so on are either objects or treated as objects</li>
+                <li>An object is something that either has a property or a meathod</li>
+                <li>Example - an array is a object as it has properties such as .length or meathods such as .push</li>
+                <li>A key or property is like a variable and the value for that key or property is like a value for a variable</li>
+                <li>Example for for a object in a variable
+                  <br><b>var student = {};</b> 
+                  <br><img src="Images/Object Example.jpg" alt=""></li>
+                <li>When adding values in a object you dont use a ; - Example <b>name : "Sarah",</b></li>
+                <li>You can add everything to an object, string, number, boolean, array and so on</li>
+                <li>To access a property of a object you use a key.
+                  <br><img src="Images/accessing a object V1.jpg" alt="">
+                  <br><img src="Images/accessing a object V2.jpg" alt=""></li>
+                <li>To assign a new value to a property in a object you use <b>person.name = "Bobby";</b>. Name is the key and person is the object
+                  <br><img src="Images/assign a value to a key in the object.jpg" alt=""></li>
+                <li>To create a new property on an object you use <b>person.country = "Brazil";</b>. Person is the object and country will be the new property</li>
+                <li>An object can be seen as a package of variables</li>
+                <li>a return would normally only return one value but when returning a object you can return all the values of the object</li>
+                <li>The loop used for an object is called <b>a for in loop</b>. This loops through each key and property in the object</li>
+                <li>An example of a for in loop. <b>for</b> and <b>var</b> and <b>in</b> cant be changed but propName is just like i in for loops
+                  <br><img src="Images/for in loop example.jpg" alt=""></li>
+                <li>Another for in loop example
+                  <br><img src="Images/for in loop example V2.jpg" alt="">
+                  <br><img src="Images/for in loop example V2 console.jpg.jpg" alt=""></li>
+                <li>Remember, const does not prevent the arrays and objects assigned to variables from being modified; it only prevents the variable itself from being reassigned or overwritten completely.
+                  <br>For example, attempting to override person to equal another object literal throws an error. Person being the const variable</li>
+                <li>If you hve an array or object assigned to a const variable you can override the variable itself but you can add to the object or array</li>
+                <li>Example of converting a two dimentional array into object making it easier to call out
+                  <br><img src="Images/Array to object example.jpg" alt="">
+                  <br><img src="Images/Array to object single line example.jpg" alt="">
+                  <br><img src="Images/Array to object function change.jpg" alt=""></li>
+                <li>JSON stands for javascript object notation - used a lot with ajax to exchange data with a server and web browser
+                  <br><img src="Images/Example of json.jpg" alt=""></li>            
+              </ul>
+          </section>
 
-          <h2>Exploring JavaScript Conditionals</h2>
-          <p>This is not the best way to build logic but these methods will be used</p>
-          <p>In this workshop we'll explore alternatives to if..then statements for controlling program flow. Even if you don't end up using them, you will see these forms appear in other code bases, and it's helpful to know how they work.</p>
+          <section>
+            <h2>Exploring JavaScript Conditionals</h2>
+            <p>This is not the best way to build logic but these methods will be used. Below we'll explore alternatives to if..then statements for controlling program flow. Even if you don't end up using them, you will see these forms appear in other code bases, and it's helpful to know how they work.</p>
             <ul>
-              <li>A if else statement is a condiitonal statement as it acts based on the condition defined <br>
-                <img src="Images/Conditional Statement.jpg" alt=""></li>
+              <li>A if else statement is a condiitonal statement as it acts based on the condition defined
+                <br><img src="Images/Conditional Statement.jpg" alt=""></li>
               <li>The path that the if else statement follows is called branches, they branch the logic in different directions based on the result</li>
-              <li>A two way branch is a if else statement  and a multi branch is a if else if statement. Below example looks for true first <br>
-                <img src="Images/two way.jpg" alt=""> <br>
-                Below is a example of multi way, going through all the conditions looks to see which one is the first one meet? <br>
+              <li>A two way branch is a if else statement  and a multi branch is a if else if statement. Below example looks for true first
+                <br><img src="Images/two way.jpg" alt="">
+                <br>Below is a example of multi way, going through all the conditions looks to see which one is the first one meet?
                 <img src="Images/Multi way.jpg" alt=""></li>
             </ul>
-          
-          <h3>Ternary Operator</h3>
-          <p>MDN info on the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">Ternary</a> operator</p>
-            <ul>
-              <li><img src="Images/Ternary Operator.jpg" alt=""></li>
-              <li><img src="Images/Ternary Operator Expressions.jpg" alt=""></li>
-              <li>The first expression determines which of the next two operators are used. This is everything before the ?</li>
-              <li>The below example checks that anything before the ? is true and than the left of the : is run otherwise the right of the : is run <br>
-                <img src="Images/Ternary Example.jpg" alt=""></li>
-              <li>A ternary can also be used in a variable, so the result in the calcualtion in the varaible is returned. <br>
-                <img src="Images/Ternary Variable.jpg" alt=""></li>
-            </ul>
+          </section>
 
-          <h3>Short circuit evaluation</h3>
-            <ul>
-              <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_Operators" target="_blank">Logical Operators</a></li>
-              <li>Short Circuit evaluation - Stopping code execution as soon as possible</li>
-              <li>The below example shows that the console log will never print chicken as the false short circuits the console log. JavaScript works from the left looking for a false of a failed expression <br>
-                <img src="Images/Short Circuit Example.jpg" alt=""></li>
-              <li>This example below shows the above example but better checking condition and then executing the console log. It wount run as false will short circuit this <br>
-                <img src="Images/Short Circuit Example 2.jpg" alt=""></li>
-              <li>The below example uses the || operator which is or. This will return the true as the first condition is true <br>
-                <img src="Images/Short Circuit Example 3.jpg" alt=""></li>
-              <li>Below a short circuit is used in a function ensuring that the parameter start is always defined. This is done through a variable saying start is the number passed in or 1
-                <img src="Images/Short Circuit Function Example.jpg" alt=""></li>
-              <li>In ES2015 you can simply assign the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters" target="_blank">default value in the paramter</a> of the function <br>
-                <img src="Images/ES2015 default value parameter function.jpg" alt=""></li>
+          <section>
+            <h2>Ternary Operator</h2>
+            <p>The conditional <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">Ternary</a> operator is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
+              <br> This operator is frequently used as a shortcut for the if statement.</p>
+              <ul>
+                <li><img src="Images/Ternary Operator.jpg" alt=""></li>
+                <li><img src="Images/Ternary Operator Expressions.jpg" alt=""></li>
+                <li>The first expression determines which of the next two operators are used. This is everything before the ?</li>
+                <li>The below example checks that anything before the ? is true and than the left of the : is run otherwise the right of the : is run
+                  <br><img src="Images/Ternary Example.jpg" alt=""></li>
+                <li>A ternary can also be used in a variable, so the result in the calcualtion in the varaible is returned.
+                  <br><img src="Images/Ternary Variable.jpg" alt=""></li>
               </ul>
+          </section>
+
+          <section>
+            <h2>Short circuit evaluation</h2>
+            <p>Two important aspects of logical operators in JavaScript is that they evaluate from left to right, and they short-circuit.
+              <br> What this means is that when JavaScript evaluates an OR expression, if the first operand is true, JavaScript with short-circuit and not even look at the second operand. In the example below the asterisks (****) indicate any value — it simply doesn’t matter what it is as JavaScript will never even read that side of the Logical OR.
+              <br><img src="Images/Logical Operator.jpg" alt=""></p>
+              <ul>
+                <li>Short Circuit evaluation - Stopping code execution as soon as possible</li>
+                <li>The below example shows that the console log will never print chicken as the false short circuits the console log. JavaScript works from the left looking for a false of a failed expression
+                  <br><img src="Images/Short Circuit Example.jpg" alt=""></li>
+                <li>This example below shows the above example but better checking condition and then executing the console log. It wount run as false will short circuit this
+                  <br><img src="Images/Short Circuit Example 2.jpg" alt=""></li>
+                <li>The below example uses the || operator which is or. This will return the true as the first condition is true 
+                  <br><img src="Images/Short Circuit Example 3.jpg" alt=""></li>
+                <li>Below a short circuit is used in a function ensuring that the parameter start is always defined. This is done through a variable saying start is the number passed in or 1
+                  <br><img src="Images/Short Circuit Function Example.jpg" alt=""></li>
+                <li>In ES2015 you can simply assign the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Default_parameters" target="_blank">default value in the paramter</a> of the function 
+                  <br><img src="Images/ES2015 default value parameter function.jpg" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Practice with <a href="https://www.codewars.com/" target="_blank">Code Wars</a> reinforcing what you know</h2>
+          </section>
       </main>
     </div>    
   </body>

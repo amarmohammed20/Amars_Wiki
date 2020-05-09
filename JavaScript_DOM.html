@@ -1,71 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>JavaScript And The DOM</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  </head>
   <body>
-    <h1> Javascript and the DOM </h1>
-      <p>Ref Points <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank">Mozilla DOM</a></p>
-      <p>Use the MDN website to look for help or see what is relevant today <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a>. Also shows browser compatability</p>
-      <p>You can also use <a href="http://caniuse.com/#" target="_blank">can I use</a> to get browser compatability</p>
-    <h2>The Browser Environment</h2>
-        <ul>
-            <li>Wikipedia is an exmaple of a website that doesnt have any javascript just text, links and images</li>
-            <li><a href="https://www.codepen.io" target="_blank">Code pen</a> is a website that displays JavaScript. repsonsingto clicks of a mouse on the screen</li>
-            <li>Javascript will act upon actions</li>
-            <li>A web page has many elements on a page, example would be a number on the codepen calcualtor. Once clicked on the element is manipulated or changed.</li>
-            <li>THe dom standard for document object model - The dom is were all these actions take place.</li>
-            <li>To interact with the DOM you can use developers tools in chrome or something similiar in another browser</li>
-            <li>You can type javascript directly into the console. <b>location.ref</b> is javascript to display the URL you are on.</li>
-            <li>The variables such as <b>location.ref</b> and <b>alert</b> are part of the global Environment of the browser.</li>
-            <li>The window object in Javascript holds lots of properties, to see a list type window in the console.</li>
-            <li><b>window.alert</b> is the same as <b>alert();</b> becuase alert is from the window property list</li>
-            <li><b style="color:red">document.getElementById()</b> is used to interact with a element in a web page</li>
-            <li>An exmaple of interactive javascript is to change the colour of a element when hovered or clicked.</li>
-            <li>The DOM is like a map of the web page that javascript can use, illustrations below: <br>
-              <img src="Images/DOM structure Illustration.jpg" alt=""> <br>
-              <img src="Images/DOM structure Illustration.jpg" alt=""> </li>
-            <li>Javascript uses the above relationships to alter and chnage the structure and actions of the DOM website</li>
-            <li><img src="Images/JS can do with DOM.jpg" alt=""></li>
-        </ul>
-    <h2>Getting a handle on the DOM</h2>
-      <ul>
-        <li>To get JavaScript to interact with the DOM you reach out to the elements ID <br>
-          <img src="Images/html element with ID.jpg" alt=""></li>
-        <li>You can use the meathod .addEventListener() to listen out for things like mouse clicks and so on. <a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp" target="_blank">HTML DOM addEventListener() Method</a></li>
-        <li>In the code <b style="color:red">.addEventListener("click", () => { <br>
-          myHeading.style.color = "red"; <br>
-        }); </b>. <br>
-        The above code changes the heading in the HTML which has the ID myHeading to red when clicked on.</li>
-        <li>A break down of the below example: 
-          On the first line we select the element<br>
-          Next we take our selection and add our call event listener meathod, telling the browser to act when the headline is clicked.<br>
-          We finally tell the browser to manipulate the heading and change to to the colour red when clicked<br>
-          <img src="Images/HTML element DOM example.png" alt=""></li>
-        <li>document is a global variable representing the current web page, getElementById() belongs to document and looks through the webpage for the element you call out by ID </li>
-        <li>Below is a example of adding a button/Element to a HTML page, than giving it a ID so we can call it out to give it a action <br>
-          <img src="Images/New element on HTML with ID.jpg" alt="">
-          The below image shows that we are looking for the myButton element and when clicked the heading changed colour to red <br>
-          <img src="Images/New element on HTML Javascript.jpg" alt=""> </li>
-        <li>In the HTML you can add a input field what accepts a value. to get that value you use .value. Example <b style="color:red">myTextInput.value</b>. MyTextInput is the element ID </li>
-        <li>Below is an example of Javascript were you can use input text to determine what colour you make the heading <br>
-          <img src="Images/HTML input field value capture.jpg" alt=""></li>
-        <li>If you dont have a ID against a HTML element you can use <b>document.getElementsByTagName()</b>. The difference is elements as this will normally capture multiple elements not a single <br>
-          <img src="Images/Element vs Elements.jpg" alt=""></li>
-        <li>The below is an exmaple of of the document.getElementsByTagName("p"). it finds only one p tag and selects the first one use [0] <br>
-          <img src="Images/Elements Example.jpg" alt=""> <br>
-          The code <b>myParagraph[0].style.color = "blue"</b>. This changes the the first paragraph element to blue.</li>
-        <li><img src="Images/Elements Example 2.jpg" alt=""></li>
-        <li><b style = "color:red">document.getElementsByClassName()</b>. This lets you choose a element that has a class assigned to it. class normally used by CSS<br>
-          <img src="Images/Elements by class name example.jpg" alt=""></li>
-        <li>Both document.getElementsByClass() and document.getElementsByTagName() bring back a HTML collection. Use the [] to select which one?</li>
-        <li>Both <b>document.querySelectorAll()</b> and <b>document.querySelector()</b> are used to return the first element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</li>
-        <li>document.querySelector() vs document.getElementsBy()? Here is the <a href="https://beamtic.com/getelementbyid-vs-queryselector" target="_blank">difference</a></li>
-        <li>Example - How would you select the first element in the DOM with its HTML title attribute set to "MyTitle"? - <b style = "color:red">document.querySelector("[title=MyTitle]");</b></li>
-        <li><b style = "color:red"> NEED MORE PRACTICE ON document.querySelector/all()</b></li>
-        <li>To select a p tag with a class you use example - <b>document.querySelector("p.description");</b></li>
-      </ul>
-    
-    <h2>Making Changes to the DOM</h2>
-      <ul>
-        <li>These are two DOM element properties <b>Element.textContent</b> & <b>Element.innerHTML</b>. Each have thier own approach to the dom</li>
+    <div class="wrapper">
+      <header>
+        <h1>JavaScript And The DOM - manipulating the DOM</h1>
+      </header>
+
+        <main>
+          <section class="openingSection">
+            <p>Ref Points <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction" target="_blank">Mozilla DOM</a></p>
+            <p>Use the MDN website to look for help or see what is relevant today <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a>. Also shows browser compatability</p>
+            <p>You can also use <a href="http://caniuse.com/#" target="_blank">can I use</a> to get browser compatability</p>
+          </section>
+
+          <section>
+            <h2>The Browser Environment</h2>
+            <p>The environment that JavaScript runs in — like a browser, or a server, or even an embedded computer — has a fundamental effect on what it can do. In this stage we'll explore the browser environment, and see how JavaScript can change a webpage right before our eyes.</p>
+              <ul>
+                <li>Wikipedia is an exmaple of a website that doesnt have any javascript just text, links and images</li>
+                <li><a href="https://www.codepen.io" target="_blank">Code pen</a> is a website that displays JavaScript. repsonsingto clicks of a mouse on the screen</li>
+                <li>Javascript will act upon actions</li>
+                <li>A web page has many elements on a page, example would be a number on the codepen calcualtor. Once clicked on the element is manipulated or changed.</li>
+                <li>THe dom standard for document object model - The dom is were all these actions take place.</li>
+                <li>To interact with the DOM you can use developers tools in chrome or something similiar in another browser</li>
+                <li>You can type javascript directly into the console. <b>location.ref</b> is javascript to display the URL you are on.</li>
+                <li>The variables such as <b>location.ref</b> and <b>alert</b> are part of the global Environment of the browser.</li>
+                <li>The window object in Javascript holds lots of properties, to see a list type window in the console.</li>
+                <li><b>window.alert</b> is the same as <b>alert();</b> becuase alert is from the window property list</li>
+                <li><b style="color:red">document.getElementById()</b> is used to interact with a element in a web page</li>
+                <li>An exmaple of interactive javascript is to change the colour of a element when hovered or clicked.</li>
+                <li>The DOM is like a map of the web page that javascript can use, illustrations below: <br>
+                  <img src="Images/DOM structure Illustration.jpg" alt=""> <br>
+                  <img src="Images/DOM structure Illustration.jpg" alt=""> </li>
+                <li>Javascript uses the above relationships to alter and chnage the structure and actions of the DOM website</li>
+                <li><img src="Images/JS can do with DOM.jpg" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Getting a handle on the DOM</h2>
+            <p>The first step of making a web page interactive is grabbing ahold of elements you want the user to interact with. This is called selection. There are a number of ways to select elements on a web page. Let's explore those you are likely to use most often.</p>
+              <ul>
+                <li>To get JavaScript to interact with the DOM you reach out to the elements ID <br>
+                  <img src="Images/html element with ID.jpg" alt=""></li>
+                <li>You can use the meathod .addEventListener() to listen out for things like mouse clicks and so on. <a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp" target="_blank">HTML DOM addEventListener() Method</a></li>
+                <li>In the code <b style="color:red">.addEventListener("click", () => { <br>
+                  myHeading.style.color = "red"; <br>
+                }); </b>. <br>
+                The above code changes the heading in the HTML which has the ID myHeading to red when clicked on.</li>
+                <li>A break down of the below example: 
+                  On the first line we select the element<br>
+                  Next we take our selection and add our call event listener meathod, telling the browser to act when the headline is clicked.<br>
+                  We finally tell the browser to manipulate the heading and change to to the colour red when clicked<br>
+                  <img src="Images/HTML element DOM example.png" alt=""></li>
+                <li>document is a global variable representing the current web page, getElementById() belongs to document and looks through the webpage for the element you call out by ID </li>
+                <li>Below is a example of adding a button/Element to a HTML page, than giving it a ID so we can call it out to give it a action <br>
+                  <img src="Images/New element on HTML with ID.jpg" alt="">
+                  The below image shows that we are looking for the myButton element and when clicked the heading changed colour to red <br>
+                  <img src="Images/New element on HTML Javascript.jpg" alt=""> </li>
+                <li>In the HTML you can add a input field what accepts a value. to get that value you use .value. Example <b style="color:red">myTextInput.value</b>. MyTextInput is the element ID </li>
+                <li>Below is an example of Javascript were you can use input text to determine what colour you make the heading <br>
+                  <img src="Images/HTML input field value capture.jpg" alt=""></li>
+                <li>If you dont have a ID against a HTML element you can use <b>document.getElementsByTagName()</b>. The difference is elements as this will normally capture multiple elements not a single <br>
+                  <img src="Images/Element vs Elements.jpg" alt=""></li>
+                <li>The below is an exmaple of of the document.getElementsByTagName("p"). it finds only one p tag and selects the first one use [0] <br>
+                  <img src="Images/Elements Example.jpg" alt=""> <br>
+                  The code <b>myParagraph[0].style.color = "blue"</b>. This changes the the first paragraph element to blue.</li>
+                <li><img src="Images/Elements Example 2.jpg" alt=""></li>
+                <li><b style = "color:red">document.getElementsByClassName()</b>. This lets you choose a element that has a class assigned to it. class normally used by CSS<br>
+                  <img src="Images/Elements by class name example.jpg" alt=""></li>
+                <li>Both document.getElementsByClass() and document.getElementsByTagName() bring back a HTML collection. Use the [] to select which one?</li>
+                <li>Both <b>document.querySelectorAll()</b> and <b>document.querySelector()</b> are used to return the first element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</li>
+                <li>document.querySelector() vs document.getElementsBy()? Here is the <a href="https://beamtic.com/getelementbyid-vs-queryselector" target="_blank">difference</a></li>
+                <li>Example - How would you select the first element in the DOM with its HTML title attribute set to "MyTitle"? - <b style = "color:red">document.querySelector("[title=MyTitle]");</b></li>
+                <li><b style = "color:red"> NEED MORE PRACTICE ON document.querySelector/all()</b></li>
+                <li>To select a p tag with a class you use example - <b>document.querySelector("p.description");</b></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Making Changes to the DOM</h2>
+            <p>Once we've selected an element in the DOM, we can read or affect it. We can replace or change the display of text, for example. Or we can create new nodes and insert them into the DOM. Let's learn about and get some practice with some of these actions.</p>
+              <ul>
+                <li>These are two DOM element properties <b>Element.textContent</b> & <b>Element.innerHTML</b>. Each have thier own approach to the dom</li>
         <li>Example of textContent is <b>myHeading.textContent</b> this in the console brings back what is in the variable myHeading which is a h1 element </li>
         <li>Example of textContent using a input element <br>
           <img src="Images/textContent example.jpg" alt=""> <br>
@@ -98,7 +122,9 @@
             Above the value entererd into the input field isnt cleared after adding to the new element. To clear use <b>addItemInput.value = "";</b>. </li>
           <li>To remove a element from a page - <b>Node.removeChild()</b> place the child element in the ()</li>
           <li>To select the last element in a group of elements you can use <b style = "color:red">document.querySelector("li:last-child");</b>. This picks the last li in the HTML</li>
-      </ul>
+              </ul>
+          </section>
+
     
     <h2>Responding to User Interaction</h2>
       <ul>
@@ -139,6 +165,8 @@
           <img src="Images/first and last element child.jpg" alt=""></li>
         <li>Example on how to assign all children to a variable using DOM traversal <br>
           <img src="Images/assign all children dom traversal.jpg" alt=""></li>
-      </ul>    
+      </ul>
+    </main>
+    </div>    
   </body>
 </html>

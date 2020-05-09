@@ -32,3 +32,9 @@ h3 {
     padding: 0.8em;
     font-size: 1.9em;
 }
+
+img {
+    max-height: 250px;
+    max-width: 300px;
+    padding: 5%;
+}
