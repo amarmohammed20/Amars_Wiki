@@ -3,26 +3,26 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>JavaScript Basics</title>
+      <title>JavaScript Fundamentals</title>
       <link rel="stylesheet" href="style.css">
       <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="wrapper">
       <header>
-        <h1>JavaScript Basics</h1>
+        <h1>JavaScript Fundamentals</h1>
       </header>
 
         <main>
           <section class="openingSection">
             <h2> General Pointers </h2>
-              <p>Important to learn the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">objects</a> for JavaScript, it will open many doors</p>
+              <p>Important to learn the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">objects</a> for JavaScript, it will open many doors - Udemy course <a href="https://www.udemy.com/course/modern-javascript-from-the-beginning/" target="_blank">Modern JavaScript From The Beginning</a></p>
+              <p>Next progress onto learning TypeScript as this will keep your JS clean and error free, ready for Angular</p>
               <p>You can use the <a href="https://chrome.google.com/webstore/detail/jsonview/chklaanhfefbnpoihckbnefhakgolnmc" target="_blank">JSONView</a>plugin in chrome to make .json webpages look better to understand</p>
               <p> Always use <a href="https://www.codementor.io/@joshuaaroke/dry-code-vs-wet-code-89xjwv11w" target="_blank">DRY</a> when coding <b>Dont Repeat Yourself</b></p>
               <p> How to document in JS <a href="http://usejsdoc.org/" target="_blank">JS Doc</a></p>
-              <p> JavaScript has lots of <a href="https://www.w3schools.com/js/js_datatypes.asp" target="_blank">Data Types</a></p>
-              <p> You can manipulate the DOM which are elements in your HTML using JavaScript </p> 
               <p><a href="https://www.youtube.com/watch?v=Nqv6UkTROak" target="_blank">JSDoc</a> besides its descriptive format, the JSDoc tool itself has other useful and powerful features. JSDoc is also a documentation generator for JavaScript.</p>
+              <p>Git Hub repo for the <a href="https://github.com/bradtraversy/modern_js_udemy_projects" target="_blank">brad traversy</a> projects for the Udemy course</p>
           </section>
 
           <section>
@@ -41,7 +41,7 @@
                   The object-oriented and prototype-based programming language Self inspired JavaScript’s prototypal inheritance, and Scheme likely influenced its functional and imperative styles of programming.</li>
                 <li>Javascript started out in the browser now is included in anything that requires user interaction.</li>
                 <li>The website <a href="http://lookbook.wedze.com/winter-2017-2018/" target="_blank">lookbook.wedze.com</a> is a good example of javascript in a website.</li>
-                <li>Air bnb, Tesla and instagram and just some app that use javascript</li>
+                <li>Air bnb, Tesla and instagram are just some app that use javascript</li>
                 <li>Javascript is good when running on IOT device. <a href="https://en.wikipedia.org/wiki/Internet_of_things" target="_blank">IOT Explained</a> <br>
                   IOT is a physical device with an onn/off switch that can connect to the internet and with other IOT devices</li>
                 <li>To run javascript outside of the browser <a href="https://en.wikipedia.org/wiki/Node.js" target="_blank">Node.js</a> and <a href="https://nodejs.org/en/" target="_blank">nodejs.org</a></li>
@@ -79,22 +79,97 @@
           </section>
 
           <section class="section">
+            <h2>JavaScript Console</h2>
+            <p>Javascript has a console area that provides feedback and information on your website and related linked files</p>
+              <ul>
+                  <li>On Google chrome you can open up the console by using the Control Shift and I key</li>
+                  <li>Used to trouble shoot and test your code</li>
+                  <li>More info on Google <a href="https://developers.google.com/web/tools/chrome-devtools/console" target="_blank"></a>Console</li>
+                  <li>You can use console.log to print out variables, arrays objects and so on. A good way to check what you think something is actually is that</li>
+                  <li>You can use console.table which prints out the information in a table. 
+                    <br><img src="Images/console table.jpg" alt=""></li>
+                  <li>console.error lets you log a error, displayed in red</li>
+                  <li>Console.clear() allows you to clear the console</li>
+                  <li>Console.Timer can be used to perform some actions and the time those actions took is returned
+                  <br><img src="Images/console timer.jpg" alt=""></li>
+              </ul>
+          </section>
+          
+          <section class="section">
             <h2>JavaScript Variables</h2>
             <p>Javascript has three types of variables Const, Let and var</p>
               <ul>
-                  <li>The let and const variables were introduced in ES6</li>
+                  <li>The let and const variables were introduced in ES6. VAR is the oldest type of variable.</li>
                   <li>To reassign a value in javascript you can use +=</li>
-                  <li>const variables - The value of the variable should remain constant. Once assigned a value you cant later down the code assign another value</li>
-                  <li>let variables lets you update the value of the variable but never reassign the value.</li>
-                  <li>var variables - You are able to assign a value to a variable at anytime, even when a variable has been assigned a value earlier on </li>
+                  <ul>
+                    <li>const variables - The value of the variable should remain constant. Once assigned a value you cant later down the code assign another value to that variable. What you can do though is a change values in a object that is assigned to a const variable. Same rule applys for arrays against a const variable. You can update the array.
+                      <br><img src="Images/const object.jpg" alt=""></li>
+                    <li>let variables lets you update/reassign the value of the variable.</li>
+                    <li>var variables - You are able to assign a value to a variable at anytime, even when a variable has been assigned a value earlier on </li>
+                  </ul>
+                  <li>For a const variable you have to assign a value</li>
+                  <li>A variable name can only include letters, numbers, _ and $</li>
+                  <li>A variable name cannot start with a number</li>
+                  <li>For multi word variables you use camel case which is the second,third and so on word starts with a captial</li>
+                  <li>Variables declared by var keyword are scoped to the immediate function body (hence the function scope) while let variables are scoped to the immediate enclosing block denoted by { } (hence the block scope). var variables are hosted and let variables are not</li>
                   <li>Javascript has the data type string, example "Hello world!"</li>
-                  <li>If you start a string with " end with ", can also use ' <br> How to decide on which one will determine what is in your string example if you use I'm than use "</li>
+                  <li>If you start a string with " end with ", can also use ' 
+                    <br> How to decide on which one will determine what is in your string example if you use I'm than use "</li>
                   <li>If you use a \ infront of a ' than javascript will treat this as a normal charector</li>
                   <li>If you want to write a string on mutiple lines use a \ at the end of each line</li>
                   <li>Javascript has many properties that make it easier to perform simple tasks <a href="https://www.w3schools.com/js/js_object_properties.asp" target="_blank"> Properties</a> <br> Example = passphrase.length give you the length of the variable passphrase <br> passphrase is a object and length is the property.</li>
                   <li>A meathod is something you can do to a string <br> Example = toUpperCase()</li>
                   <li><b>Properties are like nouns. They have a value or state. Methods are like verbs. They perform actions.</b></li>
                   <li>A challange to build a word game, Your gona ask for an adjective, verb and noun and than make a story out of this. <br> see javascript file for the game <a href="js_e1_260320.html" target="_blank">JS_E1_260320</a></li>
+              </ul>
+          </section>
+
+          <section class="section">
+            <h2>JavaScript Data Types</h2>
+            <p>Javascript has two main data types, Primitive and Reference</p>
+              <ul>
+                  <li>Primitive - Stored directly in the location the variable accesses. Stored on the stack</li>
+                  <li>Reference - Accessed by reference. Objects that are stored on the heap. A pointer to a location</li>
+                  <li>The Primitive Data types are:
+                    <ul>
+                      <li>String - A squence of charectors</li>
+                      <li>Number - A number, integer, decimal and float</li>
+                      <li>Boolean - true or false</li>
+                      <li>Null - An intential empty value</li>
+                      <li>Undefined - A variable that has not been assigned a value</li>
+                      <li>Symbols ES6 - No two symbols can be the same. Example: 
+                        <br><img src="Images/Symbol Example.jpg" alt=""></li>
+                    </ul>
+                  </li>
+                  <li>The Reference Data types are:
+                    <ul>
+                      <li>Arrays - A list of information. Can hold any of the above Primitive data types</li>
+                      <li>Object Literals - A comma-separated list of name-value pairs wrapped in curly braces</li>
+                      <li>Function - Hold a block of reusable code that can be called at anytime</li>
+                      <li>Dates - </li>
+                      <li>Anything Else</li>
+                    </ul>
+                  </li>
+                  <li>JavaScript is a dynamically Styped lanuage
+                    <br><img src="Images/dynamically typed.jpg" alt=""></li>
+                  <li>On the above image Javascript can ensure the stict statically typing by using TypeScript</li>
+                  <li>The typeof property can be used to show what data type is being used for a varaible</li>
+              </ul>
+          </section>
+
+          <section class="section">
+            <h2>JavaScript Type Conversion</h2>
+            <p>Number() converts to a Number, String() converts to a String, Boolean() converts to a Boolean.</p>
+              <ul>
+                <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
+                <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
+                <li>To convert a string to a number you can use <b>parseInt</b> 
+                  <br>Example <b>const fruit = parseInt(melons) + parseInt(oranges);
+                  <br>Melons and orange have been given numbers by the user through a propmt</li>
+                <li><b>parseFloat</b> is like the above but for decimal numbers</li>
+                <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion" target="_blank">Type coercion</a>is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Exmaple
+                <br><img src="Images/Type coercion.jpg" alt=""></li>
               </ul>
           </section>
 
@@ -149,26 +224,19 @@
             <h2>Javascript Numbers</h2>
             <p>Numbers in JavaScript are as straightforward as they sound; you don’t need any special syntax for numbers, you write them straight into JavaScript.</p>
               <ul>
-                <li>Data types for javascript: <br>
-                  Strings - series of number and letters enclosed in ""
-                  Boolean - is either is true of false
-                  Numbers - Numeric data types, counting and calculating</li>
                 <li>a Interger is a whole number, either positive or negative number. It has no decimal places </li>
                 <li>Floating point numbers are used to represent fractional values and include a decimal point.</li>
                 <li>This is an integer value -- scientific notation uses the letter 'e' to represent an exponential value.</li>
+
                 <p>Developers frequently use numbers for performing calculations; you'll likely spend a lot of time working with numbers in JavaScript. If you create a game, for example, you'll need to keep track of a player's score. If you build an eCommerce site, you'll need to figure out the total cost of items in a visitor's shopping cart. And if you want to calculate the number of days until your next birthday, you'll need to use numbers and do some math.</p>
+
                 <li>Arithmetic Operators - JavaScript lets you perform most mathematical calculations, including addition, subtraction, multiplication, and division.</li>
-                <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. <br>
-                There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value. <br>
-                <img src="images/short hand.jpg" alt=""></li>
-                <li>Time excercise <a href="js_e3_270320.html" target="_blank">js_e3_270320</a></li>
-                <li>When a user inputs a number javascript treats this like a string, example a webform.</li>
-                <li>You can use <b>typeof</b> before the variable so it displays if it is a string</li>
-                <li>To convert a string to a number you can use <b>parseInt</b> <br>
-                  Example <b>const fruit = parseInt(melons) + parseInt(oranges);</b>
-                  Melons and orange have been given numbers by the user through a propmt</li>
-                <li><b>parseFloat</b> is like the above but for decimal numbers</li>
-                <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
+                <li>There are shorthand methods for performing each of the basic mathematical operations on a variable: addition, subtraction, multiplication and division. For example, to add 10 to the contents of a variable, use += 10. This both adds 10 to the current variable and assigns the result back into the variable. 
+                <br>There are also shorthands for subtracting from a variable, multiplying a variable by a value, and dividing a variable by a value.
+                <br><img src="images/short hand.jpg" alt=""></li>
+
+                <p>Time excercise <a href="js_e3_270320.html" target="_blank">js_e3_270320</a></p>
+                
                 <p>Random Numbers</p>
                 <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
                 <li>Javascript objects have many properties example is <b>object.length</b></li>
@@ -182,7 +250,9 @@
                 <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
                 <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
                 <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
-                <li>Excercise <a href="js_e4_280320.html" target="_blank">JS_E4_280320</a></li>
+
+                <p>Excercise <a href="js_e4_280320.html" target="_blank">JS_E4_280320</a></p>
+
                 <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
                 <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
               </ul>
