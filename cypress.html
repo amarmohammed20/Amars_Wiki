@@ -1,23 +1,40 @@
 <!DOCTYPE html>
-<html>
-  <body>
-    <h1> Welcome to my notes on <a href = "https://www.cypress.io/">cypress</a> - Fast, easy and reliable testing for anything that runs in a browser.</h1>
-    <p>This page will document any notes required for cypress while also the dvelopment and installation process<p>
-    <h2>The installation process</h2>
-    <p>To complete the installation porcess on a widnows machine you simply follow this <a href="https://www.youtube.com/watch?v=F53rDUwiAbU">video</a> up to minute 12:43 and than follow the instrcutions below:</p>
-    <ul>
-        <li><b>Make sure your directory is not called cypress</b></li>
-        <li>At this point you should be ready to run cypress, your command screen should something like this: <br>
-          <img src="cypress%20install.jpg" alt=""></li>
-        <li>In the command line navigate into your working cypress directory and go further into the folders - node_modules - .bin <br>
-            Your command line cd will look something like this <b>C:\Users\SEISMI020\Desktop\CypressDir\node_modules\.bin</b> </li>
-        <li>Once inside the directory inside the command line run the command <b>cypress open</b></li>
-        <br>
-        <br>
-        <li>If you are having the below issue you have to edit the <b>package.json</b> file as shown below 
-          <li>Error message is - EEXIST: file already exists - cannot start server on Windows - <a href="https://github.com/cypress-io/cypress/issues/1099">FIX</a> <br>
-          <img src="cypress intial run error fix.jpg" alt=""> <br> </li>
-    <p>Now at this point you will have cypress open and installed. </p>
-    </ul>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cypress Basics</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <div class="wrapper">
+          <header>
+              <h1>The Basics Of <a href = "https://www.cypress.io/">Cypress</a></h1>
+          </header>
+
+          <main>
+
+          <h2>The installation process</h2>
+          <p>To complete the installation porcess on a widnows machine you simply follow this <a href="https://www.youtube.com/watch?v=F53rDUwiAbU">video</a> up to minute 12:43 and than follow the instrcutions below:</p>
+          <ul>
+              <li><b>Make sure your directory is not called cypress</b></li>
+              <li>At this point you should be ready to run cypress, your command screen should something like this: <br>
+                <img src="images/cypress%20install.jpg" alt=""></li>
+              <li>In the command line navigate into your working cypress directory and go further into the folders - node_modules - .bin <br>
+                  Your command line cd will look something like this <b>C:\Users\SEISMI020\Desktop\CypressDir\node_modules\.bin</b> </li>
+              <li>Once inside the directory inside the command line run the command <b>cypress open</b></li>
+              <br>
+              <br>
+              <li>If you are having the below issue you have to edit the <b>package.json</b> file as shown below 
+                <li>Error message is - EEXIST: file already exists - cannot start server on Windows - <a href="https://github.com/cypress-io/cypress/issues/1099">FIX</a> <br>
+                <img src="images/cypress intial run error fix.jpg" alt=""> <br> </li>
+          <p>Now at this point you will have cypress open and installed. </p>
+          </ul>
+          </main>
+          <footer>
+            <p>&copy;2020 Cypress Basics, Amar's Learning</p>
+        </footer>
+      </div>
   </body>
 </html>

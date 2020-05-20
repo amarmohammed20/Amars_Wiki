@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NPM Basics</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>The Basics Of NPM - Node Package Manager</h1>
+            </header>
+
+                <main>
+                    <p>NPM is a node package manager. Nodes are reusable code that is created by other people. Before using npm you will need <a href="https://www.npmjs.com/">node.js</a> </p>
+                    
+                    <p>You will get npm manager downloaded when you download Node.js. You can check if you have node.js installed or npm by typing <b>node -v</b> or <b>npm -v</b> in the command propmt. This will bring back the version of either node.js or npm</p>
+
+                    <p>A <a href="https://nodejs.org/en/knowledge/getting-started/npm/what-is-the-file-package-json/" target="_blank">package.json</a> file is located in every root location of a node project. This file holds various metadata relevant to the project. This file is used to give information to npm that allows it to identify the project as well as handle the project's dependencies. It can also contain other metadata such as a project description, the version of the project in a particular distribution, license information, even configuration data - all of which can be vital to both npm and to the end users of the package. </p>
+
+                    <ul>
+                        <li>When starting out with working with a Node JS project create a package.json file by uisng the command in your terminal (Be in the correct path) - <b>npm init</b></li>
+                        <li>Keep everything default through the setup of the package.json file</li>
+                        <li>The main purpose of the package.json file is to store all of your dependancies. So when you move to another environment you move this file and simply run <b>npm install</b>
+                        <br>Remember not to move the node_modules folder as all will be reinstalled using the package.json file.</li>
+                        <li>You will also get a <a href="https://nodejs.dev/the-package-lock-json-file" target="_blank">package-lock.json</a> file that will record all the dependacies and the associated versions</li>
+                        <li>Example of installing a third module that generates random ID's.
+                        <br><img src="Images/uuid install.jpg" alt="">
+                        <br>The updated package.json file below:
+                        <br><img src="Images/uuid install package.json update.jpg" alt=""></li>
+                        <li>You can install dev dependancies which are modoules used in the development process not in production - <a href="https://www.npmjs.com/package/nodemon" target="">nodemon</a> is one which is used for hot reloading. </li>
+                    </ul>
+                </main>
+
+            <footer>
+                <p>&copy;2020 NPM Basics, Amar's Learning</p>
+            </footer>
+        </div>
+    </body>
+</html>

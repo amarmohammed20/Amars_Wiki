@@ -23,6 +23,8 @@
               <p> How to document in JS <a href="http://usejsdoc.org/" target="_blank">JS Doc</a></p>
               <p><a href="https://www.youtube.com/watch?v=Nqv6UkTROak" target="_blank">JSDoc</a> besides its descriptive format, the JSDoc tool itself has other useful and powerful features. JSDoc is also a documentation generator for JavaScript.</p>
               <p>Git Hub repo for the <a href="https://github.com/bradtraversy/modern_js_udemy_projects" target="_blank">brad traversy</a> projects for the Udemy course</p>
+              <p>() parentheses are only used for methods and not properties</p>
+              <p>The undefined property indicates that a variable has not been assigned a value, or not declared at all.</p>
           </section>
 
           <section>
@@ -78,7 +80,7 @@
               </ul>
           </section>
 
-          <section class="section">
+          <section>
             <h2>JavaScript Console</h2>
             <p>Javascript has a console area that provides feedback and information on your website and related linked files</p>
               <ul>
@@ -95,7 +97,7 @@
               </ul>
           </section>
           
-          <section class="section">
+          <section>
             <h2>JavaScript Variables</h2>
             <p>Javascript has three types of variables Const, Let and var</p>
               <ul>
@@ -124,7 +126,19 @@
               </ul>
           </section>
 
-          <section class="section">
+          <section>
+            <h2>Block Scope</h2>
+            <p>Block scopes are different from function scopes in JavaScript. A function scope is created for every function (within the function). In a browser environment, the global scope is controlled by the window object while in Node.js, it’s controlled by the global object. </p>
+            <ul>
+              <li>Explained in more detial <a href="https://medium.com/edge-coders/function-scopes-and-block-scopes-in-javascript-25bbd7f293d7" target="_blank">Function scopes and block scopes in JavaScript</a></li>
+              <li>Example of function scope vs global scope:
+                <br><img src="Images/Function Scope vs Globsl Scope.jpg" alt=""></li>
+              <li>A block is anything wrapped in {} like a if or a loop. In this example you will see how the var has been chnagced in Global scope. This is why we shouldnt use var for variables.
+                <br><img src="Images/Block Scope vs Globsl Scope.jpg" alt=""></li>
+            </ul>
+          </section>
+
+          <section>
             <h2>JavaScript Data Types</h2>
             <p>Javascript has two main data types, Primitive and Reference</p>
               <ul>
@@ -157,7 +171,7 @@
               </ul>
           </section>
 
-          <section class="section">
+          <section>
             <h2>JavaScript Type Conversion</h2>
             <p>Number() converts to a Number, String() converts to a String, Boolean() converts to a Boolean.</p>
               <ul>
@@ -166,58 +180,15 @@
                 <li>To convert a string to a number you can use <b>parseInt</b> 
                   <br>Example <b>const fruit = parseInt(melons) + parseInt(oranges);
                   <br>Melons and orange have been given numbers by the user through a propmt</li>
+                <li>To convert to a string you can also use <a href="https://www.w3schools.com/jsref/jsref_tostring_number.asp" target="_blank">toString()</a></li>
+                <li><a href="https://www.w3schools.com/js/js_number_methods.asp" target="_blank">Number()</a> can be used to convert JavaScript variables to numbers.
+                <br>Exmaple - Number(true);          // returns 1</li>
                 <li><b>parseFloat</b> is like the above but for decimal numbers</li>
                 <li>For the above parseInt and parseFloat you can just use + before the variable and does the same thing. </li>
                 <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/Type_coercion" target="_blank">Type coercion</a>is the automatic or implicit conversion of values from one data type to another (such as strings to numbers). Exmaple
                 <br><img src="Images/Type coercion.jpg" alt=""></li>
+                <li></li>
               </ul>
-          </section>
-
-          <section>
-            <h2>Conditional Statements</h2>
-            <p>You can change what your program does by adding decision-making to it. Programmers make a program react to different situations using JavaScript conditional statements.</p>
-
-            <h3>Conditional Statements - If Statement</h3>
-              <ul>
-                <li>To apply conditions you can use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">if else</a> statement</li>
-                <li>An example of a if statement and if else statement is as below:
-                  <br><img src="Images/if else statement.jpg" alt=""></li>
-                <li>More information on <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals" target="_blank">condiitons</a> in JavaScript</li>
-                <li>It is best practice to place this type of code/syntax into a function to it can be ran multiple times if required</li>
-                <li>Something to be careful of is when checking conditions ensure that the answers are expected as the comparision is case sensative. Also ensure that numbers as seen as number not strings.</li>
-                <li>A video explaining if else statements <a href="https://www.youtube.com/watch?v=IsG4Xd6LlsM" target="_blank">Mosh if else</a></li>
-                <li>Typically you open and close returns with { but the below also works
-                  <br><img src="Images/if statement with no brackets.jpg" alt=""></li>
-              </ul>
-
-            <h3>Conditional Statements - switch and Case</h3>
-            <p>The switch statement was introduced in ES6 and evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.</p>
-            <ul>
-              <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">Switch Statement</a></li>
-              <li>Were in a if statment we place the argument first here we place the argument in switch statements</li>
-              <li>Below example we are shown that the parameter is day which is defined earlier as a variable. Than the argument case and if meet the console is logged and breaks takes us out of the switch statment <br><img src="Images/Switch example.jpg" alt=""></li>
-              <li>By removing the break in the switch statement if the case is meet the action will be applied and than unexpected things will occur. This is why this is sometimes seen as a bad choice</li>
-              <li>A switch statement does not have a else statement so it uses a default statement <br>
-                <img src="Images/Switch default example.jpg" alt=""></li>
-            </ul>
-          </section>
-
-          <section>
-            <h2>Comparison Operators</h2>
-            <ul>
-              <li>Here are just some comparison Operators Comparison <br> <img src="images/Operators.jpg" alt=""> </li>
-              <li>In Javascript when using the comparison's, Javascript reacts true and false.</li>
-              <li>Booleans return true or false. All conditions return a true or false value. true and false are not strings no '' <br>
-              <img src="images/boolean example.jpg" alt=""></li>
-              <li>you can also use a else if in a if statement. You only use else if if the first else is false.</li>
-              <li>add two conditions to a if statement <br>
-              && means something and something <br></li>
-              <li>When using the or operator <b>||</b> you have to have full conditions on both sides</li>
-              <li>Document your code - Consider other developers. <br> To leave a comment use <b>//</b> or multi line comment <b>/* */</b> or in line - after code <b>//</b> <br>
-              Use comments when you are doing something complex <br>
-              You can also comment out code</li>
-              <li>A challange to build a quiz game, ask 5 questions and depending on the score you get a trophy <br> see javascript file for the game <a href="js_e2_260320.html">JS_E2_260320</a></li>
-            </ul>
           </section>
 
           <section>
@@ -236,28 +207,279 @@
                 <br><img src="images/short hand.jpg" alt=""></li>
 
                 <p>Time excercise <a href="js_e3_270320.html" target="_blank">js_e3_270320</a></p>
+              </ul>
                 
-                <p>Random Numbers</p>
-                <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
-                <li>Javascript objects have many properties example is <b>object.length</b></li>
-                <li>Javascript objects have many meathods example is <b>object.toUppercase()</b></li>
-                <li> <a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Object</a> Meathods and Properties </li>
-                <li>Example of a math meathod <b>Math.round(2.2)</b> this rounds the number up</li>
-                <li>Create a random number using Javascript <b>Math.random()</b> This returns a decimal place number between 0 and 1 but never 1</li>
-                <li>To get Math.random() to return a random number between 1 and 6 you do <b>Math.random() * 6;</b></li>
-                <li>Math.floor() rounds the number down and Math.ceil() rounds the number up <br>
-                  Both pass the whole number if the number is not a decimal place</li>
-                <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
-                <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
-                <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
+                <h3><a href="https://www.w3schools.com/js/js_math.asp" target="_blank">Math object</a></h3>
+                <ul>
+                  <li> <a href = "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank">Math Object</a> Meathods and Properties </li>
+                  <li>Javascript treats strings, numbers and booleans as objects, a object is a wrap around that data type</li>
+                  <li>Javascript objects have many properties example is <b>object.length</b></li>
+                  <li>Javascript objects have many meathods example is <b>object.toUppercase()</b></li>
+                  <li>Example of a math meathod <b>Math.round(2.2)</b> this rounds the number up</li>
+                  <li>Create a random number using Javascript <b>Math.random()</b> This returns a decimal place number between 0 and 1 but never 1</li>
+                  <li>To get Math.random() to return a random number between 1 and 6 you do <b>Math.random() * 6;</b></li>
+                  <li>Math.floor() rounds the number down and Math.ceil() rounds the number up <br>
+                    Both pass the whole number if the number is not a decimal place</li>
+                  <li>Example of the two above <b>Math.floor( Math.random() * 6 )</b> This gives me a whole number between 0 and 5</li>
+                  <li>To have the above to give me a number between one and 6 I do <b>Math.floor( Math.random() * 6 ) + 1;</b></li>
+                  <li> Example of rounding to the nearest interger for a variable. <b>const tempRounded = Math.round(temperature);</b></li>
 
-                <p>Excercise <a href="js_e4_280320.html" target="_blank">JS_E4_280320</a></p>
+                  <p>Excercise <a href="js_e4_280320.html" target="_blank">JS_E4_280320</a></p>
 
-                <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
-                <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
+                  <li>In the excercise above if the user did not put a number in you would get NaN, stands for not a number.</li>
+                  <li>To deal with the above issue of no input from a user use a condition <b>if statement</b> </li>
+                </ul>
+          </section>
+
+          <section>
+            <h2>Comparison Operators</h2>
+            <ul>
+              <li>Here are just some comparison Operators Comparison <br> <img src="images/Operators.jpg" alt=""> </li>
+              <li>In Javascript when using the comparison's, Javascript reacts true and false.</li>
+              <li>Booleans return true or false. All conditions return a true or false value. true and false are not strings no '' <br>
+              <img src="images/boolean example.jpg" alt=""></li>
+              <li>you can also use a else if in a if statement. You only use else if if the first else is false.</li>
+              <li>add two conditions to a if statement <br>
+              && means something and something <br></li>
+              <li>When using the or operator <b>||</b> you have to have full conditions on both sides</li>
+              <li>Document your code - Consider other developers. <br> To leave a comment use <b>//</b> or multi line comment <b>/* */</b> or in line - after code <b>//</b> <br>
+              Use comments when you are doing something complex <br>
+              You can also comment out code</li>
+              <li>The equal operator in Javascript is either == or ===. 
+                <br>== - Checks that the value but not the data type
+                <br>=== - Checks that the value and the data type. This has to be an exact match</li>
+              <li>A challange to build a quiz game, ask 5 questions and depending on the score you get a trophy <br> see javascript file for the game <a href="js_e2_260320.html">JS_E2_260320</a></li>
+              <li>The signs in JavaScript &lt; &gt; mean less than or greater than.  </li>
+            </ul>
+          </section>
+
+<!-- **********************START OF STRING METHODS & CONCATENATION********************** -->
+
+          <section>
+            <h2>String Methods & Concatenation</h2>
+            <p></p>
+              <ul>
+                <li>You can contenate two variables using +</li>
+                <li>By using a = against a variable you override the variable but by using a += you append to that variable. 
+                  <br><img src="Images/String append.jpg" alt=""></li>
+                <li>Exmaple of a string with variables. In ES6 you can use Template Literals instead.  
+                  <br><img src="Images/String concat.jpg" alt=""></li>
+                <li><a href="https://www.freeformatter.com/javascript-escape.html" target="_blank">Escaping</a> in Javascript is when you ignore a charectors preseved action by javascript. So not treating a ' as closing a strings when used in a word.</li>
+                <li>A <a href="https://www.w3schools.com/js/js_string_methods.asp" target="_blank">string</a> has many properties and methods in JavaScript. Example would be .length. toUpperCase() and toLowerCase() are methods that change the case of the string</li>
+                <li>The <a href="https://www.w3schools.com/jsref/jsref_split.asp" target="_blank">split()</a> method is used to split a string into an array of substrings, and returns the new array. 
+                <br><img src="Images/split string.jpg" alt=""></li>
               </ul>
           </section>
 
+<!-- **********************END OF STRING METHODS & CONCATENATION********************** -->
+
+<!-- **********************START OF TEMPLATE LITERALS********************** -->
+
+          <section>
+            <h2>Template Literals</h2>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template</a> literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them. Used as a replacement to string concatenation only found in ES6</p>
+              <ul>
+                <li>Template literals are enclosed by the backtick (` `)  (grave accent) character instead of double or single quotes.</li>
+                <li>Template literals can contain placeholders(variables). These are indicated by the dollar sign and curly braces (${expression}). The expressions in the placeholders and the text between the backticks (` `) get passed to a function.</li>
+                <li>Am example shown without and with template literals
+                  <br><img src="Images/Template Literal Example.jpg" alt=""></li>
+              </ul>
+          </section>
+
+<!-- **********************END OF TEMPLATE LITERALS********************** -->
+
+<!-- **********************START OF ARRAYS********************** -->
+
+          <section>
+            <h2>Arrays in Javascript</h2>
+            <p>JavaScript <a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank"></a> arrays are used to store multiple values in a single variable</p>
+              <ul>
+                <li>A simple array is a variable that holds a list of data</li>
+                <li>Both ways on how you can create a new array.
+                  <br><img src="Images/New arrays.jpg" alt="">
+                </li>
+                <li>You can check if somethng is an array by using Array.isArray(); This returns a boolean value</li>
+                <li>Arrays are 0 based the first item is 0</li>
+                <li>An array can hold strings, number or any sort of data types</li>
+                <li>You can add an remove from an array as you go along.</li>
+                <li>Example of an array <b>var shopping = ["milk", 2, "Hello"];</b>
+                <br><img src="images/basic%20array.jpg" alt=""></li>
+                <li>To print a array its like printing a variable becuas eit is a variable</li>
+                <li>To call a item within an array you use index. <b>The first item in the array is 0</b></li>
+                <li>Example of calling out an itme in an array <br>
+                    <img src="images/Calling%20item%20in%20array.jpg" alt=""></li>
+                <li>If you call a item for example [4] and there are only three items in an array you will return undefined</li>
+                <li>You can use properties to find details for your array. example <b>numbers.length</b>. Numbers being an array variable</li>
+                <li>You can add a anohter value to a 6 value array. <b>numbers[ numbers.length ] = 7;</b></li>
+                <li>You can add a value to an array using a push meathod. <b>numbers.push(8, 9);</b>. numbers being the array and the array having 7 values inside</li>
+                <li>You can add a value to the start of an array using a unshift meathod. <b>numbers.unshift( 0 );</b>.</li>
+                <li>To print an array in javascript you can use <b>printList( playList );</b>. Playlist being the array variable</li>
+                <li>To remove the first value from an array you use the command <b>numbers.shift();</b> <br>
+                  .shift also retrieves the first item in the array and you can save this in a variable - Example <b>var lastItem = numbers.shift();</b></li>
+                <li>To remove the last value from an array you use the command <b>numbers.pop();</b> <br>
+                  .pop also retrieves the last item in the array and you can save this in a variable - Example <b>var lastItem = numbers.pop();</b></li>
+                <li>Example of a array and for loop working toghther <br>
+                  <img src="images/Example of for loop and array.jpg" alt=""></li>
+                <li>The join meathod is used with an array, enabling you to display all the value in one go from the array. 
+                  Exmaple is <b>var daysString = daysInWeek.join(",");</b>. This says use , to join all the values in the array <br>
+                  <img src="images/join for an array.jpg" alt=""> </li>
+                <li>To sort an array of numbers you can use .sort with a function.
+                  <br><img src="Images/To sort numbers in an array.jpg" alt=""></li>
+                <li>The concat meathod is used with multiple arrays, enabling you to joing different arrays toghther. 
+                  Exmaple is <b> var allStudents = currentStudents.concat( newStudents );</b>. This says concat the currentStudents array with the newStudents array. <br>
+                  The arrays still exisit as they stand but concat simply makes a new variable with them both in <br>
+                  <img src="images/concat for an array.jpg" alt=""> </li>
+                <li>You can use the meathod indexOf for an array to tell you the position of a item in the array <br>
+                  Example - <b>var position = fruit.indexOf("Apple");</b>. The result for the variable would be 0 as Apple is first in the array <br>
+                  <img src="images/indexOf for an array.jpg" alt=""></li>
+                <li>For the indexOf meathod if you as for the position of a item that isnt in the array you get back <b>-1</b></li>
+                <li>To check for something in an array you can use <b>if (inStock.includes(search) === true)</b>. Search is what is typed in the prompt and includes brings back boolean</li>
+                <li>array example excercise <a href="Excercises/js_e6_010420.html"></a></li>
+                <li>A two dimensional array is an array that holds other arrays, dont forgot the , after the arrays - Example: <br>
+                  <img src="Images/two dimensional array.jpg" alt=""> <br>
+                  First array is at index 0, second index 2 and so on. Just like a normal array <br>
+                  To get a value from within one array it would look like <b>grades[2][0]</b>. This says get the first value in the third array</li>
+                <li>A two dimensional array that hold a playlist of songs with the artists <br>
+                  <img src="Images/two dimensional array playlist.jpg" alt=""></li>
+                <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">Array.prototype.filter()</a> method creates a new array with all elements that pass the test implemented by the provided function. <br>
+                  <img src="Images/Array filter method.jpg" alt=""> </li>
+              </ul>
+          </section>
+
+<!-- **********************END OF ARRAYS********************** -->
+
+<!-- **********************START OF OBJECTS********************** -->
+
+          <section>
+            <h2>Objects in Javascript</h2>
+            <p>In real life, a car is an object. A car has properties like weight and color, and methods like start and stop:
+              <br><img src="Images/object illustration.jpg" alt=""></p>
+              <ul>
+                <li>Javascript is commonly known as a object oriented software, strings, booleans, functions and so on are either objects or treated as objects</li>
+                <li>An object is something that either has a property or a meathod</li>
+                <li>Example - an array is a object as it has properties such as .length or meathods such as .push</li>
+                <li>A key or property is like a variable and the value for that key or property is like a value for a variable</li>
+                <li>Example for for a object in a variable
+                  <br><b>var student = {};</b> 
+                  <br><img src="Images/Object Example.jpg" alt=""></li>
+                <li>When adding values in a object you dont use a ; - Example <b>name : "Sarah",</b></li>
+                <li>You can add everything to an object, string, number, boolean, array and so on</li>
+                <li>To access a property of a object you use a key.
+                  <br><img src="Images/accessing a object V1.jpg" alt="">
+                  <br><img src="Images/accessing a object V2.jpg" alt=""></li>
+                <li>To assign a new value to a property in a object you use <b>person.name = "Bobby";</b>. Name is the key and person is the object
+                  <br><img src="Images/assign a value to a key in the object.jpg" alt=""></li>
+                <li>To create a new property on an object you use <b>person.country = "Brazil";</b>. Person is the object and country will be the new property</li>
+                <li>An object can be seen as a package of variables</li>
+                <li>To reference a property that lives within the object you have to use this. see example
+                  <br><img src="Images/Properties within a object.jpg" alt=""></li>
+                <li>a return would normally only return one value but when returning a object you can return all the values of the object</li>
+                <li>The loop used for an object is called <b>a for in loop</b>. This loops through each key and property in the object</li>
+                <li>An example of a for in loop. <b>for</b> and <b>var</b> and <b>in</b> cant be changed but propName is just like i in for loops
+                  <br><img src="Images/for in loop example.jpg" alt=""></li>
+                <li>Another for in loop example
+                  <br><img src="Images/for in loop example V2.jpg" alt="">
+                  <br><img src="Images/for in loop example V2 console.jpg.jpg" alt=""></li>
+                <li>Remember, const does not prevent the arrays and objects assigned to variables from being modified; it only prevents the variable itself from being reassigned or overwritten completely.
+                  <br>For example, attempting to override person to equal another object literal throws an error. Person being the const variable</li>
+                <li>If you hve an array or object assigned to a const variable you cannot override the variable itself but you can add to the object or array</li>
+                <li>Example of converting a two dimentional array into object making it easier to call out
+                  <br><img src="Images/Array to object example.jpg" alt="">
+                  <br><img src="Images/Array to object single line example.jpg" alt="">
+                  <br><img src="Images/Array to object function change.jpg" alt=""></li>            
+              </ul>
+          </section>
+
+<!-- **********************END OF OBJECTS********************** -->
+
+<!-- **********************START OF DATE OBJECT********************** -->
+
+          <section>
+            <h2>Date Object</h2>
+            <p>The Date object is used to work with dates and times. Date objects are created with new Date().</p>
+            <ul>
+              <li>There are four ways of instantiating a date:
+                <br><img src="Images/Date four ways.jpg" alt=""></li>
+                <li>The date object has many methods </li>
+            </ul>
+          </section>
+
+<!-- **********************END OF DATE OBJECT********************** -->
+
+<!-- **********************START OF IF STATEMENTS********************** -->
+          <section>
+            <h2>Conditional Statements</h2>
+            <p>You can change what your program does by adding decision-making to it. Programmers make a program react to different situations using JavaScript conditional statements.</p>
+
+              <h3>Conditional Statements - If Statement</h3>
+                <ul>
+                  <li>To apply conditions you can use a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else" target="_blank">if else</a> statement</li>
+                  <li>An example of a if statement and if else statement is as below:
+                    <br><img src="Images/if else statement.jpg" alt=""></li>
+                  <li>More information on <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/conditionals" target="_blank">condiitons</a> in JavaScript</li>
+                  <li>It is best practice to place this type of code/syntax into a function to it can be ran multiple times if required</li>
+                  <li>Something to be careful of is when checking conditions ensure that the answers are expected as the comparision is case sensative. Also ensure that numbers as seen as number not strings.</li>
+                  <li>A video explaining if else statements <a href="https://www.youtube.com/watch?v=IsG4Xd6LlsM" target="_blank">Mosh if else</a></li>
+                  <li>Typically you open and close returns or blocks of code with { but the below also works
+                    <br><img src="Images/if statement with no brackets.jpg" alt=""></li>
+                </ul>
+            </section>
+
+<!-- **********************END OF IF STATEMENTS********************** -->
+
+<!-- **********************START OF TERNARY OPERATOR********************** -->
+              <section>
+                <h2>Ternary Operator</h2>
+                <p>The conditional <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">Ternary</a> operator is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
+                  <br> This operator is frequently used as a shortcut for the if statement.</p>
+                  <ul>
+                    <li><img src="Images/Ternary Operator.jpg" alt=""></li>
+                    <li><img src="Images/Ternary Operator Expressions.jpg" alt=""></li>
+                    <li>The first expression determines which of the next two operators are used. This is everything before the ?</li>
+                    <li>The below example checks that anything before the ? is true and than the left of the : is run otherwise the right of the : is run
+                      <br><img src="Images/Ternary Example.jpg" alt=""></li>
+                    <li>A ternary can also be used in a variable, so the result in the calcualtion in the varaible is returned.
+                      <br><img src="Images/Ternary Variable.jpg" alt=""></li>
+                  </ul>
+              </section>
+<!-- **********************End OF TERNARY OPERATOR********************** -->
+
+<!-- **********************START OF SWITCHES********************** -->
+
+          <section>
+            <h2>Conditional Statements - switch and Case</h2>
+              <p>The switch statement is very similiar to a if statement. A switch statement is usually more efficient than a set of nested ifs. Deciding whether to use if-then-else statements or a switch statement is based on readability and the expression that the statement is testing.</p>
+              
+              <p></p> The switch statement was introduced in ES6 and evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case.</p>
+              <ul>
+                <li>More information on a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch" target="_blank">Switch Statement</a></li>
+                <li>Were in a if statment we place the argument first here we place the argument in switch statements</li>
+                <li>Below example we are shown that the parameter is day which is defined earlier as a variable. Than the argument case and if meet the console is logged and breaks takes us out of the switch statment <br><img src="Images/Switch example.jpg" alt=""></li>
+                <li>By removing the break in the switch statement if the case is meet the action will be applied and than unexpected things will occur. This is why this is sometimes seen as a bad choice</li>
+                <li>A switch statement does not have a else statement so it uses a default statement <br>
+                  <img src="Images/Switch default example.jpg" alt=""></li>
+                <li>A switch is good to use if there are a lot of cases/conditions instead of having many if else statements. Example below:
+                  <br><img src="Images/Switch Example 2.jpg" alt=""></li>
+              </ul>
+          </section>
+
+<!-- **********************End OF SWITCHES********************** -->
+
+          <section>
+            <h2>Exploring JavaScript Conditionals</h2>
+            <p>This is not the best way to build logic but these methods will be used. Below we'll explore alternatives to if..then statements for controlling program flow. Even if you don't end up using them, you will see these forms appear in other code bases, and it's helpful to know how they work.</p>
+            <ul>
+              <li>A if else statement is a condiitonal statement as it acts based on the condition defined
+                <br><img src="Images/Conditional Statement.jpg" alt=""></li>
+              <li>The path that the if else statement follows is called branches, they branch the logic in different directions based on the result</li>
+              <li>A two way branch is a if else statement  and a multi branch is a if else if statement. Below example looks for true first
+                <br><img src="Images/two way.jpg" alt="">
+                <br>Below is a example of multi way, going through all the conditions looks to see which one is the first one meet?
+                <img src="Images/Multi way.jpg" alt=""></li>
+            </ul>
+          </section>
+
+<!-- **********************START OF FUNCTIONS********************** -->
           <section>
             <h2>Javascript Functions</h2>
             <p>JavaScript functions let you create reusable chunks of code. They make programming faster, easier, and less error-prone. They are also one of the essential concepts in JavaScript programming. </p>
@@ -268,19 +490,19 @@
                 <li>A function name cant have spaces or start with a number but you can use letters and number and dollar sign</li>
                 <li>The () after a function are called parentheses</li>
                 <li>Remember to close the syntax and call the function once completed, example <b>FUNCTIONNAME();</b> </li>
-                <li>Math.floor() and Math.random() are also function as they have (), these are built in functions</li>
+                <li>Math.floor() and Math.random() are also functions as they have (), these are built in functions</li>
                 <li>Example of a function
                   <br><img src="images/Function Example.jpg" alt=""></li>
                 <li>A function can return a value, this can be used in a alert or variable Example <br>
-                <img src="images/Function%20return%20value.jpg" alt=""></li>
+                <img src="images/Function return value.jpg" alt=""></li>
                 <li>To return a value from a function use <b>return</b> in the function
                   <br>Example <b>return random</b>, random being a variable. When I call this value from the function I still use () example <b>console.log( getRandomNumber () ); </b></li>
                 <li>The below image is an exmaple of a function that looks in the html for a value in the Info ID
-                  <br><img src="images/Function%20with%20condition.jpg" alt=""></li>
+                  <br><img src="images/Function with condition.jpg" alt=""></li>
                 <li>A return in a function can only return one thing</li>
               </ul>
 
-              <h3>Passing information into a function</h3>
+              <h3>Passing information into a function in the ()</h3>
                 <ul>
                   <li>You can send information into a function, these are called arguments. You have to add a parameter into the function example <b>function goToCoffeeShop(drink)</b>. Parameter being drink</li>
                   <li>Example below - You are using the parameter drink and the alert give a message using that parameter. When calling the function you give that drink parameter a value Iced Tea.
@@ -290,16 +512,20 @@
                   <li>You can pass more than one paramter into a function, see exmaple below
                     <br><img src="images/pass%202%20param%20to%20function.jpg" alt=""></li>
                   <li>Its not neat to pass to many arguments into a function, you can use something like an array</li>
-                  <li>Variables created in a function and they dont interact with any variable outside that function</li>
+                  <li>Variables created in a function dont interact with any variable outside that function</li>
                   <li>variables outside of a function are part of the global scope. Variables in the function and global scope dont interact.
                     <br><img src="images/variable%20functions.jpg" alt=""></li>
+                  <li>If you have paramters in a function and dont pass any in you get undefined</li>
+                  <li>You can set default values for these parameters you pass in, see below:
+                    <br><img src="Images/Function default paramters.jpg" alt="">
+                  </li>
                 </ul>
 
               <h3>Function Declarations Vs. Function Expressions</h3>
-              <p>An anonymous function is a function without a name after the function keyword. Dont forget to add a ; after the closing } as it is a variable example <p>
+              <p>An anonymous function (Function Expressions) is a function without a name after the function keyword. Dont forget to add a ; after the closing } as it is a variable example <p>
                 <ul>
                   <li>Below is a example of a anonymous function
-                    <br><img src="images/anonymous%20function%20example.jpg" alt=""></li>
+                    <br><img src="images/anonymous function example.jpg" alt=""></li>
                   <li>The JavaScript engine moves function declarations to the top of their scope before code execution. This behavior is called: hoisting</li>
                   <li>Function declarations load before any other code is loaded. See example <br>
                     <img src="images/function%20dec%20loading%20first%20example.jpg" alt=""> </li>
@@ -312,6 +538,17 @@
                     <br><b>Function Decalration</b> <br> <img src="images/function%20dec.jpg" alt="">
                     <br><b>Function Expression</b> <br> <img src="images/Function%20expression.jpg" alt=""></li>
                 </ul>
+
+              <h3>IIFEs</h3>
+              <p>An IIFE is an Immediately-invoked Function Expression. You do not need to call the function after the function is created it is ran immediatley</p>
+              <ul>
+                <li>An example of a IIFE function is as below:
+                  <br><img src="Images/IIFE Function.jpg" alt=""></li>
+                <li>Another exmaple with and without paramters:
+                  <br><img src="Images/IIFE Function 2.jpg" alt="">
+                  <br><img src="Images/IIFE Function 2 with Param.jpg.jpg" alt="">
+                </li>
+              </ul>
                 
               <h3>Arrow Functions</h3>
               <p>Arrow functions were introduced in ES6. Arrow functions allow us to write shorter function syntax:
@@ -338,11 +575,14 @@
                   <li><img src="images/Javascript%20commenting.jpg" alt=""></li>
                   <li><img src="images/Javascript%20commenting%202.jpg" alt=""></li>
                 </ul>
-              
           </section>
 
+<!-- **********************END OF FUNCTIONS********************** -->
+
+<!-- **********************START OF LOOPS********************** -->
+
           <section>
-          <h2>Javascript Arrays, Loops and Objects</h2>
+          <h2>Javascript Loops</h2>
           <p>JavaScript supports different kinds of loops:</p>
             <ul>
               <li>for - loops through a block of code a number of times</li>
@@ -361,17 +601,19 @@
               </ul>
 
               <h3>While Loops</h3>
-              <p>A <a href="Loops can execute a block of code as long as a specified condition is true." target="_blank"></a> loop that runs until the condition is no longer true</p>
+              <p>A <a href="Loops can execute a block of code as long as a specified condition is true." target="_blank">loop</a> that runs until the condition is no longer true</p>
                 <ul>
                   <li>The syntax for the while loop is as below, condition and then the code block to run.
                     <br><img src="Images/while loops syntax.jpg" alt=""></li>
-                  <li>An example of a while loop - Below is the example explained
+                  <li>You set the i variable outside of the loop but set the increment inside of the code block of the loop.
+                    <br><img src="Images/while loop Ex.jpg" alt=""></li>
+                  <li>An example of a while loop - Below is the example explained:
                     <br>The variable counter is 0 and counts the time the while loop is ran
                     <br>The condition in the while loop is keep running until you get to 100. <b>counter less than 100</b><br>
                     <br>so the function is ran and everytime it runs it adds one to the variable counter <b>counter += 1;</b>
-                      <img src="images/Example%20of%20a%20while%20Loop.jpg" alt=""></li>
+                      <img src="images/Example of a while Loop.jpg" alt=""></li>
                   <li>Another example of a while loop with a condition using a function <br>
-                      <img src="images/Example%20of%20a%20while%20Loop%202.jpg" alt=""></li>
+                      <img src="images/Example of a while Loop 2.jpg" alt=""></li>
                   <li>A while loop complex example <br>
                       <img src="images/A%20while%20loop%20complex%20example.jpg" alt=""> <br>
                       <img src="images/A%20while%20loop%20complex%20example%20code.jpg" alt=""> <br>
@@ -382,7 +624,7 @@
               
               
               <h3>Do while loop</h3>
-              <p><a href="https://www.w3schools.com/jsref/jsref_dowhile.asp" target="_blank"></a> Do while loop - This loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested
+              <p><a href="https://www.w3schools.com/jsref/jsref_dowhile.asp" target="_blank">Do while loop</a> - This loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested
                 <br>Good to be used to collect a users email address. The loop would run wihtout checking any conditions and than keep running until it has a valid email address <br>
                 <img src="images/do%20while%20loop.jpg" alt=""></p>
                 <ul>
@@ -413,127 +655,57 @@
                   <li>The below example is were we want the user to guess the random number in 10 guesses also capturing if they gues sit right before <br>
                       <img src="images/10%20guess%20example.jpg" alt=""></li>
                   <li><b>In for loops try to use let when defining the variable i</b></li>
+                  <li>You can set a condition for a particular part of the loop while skipping the nomal step for that part of the loops.
+                    <br><img src="Images/for loop continue.jpg" alt=""></li>
+                  <li>A little more information on <a href="https://www.w3schools.com/js/js_break.asp" target="_blank">break and continue</a> in a for a loop:
+                    <ul>
+                      <li>The break statement "jumps out" of a loop.</li>
+                      <li>The continue statement "jumps over" one iteration in the loop.</li>
+                    </ul>
+                  </li>
                   <li>Excercise for using loops and clenaing up code <a href="js_e5_310320.html">js_e5_310320.html</a></li>
+                </ul>
+
+              <h3>For Each Loop</h3>
+              <p><a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank">forEach()</a> method calls a function once for each element in an array, in order. Note: the function is not executed for array elements without values.</p>
+                <ul>
+                  <li>The paramters used in a foreach loop is as below:
+                    <br><img src="Images/For each Parameter Values.jpg" alt=""></li>
+                  <li>The map is used to created a new array. The below example created a ids arrays after looping through the users object. Its a dynamic way to create a array as it will update when you update the users object. 
+                    <br><img src="Images/for each map.jpg" alt=""></li>
+                </ul>
+
+              <h3>ForIn Loop</h3>
+              <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in" target="_blank">for in</a> loops through the properties of an object</p>
+                <ul>
+                  <li>An example of a forin loop:
+                    <br><img src="Images/for in loop.jpg" alt=""></li>
                 </ul>
           </section>
 
-          <section>
-            <h2>Arrays in Javascript</h2>
-            <p>JavaScript <a href="https://www.w3schools.com/js/js_arrays.asp" target="_blank"></a> arrays are used to store multiple values in a single variable</p>
-              <ul>
-                <li>A variable is a simple array it holds one bit of data</li>
-                <li>An array can hold strings, number or any sort of data types</li>
-                <li>You can add an remove from an array as you go along.</li>
-                <li>Example of an array <b>var shopping = ["milk", 2, "Hello"];</b></li>
-                    <img src="images/basic%20array.jpg" alt="">
-                <li>To print a array its like printing a variable becuas eit is a variable</li>
-                <li>To call a item within an array you use index. <b>The first item in the array is 0</b></li>
-                <li>Example of calling out an itme in an array <br>
-                    <img src="images/Calling%20item%20in%20array.jpg" alt=""></li>
-                <li>If you call a item for example [4] and there are only three items in an array you will return undefined</li>
-                <li>You can use properties to find details for your array. example <b>numbers.length</b>. Numbers being an array variable</li>
-                <li>You can add a anohter value to a 6 value array. <b>numbers[ numbers.length ] = 7;</b></li>
-                <li>You can add a value to an array using a push meathod. <b>numbers.push(8, 9);</b>. numbers being the array and the array having 7 values inside</li>
-                <li>You can add a value to the start of an array using a unshift meathod. <b>numbers.unshift( 0 );</b>.</li>
-                <li>To print an array in javascript you can use <b>printList( playList );</b>. Playlist being the array variable</li>
-                <li>To remove the first value from an array you use the command <b>numbers.shift();</b> <br>
-                  .shift also retrieves the first item in the array and you can save this in a variable - Example <b>var lastItem = numbers.shift();</b></li>
-                <li>To remove the last value from an array you use the command <b>numbers.pop();</b> <br>
-                  .pop also retrieves the last item in the array and you can save this in a variable - Example <b>var lastItem = numbers.pop();</b></li>
-                <li>Example of a array and for loop working toghther <br>
-                  <img src="images/Example of for loop and array.jpg" alt=""></li>
-                <li>The join meathod is used with an array, enabling you to display all the value in one go from the array. 
-                  Exmaple is <b>var daysString = daysInWeek.join(",");</b>. This says use , to join all the values in the array <br>
-                  <img src="images/join for an array.jpg" alt=""> </li>
-                <li>The concat meathod is used with multiple arrays, enabling you to joing different arrays toghther. 
-                  Exmaple is <b> var allStudents = currentStudents.concat( newStudents );</b>. This says concat the currentStudents array with the newStudents array. <br>
-                  The arrays still exisit as they stand but concat simply makes a new variable with them both in <br>
-                  <img src="images/concat for an array.jpg" alt=""> </li>
-                <li>You can use the meathod indexOf for an array to tell you the position of a item in the array <br>
-                  Example - <b>var position = fruit.indexOf("Apple");</b>. The result for the variable would be 0 as Apple is first in the array <br>
-                  <img src="images/indexOf for an array.jpg" alt=""></li>
-                <li>For the indexOf meathod if you as for the position of a item that isnt in the array you get back <b>-1</b></li>
-                <li>To check for something in an array you can use <b>if (inStock.includes(search) === true)</b>. Search is what is typed in the prompt and includes brings back boolean</li>
-                <li>array example excercise <a href="Excercises/js_e6_010420.html"></a></li>
-                <li>A two dimensional array is an array that holds other arrays, dont forgot the , after the arrays - Example: <br>
-                  <img src="Images/two dimensional array.jpg" alt=""> <br>
-                  First array is at index 0, second index 2 and so on. Just like a normal array <br>
-                  To get a value from within one array it would look like <b>grades[2][0]</b>. This says get the first value in the third array</li>
-                <li>A two dimensional array that hold a playlist of songs with the artists <br>
-                  <img src="Images/two dimensional array playlist.jpg" alt=""></li>
-                <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter" target="_blank">Array.prototype.filter()</a> method creates a new array with all elements that pass the test implemented by the provided function. <br>
-                  <img src="Images/Array filter method.jpg" alt=""> </li>
-            </ul>
-          </section>
+<!-- **********************END OF LOOPS********************** -->
+
+<!-- **********************START OF WINDOW OBJECT********************** -->
 
           <section>
-            <h2>Objects in Javascript</h2>
-            <p>In real life, a car is an object. A car has properties like weight and color, and methods like start and stop:
-              <br><img src="Images/object illustration.jpg" alt=""></p>
-              <ul>
-                <li>Javascript is commonly known as a object oriented software, strings, booleans, functions and so on are either objects or treated as objects</li>
-                <li>An object is something that either has a property or a meathod</li>
-                <li>Example - an array is a object as it has properties such as .length or meathods such as .push</li>
-                <li>A key or property is like a variable and the value for that key or property is like a value for a variable</li>
-                <li>Example for for a object in a variable
-                  <br><b>var student = {};</b> 
-                  <br><img src="Images/Object Example.jpg" alt=""></li>
-                <li>When adding values in a object you dont use a ; - Example <b>name : "Sarah",</b></li>
-                <li>You can add everything to an object, string, number, boolean, array and so on</li>
-                <li>To access a property of a object you use a key.
-                  <br><img src="Images/accessing a object V1.jpg" alt="">
-                  <br><img src="Images/accessing a object V2.jpg" alt=""></li>
-                <li>To assign a new value to a property in a object you use <b>person.name = "Bobby";</b>. Name is the key and person is the object
-                  <br><img src="Images/assign a value to a key in the object.jpg" alt=""></li>
-                <li>To create a new property on an object you use <b>person.country = "Brazil";</b>. Person is the object and country will be the new property</li>
-                <li>An object can be seen as a package of variables</li>
-                <li>a return would normally only return one value but when returning a object you can return all the values of the object</li>
-                <li>The loop used for an object is called <b>a for in loop</b>. This loops through each key and property in the object</li>
-                <li>An example of a for in loop. <b>for</b> and <b>var</b> and <b>in</b> cant be changed but propName is just like i in for loops
-                  <br><img src="Images/for in loop example.jpg" alt=""></li>
-                <li>Another for in loop example
-                  <br><img src="Images/for in loop example V2.jpg" alt="">
-                  <br><img src="Images/for in loop example V2 console.jpg.jpg" alt=""></li>
-                <li>Remember, const does not prevent the arrays and objects assigned to variables from being modified; it only prevents the variable itself from being reassigned or overwritten completely.
-                  <br>For example, attempting to override person to equal another object literal throws an error. Person being the const variable</li>
-                <li>If you hve an array or object assigned to a const variable you can override the variable itself but you can add to the object or array</li>
-                <li>Example of converting a two dimentional array into object making it easier to call out
-                  <br><img src="Images/Array to object example.jpg" alt="">
-                  <br><img src="Images/Array to object single line example.jpg" alt="">
-                  <br><img src="Images/Array to object function change.jpg" alt=""></li>
-                <li>JSON stands for javascript object notation - used a lot with ajax to exchange data with a server and web browser
-                  <br><img src="Images/Example of json.jpg" alt=""></li>            
-              </ul>
-          </section>
-
-          <section>
-            <h2>Exploring JavaScript Conditionals</h2>
-            <p>This is not the best way to build logic but these methods will be used. Below we'll explore alternatives to if..then statements for controlling program flow. Even if you don't end up using them, you will see these forms appear in other code bases, and it's helpful to know how they work.</p>
+            <h2>Window Object Of JavaScript</h2>
+            <p>The <a href="https://www.w3schools.com/jsref/obj_window.asp" target="_blank">window object</a> represents an open window in a browser. If a document contain frames (&lt;iframe&gt; tags), the browser creates one window object for the HTML document, and one additional window object for each frame. Note: There is no public standard that applies to the Window object, but all major browsers support it.</p>
             <ul>
-              <li>A if else statement is a condiitonal statement as it acts based on the condition defined
-                <br><img src="Images/Conditional Statement.jpg" alt=""></li>
-              <li>The path that the if else statement follows is called branches, they branch the logic in different directions based on the result</li>
-              <li>A two way branch is a if else statement  and a multi branch is a if else if statement. Below example looks for true first
-                <br><img src="Images/two way.jpg" alt="">
-                <br>Below is a example of multi way, going through all the conditions looks to see which one is the first one meet?
-                <img src="Images/Multi way.jpg" alt=""></li>
+              <li>The window/browser is the global environment, this is the oppoiste to nodeJS.</li>
+              <li>The window object has many things like fetch API and local storage, see a list <a href="https://www.w3schools.com/jsref/obj_window.asp" target="_blank">HERE</a></li>
+              <li>In the window object document is the core of the dom. </li>
+              <li>The alerts and propmts arnt great so maybe use a bootstrap version</li>
+              <li>You can get the height and width of the users browser and the were the scroll bar is. This info can be used for resizing the website and      making animations happen when a user is at a particular section of the website. 
+                <br><img src="Images/DOM page detials.jpg" alt=""></li>
+              <li>window.location can get you lot sof useful detials like host, port and so on
+                <br><img src="Images/window_location.jpg" alt=""></li>
+              <li>To look at the browsing history - window.history</li>
+              <li>The navigator object focuses on the browser. Displaying things about the browser</li>
+              
             </ul>
           </section>
 
-          <section>
-            <h2>Ternary Operator</h2>
-            <p>The conditional <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator" target="_blank">Ternary</a> operator is the only JavaScript operator that takes three operands: a condition followed by a question mark (?), then an expression to execute if the condition is truthy followed by a colon (:), and finally the expression to execute if the condition is falsy.
-              <br> This operator is frequently used as a shortcut for the if statement.</p>
-              <ul>
-                <li><img src="Images/Ternary Operator.jpg" alt=""></li>
-                <li><img src="Images/Ternary Operator Expressions.jpg" alt=""></li>
-                <li>The first expression determines which of the next two operators are used. This is everything before the ?</li>
-                <li>The below example checks that anything before the ? is true and than the left of the : is run otherwise the right of the : is run
-                  <br><img src="Images/Ternary Example.jpg" alt=""></li>
-                <li>A ternary can also be used in a variable, so the result in the calcualtion in the varaible is returned.
-                  <br><img src="Images/Ternary Variable.jpg" alt=""></li>
-              </ul>
-          </section>
+<!-- **********************END OF WINDOW OBJECT********************** -->
 
           <section>
             <h2>Short circuit evaluation</h2>
@@ -555,10 +727,32 @@
               </ul>
           </section>
 
+<!-- **********************START OF JSON********************** -->
+
           <section>
+            <h2>JavaScript JSON</h2>
+            <p>JSON is a format for storing and transporting data. JSON is often used when data is sent from a server to a web page.</p>
+            <ul>
+              <li><a href="https://www.w3schools.com/js/js_json.asp" target="_blank">JSON</a> stands for javascript object notation - used a lot with ajax to exchange data with a server and web browser
+                <br><img src="Images/Example of json.jpg" alt=""></li>
+              <li>JSON stands for JavaScript Object Notation</li>
+              <li>JSON is a lightweight data interchange format</li>
+              <li>JSON is language independent * - The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.</li>
+              <li>JSON is "self-describing" and easy to understand</li>
+            </ul>
+          </section>
+
+<!-- **********************END OF JSON********************** -->
+
+          <section>
+            <div class="practice">
             <h2>Practice with <a href="https://www.codewars.com/" target="_blank">Code Wars</a> reinforcing what you know</h2>
+            </div>
           </section>
       </main>
+      <footer>
+        <p>&copy;2020 JavaScript Fundamentals, Amar's Learning</p>
+    </footer>
     </div>    
   </body>
 </html>
