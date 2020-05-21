@@ -19,6 +19,7 @@
             <p>Use the MDN website to look for help or see what is relevant today <a href="https://developer.mozilla.org/en-US/" target="_blank">MDN</a>. Also shows browser compatability</p>
             <p>You can also use <a href="http://caniuse.com/#" target="_blank">can I use</a> to get browser compatability</p>
             <p>The developer tools in the browsers is very helpful, the elements tabs</p>
+            <p>The e passed into a function is the event object. It gives some great info that but most importantly the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event/target" target="_blank">target</a>.</p>
           </section>
 
           <section>
@@ -49,7 +50,7 @@
           </section>
 
           <section>
-            <h2>Getting a handle on the DOM</h2>
+            <h2>Getting a handle on the DOM While Making Changes</h2>
             <p>The first step of making a web page interactive is grabbing a hold of elements you want the user to interact with. This is called selection. There are a number of ways to select elements on a web page. Let's explore those you are likely to use most often.</p>
 
               <h3>Single Element Selection DOM</h3>
@@ -67,6 +68,7 @@
                     <br><img src="Images/Single Element Dom innerHTML.jpg" alt=""></li>
                   <li>You can selected a nested element using document.querySelector('ul li'). This picks up the first bullet point in the list
                     <br><img src="Images/query selector nested.jpg" alt=""></li>
+                  <li>The locations where the elements are placed in the DOM are called Nodes, and on the web page, it’s not that only HTML elements get their node, but also the attributes of the HTML elements have their nodes (attribute nodes), every piece of text has its node (text nodes), and there are many other node types. The structural relation of these nodes reflects the structure of the HTML document. Because of that, we can define the relations between the elements on the page as the relations between their nodes in the DOM.</li>
                 </ul>
 
               <h3>Multiple Element Selection DOM</h3>
@@ -82,120 +84,109 @@
                 </ul>
 
               <h3>Traversing The DOM</h3>
+                <ul>
+                  <li>Traversing The DOM is moving up and down the DOM</li>
+                  <li>Parents and Children of nodes or what ever we select.</li>
+                  <li>All items in the DOM are defined as <a href="https://www.digitalocean.com/community/tutorials/understanding-the-dom-tree-and-nodes" target="_blank">nodes</a>. There are many types of nodes, but there are three main ones that we work with most often:
+                    <ul>
+                      <li>Element nodes</li>
+                      <li>Text nodes</li>
+                      <li>Comment nodes</li>
+                    </ul> </li>
+                  <li>To get a child node of something you can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/childNodes" target="_blank">.childNodes</a>. Returns a node list including text nodes which can be as simple as line breaks</li>
+                  <li>The above might not work for you as you dont want the text nodes so you can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/children" target="_blank">node.children;</a>. This returns a HTML collection</li>
+                  <li>childNodes gives us all types of nodes but children gives us just the HTML elements</li>
+                  <li>You can use properties on the above two getting the name and node type. 
+                    <br><img src="Images/child node properties.jpg" alt=""></li>
+                  <li>TO get grand children you can use you can use children.children</li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/firstChild" target="_blank">.firstChild</a> returns the first node and <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/firstElementChild" target="_blank">firstElementChild</a> returns the first element</li>
+                  <li>As above you can also use .lastChild and lastElementChild</li>
+                  <li>You can also use <a href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode" target="_blank">parentNode</a> and parentElement</li>
+                  <li>You can also get siblings  using <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/nextSibling" target="_blank">nextSibling;</a> . this is a node and you can use nextElementSibling; for the next HTML element</li>
+                  <li>You can also use previousSibling or previousElementSibling</li>
+                </ul>
 
-                  <ul>
-                <li>You can use the meathod .addEventListener() to listen out for things like mouse clicks and so on. <a href="https://www.w3schools.com/jsref/met_document_addeventlistener.asp" target="_blank">HTML DOM addEventListener() Method</a></li>
-                <li>A break down of the below example: 
-                  On the first line we select the element<br>
-                  Next we take our selection and add our call event listener meathod, telling the browser to act when the headline is clicked.<br>
-                  We finally tell the browser to manipulate the heading and change to to the colour red when clicked<br>
-                  <img src="Images/HTML element DOM example.png" alt=""></li>
-                <li>document is a global variable representing the current web page, getElementById() belongs to document and looks through the webpage for the element you call out by ID </li>
-                <li>Below is a example of adding a button/Element to a HTML page, than giving it a ID so we can call it out to give it a action <br>
-                  <img src="Images/New element on HTML with ID.jpg" alt="">
-                  The below image shows that we are looking for the myButton element and when clicked the heading changed colour to red <br>
-                  <img src="Images/New element on HTML Javascript.jpg" alt=""> </li>
-                <li>In the HTML you can add a input field what accepts a value. to get that value you use .value. Example <b style="color:red">myTextInput.value</b>. MyTextInput is the element ID </li>
-                <li>Below is an example of Javascript were you can use input text to determine what colour you make the heading <br>
-                  <img src="Images/HTML input field value capture.jpg" alt=""></li>
-                <li>If you dont have a ID against a HTML element you can use <b>document.getElementsByTagName()</b>. The difference is elements as this will normally capture multiple elements not a single <br>
-                  <img src="Images/Element vs Elements.jpg" alt=""></li>
-                <li>The below is an exmaple of of the document.getElementsByTagName("p"). it finds only one p tag and selects the first one use [0] <br>
-                  <img src="Images/Elements Example.jpg" alt=""> <br>
-                  The code <b>myParagraph[0].style.color = "blue"</b>. This changes the the first paragraph element to blue.</li>
-                <li><img src="Images/Elements Example 2.jpg" alt=""></li>
-                <li><b style = "color:red">document.getElementsByClassName()</b>. This lets you choose a element that has a class assigned to it. class normally used by CSS<br>
-                  <img src="Images/Elements by class name example.jpg" alt=""></li>
-                <li>Both document.getElementsByClass() and document.getElementsByTagName() bring back a HTML collection. Use the [] to select which one?</li>
-                <li>Both <b>document.querySelectorAll()</b> and <b>document.querySelector()</b> are used to return the first element within the document that matches the specified selector, or group of selectors. If no matches are found, null is returned.</li>
-                <li>document.querySelector() vs document.getElementsBy()? Here is the <a href="https://beamtic.com/getelementbyid-vs-queryselector" target="_blank">difference</a></li>
-                <li>Example - How would you select the first element in the DOM with its HTML title attribute set to "MyTitle"? - <b style = "color:red">document.querySelector("[title=MyTitle]");</b></li>
-                <li><b style = "color:red"> NEED MORE PRACTICE ON document.querySelector/all()</b></li>
-                <li>To select a p tag with a class you use example - <b>document.querySelector("p.description");</b></li>
-              </ul>
-          </section>
+              <h3>Creating Elements</h3>
+                <ul>
+                  <li>Create a new HTML element and can add a css class to it. Essentially mnipulaton of the DOM</li>
+                  <li>You can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement" target="_blank">document.createElement();</a>. This method creates the HTML element. You place the element you want to create in the parenthases ('li').</li>
+                  <li>To add a css class to the new element you can use .className - '';</li>
+                  <li>You can add a id to the new HTML using .id = '';</li>
+                  <li>To add text to the new HTML element you create a text node <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createTextNode" target="_blank">document.createTextNode()</a> and append that. node.appendChild(document.createTextNode());, node being the new HTML element and the text you want to insert will be placed into the parenthases of document.createTextNode().</li>
+                  <li>An exmaple of creating a new HTML element:
+                    <br><img src="Images/New DOM element.jpg" alt=""></li>
+                </ul>
+
+              <h3>Removing or Replacing Elements</h3>
+                <ul>
+                  <li>To replace a element create a new element using document.createElement('');.</li>
+                  <li>Than add a id using .id or a class using .className</li>
+                  <li>Finally append a text node to the new element using document.createTextNode('TEXT');</li>
+                  <li><img src="Images/new element.jpg" alt=""></li>
+                  <li>To replace a element you can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild" target="_blank">replaceChild(NEWELEMENT, OLDELEMENT);</a>  In the example below you see card action which is the div the new and old element is in.
+                    <br><img src="Images/Replace element.jpg" alt=""></li>
+                  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/ChildNode/remove" target="_blank">.remove</a> can be used to remove a element 
+                    <br><img src="Images/Remove Element.jpg" alt=""></li>
+                  <li>For attributes for a chosen element you an use <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getAttribute" target="_blank">.getAttribute('')</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute" target="_blank">.setAttribute('')</a>
+                    <br><img src="Images/Attribute.jpg" alt=""></li>
+                </ul>
+
+              <h3>Event Listners and The Event Object</h3>
+                <ul>
+                  <li>First select the element in the dom, qurySelector can be used</li>
+                  <li>Once the element has been selected you can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank">.addEventListner()</a></li>
+                  <li>The two things that go in the parenthases in .addEventListner() are <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">event type</a> (maybe a click) and anonymous call back function with a block of code to execute</li>
+                  <li>To stop the defualt behaviour of the element you can pass in e as the parameter to the function which is the <a href="https://www.w3schools.com/jsref/obj_event.asp" target="_blank">event object</a>. This would look something like <b>e.preventDefault();</b> which would be placed in the function. The default action would be specified in the href in the HTML.
+                    <br><img src="Images/e.preventdefault.jpg" alt=""></li>
+                  <li>You can also call the event listner by passing the event type and stating a named function later down the code you can specify what that function does</li>
+                  <li>The better way to do the above, using a named function
+                    <br><img src="Images/Event named function.jpg" alt=""></li>
+                </ul>
+
+              <h3>Move Events</h3>
+                <ul>
+                  <li>Events that occur when the <a href="https://www.w3schools.com/jsref/obj_mouseevent.asp" target="_blank">mouse</a> interacts with the HTML document belongs to the MouseEvent Object.</li>
+                  <li>You have mouse events like click, double click, mouse down, mouse up, mouse enter, mouse leave, mouse over, mouse out.</li>
+                  <li>Example of using the above:
+                    <br><img src="Images/Mouse Event Example.jpg" alt=""></li>
+                </ul>
+
+              <h3>Input and Form Events</h3>
+                <ul>
+                  <li>Like the mouse events you have many input and form events.</li>
+                  <li>Remember to use e.preventDefault to stop the default behaviour.</li>
+                  <li>You would want to get the value of the input field you use <a href="https://www.w3schools.com/jsref/prop_text_value.asp" target="_blank">.value</a> </li>
+                  <li>Some key events keydown, keyup, keypress, focus, blurr, cut, paste, input, change</li>
+                </ul>
+
+              <h3>Event Bubbling and Delegation</h3>
+                <ul>
+                  <li>Event bubbling is the bubbling up of events through the DOM. A event will bubble up through its parents</li>
+                  <li>An example of event bubbling clicking on a element with an event and this bubbles up and triggers any events on its parents 
+                    <br><img src="Images/Event Bubbling.jpg" alt=""></li>
+                  <li>Event delegation is were we put the event on the parent and use logic to target a child/gradchild and so on</li>
+                  <li>An example of DOM delegation is as below were our function picks on al the a tags (X's) on the list page. This also clears all the list items buy looking at the grandparent elements.
+                    <br><img src="Images/Dom delegation example.jpg" alt=""></li>
+                </ul>
+              </section>
 
           <section>
-            <h2>Making Changes to the DOM</h2>
-            <p>Once we've selected an element in the DOM, we can read or affect it. We can replace or change the display of text, for example. Or we can create new nodes and insert them into the DOM. Let's learn about and get some practice with some of these actions.</p>
+            <h2>Local and Session Storage</h2>
+            <p>Web storage objects <a href="https://javascript.info/localstorage" target="_blank">localStorage and sessionStorage</a> allow to save key/value pairs in the browser.</p>
               <ul>
-                <li>These are two DOM element properties <b>Element.textContent</b> & <b>Element.innerHTML</b>. Each have thier own approach to the dom</li>
-        <li>Example of textContent is <b>myHeading.textContent</b> this in the console brings back what is in the variable myHeading which is a h1 element </li>
-        <li>Example of textContent using a input element <br>
-          <img src="Images/textContent example.jpg" alt=""> <br>
-          <img src="Images/textContent example part 2.jpg" alt=""> <br>
-          <img src="Images/textContent result.jpg" alt="">
-        <li>The Element.innerHTML gets or sets the HTML or XML markup contained within the element <br>
-          To insert the HTML into the document rather than replace the contents of an element, use the method insertAdjacentHTML()</li>
-        <li>Am exmaple of a .innerHTML were you change the list within the li tags of the HTML <br>
-          <img src="Images/InnerHTML console example.jpg" alt=""></li>
-        <li>The Element.attributes - attributes are like a href attribute on a link and on a input element there is a type attribute of text. <br>
-          An example would be <b>input.type</b>, this would look at the input element and bring back the attribute type which would be text</li>
-        <li>To change the input element attribute from text to checkbox you would do <b>input.type = "checkbox"</b>. This will change the input box to a checkbox</li>
-        <li>If you want to set a Elements class dont use Elements.class it wont work. Use <b style = "color:red">Element.className</b> Example - newParagraph.className = 'panel'</li>
-        <li>Example of changing the text content to a element by ID to a variable called inputValue. <b>document.getElementById('link').textContent = inputValue;</b></li>
-        <li>Example of inline style elements using css directly in HTML which overrides the attached CSS style sheet. <br>
-          <img src="Images/Example of a inline css style element.jpg" alt=""> </li>
-        <li>Below is an example were we have created a button to hide everything in the div element. Button has the ID of toggleList <br>
-          First in the JavaScript decalre the variables for the div and button, selecting the elements. Using document.getElementById("toggleList"); and document.querySelector(".list") <br>
-          <img src="Images/hide div example.jpg" alt=""> <br>
-          <img src="Images/hide div example js.jpg" alt=""> <br>
-          The below JS has been updated to check if the inline class of the .list element is none and than depending on that the text in the button will change and the div will change. <br>
-          <img src="Images/hide div example with if in js.jpg" alt=""></li>
-          <li>You can create a new element in your HTML using JavaScript the code would be <b>document.createElement("div")</b>. This creates a new div element. Example of creating a list item <br>
-            <img src="Images/create element.jpg" alt=""> This doesnt add a item yet but the new item is stored </li>
-          <li>To add the newly created element you use <b style = "color:red">Node.appendchild()</b>. In the brackets you pass in your new child element</li>
-          <li>Nodes belong to the DOM and elements belong to HTML. <a href="https://teamtreehouse.com/community/js-dom-node-vs-element" target="_blank">difference</a></li>
-          <li>Below is an example of appending a new element created to an exisiting element. a new item to the list items <br>
-            <img src="Images/appendchild example.jpg" alt=""> <br>
-            <img src="Images/appendchild browser example.jpg" alt=""> <br>
-            Above the value entererd into the input field isnt cleared after adding to the new element. To clear use <b>addItemInput.value = "";</b>. </li>
-          <li>To remove a element from a page - <b>Node.removeChild()</b> place the child element in the ()</li>
-          <li>To select the last element in a group of elements you can use <b style = "color:red">document.querySelector("li:last-child");</b>. This picks the last li in the HTML</li>
+                <li>What you set in <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank"></a> local storage has to be a string. You will have to convert things like arrays into a string.</li>
+                <li>The <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank">JSON. stringify()</a> method converts a JavaScript object or value to a JSON string</li>
+                <li>The <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse" target="_blank">JSON.parse()</a> method parses a JSON string, constructing the JavaScript value or object described by the string.</li>
+                <li>The difference between local storage and session storage is local stroage will stay until you clear it out.</li>
+                <li>For local storage we use localStorage.setItem('');</li>
+                <li>For session storage we use sessionStorage.setItem('');</li>
+                <li>You can remove from the local storage using localStorage.removeItem('');</li>
+                <li>To get a value from the local storage you can use localStorage.getItem('');</li>
+                <li>To clear everything from the local storage you can use localStorage.clear();</li>
+                <li>In local storage you can only save one thing at a time so you can save all into an array and JSON.stringify that in
+                  <br><img src="Images/Add to local storage.jpg" alt=""></li>
               </ul>
           </section>
-
-    
-    <h2>Responding to User Interaction</h2>
-      <ul>
-        <li>Events are like moving moving your mouse and clicking, browsers listen to these events. You normally trigger lots of events without knowing it</li>
-        <li>JavaScript was built to listen to these <a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank">events</a> and than act, below are just some actions that can be down on the browser <br>
-          <img src="Images/Actions on browser.jpg" alt=""> <br>
-          These events can happen on keyboard mobile devices and many more</li>
-        <li>Functions in JS can be treated like a string numbers or any other Data Type. </li>
-        <li>Example of an anonymous Functions - This is a function within a function <br>
-          <img src="Images/anonymous function.jpg" alt=""></li>
-        <li>An exmaple of why you would use this would be if you want to load a message after a certain amout of time. This is called a call back function <br>
-          <img src="Images/call back function.jpg" alt=""></li>
-        <li>You use <b style = "color:red">EventTarget.addEventListener()</b> to listen to an event and than select a element of the whole document itself. <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank">More Info</a></li>
-        <li>The below example shows use of event listner. It looks at the first list item and when hoovered over it changes to uppcase and when the mouse moves away it changes back to lowercase <br>
-          <img src="Images/addEventListner example.jpg" alt=""></li>
-        <li>Now to make this action occur on all the list items we place the current code into a for loop <br>
-          <img src="Images/addEventListner for loop example.jpg" alt=""></li>
-        <li>The below image is a tree structure of the document DOM. When a event occurs anywhere it travels up to the parent right the way to the document <br>
-          <img src="Images/Event Tree.jpg" alt=""> <br>
-          This is called bubbling, the event bubbles to the to pof the tree.</li>
-        <li>Based on the previous example of changing a list item to upper case. Instead of doing a loop through each one you can add the event lisnter to the parent <br>
-          The other benifit to this is that the eventlisnter will be applied to new list items whe added. This wont be the case in the last example. </li>
-        <li>The below image shows the event lisnter with the addiiton of event. event records the element you have clicked as currently we have applied the listner to the DIV itself. <br>
-          We have than done a if statment using <b>event.target.tagName</b> to select the correct tag name which is li within the selected div <br>
-          <img src="Images/addEventListner with event example.jpg" alt=""></li>
-      </ul>
-      
-    <h2 style = "color:red">Traversing the DOM</h2>
-      <ul>
-        <li>DOM traversal if were you have referrence to one element but you need to get hold of another element nearby</li>
-        <li>Traversal DOM is how to move from one element to an other, selecting one element based on its relationship to another element</li>
-        <li>To get a referrence to a parents node you can use <b>Element.parentNode</b></li>
-        <li>Below shows you an example of how to get a parent node to later use it to remove a paragraph. <br>
-          <img src="Images/Parent Node Prop example.jpg" alt=""></li>
-        <li>The below code displays getting hold of a element from a class in a li called .remove_me. Than getting hold of its parent and than removing the element from the dom <br>
-          <img src="Images/remove element using parent node.jpg" alt=""></li>
-        <li>Example of using <b>ParentNode.firstElementChild</b> and <b>ParentNode.firstElementChild</b>. Below changes the background for the first and last li's in the ul <br>
-          <img src="Images/first and last element child.jpg" alt=""></li>
-        <li>Example on how to assign all children to a variable using DOM traversal <br>
-          <img src="Images/assign all children dom traversal.jpg" alt=""></li>
-      </ul>
     </main>
     <footer>
       <p>&copy;2020 JavaScript DOM Basics, Amar's Learning</p>
