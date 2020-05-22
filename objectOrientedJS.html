@@ -1,64 +1,205 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Object-oriented Programming in JavaScript</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  </head>
   <body>
-    <h1> <a href="https://www.youtube.com/watch?v=PFmuCDHHpwk" target="_blank">Object-oriented Programming in JavaScript</a></h1>
-      <p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank">MDN Object-oriented JavaScript</a></p>
-      <p style="color: red;">Its important to understand the difference between <a href="https://www.youtube.com/watch?v=O3JSPhwKowA" target="_blank">object vs object literals</a></p>
-      <p>NodeJS host objects - Good to keep a reference </p>
-      
-    <h2>What is Object-Oriented JavaScript</h2>
-      <ul>
-        <li>This is more advanced JS, working mainly with objects that ties into a framework like react of angular</li>
-        <li><b style="color: red;">Inherticance and Prototypes are not covered these need to be covered later</b></li>
-        <li>A object is a package of information that you want to use in your code and its functions are called meathods, contains properties and functions</li>
-        <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript" target="_blank">meathods</a> are used to allow you to do something with your object </li>
-        <li>The below exmaple is were the house is the object and the rest are its properties <br>
-          <img src="Images/Object Example House.jpg" alt=""> <br>
-          <img src="Images/Object Example Radio.jpg" alt=""></li>
-        <li>Objects are a easy way to store data, used as containers. Another example of using a object as a storage container <br>
-          <img src="Images/Object Example Containers.jpg" alt=""></li>
-        <li>We have used objects before as they are like arrays and interarcting with the DOM. we use meathods to update and remove from an array of interact with the DOM</li>
-      </ul>
+    <div class="wrapper">
+      <header>
+        <h1>Object-oriented Programming in JavaScript</h1>
+      </header>
 
-    <h2>Object Basics</h2>
-      <ul>
-        <li>An example of a object literal which was covered in JavaScript <br>
-          <img src="Images/Object Literal.jpg" alt=""></li>
-        <li>This is an example of .notation were we can find the length of an array by using a method <br>
-          <img src="Images/array . notation.jpg" alt=""></li>
-        <li>Object Literals Referring to Themselves <br>
-          Many times, when writing methods for objects, you might want to refer to one of that object's properties. For example, consider the following code: <br>
-          <img src="Images/objects literal 1.jpg" alt=""> <br>
-          I may want to add a method to this object literal called printName() that will log both the first and last name properties of the teacher variable to the console. To access the value of these properties inside the method, I'll use the this keyword instead of the variable name. <br>
-          This way, you'll always be access the property values attached to that particular object: <br>
-          <img src="Images/objects literal 2.jpg" alt=""></li>
-        <li>When calling a method use () at the end - <b style="color: red;">ernie.bark</b>. ernie being a variable and bark being a property which is a function to the console</li>
-        <li>So the above is .noatation but we can also use bracket notation. Bracket notation - <b style="color: red;">ernie['name']</b>. This brings back the value of the property </li>
-        <li>JSON and Bracket Notation <br>
-          <img src="Images/JSON and bracket notation.jpg" alt=""></li>
-        <li>Object Literals are a great way to make objects. </li>
-        <li>You can update a property in a object like you update a varaible - Example - <b style="color: red;">ernie.age = 2;</b>. This changes the property age in the object to 2</li>
-        <li>To add a property to the object we use - <b style="color: red;">ernie.color = 'black';</b>. This adds the property color to the object</li>
+        <main>
+          <section class="openingSection">
+            <p><a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS" target="_blank">MDN Object-oriented JavaScript</a></p>
+            <p style="color: red;">Its important to understand the difference between <a href="https://www.youtube.com/watch?v=O3JSPhwKowA" target="_blank">object vs object literals</a></p>
+            <p>NodeJS host objects - Good to keep a reference </p>
+          </section>
 
-        <h3>Working with Classes</h3>
-          <li>Some object literal examples <br>
-            <img src="Images/Object Literal examples.jpg" alt=""></li>
-          <li>A class solves the problem were you create many objects with the same properties - A class has a base set of properties and meathods, these are than avalible to any object created of that class type </li>
-          <li><img src="Images/JS class.jpg" alt=""></li>
-          <li>Class was released in ES2015 and is also called <a href="https://frontendmasters.com/courses/javascript-hard-parts/class-syntactic-sugar/" target="_blank">Syntactic Sugar</a> </li>
-          <li><img src="Images/syntax sugar.jpg" alt=""></li>
-          <li>To create a class it will be <b style="color: red;">class Pet {}</b>. To capatilise a class in javascript is common and pet can be anyword you use.</li>
-          <li>A <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes#Class_body_and_method_definitions" style="color: red;">constructor</a> method goes at the top of a class, its a special method were you outline the properties your class will have. Like a blue print <br>
-            <img src="Images/class constructor.jpg" alt=""></li>
-          <li>In the constructor you use a this.property. You pass a value to the property later - understanding <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this" style="color: red;">this</a></li>
-          <li>Class with a constructor method. The properties are assigned but the values will be passed into the class once the objects are defined <br>
-            <img src="Images/Class constructor example.jpg" alt=""></li>
-          <li>To pass objects to the above properties using a new object is as below <br>
-            <img src="Images/object for new class.jpg" alt=""></li>
-          <li>You can also add a method (function) to a class, as below: . When adding a method/function in a class we dont use the function keyword so its <b style="color: red;">speak() {}</b><br>
-            <img src="Images/method in a constructor.jpg" alt=""></li>
-      </ul>
+          <section>
+          <h2>What is Object-Oriented JavaScript</h2>
+            <ul>
+                <li>This is more advanced JS, working mainly with objects that ties into a framework like react of angular</li>
+                <li><b style="color: red;">Inherticance and Prototypes are not covered these need to be covered later</b></li>
+                <li>A object is a package of information that you want to use in your code and its functions are called meathods, contains properties and functions</li>
+                <li><a href="https://www.digitalocean.com/community/tutorials/how-to-use-object-methods-in-javascript" target="_blank">meathods</a> are used to allow you to do something with your object </li>
+                <li>The below exmaple is were the house is the object and the rest are its properties <br>
+                <img src="Images/Object Example House.jpg" alt=""> <br>
+                <img src="Images/Object Example Radio.jpg" alt=""></li>
+                <li>Objects are a easy way to store data, used as containers. Another example of using a object as a storage container <br>
+                <img src="Images/Object Example Containers.jpg" alt=""></li>
+                <li>We have used objects before as they are like arrays and interarcting with the DOM. we use meathods to update and remove from an array of interact with the DOM</li>
+            </ul>
+          </section>
 
+          <section>
+            <h2>Constructors & the 'this' Keyword</h2>
+            <p>The JavaScript <a href="https://www.w3schools.com/js/js_this.asp" target="_blank"></a> this keyword refers to the object it belongs to.
+              <br><img src="Images/js this.jpg" alt=""></p>
+              <ul>
+                <li>To create a object constructor you would do function Object() {}. Ensure to give the object a capital letter to start with and the internal will look like a object literal but using this. before each property
+                  <br><img src="Images/Object Constructor Example.jpg" alt="">                </li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">JavaScript classes</a>, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript's existing prototype-based inheritance. The class syntax does not introduce a new object-oriented inheritance model to JavaScript.</li>
+                <li>It is considered good practice to name constructor functions with an upper-case first letter.</li>
+                <li>The difference between <a href="https://medium.com/@mandeepkaur1/object-literal-vs-constructor-in-javascript-df143296b816" target="_blank">object literals and object Constructors</a> boils down to if we need multiple instances of our object or not; object defined with a constructor let us have multiple instances of that object. Object literals are basically singletons with variables that are all public.
+                <br><img src="Images/object literal and object constructor.png" alt=""> </li>
+                <li>Object literals have key value pairs, fine to deal with one object but not multiple. 
+                  <br><img src="Images/Object literal 2.jpg" alt=""></li>
+                <li>Object Constructors/function deal with multiple instances. You always start with a capital. this. is a associated property to that object   </li>
+                <li>You can create a new object using the new keyword</li>
+                <li>To add a property to a object outside of the object you would do object.NEWPROPERTY = '';</li>
+                <li>If you use this. outside of the function scope which is the Global scope you will get the windows object. Mainly used in the function scope</li>
+                <li>You can build a function inside a object. The below example shows a function being used in a object to get the age. This calls the this birthday which is another property associated to the object 
+                  <br><img src="Images/object function example.jpg" alt=""></li>
+                <li>In a object you dont have to use the new keyword for the math object.</li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Built In Constructors</h2>
+              <ul>
+                <li>You can create a string in to ways. You wouldnt create a string as a object as the string will be classed as a object not a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">primative value.</a> This would result in the === not working but the == would work if string is compared to another string. 
+                  <br><img src="Images/string as object and normal .jpg" alt=""></li>
+                <li>Th same applys to numbers, booleans, arrays, objects literals, regular expressions and functions as above.</li>
+                <li><img src="Images/built in constructors.jpg" alt=""></li>
+                <li>Proceed as you would normally instead of using the new method as explained above.</li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Prototypes Explained</h2>
+            <p>All JavaScript objects inherit properties and methods from a <a href="https://www.w3schools.com/js/js_object_prototypes.asp" target="_blank">prototype</a>.</p>
+              <ul>
+                <li>All JavaScript objects inherit properties and methods from a prototype:</li>
+                  <ul>
+                    <li>Date objects inherit from Date.prototype</li>
+                    <li>Array objects inherit from Array.prototype</li>
+                    <li>Person objects inherit from Person.prototype</li>
+                    <li>The Object.prototype is on the top of the prototype inheritance chain: Date objects, Array objects, and Person objects inherit from Object.prototype.</li>
+                  </ul>
+                <li>The proto type against a object will be displays __proto__:object. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto" target="_blank">__proto__</a> property of Object.prototype is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed.
+                  <br><img src="Images/proto property.jpg" alt=""></li>
+                <li>Properties that can change within the object should not be in the prototype and things that dont change like a calcualtion for the age of someone will need to be place into the prototype</li>
+                <li>To place something into the prototype of a object you do object.prototype.property = ;. This could be a function of a string or what ever you like.
+                  <br><img src="Images/proto Example.jpg" alt=""></li>
+                <li>When you console log the object the property that is placed into the prototype wont be seen but will be under __proto__</li>
+                <li>You can manipulate the properties in prototype. This will only work if you reference a property from the object and this property is later changed or reassigned.</li>
+                <li>WHY USE A PROTOTYPE?</li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Prototypal Inheritance</h2>
+              <ul>
+                <li>This is were one objects inherits the prototypes of another object</li>
+                <li>You can use <a href="https://www.w3schools.com/js/js_function_call.asp" target="_blank">.call</a> to call another function within another function.
+                  <br><img src="Images/call method.jpg" alt=""></li>
+                <li>Call is used in the first part of inheritance in a object constructor which will have the first paramter as this, and than any paramters that are used in the object it is inherting. 
+                  <br><img src="Images/call method inheritance.jpg" alt=""></li>
+                <li>For inheritance we use object.prototype = Object.create(object.prototype);. This returns the inherited object against __proto__ and we want the current object to be displayed. To change this we use Object.proptotype.constructor = Customer;
+                  <br>What this does it uses __proto__ and pulls in the associated properties into the new object constructor</li>
+                <li>You can override or create new prototypes that have been inherited. This doesnt override the prototype that you have inheritied.</li>
+                </ul>
+          </section>
+
+          <section>
+            <h2>Using Object.create</h2>
+            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank">Object.create()</a> method creates a new object, using an existing object as the prototype of the newly created object.</p>
+              <ul>
+                <li>When using the object.create you can create a variable and use Object.create(EXISTING_OBJECT). In the existing project you dont have to add any properties or pramaters to the function as this will be done later. You than specify the properties doing object(variable name).property = '';. 
+                  <br><img src="Images/object create example.jpg" alt=""></li>
+                <li>You can also achieve the above using the syntax below:
+                  <br><img src="Images/object create example 2.jpg" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>ES6 Classes</h2>
+            <p><a href="https://www.w3schools.com/js/js_classes.asp" target="_blank">Classes</a> is based on the above Object Constructors. The class concept is used in other lanuages such as C sharp, php, phython and Java and <a href="https://en.wikipedia.org/wiki/Category:Class-based_programming_languages" target="_blank">so on</a></p>
+              <ul>
+                <li>This is built with the structure class, constructor method and properties.</li>
+                <li>A class always starts with a cpatial letter</li>
+                <li>Pass the properties into the class as paramters and than define the properties with this.property.</li>
+                <li>An example of a class - 
+                  <br><img src="Images/Class Example.jpg" alt=""></li>
+                <li>You will see this works exactly the same as the earlier explained object constructor. This can be seen in the __proto__ property of the object</li>
+                <li>This is why we call class syntaxtic sugar as its only the syntax is different not the fundementals</li>
+                <li>A method can be called and will be inserted in the constructor {}</li>
+                <li><img src="Images/Class Example 2.jpg" alt=""></li>
+                <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" target="_blank">static</a> keyword defines a static method for a class. Static methods aren't called on instances of the class. Instead, they're called on the class itself. These are often utility functions, such as functions to create or clone objects.</li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Sub Classes</h2>
+              <ul>
+                <li>A sub class is used to extend a class. You would have a person class and you would extend this class with a customer class.</li>
+                <li>To do this you would do class NEW_CLASS extends CURRENT_CLASS {}</li>
+                <li>The new class would take in the same paramters and new paramters. This only extends one way</li>
+                <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" target="_blank">super</a> keyword is used to access and call functions on an object's parent. The super.prop and super[expr] expressions are valid in any method definition in both classes and object literals.</li>
+                <li>Super replaces the object.prototype = Object.create(object.prototype); and Object.proptotype.constructor = Customer; used earlier for inhertiance. </li>
+                <li><img src="Images/Class example inheritance.jpg" alt=""></li>
+              </ul>
+          </section>
+
+        </main>
+    <footer>
+      <p>&copy;2020 JavaScript Object-oriented Programming, Amar's Learning</p>
+    </footer>
+    </div>    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+<!-- 
     <h2>Getters and Setters</h2>
       <p>Create properties with dynamic values using getters in JavaScript</p>
       <ul>
@@ -108,9 +249,5 @@
         <li>Score is not a class or object in Four in a Row. This game doesn't keep score, and if it did, the score would probably be managed in the Game class.</li>
         <li>It is normal to rewrtie a class and its constrcutor method many times</li>
         <li>Creator methods are used to routinely create several objects at once in a way that's organised and neat</li>
-
-      </ul>
-      
-   
-  </body>
-</html>
+      </ul> -->
+       -->
