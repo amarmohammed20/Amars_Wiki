@@ -177,7 +177,99 @@
             <h2>Callback Functions</h2>
             <p>A <a href="https://www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/" target="_blank">callback function</a> is a function that is passed as an argument to another function, to be “called back” at a later time. A function that accepts other functions as arguments is called a higher-order function, which contains the logic for when the callback function gets executed. It’s the combination of these two that allow us to extend our functionality.</p>
               <ul>
-                <li>Previously we have used </li>
+                <li>Previously we have dealt with callbacks as a callback is a function that is passed in as a parameter to another function and than ran in the function body. </li>
+                <li>We have both synchronous and asynchronous callbacks. </li>
+                <li>In the example we will be putting information from a object literal array containing two objects acting as a server. Than we will have two functions one to create some HTML and one to pull information from the array</li>
+                <li>SetTimeout is being used to mimic the time taken by the server. The below example is in a synchronous way meaning that createPost function for the third post wont be ran. What happened was that createPost function took 2 seconds and getPosts function took 1 second so the getting of post happened so quickly we didnt have time to make the third post.
+                  <br><img src="Images/Call back example 1.jpg" alt=""></li>
+                <li>Now the below is asynchronous with callbacks</li>
+                <li>Call back is passed in as a paramrter to a function and within the body of that function used by doing callback();</li>
+                <li>Than the call back is used when that function is used later on by also pulling in another function. So even if that function takes to long the other function will becalled as its be called through a callback</li>
+                <li><img src="Images/Call back example 2.jpg" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>ES6 Promises</h2>
+            <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise" target="_blank"></a> Promise object represents the eventual completion (or failure) of an asynchronous operation, and its resulting value.</p>
+              <ul>
+                <li>Promises replace callbacks and is seen by others better way to do things over call backs.</li>
+                <li>A promise represents the eventual completion of a Asynchronous operation. A value that might be avalible like data from a server</li>
+                <li>A example of a Asynchronous call back is ordering a takeaway and you leave your detials. You have ordered and they will deliver but you are always waiting for a call back. This example you have a few issues, the number you give might be wrong, the order could be wrong and so on</li>
+                <li>A Asynchronous <b> promises</b> is the same as above but this time you go to the shop and pay and when you pay you are given a pager. You will now be alearted when things are ready or if there is a issue. You are promised a reply.</li>
+                <li>The states a promise can be in - pending(The default state of a promise) - fulfilled(The operation completed successfully) - rejected(The operation failed)
+                  <br><img src="Images/working with a promise.jpg" alt=""></li>
+                <li><b>then()</b> and <b>catch()</b>are meathods you can use on the promise.</li>
+                <li>.then() is use to get the successful value out to the console
+                  <br><img src="Images/Promise Example then.jpg" alt=""></li>
+                <li>Using the .catch() meathod you can deal with a rejection.</li>
+                <li>style="color: red;">Always remember to add a resolve and reject so your promise doesnt fail silently.
+                  <br><img src="Images/promise resolve and reject.jpg" alt=""></li>
+                <li>Promises provide can keep track of many Asynchronous requests. <b>Promise.all()</b> accepts a array </li>
+                <li>Promise.all is a all or nothing operation. It will reject if any of the promises fail.</li>
+                <li>An example of something we have done earlier but callbacks have been replaced with promises
+                  <br><img src="Images/Promise Example Replacing callback.jpg" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>The Fetch API</h2>
+            <p>The Fetch API is a modern alternative to XMLHttpRequest</p>
+              <ul>
+                <li>The fetch API is the new standard to make HTTP requests</li>
+                <li><a href="https://www.ma-no.org/en/programming/fetch-api-an-amazing-replacement-of-xmlhttprequest-ajax" target="_blank">Fetch</a> is a promise based HTTP networking API provided by the browser. It is here from the chrome 42. Firefox also supports it. It is now almost standardised. It saves you from remembering complex API of XMLHttpRequest.</li>
+                <li>Fetch is part of the window object. window.fetch</li>
+                <li>To use fetch simply type fetch and the fetch() method takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise that resolves to the Response to that request, whether it is successful or not.</li>
+                <li>We use than to check the response and in the than we use a function to also passing into the function a paramter of our choice which is the response. We have used res.text as its a text file we are dealing with and the first then returns the promise the second then with data passed in returns the data.
+                  <br><img src="Images/Fetch example basic.jpg" alt=""></li>
+                <li>Below is the same example but using .catch 
+                  <br><img src="Images/Fetch example basic error.jpg" alt=""></li>
+                <li>Below is the same example but using getting json data 
+                  <br><img src="Images/Fetch example basic error json.jpg.jpg" alt=""></li>
+                <li>Below is the same example but using getting API data
+                  <br><img src="Images/Fetch example basic API.jpg" alt=""></li>
+                <li>Dealing with errors in the fetch API method is as below:
+                  <br><img src="Images/Fetch example Error handling.jpg" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Arrow Functions</h2>
+            <p>An arrow function expression is a syntactically compact alternative to a regular function expression</p>
+              <ul>
+                <li>Arrow functions compared to normal function remove the following:
+                  <ul>
+                    <li>The function key word used in a normal function.</li>
+                    <li>You should be left with some () parenthesis.</li>
+                    <li>After the () you want to put a arrow which is created through using a => - Looking like <b>() => {BODY}</b></li>
+                    <li>Basic Arrow function
+                      <br><img src="Images/Basic Arrow function.jpg" alt=""></li>
+                  </ul>
+                </li>
+                <li>When you return a object literal you will get undefined, to fix this you will have to wrap the return in parenthesis
+                  <br><img src="Images/Arrow function object return.jpg" alt=""></li>
+                <li>An arrow function with a paramter will look like this:
+                  <br><img src="Images/Arrow function with paramter.jpg" alt=""></li>
+                <li>Multiple paramters for a arrow function need parenthesis a sinlge parmater doesnt</li>
+                <li>Arrow function use din the fetch example
+                  <br><img src="Images/Arrow function in fetch example.jpg" alt=""></li>
+                <li>Arrow Functions lexically bind their context so this actually refers to the originating context. This allows you to refer to a this in the scope of another function not worrying about the scope of the function when using this. While in ES5 ‘this’ referred to the parent of the function, in ES6, arrow functions use lexical scoping — ‘this’ refers to it’s current surrounding scope and no further. Thus the inner function knew to bind to the inner function only, and not to the object’s method or the object itself. See line 24
+                  <br><img src="Images/lexical this.png" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Async and Await</h2>
+            <p>More recent additions to the JavaScript language are <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await" target="_blank">async</a> functions and the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/await" target="_blank">await</a> keyword, part of the so-called ECMAScript 2017 JavaScript edition</p>
+              <ul>
+                <li>As this is new check for compatability and compile the code down if needs be</li>
+                <li>You start of by adding async to the start of the function. This automatically gets the function to return a promise</li>
+                <li>Within the function you can use await and this will wait for what ever you have asked to wait for
+                  <br><img src="Images/async await example 2.jpg" alt=""></li>
+                <li>A example of async await with error capturing. 
+                  <br><img src="Images/async await error example 2.jpg" alt=""></li>
+                <li>The below is an example a fetch api pulling in dummy data. This time code is neater and each step waits for the previous to be completed. 
+                  <br><img src="Images/Fetch API with async await.jpg" alt=""></li>
               </ul>
           </section>
 
@@ -207,44 +299,6 @@
 
 <!-- 
 
-<h2>Asynchronous JavaScript with Promises</h2>
-<ul>
-  <li>This is the better way to do things over call backs. </li>
-  <li>A promise represents the eventual completion of a Asynchronous operation. A value that might be avalible yet like data from a server</li>
-  <li>A example of a Asynchronous call back is ordering a takeaway and you leave your detials. You have ordered and they will deliver but you are always waiting for a call back <br>
-    This example you are a few issues, the number you gave might be wrong, the order could be wrong and so on</li>
-  <li>A Asynchronous <b> promise</b> is the same as above but this time you go to the shop and pay and when you pay you are given a pager. You will now be alearted when things are ready or if there is a issue</li>
-  <li>A promise is better as you will always get a value. That value might be the result you are looking for but it will be informative and will be returned.</li>
-  <li>The states a promise can be in - pending(The default state of a promise) - fulfilled(The operation completed successfully) - rejected(The operation failed)</li>
-  <li><img src="Images/working with a promise.jpg" alt=""></li>
-  <li>The below is a empty promise that takes into account the three states, you dont see pending as its default. setTmeout is used to allow you to do other things while the call back runs <br>
-    <img src="Images/Promise Example.jpg" alt=""></li>
-  <li><b>then()</b> and <b>catch()</b>are meathods you can use on the promise. <br>
-    .then() is use to get the successful value out to the console <br>
-    <img src="Images/Promise Example then.jpg" alt=""></li>
-  <li>Using the .catch() meathod you can deal with a rejection. </li>
-  <li style="color: red;">Always remember to add a resolve and reject so your promise doesnt fail silently. <br>
-    <img src="Images/promise resolve and reject.jpg" alt=""></li>
-  <li>Below example uses a if statement for resolve and reject <br>
-    <img src="Images/promise if statement.jpg" alt=""></li>
-  <li>Review <br>
-    <img src="Images/Promise Review.jpg" alt=""> <br>
-    <img src="Images/names functions.jpg" alt=""><br>
-    <img src="Images/promise chaining 1.jpg" alt=""><br>
-    <img src="Images/promise chaining 2.jpg" alt=""> </li>
-  <li>Promises provide can keep track of many Asynchronous requests. <b>Promise.all()</b> accepts a array </li>
-  <li>Promise.all is a all or nothing operation. It will reject if any of the promises fail.</li>
-  <li>finally is a new addition to promises and is called once a promise if fully settled, happening regardfull success or failure of the promise - Example <br>
-    <img src="Images/promise finally example.jpg" alt=""></li>
-  <li>finally call back nesting requires you to jump out when following and is a little messy. Promises use a chain of functions to provide the result <br>
-    .then - .catch - .finally</li>
-  <li>fetch API allow you to use javascript promises to allow you to handle results from the server. The global fetch meathod <b>fetch()</b> </li>
-  <li>The fetch meathod enables you to remove the xhr AJAX typical code as below <br>
-    <img src="Images/fetch meathod.jpg" alt=""></li>
-  <li>The fetch meathod itself returns a promise. </li>
-  <li>Below is a example function that displays using fetch to get a promise <br>
-    <img src="Images/fetch promise function.jpg" alt=""></li>
-</ul>
 
 
 <h2>Exploring Async/Await</h2>
