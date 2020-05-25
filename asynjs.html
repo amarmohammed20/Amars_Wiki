@@ -1,85 +1,253 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Asynchronous JavaScript, Ajax & Fetch API</title>
+      <link rel="stylesheet" href="style.css">
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  </head>
   <body>
-    <h1> <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous" target="_blank">Asynchronous Programming with JS</a></h1>
-      <p></p>
-      
-    <h2>What is Asynchronous Programming?</h2>
-      <ul>
-        <li>JS is a single synchronous threaded lanuage which means it can only excute and process one task at a time</li>
-        <li>Example is were an app opens and it waits for data from a server, this will negatively affect your performance and user experience.</li>
-        <li>JS uses Asynchronous to allows tasks to run while other tasks run in the background taking thier time.</li>
-        <li>The <a href="https://www.toppr.com/ask/question/the-main-difference-between-synchronous-and-asynchronous-transmission-is/" target="_blank">difference </a> between Asynchronous and synchronous </li>
-        <li>Example of synchronous code - nothing can be done whille the function is running <br>
-          <img src="Images/synchronous example JS.jpg" alt=""> <br>
-          <img src="Images/synchronous example JS Frontend.jpg" alt=""> </li>
-        <li>The above example but done with an Asynchronous approach <br>
-          <img src="Images/Asynchronous example JS.jpg" alt=""></li>
-        <li>On the above the <b>setTimeout(()</b> meathod uses a call back function says to run the code after a given number of time</li>
-        <li>The below example is a synchronous code that uses a ajax request to pull 5000 photos in as JSON and once done an alert box is fired <br>
-        <img src="Images/AJAX synchronous example JS.jpg" alt=""></li>
-        <li>Information on <a href="https://developer.mozilla.org/en-US/docs/Glossary/Call_stack" target = "_blank"> Call stack</a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Queue" target = "_blank">Queue - MDN</a> <a href="https://developer.mozilla.org/en-US/docs/Web/API" target = "_blank">Web APIs -MDN</a></li>
-        <li>The call background <br>
-          <img src="Images/Call back.jpg" alt=""> <br>
-          <img src="Images/Call back 2.jpg" alt=""></li>
-        <li>More info <a href="http://latentflip.com/loupe">Visualize how JavaScript's call stack/event loop/callback queue interact</a></li>
-      </ul>
-      
-    <h2>Asynchronous JavaScript with Callbacks</h2>
-      <ul>
-        <li>Asynchronous is structured in a different way compared to synchronous</li>
-        <li>Asynchronous use call backs</li>
-        <li style="color:red">A call back is a function that is passed to another function as a argument and only runs when its parent function has finished</li>
-        <li>Callback Functions <br>
-          <img src="Images/call back function explained.jpg" alt=""> <br>
-          <img src="Images/call back DOM event.jpg" alt=""> <br>
-          <img src="Images/iteration meathods callback.jpg" alt=""> <br>
-          <img src="Images/CPS callback.jpg" alt="">
-        </li>
-        <li>Example - <a href=""></a></li>
-        <li>Debugging resource - <a href="https://teamtreehouse.com/library/breaking-on-events-and-basic-stepping" target="_blank">Breaking on Events and Basic Stepping</a>, <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/breakpoints#event-listeners" target="_blank">Event listener breakpoints</a>, <a href="https://developers.google.com/web/tools/chrome-devtools/javascript/reference#call-stack" target="_blank">View the current call stack</a></li>
-      </ul>
-      
-    <h2>Asynchronous JavaScript with Promises</h2>
-      <ul>
-        <li>This is the better way to do things over call backs. </li>
-        <li>A promise represents the eventual completion of a Asynchronous operation. A value that might be avalible yet like data from a server</li>
-        <li>A example of a Asynchronous call back is ordering a takeaway and you leave your detials. You have ordered and they will deliver but you are always waiting for a call back <br>
-          This example you are a few issues, the number you gave might be wrong, the order could be wrong and so on</li>
-        <li>A Asynchronous <b> promise</b> is the same as above but this time you go to the shop and pay and when you pay you are given a pager. You will now be alearted when things are ready or if there is a issue</li>
-        <li>A promise is better as you will always get a value. That value might be the result you are looking for but it will be informative and will be returned.</li>
-        <li>The states a promise can be in - pending(The default state of a promise) - fulfilled(The operation completed successfully) - rejected(The operation failed)</li>
-        <li><img src="Images/working with a promise.jpg" alt=""></li>
-        <li>The below is a empty promise that takes into account the three states, you dont see pending as its default. setTmeout is used to allow you to do other things while the call back runs <br>
-          <img src="Images/Promise Example.jpg" alt=""></li>
-        <li><b>then()</b> and <b>catch()</b>are meathods you can use on the promise. <br>
-          .then() is use to get the successful value out to the console <br>
-          <img src="Images/Promise Example then.jpg" alt=""></li>
-        <li>Using the .catch() meathod you can deal with a rejection. </li>
-        <li style="color: red;">Always remember to add a resolve and reject so your promise doesnt fail silently. <br>
-          <img src="Images/promise resolve and reject.jpg" alt=""></li>
-        <li>Below example uses a if statement for resolve and reject <br>
-          <img src="Images/promise if statement.jpg" alt=""></li>
-        <li>Review <br>
-          <img src="Images/Promise Review.jpg" alt=""> <br>
-          <img src="Images/names functions.jpg" alt=""><br>
-          <img src="Images/promise chaining 1.jpg" alt=""><br>
-          <img src="Images/promise chaining 2.jpg" alt=""> </li>
-        <li>Promises provide can keep track of many Asynchronous requests. <b>Promise.all()</b> accepts a array </li>
-        <li>Promise.all is a all or nothing operation. It will reject if any of the promises fail.</li>
-        <li>finally is a new addition to promises and is called once a promise if fully settled, happening regardfull success or failure of the promise - Example <br>
-          <img src="Images/promise finally example.jpg" alt=""></li>
-        <li>finally call back nesting requires you to jump out when following and is a little messy. Promises use a chain of functions to provide the result <br>
-          .then - .catch - .finally</li>
-        <li>fetch API allow you to use javascript promises to allow you to handle results from the server. The global fetch meathod <b>fetch()</b> </li>
-        <li>The fetch meathod enables you to remove the xhr AJAX typical code as below <br>
-          <img src="Images/fetch meathod.jpg" alt=""></li>
-        <li>The fetch meathod itself returns a promise. </li>
-        <li>Below is a example function that displays using fetch to get a promise <br>
-          <img src="Images/fetch promise function.jpg" alt=""></li>
-      </ul>
+    <div class="wrapper">
+      <header>
+        <h1>Asynchronous JavaScript, Ajax & Fetch API</h1>
+      </header>
 
-    <h2>Exploring Async/Await</h2>
+        <main>
+          <section class="openingSection">
+            <p><a href="https://www.youtube.com/watch?v=RDo3hBL1rfA" target="_blank">Ajax Basics</a></p>
+            <p>HTTP <a href="https://en.wikipedia.org/wiki/List_of_HTTP_status_codes" target="_blank">Status codes</a></p>
+          </section>
+
+          <section>
+            <h2>What is <a href="https://eloquentjavascript.net/11_async.html" target="_blank">Asynchronous Programming?</a></h2>
+            <p>In a synchronous programming model, things happen one at a time. When you call a function that performs a long-running action, it returns only when the action has finished and it can return the result. This stops your program for the time the action takes.</p>
+
+            <p>An asynchronous model allows multiple things to happen at the same time. When you start an action, your program continues to run. When the action finishes, the program is informed and gets access to the result (for example, the data read from disk).</p>
+              <ul>
+                <li>Synchronous code is known as blocking code and only runs when the previous task has been completed</li>
+                <li>JavaScript is a single synchronous threaded lanuage which means it can only excute and process one task at a time</li>
+                <li>Example is were an app opens and it waits for data from a server, this will negatively affect your performance and user experience.</li>
+                <li>JS uses Asynchronous to allows tasks to run while other tasks run in the background taking thier time.</li>
+                <li>The <a href="https://www.toppr.com/ask/question/the-main-difference-between-synchronous-and-asynchronous-transmission-is/" target="_blank">difference </a> between Asynchronous and synchronous </li>
+                <li>There are a few ways to work with Async code:</li>
+                  <ul>
+                    <li><a href="https://www.freecodecamp.org/news/javascript-callback-functions-what-are-callbacks-in-js-and-how-to-use-them/" target="_blank">Callbacks</a></li>
+                    <li><a href="https://web.dev/promises/" target="_blank">Promises</a></li>
+                    <li><a href="https://javascript.info/async-await" target="_blank">Async/Await</a></li>
+                  </ul>
+                <li>Example of synchronous code - nothing can be done whille the function is running:
+                  <br><img src="Images/synchronous example JS.jpg" alt="">
+                  <br><img src="Images/synchronous example JS Frontend.jpg" alt=""> </li>
+                <li>The above example but done with an Asynchronous approach:
+                  <br><img src="Images/Asynchronous example JS.jpg" alt=""></li>
+                <li>On the above the <a href="https://www.w3schools.com/js/js_timing.asp" target="_blank"><b>setTimeout(function, milliseconds)</b></a> meathod uses a call back function says to run the code after a given number of time</li>
+                <li>The below example is a synchronous code that uses a ajax request to pull 5000 photos in as JSON and once done an alert box is fired
+                  <br><img src="Images/AJAX synchronous example JS.jpg" alt=""></li>
+                <li>Information on <a href="https://developer.mozilla.org/en-US/docs/Glossary/Call_stack" target = "_blank"> Call stack</a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#Queue" target = "_blank">Queue - MDN</a> <a href="https://developer.mozilla.org/en-US/docs/Web/API" target = "_blank">Web APIs -MDN</a></li>
+                <li>The call background
+                  <br><img src="Images/Call back.jpg" alt="">
+                  <br><img src="Images/Call back 2.jpg" alt=""></li>
+                <li>More info <a href="http://latentflip.com/loupe">Visualize how JavaScript's call stack/event loop/callback queue interact</a></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Ajax Concepts</h2>
+            <ul>
+                <li>Ajax stands for Asynchronous JavaScript and XML. </li>
+                <li>Ajax is:
+                  <br><img src="Images/What is Ajax.jpg" alt=""> </li>
+                <li>Ajax lets you update HTML without loading a new webpage</li>
+                <li>Ajax is not a lanuage or framework, its a set of web technologies to send and recieve data from the client and server without reloading the webpage.</li>
+                <li>JSON is mainly used instead of XML now with Ajax</li>
+                <li>A diagram on how things work. The common request if normally HTTP request, making this request asynchronously. Remember we have to parse the JSON information when it comes into the client
+                  <br><img src="Images/Ajax diagram.jpg" alt=""></li>
+                <li>The XMLHttpRequest (XHR) Object is the main technology in Ajax and is provided by the JavaScript environment
+                  <br><img src="Images/XmlHttpRequest Object.jpg" alt=""></li>
+                <li>There are other libraries/Methods to make HTTP requests</li>
+                  <ul>
+                    <li>Fetch API - The new plain method</li>
+                    <li>Axios</li>
+                    <li>Superagent</li>
+                    <li>jQuery - Not suggested, mainly used for DOM manipulation</li>
+                    <li>Node HTTP</li>
+                  </ul>
+                <li>Google Maps is a good example as it allows you to search for location and navigate all doing this quickly without loading a new HTML page
+                  <br>Loading new content without loading new web pages</li>
+                <li>reddit is a website that has many posts, you can vote for a post to be shown higher. This click of a button to vote sends a message to the reddit server
+                  <br><img src="Images/reddit ajax example.jpg" alt=""></li>
+                <li>Normally when you require more information or submit a form a new web page is created or required. Ajax is quicker and faster and lets you get that information from a webserver</li>
+                <li><img src="Images/Ajax and browser diagram.jpg" alt="">
+                  <br>With ajax not the whole page of information is brought back just what is required. Javascript is used to apply this information to the parts of the webpage</li>
+                <li>The internet is made up of browsers or clients making requests from servers and servers providing responses.</li>
+                <li>You can see Ajax working within the console by clicking the cox in the console and selecting <b>Log XMLHttpRequests</b>
+                  <br><img src="Images/console Ajax requests.jpg" alt="">
+                  <br>You see the above image using GET api requests from a server to pull information</li>
+                <li>You will need to know Php, Ruby, Python, Cold Fusion and a few others for the server side.</li>
+                <li>Ajax has been around for a long time first introduced by Microsoft in 1999 with IE 5. Also known as XHR</li>
+                <li>Javascript is used to make Ajax happen - for both request and response
+                  <br>Ajax uses Asynchronous technology to keep loading the html while getting the response from the server</li>
+                <li>What is one characteristic of "asynchronous" AJAX requests? - Call backs for multiple AJAX requests may not run in the order the requests were sent
+                  <br>Yes. Servers may take longer to respond to certain requests, so callbacks run in the order in which the responses return.</li>
+                <li>Web browsers use XMLHttpRequest Object to manage AJAX requests</li>
+                <li>How Ajax works
+                  <br><img src="Images/How Ajax Works.jpg" alt=""></li>
+                <li>To get ajax working you will need a web server running on your machine</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>Ajax Example</h2>
+            <p>In this example we will be pulling in some information from a text file we have created when clicking on a button</p>
+              <ul>
+                <li>We have the below as a setup ready for the example:</li>
+                  <ul>
+                    <li>A button on the HTML page called Get Data. This is wrapped in a div</li>
+                    <li>Another div which will be used to hold the output</li>
+                    <li>A linked js file holding out JavaScript</li>
+                  </ul>
+                <li>Start of by creating a event listener for the button. The function used will be called loadData</li>
+                <li>In the loadData function we start of by creating a variable called xhr and set to new XMLHttpRequest();</li>
+                <li>This is created like any other object constructor and has properties associated to it. One of the properties we will be using will be called open</li>
+                <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open" target="_blank"></a> The XMLHttpRequest method open() initializes a newly-created request, or re-initializes an existing one.</li>
+                  <ul>
+                    <li>The first paramter will be the type of request which can be - GET, POST, PUT or DELETE</li>
+                    <li>The second paramter will be the file which is this case is file.txt. This normally is a URL - A DOMString representing the URL to send the request to.</li>
+                    <li>As we want this to be asynchronous we will set the third paramter to be true - An optional Boolean parameter, defaulting to true, indicating whether or not to perform the operation asynchronously. If this value is false, the send() method does not return until the response is received. If true, notification of a completed transaction is provided using event listeners. This must be true if the multipart attribute is true, or an exception will be thrown.</li>
+                    <li>Further paramters will be username and password but this is only used when authetication is required.</li>
+                  </ul>
+                <li>We now called the xhr variable by uisng xhr.onload = function() {}. In this function we simply decide what we want to do with the data we are getting.</li>
+                <li>We first get the HTTP status to ensure all is ok with should return 200. the xhr variable we defined earlier we like a object constructor and has a property called status so to check this we do this.status === 200</li>
+                <li>Another property the xhr object has is <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseText" target="_blank">reponseText</a>. The read-only XMLHttpRequest property responseText returns the text received from a server following a request being sent.</li>
+                <li>To finalise everything we have to do send which would be <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send" target="_blank">xhr.send</a> - The XMLHttpRequest method send() sends the request to the server. If the request is asynchronous (which is the default), this method returns as soon as the request is sent and the result is delivered using events. If the request is synchronous, this method doesn't return until the response has arrived.</li>
+                <li>All should work and we currently are just logging the text to the console log
+                  <br><img src="Images/xhr object example.jpg" alt=""></li>
+                <li>the onload property is fairly new, previously we used onreadystatechange as below:
+                  <br><img src="Images/onreadystate.jpg" alt=""></li>
+                <li>You can have what we call a spinner or loader, something showing while the information is being fetched. <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onprogress" target="_blank">xhr.onprogress</a> = function() {}</li>
+                <li>To capture any errors you can use <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequestEventTarget/onerror" target="_blank">xhr.onerror</a> = function() {}. This will only run if something has gone wrong.</li>
+                <li>Currently we are only console logging the returned text but in the onload function we can place the text anywhere we want without a page refresh</li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Working With Ajax and JSON</h2>
+              <ul>
+                <li>A json file has the extention of .json</li>
+                <li>JSON is very similiar to a object literal. The difference with JSON is you wrap your keys in double quotes "" - "id":1,
+                  <br>The strings which are the values should also be wrapped in double quotes "". 
+                  <br><img src="Images/json example.jpg" alt=""></li>
+                <li>You can validate your JSON by visiting <a href="https://jsonlint.com/" target="_blank">jsonlint</a></li>
+                <li>The JSON will look a this in the console log 
+                  <br><img src="Images/json example response.jpg" alt=""></li>
+                <li>Remember to parse the JSON as when first imported it will be imported as text. To do this we do by using JSON.parse(this.reponseText) </li>
+                <li>The working json both js and HTML 
+                  <br><img src="Images/json example output.jpg" alt=""></li>
+                <li>When dealing with JSON files that are larger than a single object we will need to loop though the array. It would be variable .forEach() and the variable will be whatever you used to parse the information. 
+                  <br><img src="Images/json example output multiple.jpg" alt=""> </li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Data From External API</h2>
+              <ul>
+                <li>Instead of normally putting the filename we put a URL and part of the URL might need to be dynamic
+                  <br><img src="Images/json URL request.jpg" alt=""></li>
+                <li>One thing to be careful of each API returns its data different so read the documentation. Some return a object if so you will need to look at the response.value for the forEach() as its the value within the object that holds the array</li>
+                <li>The final JS code 
+                  <br><img src="Images/json URL request js.jpg" alt=""></li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>REST API's & HTTP requests</h2>
+              <ul>
+                <li>API stands for Application Programming Interface and is the messenger that takes requests and tells the server what you want to do, finally returning the response back to you.</li>
+                <li>There are many different types of API's and we are talking about a web API. This is normally the below
+                  <br><img src="Images/Web API.jpg" alt=""></li>
+                <li>A rest API is the below: rest lets us format the API using HTTP and is commonly used in many different software lanuages 
+                  <br><img src="Images/Rest API.jpg" alt=""></li>
+                <li><img src="Images/HTTP Rquests.jpg" alt=""></li>
+                <li>You normally only ever send data with the HTTP API methods Post and PUT</li>
+              </ul>
+          </section>
+
+          <section>
+            <h2>Callback Functions</h2>
+            <p>A <a href="https://www.freecodecamp.org/news/what-is-a-callback-function-in-javascript/" target="_blank">callback function</a> is a function that is passed as an argument to another function, to be “called back” at a later time. A function that accepts other functions as arguments is called a higher-order function, which contains the logic for when the callback function gets executed. It’s the combination of these two that allow us to extend our functionality.</p>
+              <ul>
+                <li>Previously we have used </li>
+              </ul>
+          </section>
+
+        </main>
+      <footer>
+        <p>&copy;2020 JavaScript - Asynchronous Programming, Amar's Learning</p>
+      </footer>
+    </div>    
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<h2>Asynchronous JavaScript with Promises</h2>
+<ul>
+  <li>This is the better way to do things over call backs. </li>
+  <li>A promise represents the eventual completion of a Asynchronous operation. A value that might be avalible yet like data from a server</li>
+  <li>A example of a Asynchronous call back is ordering a takeaway and you leave your detials. You have ordered and they will deliver but you are always waiting for a call back <br>
+    This example you are a few issues, the number you gave might be wrong, the order could be wrong and so on</li>
+  <li>A Asynchronous <b> promise</b> is the same as above but this time you go to the shop and pay and when you pay you are given a pager. You will now be alearted when things are ready or if there is a issue</li>
+  <li>A promise is better as you will always get a value. That value might be the result you are looking for but it will be informative and will be returned.</li>
+  <li>The states a promise can be in - pending(The default state of a promise) - fulfilled(The operation completed successfully) - rejected(The operation failed)</li>
+  <li><img src="Images/working with a promise.jpg" alt=""></li>
+  <li>The below is a empty promise that takes into account the three states, you dont see pending as its default. setTmeout is used to allow you to do other things while the call back runs <br>
+    <img src="Images/Promise Example.jpg" alt=""></li>
+  <li><b>then()</b> and <b>catch()</b>are meathods you can use on the promise. <br>
+    .then() is use to get the successful value out to the console <br>
+    <img src="Images/Promise Example then.jpg" alt=""></li>
+  <li>Using the .catch() meathod you can deal with a rejection. </li>
+  <li style="color: red;">Always remember to add a resolve and reject so your promise doesnt fail silently. <br>
+    <img src="Images/promise resolve and reject.jpg" alt=""></li>
+  <li>Below example uses a if statement for resolve and reject <br>
+    <img src="Images/promise if statement.jpg" alt=""></li>
+  <li>Review <br>
+    <img src="Images/Promise Review.jpg" alt=""> <br>
+    <img src="Images/names functions.jpg" alt=""><br>
+    <img src="Images/promise chaining 1.jpg" alt=""><br>
+    <img src="Images/promise chaining 2.jpg" alt=""> </li>
+  <li>Promises provide can keep track of many Asynchronous requests. <b>Promise.all()</b> accepts a array </li>
+  <li>Promise.all is a all or nothing operation. It will reject if any of the promises fail.</li>
+  <li>finally is a new addition to promises and is called once a promise if fully settled, happening regardfull success or failure of the promise - Example <br>
+    <img src="Images/promise finally example.jpg" alt=""></li>
+  <li>finally call back nesting requires you to jump out when following and is a little messy. Promises use a chain of functions to provide the result <br>
+    .then - .catch - .finally</li>
+  <li>fetch API allow you to use javascript promises to allow you to handle results from the server. The global fetch meathod <b>fetch()</b> </li>
+  <li>The fetch meathod enables you to remove the xhr AJAX typical code as below <br>
+    <img src="Images/fetch meathod.jpg" alt=""></li>
+  <li>The fetch meathod itself returns a promise. </li>
+  <li>Below is a example function that displays using fetch to get a promise <br>
+    <img src="Images/fetch promise function.jpg" alt=""></li>
+</ul>
+
+
+<h2>Exploring Async/Await</h2>
       <ul>
         <li>Async await is the new way jaavscript deals with promises. no .than required<br>
           <img src="Images/async await example.jpg" alt=""> </li>
@@ -89,11 +257,4 @@
           That promise resolves with the value returned by the async function, or rejects with an error thrown from within the function</li>
         <li>Async/await is not meant to replace promises -- it's actually syntactic sugar for creating functions that return and wait for promises.</li>
         <li>the most common way to catch errors <a href="https://www.youtube.com/watch?v=BztW_u6HDbs" target="_blank">try / catch with Promises</a></li>
-      </ul>
-
-
-
-      
-        
-  </body>
-</html>
+      </ul> -->
