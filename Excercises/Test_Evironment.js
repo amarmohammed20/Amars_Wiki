@@ -20,7 +20,6 @@ let human = {
   education : "Degree",
   hobbies : ["cars", "games"]
 };
-console.log(human);
 
 let objectButton = document.querySelector("#buttonObject");
 let objectButtonEvent = objectButton.addEventListener("click", 
@@ -34,4 +33,30 @@ let objectButtonEvent = objectButton.addEventListener("click",
                               <p>They are ${human.education} educated</p>
                               <p>They love ${human.hobbies[0]} and ${human.hobbies[1]}</p>`
     });
-      
+
+// Class Object Constructor example
+
+let classButton = document.querySelector("#classObject");
+let classButtonEvent = classButton.addEventListener("click", 
+    function classPrintObject(e) {
+      let rabbitBritish = new Rabbit("British", "Lettuce", "White");
+      rabbitBritish.speak();
+      let rabbitSpanish = new Rabbit("Spanish", "Cucumber", "Brown");
+      rabbitSpanish.speak();
+    });
+
+
+
+class Rabbit {
+  constructor(type, eat, color) {
+    this.type = type;
+    this.eat = eat;
+    this.color = color;
+  }
+  speak() {
+    const printDiv = document.querySelector(".classObject");
+    printDiv.innerHTML = `The ${this.type} Rabbit love to eat ${this.eat} and can be spotted becuase he is the colour ${this.color}`
+  }
+}
+
+// Ajax example
