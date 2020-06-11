@@ -59,4 +59,20 @@ class Rabbit {
   }
 }
 
-// Ajax example
+// fetch API example
+let fetchapiDiv = document.querySelector(".fetchapiObject");
+let apiButton = document.querySelector("#apiObject");
+let apiButtonEvent = apiButton.addEventListener("click",
+  function fetchPrintData(e) {
+    e.preventDefault();
+    console.log(parseData);
+  });
+
+const testApi = () => {  
+  return fetch('http://jsonplaceholder.typicode.com/posts')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  let parseData = JSON.parse(data);
+  // .catch(error => console.error(error))
+}
+

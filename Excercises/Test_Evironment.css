@@ -23,6 +23,10 @@ body {
     margin-top: 5%;
 }
 
+#apiObject {
+    margin-top: 5%;
+}
+
 .printObject {
     display: block;
 }
