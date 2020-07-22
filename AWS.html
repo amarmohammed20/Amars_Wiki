@@ -20,6 +20,7 @@
 
                     <section>
                         <h2>AWS Cloud Practitioner Essentials</h2>
+                        <p><b style="color: red;">Everything that runs between AWS resources runs and connects using a API</b></p>
                         <p>The fundamental-level course is intended for individuals who seek an overall understanding of the AWS Cloud, independent of specific technical roles. It provides a detailed overview of cloud concepts, AWS services, security, architecture, pricing, and support. This course also helps you prepare for the AWS Certified Cloud Practitioner exam.</p>
 
                         <p>The course outline</p>
@@ -210,8 +211,274 @@
                                     <li>A good guide to Setup a application load balancer <a href="https://www.youtube.com/watch?v=OKnd03nxu3k" target="_blank">AWS - ALB</a> </li>
                                     <li>To build a application load balancer you will navigate to the ec2 screen in the admin portal and go to load balancer. Here you can create either a classic load balancer or a application load balancer.</li>
                                     <li>Once you have created the load balancer ensure to create the target group. Ensure to register the instance for that target group</li>
-                                    <li></li>
                                 </ul>
+
+                            <h3>Auto Scaling</h3>
+                                <ul>
+                                    <li>AWS Auto Scaling monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost. Using AWS Auto Scaling, it’s easy to setup application scaling for multiple resources across multiple services in minutes.</li>
+                                    <li><img src="Images/Auto Scaling.png" alt=""></li>
+                                    <li>No need to guess how much resource you need</li>
+                                    <li>Important to use <a href="https://aws.amazon.com/cloudwatch/" target="_blank">Cloud Watch</a> to assist with feedback on how much resource you actually need. Cloud Watch will not automatically apply the required resource you will need auto scaling for this
+                                        <br><img src="Images/Auto Scaling Cloud Watch.png" alt=""></li>
+                                    <li>Below is it shown that we have a peek in resource usage in the middle of the week. Instead of being under resourced or over resourced Auto Scaling provides the extra resource as and when required.</li>
+                                    <li>Auto Scaling is not only providing the adequate resource its also providing that resource on on-demand</li>
+                                    <li>You can set rules and paramters to when to scale up or down. This could be a CPU percentage or another condition.
+                                        <br><img src="Images/Auto Scaling In and Out.png" alt=""></li>
+                                    <li><img src="Images/Auto Scaling Coms.png" alt="">
+                                    <br><img src="Images/Auto Scaling Coms 2.png" alt="">
+                                    <br><img src="Images/Auto Scaling Coms 3.png" alt=""></li>
+                                    <li>Dynamic auto scaling can be achieved through creating cloud watch alarms which can trigger the auto scaling
+                                        <br><img src="Images/Auto Scaling Dynamic.png" alt=""></li>
+                                    <li><img src="Images/Auto Scaling Cloud Watch Alarm.png" alt=""></li>
+                                    <li>A tutorial for <a href="https://www.youtube.com/watch?v=bhobfyQ9SSE" target="_blank">Auto Scaling</a></li>
+                                    <li>Again Auto Scaling can be found under the ec2 area in the management console.</li>
+                                    <li>Start with creating a auto scaling group</li>
+                                    <li><img src="Images/Auto Scaling Summary.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS Route 53</h3>
+                                <ul>
+                                    <li>Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service. It is designed to give developers and businesses an extremely reliable and cost effective way to route end users to Internet applications by translating names like www.example.com into the numeric IP addresses like 192.0.2.1 that computers use to connect to each other. Amazon Route 53 is fully compliant with IPv6 as well.</li>
+                                    <li><img src="Images/Route 53.png" alt=""></li>
+                                    <li><img src="Images/Route 53 How it works.png" alt=""></li>
+                                    <li>To start using route 53 you have to create a <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zones-working-with.html" target="_blank">Hosted Zone</a></li>
+                                    <li>After creating the hosted zone you will be provided with name servers that can be used for that domain</li>
+                                    <li><img src="Images/Route 53 Resolution Stratergies.png" alt=""></li>
+                                    <li><img src="Images/Route 53 Summary.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS Relational Database Services</h3>
+                                <ul>
+                                    <li>Amazon Relational Database Service (Amazon RDS) makes it easy to set up, operate, and scale a relational database in the cloud. It provides cost-efficient and resizable capacity while automating time-consuming administration tasks such as hardware provisioning, database setup, patching and backups. It frees you to focus on your applications so you can give them the fast performance, high availability, security and compatibility they need.</li>
+                                    <li><img src="Images/AWS RDS Challenges.png" alt=""></li>
+                                    <li><img src="Images/AWS RDS Intro.png" alt=""></li>
+                                    <li><img src="Images/AWS RDS 2.png" alt=""></li>
+                                    <li><img src="Images/AWS RDS Instances.png" alt=""></li>
+                                    <li><img src="Images/AWS RDS VPC.png" alt=""></li>
+                                    <li>A AWS RDS is normally isolated in a private subnet and is only made accessable to indicated applications</li>
+                                    <li>When selecting a subnet for your RDS you are also selecting the Avalibilty zone for that data base</li>
+                                    <li>Amazon created another standby instance of the RDS in another availability zone syncronising the data automitaclly from the RDS DB instance to the standby instance.
+                                        <br><img src="Images/AWS RDS High Availability.png" alt="">
+                                        <br><img src="Images/AWS RDS High Availability Failover.png" alt=""></li>
+                                    <li><img src="Images/AWS RDS High Availability 2.png" alt=""></li>
+                                    <li><img src="Images/AWS RDS USe Cases.png" alt=""></li>
+                                    <li><img src="Images/AWS RDS Summary.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS Lambda</h3>
+                                <ul>
+                                    <li>AWS Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume.
+                                        <br>
+                                        <br>With Lambda, you can run code for virtually any type of application or backend service - all with zero administration. Just upload your code and Lambda takes care of everything required to run and scale your code with high availability. You can set up your code to automatically trigger from other AWS services or call it directly from any web or mobile app.</li>
+                                    <li><img src="Images/AWS Lambda.png" alt=""></li>
+                                    <li><img src="Images/AWS Lambda works.png" alt=""></li>
+                                    <li><img src="Images/AWS Lambda Demo.png" alt=""></li>
+                                    <li>You can create cloud watch events to trigger your Lambda code
+                                        <br><img src="Images/AWS Lambda Triggers.png" alt=""></li>
+                                    <li>Use cases for AWS Lambda are, automating backups, processing objects uploaded to s3, event driven log analysis, Event Driven transformations, IOT, Operating serverless websites
+                                        <br><img src="Images/AWS Lambda Real time.png" alt=""></li>
+                                    <li><img src="Images/AWS Lambda Real time Stream.png" alt=""></li>
+                                    <li><img src="Images/AWS Lambda ETL.png" alt=""></li>
+                                    <li><img src="Images/AWS Lambda IOT.png" alt=""></li>
+                                    <li><img src="Images/AWS Lambda Mobile Backends.png" alt=""></li>
+                                    <li><img src="Images/AWS Lambda Web Backends.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS Elastic Beanstalk</h3>
+                                <ul>
+                                    <li>AWS Elastic Beanstalk is an easy-to-use service for deploying and scaling web applications and services developed with Java, .NET, PHP, Node.js, Python, Ruby, Go, and Docker on familiar servers such as Apache, Nginx, Passenger, and IIS.
+                                    <br>
+                                    You can simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.</li>
+                                    <li><img src="Images/AWS Elastic Benastalk.png" alt=""></li>
+                                    <li><img src="Images/AWS What is Elastic Benastalk.png" alt=""></li>
+                                    <li><img src="Images/AWS What is Elastic Benastalk 2.png" alt=""></li>
+                                    <li><img src="Images/AWS What is Elastic Benastalk 3.png" alt=""></li>
+                                    <li><img src="Images/AWS What is Elastic Benastalk 4.png" alt=""></li>
+                                    <li><img src="Images/AWS Elastic Benastalk Components.png" alt=""></li>
+                                    <li><img src="Images/AWS Elastic Benastalk Deploy and Updates.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS SNS Simple Notification Service</h3>
+                                <ul>
+                                    <li>Amazon Simple Notification Service (SNS) is a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications. Amazon SNS provides topics for high-throughput, push-based, many-to-many messaging. Using Amazon SNS topics, your publisher systems can fan out messages to a large number of subscriber endpoints for parallel processing, including Amazon SQS queues, AWS Lambda functions, and HTTP/S webhooks. Additionally, SNS can be used to fan out notifications to end users using mobile push, SMS, and email.</li>
+                                    <li><img src="Images/AWS SNS.png" alt=""></li>
+                                    <li><img src="Images/AWS SNS What is it.png" alt=""></li>
+                                    <li><img src="Images/AWS SNS What is it 2.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS CloudWatch</h3>
+                                <ul>
+                                    <li>Amazon CloudWatch is a monitoring and observability service built for DevOps engineers, developers, site reliability engineers (SREs), and IT managers. CloudWatch provides you with data and actionable insights to monitor your applications, respond to system-wide performance changes, optimize resource utilization, and get a unified view of operational health. CloudWatch collects monitoring and operational data in the form of logs, metrics, and events, providing you with a unified view of AWS resources, applications, and services that run on AWS and on-premises servers. You can use CloudWatch to detect anomalous behavior in your environments, set alarms, visualize logs and metrics side by side, take automated actions, troubleshoot issues, and discover insights to keep your applications running smoothly.</li>
+                                    <li><img src="Images/Whats is AWS Cloud Watch.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Features.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Architecture.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Use Cases.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Components.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Metrics.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Alarms.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Alarm Example.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Alarm 2.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Events.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Events Example.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Events Logs.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Watch Dashboard.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS CloudFront</h3>
+                                <ul>
+                                    <li>Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment. CloudFront is integrated with AWS – both physical locations that are directly connected to the AWS global infrastructure, as well as other AWS services. CloudFront works seamlessly with services including AWS Shield for DDoS mitigation, Amazon S3, Elastic Load Balancing or Amazon EC2 as origins for your applications, and Lambda@Edge to run custom code closer to customers’ users and to customize the user experience. Lastly, if you use AWS origins such as Amazon S3, Amazon EC2 or Elastic Load Balancing, you don’t pay for any data transferred between these services and CloudFront.</li>
+                                    <li>To deliver content to end users with lower latency, Amazon CloudFront uses a global network of 216 Points of Presence (205 Edge Locations and 11 Regional Edge Caches) in 84 cities across 42 countries. Amazon CloudFront Edge locations are located in:
+                                        <br><img src="Images/AWS Cloud Front.png" alt=""></li>
+                                    <li>Edge locations serve requests for CloudFront and Route 53. CloudFront is a content delivery network, while Route 53 is a DNS service. Requests going to either one of these services will be routed to the nearest edge location automatically. This allows for low latency no matter where the end user is located. I hope this answer gives you a better perspective.</li>
+                                    <li>Example <b style="color: red;">If your based in india and your customers are in the UK you can use Cloud Front to cache the web content providing faster response time to your customers.</b></li>
+                                    <li><img src="Images/AWS Cloud Front Overview.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Front Use Cases.png" alt=""></li>
+                                    <li>An Advantage for CloudFront is not just faster response times for your customer but also if the web server was to go down the cached version of the site will continue to show for your customers</li>
+                                </ul>
+
+                            <h3>AWS CloudFormation</h3>
+                                <ul>
+                                    <li>AWS CloudFormation provides a common language for you to model and provision AWS and third party application resources in your cloud environment. AWS CloudFormation allows you to use programming languages or a simple text file to model and provision, in an automated and secure manner, all the resources needed for your applications across all regions and accounts. This gives you a single source of truth for your AWS and third party resources.</li>
+                                    <li><img src="Images/AWS CloudFormation.png" alt=""></li>
+                                    <li><img src="Images/AWS CloudFormation Services.png" alt=""></li>
+                                    <li><img src="Images/AWS CloudFormation Resources.pngS" alt=""></li>
+                                    <li>AWS CloudFormation is best placed for autimation of creating infrastructures as it has a great reach into many AWS Services</li>
+                                    <li>No infrastructure to support
+                                        <br><img src="Images/AWS CloudFormation Service.png" alt=""></li>
+                                    <li>A template file is instructions on what resources you would like to provision. CloudFOrmation constructs the resources listed in the template.
+                                        <br><img src="Images/AWS CloudFormation Components.png" alt=""></li>
+                                    <li><img src="Images/AWS CloudFormation Stacks.png" alt=""></li>
+                                    <li>When you delete a stack all the resources of a stack at deleted</li>
+                                    <li><img src="Images/AWS CloudFormation Templates.png" alt=""></li>
+                                    <li>You dont have to list your resources in the exact order of creation in your template
+                                        <br><img src="Images/AWS CloudFormation Templates 2.png" alt=""></li>
+                                    <li><img src="Images/AWS CloudFormation Templates 3.png" alt=""></li>
+                                    <li><img src="Images/AWS CloudFormation Infrastructure as code.png" alt=""></li>
+                                    <li><img src="Images/AWS CloudFormation Requirements.png" alt=""></li>
+                                    <li>The two critical requirements to run CloudFOrmation are templates and permissions. The person calling the templates must have permissions to all services referrenced in the template</li>
+                                    <li>You can use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/working-with-templates-cfn-designer.html" target="_blank">CloudFormation designer</a> to get started</li>
+                                    <li><img src="Images/AWS CloudFormation Designer.png" alt=""></li>
+                                    <li>Summary - AWS CloudFormation is a fully managed services that acts as a engine to autimate the provisioning of AWS resources. This is done through a use with the adequate permissions for all resources being provisioned and this is done through a template. These provisioned resources are known as the stack.</li>
+                                </ul>
+                    </section>
+
+                    <section>
+                        <h2>AWS Architecture</h2>
+                        <p>This module focuses on architectural considerations for deploying or migrating to the AWS Cloud. The module covers the fundamentals of a well architected solution, discusses fault tolerance and availability, and wraps up with a section on web hosting on the AWS Cloud.</p>
+
+                            <h3>The AWS Well-Architected Framework</h3>
+                                <ul>
+                                    <li><img src="Images/AWS Well Architcted Framework.png" alt=""></li>
+                                    <li>AWS use <a href="https://aws.amazon.com/blogs/apn/the-5-pillars-of-the-aws-well-architected-framework/" target="_blank">5 Pillars</a> as a guide on architecture
+                                    <br><img src="Images/AWS 5 Pillars.png" alt=""></li>
+                                    <li><img src="Images/AWS Security Pillar.png" alt=""></li>
+                                    <li><img src="Images/AWS Security Pillar Design.png" alt=""></li>
+                                    <li><img src="Images/AWS Reliability Pillar.png" alt=""></li>
+                                    <li><img src="Images/AWS Reliability Pillar Design.png" alt=""></li>
+                                    <li><img src="Images/AWS Performance Pillar.png" alt=""></li>
+                                    <li><img src="Images/AWS Performance Pillar Design.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost Pillar.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost Pillar Design.png" alt=""></li>
+                                    <li><img src="Images/AWS Operational Excellence Pillar.png" alt=""></li>
+                                    <li><img src="Images/AWS Well Architcted Framework Summary.png" alt=""></li>
+                                </ul>
+
+                            <h3>Fault Tolerance and High Availability</h3>
+                                <ul>
+                                    <li><img src="Images/AWS Fault Tolerance.png" alt=""></li>
+                                    <li><img src="Images/AWS High Availability.png" alt=""></li>
+                                    <li><img src="Images/AWS High Availability Vs On Premise.png" alt=""></li>
+                                    <li><img src="Images/AWS High Availability Tools.png" alt=""></li>
+                                    <li><img src="Images/AWS Fault Tolerence.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS Web Hosting</h3>
+                                <ul>
+                                    <li><a href="https://aws.amazon.com/websites/" target="_blank">Amazon Web Services</a> offers cloud web hosting solutions that provide businesses, non-profits, and governmental organizations with low-cost ways to deliver their websites and web applications. Whether you’re looking for a marketing, rich-media, or ecommerce website, AWS offers a wide-range of website hosting options, and we’ll help you select the one that is right for you.</li>
+                                </ul>
+                    </section>
+
+                    <section>
+                        <h2>AWS Security</h2>
+                            <ul>
+                                <li><img src="Images/AWS Security Intro.png" alt=""></li>
+                                <li>Infrastructure such as Data Centers are built for the most security sensative customers, all other customer benifit from this setup by default</li>
+                                <li><img src="Images/AWS Security Data Safe.png" alt=""></li>
+                                <li><img src="Images/AWS Security Pay for what you need.png" alt=""></li>
+                                <li><img src="Images/AWS Security Compliance.png" alt=""></li>
+                                <li><img src="Images/AWS Security Network Security.png" alt=""></li>
+                                <li><img src="Images/AWS Security Data Encrypt.png" alt=""></li>
+                                <li><img src="Images/AWS Security Managmenet.png" alt=""></li>
+                                <li><img src="Images/AWS Security Logging.png" alt=""></li>
+                                <li><img src="Images/AWS Security Market.png" alt=""></li>
+                            </ul>
+
+                        <h3>The Shared Responsibility Model</h3>
+                            <ul>
+                                <li>Both the user and AWS is responsible for ensuring Security in your Stack</li>
+                                <li><a href="https://aws.amazon.com/compliance/shared-responsibility-model/#:~:text=Security%20and%20Compliance%20is%20a%20shared%20responsibility%20between%20AWS%20and%20the%20customer.&text=The%20customer%20assumes%20responsibility%20and,AWS%20provided%20security%20group%20firewall." target="_blank">Security and Compliance</a> is a shared responsibility between AWS and the customer. This shared model can help relieve the customer’s operational burden as AWS operates, manages and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates.</li>
+                                <li><img src="Images/AWS Shared Respon.png" alt=""></li>
+                                <li>AWS has external Third Party auditors that can confirm the security implimentations for the AWS infrastructure, see <a href="https://aws.amazon.com/compliance/" target="_blank">AWS Compliance</a></li>
+                                <li>AWS cant see anything above the Hypervisor level
+                                    <br><img src="Images/AWS Shared Respon Split.png" alt=""></li>
+                            </ul>
+
+                        <h3>Identity and Access management</h3>
+                            <ul>
+                                <li>AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources. IAM is a feature of your AWS account offered at no additional charge.</li>
+                                <li>Here in IAM a user is a perminant named operator, could be human or computer</li>
+                                <li>A group is a collection of users.</li>
+                                <li>A role is not your permissions, it is a authentication method. A role is a operator.</li>
+                                <li>The policy document is a JSON document, It can be attached to either a user, Group or Role.</li>
+                                <li>Example of something in the polciy document is put something in S3 bucket. This will allow a particular to interact with the s3 bucket resource in the stack/VPC</li>
+                                <li>In a policy doc you can place rules like, <b>Prevent actions like EC2 stop and EC2 terminate in a production environment.</b></li>
+                                <li>The policy doc is essential authorisation for users to perform thier actions.</li>
+                            </ul>
+
+                        <h3>Amazon Inspector</h3>
+                            <ul>
+                                <li><a href="https://aws.amazon.com/inspector/" target="_blank">Amazon Inspector</a> is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity. These findings can be reviewed directly or as part of detailed assessment reports which are available via the Amazon Inspector console or API.</li>
+                                <li><img src="Images/AWS Security Issues.png" alt=""></li>
+                                <li><img src="Images/AWS Inspector.png" alt=""></li>
+                                <li><img src="Images/AWS Inspector Shared Respon.png" alt=""></li>
+                                <li>This is agent based and API driven
+                                    <br><img src="Images/AWS Inspector Benefits.png" alt=""></li>
+                                <li><img src="Images/AWS Inspector Access.png" alt=""></li>
+                                <li><img src="Images/AWS Inspector Rules.png" alt=""></li>
+                                <li><img src="Images/AWS Inspector Summary.png" alt=""></li>
+                            </ul>
+
+                        <h3>AWS Shield</h3>
+                            <ul>
+                                <li><img src="Images/AWS Shield.png" alt=""></li>
+                                <li><a href="https://aws.amazon.com/shield/" target="_blank">AWS Shield</a> is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS. AWS Shield provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection. There are two tiers of AWS Shield - Standard and Advanced.</li>
+                                <li><img src="Images/DOS.png" alt=""></li>
+                                <li><img src="Images/DDOS.png" alt=""></li>
+                                <li><img src="Images/DDOS Attack.png" alt=""></li>
+                                <li><img src="Images/DDOS App Attack.png" alt=""></li>
+                                <li><img src="Images/DDOS Mitigation.png" alt=""></li>
+                                <li><img src="Images/AWS Shield 2.png" alt=""></li>
+                                <li>All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge. AWS Shield Standard defends against most common, frequently occurring network and transport layer DDoS attacks that target your web site or applications. When you use AWS Shield Standard with Amazon CloudFront and Amazon Route 53, you receive comprehensive availability protection against all known infrastructure (Layer 3 and 4) attacks.</li>
+                                <li>For higher levels of protection against attacks targeting your applications running on Amazon Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), Amazon CloudFront, AWS Global Accelerator and Amazon Route 53 resources, you can subscribe to AWS Shield Advanced. In addition to the network and transport layer protections that come with Standard, AWS Shield Advanced provides additional detection and mitigation against large and sophisticated DDoS attacks, near real-time visibility into attacks, and integration with AWS WAF, a web application firewall. AWS Shield Advanced also gives you 24x7 access to the AWS DDoS Response Team (DRT) and protection against DDoS related spikes in your Amazon Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), Amazon CloudFront, AWS Global Accelerator and Amazon Route 53 charges.</li>
+                                <li><img src="Images/AWS Shield Benifits.png" alt=""></li>
+                                <li><img src="Images/AWS Shield DNS.png" alt=""></li>
+                                <li><img src="Images/AWS Shield API.png" alt=""></li>
+                            </ul>
+
+                        <h3>AWS Security Complaince</h3>
+                            <ul>
+                                <li><img src="Images/AWS Com Approach.png" alt=""></li>
+                                <li><img src="Images/AWS Com Sec Info.png" alt=""></li>
+                                <li><img src="Images/AWS Assurance .png" alt=""></li>
+                                <li><img src="Images/AWS Secs.png" alt=""></li>
+                            </ul>
+                    </section>
+
+                    <section>
+                        <h2>AWS Pricing and Support</h2>
+                            <ul>
+                                <li></li>
+                            </ul>
                     </section>
                 </main>
 
