@@ -15,10 +15,6 @@
 
                 <main>    
                     <section class="openingSection">
-
-                    </section> 
-
-                    <section>
                         <h2>AWS Cloud Practitioner Essentials</h2>
                         <p><b style="color: red;">Everything that runs between AWS resources runs and connects using a API</b></p>
                         <p>The fundamental-level course is intended for individuals who seek an overall understanding of the AWS Cloud, independent of specific technical roles. It provides a detailed overview of cloud concepts, AWS services, security, architecture, pricing, and support. This course also helps you prepare for the AWS Certified Cloud Practitioner exam.</p>
@@ -33,7 +29,15 @@
                                 <li>Markup lanuage provides meaning to text in a document</li>
                                 <li>Pricing and Support</li>
                             </ul>
-                    </section>
+
+                        <p>Exam Prep:</p>
+                            <ul>
+                                <li>Exam is <a href="https://aws.amazon.com/certification/certified-cloud-practitioner/" target="_blank"></a> AWS Certified Cloud Practitioner</li>
+                                <li>Exam prep can be found <a href="https://aws.amazon.com/certification/certification-prep/" target="_blank">HERE</a></li>
+                                <li>AWS <a href="https://aws.amazon.com/whitepapers/?whitepapers-main.sort-by=item.additionalFields.sortDate&whitepapers-main.sort-order=desc" target="_blank">whitepapers & Guides</a> can be found here</li>
+                                <li>Exam Prep <a href="https://pages.awscloud.com/traincert-apac-event-oe-get-certified-cp-timing-1-20200724-reg-event.html" target="_blank">Webinar</a></li>
+                            </ul>
+                    </section> 
 
                     <section>
                         <h2>Introduction to the AWS Cloud</h2>
@@ -413,77 +417,118 @@
                                 <li><img src="Images/AWS Security Market.png" alt=""></li>
                             </ul>
 
-                        <h3>The Shared Responsibility Model</h3>
-                            <ul>
-                                <li>Both the user and AWS is responsible for ensuring Security in your Stack</li>
-                                <li><a href="https://aws.amazon.com/compliance/shared-responsibility-model/#:~:text=Security%20and%20Compliance%20is%20a%20shared%20responsibility%20between%20AWS%20and%20the%20customer.&text=The%20customer%20assumes%20responsibility%20and,AWS%20provided%20security%20group%20firewall." target="_blank">Security and Compliance</a> is a shared responsibility between AWS and the customer. This shared model can help relieve the customer’s operational burden as AWS operates, manages and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates.</li>
-                                <li><img src="Images/AWS Shared Respon.png" alt=""></li>
-                                <li>AWS has external Third Party auditors that can confirm the security implimentations for the AWS infrastructure, see <a href="https://aws.amazon.com/compliance/" target="_blank">AWS Compliance</a></li>
-                                <li>AWS cant see anything above the Hypervisor level
-                                    <br><img src="Images/AWS Shared Respon Split.png" alt=""></li>
-                            </ul>
+                            <h3>The Shared Responsibility Model</h3>
+                                <ul>
+                                    <li>Both the user and AWS is responsible for ensuring Security in your Stack</li>
+                                    <li><a href="https://aws.amazon.com/compliance/shared-responsibility-model/#:~:text=Security%20and%20Compliance%20is%20a%20shared%20responsibility%20between%20AWS%20and%20the%20customer.&text=The%20customer%20assumes%20responsibility%20and,AWS%20provided%20security%20group%20firewall." target="_blank">Security and Compliance</a> is a shared responsibility between AWS and the customer. This shared model can help relieve the customer’s operational burden as AWS operates, manages and controls the components from the host operating system and virtualization layer down to the physical security of the facilities in which the service operates.</li>
+                                    <li><img src="Images/AWS Shared Respon.png" alt=""></li>
+                                    <li>AWS has external Third Party auditors that can confirm the security implimentations for the AWS infrastructure, see <a href="https://aws.amazon.com/compliance/" target="_blank">AWS Compliance</a></li>
+                                    <li>AWS cant see anything above the Hypervisor level
+                                        <br><img src="Images/AWS Shared Respon Split.png" alt=""></li>
+                                </ul>
 
-                        <h3>Identity and Access management</h3>
-                            <ul>
-                                <li>AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources. IAM is a feature of your AWS account offered at no additional charge.</li>
-                                <li>Here in IAM a user is a perminant named operator, could be human or computer</li>
-                                <li>A group is a collection of users.</li>
-                                <li>A role is not your permissions, it is a authentication method. A role is a operator.</li>
-                                <li>The policy document is a JSON document, It can be attached to either a user, Group or Role.</li>
-                                <li>Example of something in the polciy document is put something in S3 bucket. This will allow a particular to interact with the s3 bucket resource in the stack/VPC</li>
-                                <li>In a policy doc you can place rules like, <b>Prevent actions like EC2 stop and EC2 terminate in a production environment.</b></li>
-                                <li>The policy doc is essential authorisation for users to perform thier actions.</li>
-                            </ul>
+                            <h3>Identity and Access management</h3>
+                                <ul>
+                                    <li>AWS Identity and Access Management (IAM) enables you to manage access to AWS services and resources securely. Using IAM, you can create and manage AWS users and groups, and use permissions to allow and deny their access to AWS resources. IAM is a feature of your AWS account offered at no additional charge.</li>
+                                    <li>Here in IAM a user is a perminant named operator, could be human or computer</li>
+                                    <li>A group is a collection of users.</li>
+                                    <li>A role is not your permissions, it is a authentication method. A role is a operator.</li>
+                                    <li>The policy document is a JSON document, It can be attached to either a user, Group or Role.</li>
+                                    <li>Example of something in the polciy document is put something in S3 bucket. This will allow a particular to interact with the s3 bucket resource in the stack/VPC</li>
+                                    <li>In a policy doc you can place rules like, <b>Prevent actions like EC2 stop and EC2 terminate in a production environment.</b></li>
+                                    <li>The policy doc is essential authorisation for users to perform thier actions.</li>
+                                </ul>
 
-                        <h3>Amazon Inspector</h3>
-                            <ul>
-                                <li><a href="https://aws.amazon.com/inspector/" target="_blank">Amazon Inspector</a> is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity. These findings can be reviewed directly or as part of detailed assessment reports which are available via the Amazon Inspector console or API.</li>
-                                <li><img src="Images/AWS Security Issues.png" alt=""></li>
-                                <li><img src="Images/AWS Inspector.png" alt=""></li>
-                                <li><img src="Images/AWS Inspector Shared Respon.png" alt=""></li>
-                                <li>This is agent based and API driven
-                                    <br><img src="Images/AWS Inspector Benefits.png" alt=""></li>
-                                <li><img src="Images/AWS Inspector Access.png" alt=""></li>
-                                <li><img src="Images/AWS Inspector Rules.png" alt=""></li>
-                                <li><img src="Images/AWS Inspector Summary.png" alt=""></li>
-                            </ul>
+                            <h3>Amazon Inspector</h3>
+                                <ul>
+                                    <li><a href="https://aws.amazon.com/inspector/" target="_blank">Amazon Inspector</a> is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS. Amazon Inspector automatically assesses applications for exposure, vulnerabilities, and deviations from best practices. After performing an assessment, Amazon Inspector produces a detailed list of security findings prioritized by level of severity. These findings can be reviewed directly or as part of detailed assessment reports which are available via the Amazon Inspector console or API.</li>
+                                    <li><img src="Images/AWS Security Issues.png" alt=""></li>
+                                    <li><img src="Images/AWS Inspector.png" alt=""></li>
+                                    <li><img src="Images/AWS Inspector Shared Respon.png" alt=""></li>
+                                    <li>This is agent based and API driven
+                                        <br><img src="Images/AWS Inspector Benefits.png" alt=""></li>
+                                    <li><img src="Images/AWS Inspector Access.png" alt=""></li>
+                                    <li><img src="Images/AWS Inspector Rules.png" alt=""></li>
+                                    <li><img src="Images/AWS Inspector Summary.png" alt=""></li>
+                                </ul>
 
-                        <h3>AWS Shield</h3>
-                            <ul>
-                                <li><img src="Images/AWS Shield.png" alt=""></li>
-                                <li><a href="https://aws.amazon.com/shield/" target="_blank">AWS Shield</a> is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS. AWS Shield provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection. There are two tiers of AWS Shield - Standard and Advanced.</li>
-                                <li><img src="Images/DOS.png" alt=""></li>
-                                <li><img src="Images/DDOS.png" alt=""></li>
-                                <li><img src="Images/DDOS Attack.png" alt=""></li>
-                                <li><img src="Images/DDOS App Attack.png" alt=""></li>
-                                <li><img src="Images/DDOS Mitigation.png" alt=""></li>
-                                <li><img src="Images/AWS Shield 2.png" alt=""></li>
-                                <li>All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge. AWS Shield Standard defends against most common, frequently occurring network and transport layer DDoS attacks that target your web site or applications. When you use AWS Shield Standard with Amazon CloudFront and Amazon Route 53, you receive comprehensive availability protection against all known infrastructure (Layer 3 and 4) attacks.</li>
-                                <li>For higher levels of protection against attacks targeting your applications running on Amazon Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), Amazon CloudFront, AWS Global Accelerator and Amazon Route 53 resources, you can subscribe to AWS Shield Advanced. In addition to the network and transport layer protections that come with Standard, AWS Shield Advanced provides additional detection and mitigation against large and sophisticated DDoS attacks, near real-time visibility into attacks, and integration with AWS WAF, a web application firewall. AWS Shield Advanced also gives you 24x7 access to the AWS DDoS Response Team (DRT) and protection against DDoS related spikes in your Amazon Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), Amazon CloudFront, AWS Global Accelerator and Amazon Route 53 charges.</li>
-                                <li><img src="Images/AWS Shield Benifits.png" alt=""></li>
-                                <li><img src="Images/AWS Shield DNS.png" alt=""></li>
-                                <li><img src="Images/AWS Shield API.png" alt=""></li>
-                            </ul>
+                            <h3>AWS Shield</h3>
+                                <ul>
+                                    <li><img src="Images/AWS Shield.png" alt=""></li>
+                                    <li><a href="https://aws.amazon.com/shield/" target="_blank">AWS Shield</a> is a managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS. AWS Shield provides always-on detection and automatic inline mitigations that minimize application downtime and latency, so there is no need to engage AWS Support to benefit from DDoS protection. There are two tiers of AWS Shield - Standard and Advanced.</li>
+                                    <li><img src="Images/DOS.png" alt=""></li>
+                                    <li><img src="Images/DDOS.png" alt=""></li>
+                                    <li><img src="Images/DDOS Attack.png" alt=""></li>
+                                    <li><img src="Images/DDOS App Attack.png" alt=""></li>
+                                    <li><img src="Images/DDOS Mitigation.png" alt=""></li>
+                                    <li><img src="Images/AWS Shield 2.png" alt=""></li>
+                                    <li>All AWS customers benefit from the automatic protections of AWS Shield Standard, at no additional charge. AWS Shield Standard defends against most common, frequently occurring network and transport layer DDoS attacks that target your web site or applications. When you use AWS Shield Standard with Amazon CloudFront and Amazon Route 53, you receive comprehensive availability protection against all known infrastructure (Layer 3 and 4) attacks.</li>
+                                    <li>For higher levels of protection against attacks targeting your applications running on Amazon Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), Amazon CloudFront, AWS Global Accelerator and Amazon Route 53 resources, you can subscribe to AWS Shield Advanced. In addition to the network and transport layer protections that come with Standard, AWS Shield Advanced provides additional detection and mitigation against large and sophisticated DDoS attacks, near real-time visibility into attacks, and integration with AWS WAF, a web application firewall. AWS Shield Advanced also gives you 24x7 access to the AWS DDoS Response Team (DRT) and protection against DDoS related spikes in your Amazon Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), Amazon CloudFront, AWS Global Accelerator and Amazon Route 53 charges.</li>
+                                    <li><img src="Images/AWS Shield Benifits.png" alt=""></li>
+                                    <li><img src="Images/AWS Shield DNS.png" alt=""></li>
+                                    <li><img src="Images/AWS Shield API.png" alt=""></li>
+                                </ul>
 
-                        <h3>AWS Security Complaince</h3>
-                            <ul>
-                                <li><img src="Images/AWS Com Approach.png" alt=""></li>
-                                <li><img src="Images/AWS Com Sec Info.png" alt=""></li>
-                                <li><img src="Images/AWS Assurance .png" alt=""></li>
-                                <li><img src="Images/AWS Secs.png" alt=""></li>
-                            </ul>
+                            <h3>AWS Security Complaince</h3>
+                                <ul>
+                                    <li><img src="Images/AWS Com Approach.png" alt=""></li>
+                                    <li><img src="Images/AWS Com Sec Info.png" alt=""></li>
+                                    <li><img src="Images/AWS Assurance .png" alt=""></li>
+                                    <li><img src="Images/AWS Secs.png" alt=""></li>
+                                </ul>
                     </section>
 
                     <section>
                         <h2>AWS Pricing and Support</h2>
-                            <ul>
-                                <li></li>
-                            </ul>
+
+                            <h3>Fundamentals Of Pricing</h3>
+                                <ul>
+                                    <li>No long term contract or termination fee, you only pay for what you need and for the duration you use them.</li>
+                                    <li>Pay as you go, pay less to reserve, pay even less when you use more, pay even less when you use more and pay even less when AWS grows</li>
+                                    <li>No big upfront cost and get the required services on demand.</li>
+                                    <li>For certain services like Amazon EC2 and Amazon RDS, you can invest in reserved capacity. With <a href="https://aws.amazon.com/aws-cost-management/aws-cost-optimization/reserved-instances/" target="_blank">Reserved Instances</a>, you can save up to 75% over equivalent on-demand capacity. Reserved Instances are available in 3 options – All up-front (AURI), partial up-front (PURI) or no upfront payments (NURI).</li>
+                                    <li>Data transfer in to a AWS resource is free, </li>
+                                    <li>Custom pricing is avalible for more complex projects</li>
+                                    <li>You can use the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html" target="_blank">consolidated billing</a> feature in AWS Organizations to consolidate billing and payment for multiple AWS accounts or multiple Amazon Internet Services Pvt. Ltd (AISPL) accounts.</li>
+                                </ul>
+
+                            <h3>Pricing Detials</h3>
+                                <ul>
+                                    <li><img src="Images/AWS Cost Fundementals.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost Service Offering.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost EC2.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost EC2 Types.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost EC2 Types Considerations.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost EC2 Software.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost S3 Factors.png" alt=""></li>
+                                    <li><img src="Images/AWS Cost EBS .png" alt=""></li>
+                                    <li><img src="Images/AWS Cost RDS.png" alt=""></li>
+                                    <li><img src="Images/AWS Cloud Front Cost.png" alt=""></li>
+                                    <li><img src="Images/Summary Cost.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS Trusted Advisor</h3>
+                                <ul>
+                                    <li><a href="https://aws.amazon.com/premiumsupport/technology/trusted-advisor/" target="_blank">AWS Trusted Advisor</a> is an online tool that provides you real time guidance to help you provision your resources following AWS best practices. Trusted Advisor checks help optimize your AWS infrastructure, increase security and performance, reduce your overall costs, and monitor service limits. Whether establishing new workflows, developing applications, or as part of ongoing improvement, take advantage of the recommendations provided by Trusted Advisor on a regular basis to help keep your solutions provisioned optimally.</li>
+                                    <li><img src="Images/AWS Trsusted Advisor Keep Track.png" alt=""></li>
+                                    <li><img src="Images/AWS Trsusted Advisor Intro.png" alt=""></li>
+                                    <li><img src="Images/AWS Trsusted Advisor Case Study.png" alt=""></li>
+                                    <li><img src="Images/AWS Trsusted Advisor How It Works.png" alt=""></li>
+                                    <li><img src="Images/AWS Trsusted Advisor Auto.png" alt=""></li>
+                                </ul>
+
+                            <h3>AWS Support</h3>
+                                <ul>
+                                    <li><img src="Images/AWS Support.png" alt=""></li>
+                                    <li><img src="Images/AWS Support 2.png" alt=""></li>
+                                    <li><img src="Images/AWS Support 3.png" alt=""></li>
+                                    <li><img src="Images/AWS Support Plans.png" alt=""></li>
+                                </ul>
                     </section>
                 </main>
 
             <footer>
-                <p>&copy;2020 HTML Basics, Amar's Learning</p>
+                <p>&copy;2020 AWS Certification, Amar's Learning</p>
             </footer>
         </div>
     </body>
