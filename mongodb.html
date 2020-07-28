@@ -15,10 +15,14 @@
 
                 <main>    
                     <section class="openingSection">
-                        <h2>General Pointers</h2> 
+                        <h2>General Pointers</h2>
+                        <p>You have to ensure that you have access to port 27017 through your firewall. You can check by clicking <a href="http://portquiz.net:27017/" target="_blank">HERE</a></p>
                         <p>MongoDB is a cross-platform document-oriented database program. Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas</p>
                         <p>The major difference between <a href="https://www.studytonight.com/mongodb/mongodb-vs-rdbms#:~:text=The%20major%20difference%20between%20MongoDB,of%20any%20type%20of%20data." target="_blank">MongoDB and SQL</a> Databases is the way they handle data. In SQL databases, data is stored in form of traditional 2 dimensional row-column structure while in MongoDB rich data document model is followed, which allows storage of any type of data.</p>
                         <p><img src="Images/Difference-between-SQL-and-NOSQL-2.png" alt=""></p>
+                        <p>A document is a record</p>
+                        <p><a href="https://docs.mongodb.com/manual/reference/glossary/" target="_blank">Mongo DB Glossary</a></p>
+                        <p>A list of compass query <a href="https://docs.mongodb.com/manual/reference/operator/query/" target="_blank">operators</a></p>
 
                         <h2>MongoDB Exam</h2>
                             <ul>
@@ -45,12 +49,217 @@
                                     <li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/" target="_blank">Windows</a> installation for MongoDB Shell </li>
                                     <li><a href="https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/" target="_blank">OSX</a> installation for MongoDB Shell </li></li>
                                 </ul>
+
+                            <h3>Atlas</h3>
+                            <p><a href="https://www.mongodb.com/cloud/atlas" target="_blank">MongoDB Atlas</a> is a fully-managed cloud database developed by the same people that build MongoDB. Atlas handles all the complexity of deploying, managing, and healing your deployments on the cloud service provider of your choice (AWS, Azure, and GCP).</p>
+                                <ul>
+                                    <li><img src="Images/What is Atlas.png" alt=""></li>
+                                    <li>Atlas users can deploy clusters which are groups of servers that store your data. The servers are configured in a replica set. Each server in the cluster stores the same data 
+                                    <br><img src="Images/Atlas Cluster.png" alt=""></li>
+                                    <li>Example of a data record being replicated to all servers in the cluster
+                                        <br><img src="Images/Atlas Cluster rep example.png" alt=""></li>
+                                    <li>Replication ensures that your data is not lost if a server goes down of is attacked.
+                                    <br><img src="Images/Atlas Cluster rep .png" alt=""></li>
+                                    <li>The cluster of servers that hold the Mongo DBs are hosted in the cloud from companies like AWS and so on</li>
+                                    <li><img src="Images/Why Atlas.png" alt=""></li>
+                                    <li><img src="Images/Atlas Free.png" alt=""></li>
+                                    <li>Tutorial for navigation of <a href="https://www.youtube.com/watch?v=KKyag6t98g8" target="_blank">Mongo DB Atlas</a></li>
+                                </ul>
+
+                            <h3>Mongo DB Realm</h3>
+                            <p><a href="https://docs.mongodb.com/realm/" target="_blank">MongoDB Realm</a> is a serverless platform and mobile database. MongoDB Stitch and Realm Database are now part of MongoDB Realm. </p>
+                                <ul>
+                                    <li></li>
+                                </ul>
+
+                            <h3>Connecting to DB</h3>
+                            <p>You have a few options to connect to a Mongo DB a few are listed below</p>
+                                <ul>
+                                    <li><a href="https://docs.mongodb.com/compass/master/connect/" target="_blank">Mongo DB Compass</a> On this option ensure to add your public IP address to the DB in Atlas
+                                        <br><img src="Images/Mongo IP Add.png" alt="">
+                                        <br>For this connection you will need to get the the connection string and insert the password were specified.
+                                        <br><img src="Images/Mongo DB Connect string.png" alt=""></li>
+                                    <li><a href="https://docs.mongodb.com/manual/mongo/" target="_blank">Mongo DB Shell</a> is another way you can interact with the Mongo DB. The mongo shell is an interactive JavaScript interface to MongoDB. You can use the mongo shell to query and update data as well as perform administrative operations.
+                                    <br>Mongo DB shell is downloaded as part of the Mongo DB installation and can be accessed through command propmt. 
+                                    <br>You are connected to a primary when making a shell connection. The primary is the only member in the replica set that receives write operations. MongoDB applies write operations on the primary and then records the operations on the primary’s oplog. Secondary members replicate this log and apply the operations to their data sets.</li>
+                                </ul>
+                                <p>When connecting to an Atlas cluster using the shell, why do we provide the hostnames for all nodes when we launch mongo? 
+                                    <br>So that if the primary node goes down, the shell can connect to other nodes in the cluster instead.</p>
+                    </section>
+
+                    <section>
+                        <h2>Introduction</h2>
+
+                        <h3>Understanding JSON</h3>
+                        <p>Please review the <a href="https://www.json.org/json-en.html" target="_blank">JSON spec</a> for more detail on the data types directly supported in JSON.</p>
+                            <ul>
+                                <li>You will have to understand JSON when working with Mongo DB</li>
+                                <li>To learn more about JSON see here the <a href="json.html" target="_blank">JSON</a> learning page</li>
+                                <li>An example of a JSON document is as below
+                                    <br><img src="Images/JSON document.png" alt=""></li>
+                                <li>JSON is widely used as its easy for computers to parse and humans to understand</li>
+                                <li>JSON doucments are created of keys and values
+                                    <br><img src="Images/JSON Keys and values.png" alt=""></li>
+                                <li>All keys must be surrounded in double quotes</li>
+                                <li>To separate a key and value is to use a :</li>
+                                <li>A field is a kay and value pair and are sperated by using a comma</li>
+                                <li>Below are the supported value types in JSON
+                                    <br><img src="Images/JSON value Types.png" alt=""></li>
+                                <li>White space outside quotes is not part of the JSON document. </li>
+                                <li>Arrays and Objects themselves can be values in JSON</li>
+                                <li>JSON documents support any level of hierarchy that is appropriate to your applications data model.</li>
+                                <li>To use the <a href="https://docs.mongodb.com/compass/master/query/filter/" target="_blank">compass filter</a> to display only documents you would like. This is done by using a JSON key and value.</li>
+                                <li>Date is not directly supported in JSON as a data type</li>
+                            </ul>
+
+                        <h3>Databases, Collections and Documents</h3>
+                        <p></p>
+                            <ul>
+                                <li><img src="Images/M DB Structure.png" alt=""></li>
+                                <li>A <a href="https://docs.mongodb.com/manual/core/databases-and-collections/#databases" target="_blank">database</a> serves as a name space for a collection</li>
+                                <li><a href="https://docs.mongodb.com/manual/core/databases-and-collections/#collections" target="_blank">Collections</a> store indivual records that are called documents.</li>
+                                <li>A <a href="https://docs.mongodb.com/getting-started/cpp/documents/" target="_blank">document</a> is a structure composed of file and value pairs, similar to JSON objects or other mapping data types. Fields in documents can hold rich data: other documents, arrays of values or documents. These properties make documents well suited to storing data from applications that use rich objects themselves for data storage. Consider the following document:
+                                <br><img src="Images/M DB document.png" alt=""></li>
+                                <li>A <a href="">field</a> is </li>
+                                <li><img src="Images/M DB Structure 2.png" alt=""></li>
+                            </ul>
+
+                        <h3>Exploring Datasets in Compass</h3>
+                            <ul>
+                                <li><img src="Images/dataset in compass.png" alt=""></li>
+                                <li>Each Dataset will have one or more collections and when you click on the collection you will see multiple documents
+                                    <br><img src="Images/compass dataset.png" alt=""></li>
+                                <li>You will have the schema tab in compass which will give you each record used in each document and the format of that record.
+                                    <br><img src="Images/compass schema.png" alt=""></li>
+                            </ul>
+
+                        <h3>MongoDB Documents: Scalar Value Types</h3>
+                            <ul>
+                                <li></li>
+                            </ul>
+
+                        <h3>Mongo DB Documents: Fields with Documents as values </h3>
+                            <ul>
+                                <li>The nested of a document within a document is supported
+                                    <br>The field air tempreture is the format document as it has two fields, one a string called quality and another which is value which is a number embedded.</li>
+                                <li><img src="Images/Document with nested document.png" alt=""></li>
+                                <li>You can have fields that are documents which have nested documents further down.
+                                    <br><img src="Images/Nested two times.png" alt=""> </li>
+                                <li></li>
+                            </ul>
+
+                        <h3>Mongo DB Documents: Fields with Arrays as Values</h3>
+                            <ul>
+                                <li>Array values for fields are also supported</li>
+                                <li>Unlike relational database models, MongoDB documents can have fields which have values as <a href="https://www.infoworld.com/article/2074099/working-with-arrays-as-values-in-mongodb.html#:~:text=mobile%20technology%20enthusiast.-,Working%20with%20arrays%20as%20values%20in%20MongoDB,%22%2C%20%22MongoDB%22%5D%20." target="_blank">arrays</a>. The prototypical example in almost all MongoDB documentation is a document having a tags field, whose value is an array of strings, such as ["NoSQL", "Ruby", "MongoDB"]. If you’re coming from a relational world (which most of us are) then this feature, at first glance, is a bit intimidating.</li>
+                                <li><img src="Images/document array.png" alt=""></li>
+                                <li>As mongo DB has a flexible data model all documents dont have to contain the same fields </li>
+                            </ul>
+
+                        <h3>MongoDB Documents: Geospatial Data</h3>
+                        <p>MongoDB Compass uses a 3rd party plugin for the geographical visualization of geospatial fields in your documents.</p>
+                            <ul>
+                                <li>Q - Which of the following are types of data Compass (and MongoDB) recognizes and specifically supports?
+                                    <br>A - Documents, Arrays and Geospatial Data
+                                </li>
+                            </ul>
+
+                        <h3>Filtering Collections with Queries</h3>
+                        <p>An example of a <a href="https://stackoverflow.com/questions/57040311/mongodb-compass-filter-query" target="_blank">filter</a> in compass</p>
+                            <ul>
+                                <li>Mongo DB Compass provides a easy to use interface to run quries
+                                    <br><img src="Images/Compass Filter.png" alt=""></li>
+                                <li>An example of a filter would be as below:
+                                    <br><img src="Images/query-filter-success" alt=""></li>
+                                <li>The query is sent to the collection and the relevaqnt documents are presented.</li>
+                                <li>If you click on the graph element you will see extra functionality in compass. You will see the filter has been updated what the point of the graph you have clicked. You than press apply to the filter and the relevant documents will be displayed.
+                                    <br><img src="Images/Graph element.png" alt=""> </li>
+                                <li>You have different types of filters, a common being a equality filter. Presenting documents that are equal to the query specified</li>
+                                <li>The below example dispalys the graphs showing were each bar is equal to 5 years. So the query created is shows the birth years that are greater than 1985 and less than 1990.
+                                    <br><img src="Images/query-filter-success 2.png" alt=""></li>
+                                <li>The gte and lt are called <a href="https://docs.mongodb.com/manual/reference/operator/query/" target="_blank">operators</a> in Mongo DB.</li>
+                                <li>In compass you car actually click and hold multiple bars in a graph in the schema tan. This builds a custom query 
+                                    <br><img src="Images/query-filter-success multiple.png" alt=""></li>
+                                <li>You will find some operators have a e at the end, this states equal to
+                                    <br><img src="Images/Mongo DB Operators.png" alt=""></li>
+                            </ul>
+                    </section>
+
+                    <section>
+                        <h2>The MongoDB Query Lanuage + Atlas</h2>
+
+                            <h3>Introduction to CRUD</h3>
+                            <p><a href="https://docs.mongodb.com/manual/crud/" target="_blank">CRUD</a> operations create, read, update, and delete documents.</p>
+                                <ul>
+                                    <li><img src="Images/CRUD.png" alt=""></li>
+                                    <li>This is used to get Data in and Out of Mongo DB</li>
+                                    <li>The Mongo Shell will be used in this chapter</li>
+                                </ul>
+
+                            <h3>Creating and Connecting a Sandbox in Mongo</h3>
+                                <ul>
+                                    <li>Connection String  Example. /Sandbox is the name of the cluster and the username and password will have to be changed
+                                        <br><img src="Images/Connection String.png" alt=""></li>
+                                    <li>Create a new cluster - <a href="https://www.youtube.com/watch?v=pWbMrx5rVBE&t=1043s" target="_blank">VIDEO Tutorial</a></li>
+                                </ul>
+
+                            <h3>Loading Data into Your Sandbox Cluster</h3>
+                                <ul>
+                                    <li>Start of by connecting the shell (Command Propmt) to the cluster</li>
+                                    <li>the command <b>show dbs</b> returns a list of databases</li>
+                                    <li>To quit the shell connection to your cluster use <b>quit()</b></li>
+                                    <li>To load data into a database you enter the directory of were the file is of the data in command propmt. Than run the connection script to connect to Mongo DB. Finally use <b>load("FILENAME.INCEXTENTION")</b> and this will import your data into the cluster. </li>
+                                    <li><img src="Images/Mongo Shell Connect.png" alt=""></li>
+                                    <li>If you want to select the new database simply use <b>use DATABASENAME</b>. To get the name you can do <b>show dbs</b> and this shows all the databases</li>
+                                    <li>If you want to see what is in the data base you can use <b>show collections</b> </li>
+                                    <li>If you want to see documents in the collection you simply do <b>db.COLLECTION.find().pretty()</b>
+                                    <br><img src="Images/shell pretty.png" alt=""></li>
+                                </ul>
+
+                            <h3>Connecting to Your Sandbox Cluster from Compass</h3>
+                                <ul>
+                                    <li>Download Compass and than get your connection string to connect to your database</li>
+                                    <li><img src="Images/Connect Compass.png" alt=""></li>
+                                    <li>You will be presented with the option to download compass which you can do from here. We already have it installed. You will have to edit the connection string in replace password with your password you setup.
+                                        <br><img src="Images/Connect Compass 2.png" alt=""></li>
+                                    <li>Next open up compass and connection using your newly modified string. Paste the string in first than click favorites, name the connection and pick a colour. 
+                                        <br><img src="Images/Connect Compass 3.png" alt=""></li>
+                                </ul>
+
+                            <h3>Creating Documents: insertOne()</h3>
+                                <ul>
+                                    <li>Create operation in Mongo DB are insert documents. </li>
+                                    <li>To create a collection in compass you simply click on teh database and click create collection
+                                        <br><img src="Images/Compass Create Collection.png" alt=""></li>
+                                    <li>Once you have created the collection you can add documents by selecting the collection and clicking add. Than click insert document and than click the correct view.
+                                        <br><img src="Images/document add collection.png" alt=""> 
+                                        <br><img src="Images/document add collection 2.png" alt=""></li>
+                                    <li>As you are inserting the data ensure to apply the corect value type to each record.
+                                        <br><img src="Images/document add collection 3.png" alt=""></li>
+                                    <li>You can edit a document by clicking the edit pen.</li>
+                                    <li>You can do the above using Mongo DB shell. and the method we will be using will be <b>.insertOne</b>. To use this we have to first specifiy which database to use.</li>
+                                    <li>To check what database you are currently using you can type <b>db</b></li>
+                                    <li><b style="color: red;">Ensure you are in the correct database before inserting</b></li>
+                                    <li><b style="color: red;">ENSURE TO GET THE COLLECTION NAME RIGHT OTHERWISE A NEW COLLECTION WILL BE CREATED</b> 
+                                        <br>An exmaple of using shell to insert one document would be <b>db.MoviesScratch.insertOne({title: "Star Trek II: The Wrath Of Khan", year: 1982, imdb: "tt0084726"})</b>
+                                    <br><img src="Images/Shell insert.png" alt=""></li>
+                                    <li>You get back two bits of information one confirming it has been imported through and acknowledgement and second a ID has been created for the document.</li>
+                                    <li>If the collection we specified was not already  created the above insert would create both the collection and the document.</li>
+                                    <li>If you dont provide a id one will be generated. An example of a id <b>db.MoviesScratch.insertOne({_id: "tt0084726", title: "Star Trek II: The Wrath Of Khan", year: 1982, imdb: "tt0084726"})</b>
+                                    <br><img src="Images/db id.jpg" alt=""></li>
+                                    <li></li>
+                                </ul>
+
+                            <h3>Creating Documents: insertMany()</h3>
+                                <ul>
+                                    <li></li>
+                                </ul>
                     </section>
 
                 </main>
 
             <footer>
-                <p>&copy;2020 HTML Basics, Amar's Learning</p>
+                <p>&copy;2020 MongoDB, Amar's Learning</p>
             </footer>
         </div>
     </body>
