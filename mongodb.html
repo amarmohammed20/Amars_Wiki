@@ -252,7 +252,91 @@
 
                             <h3>Creating Documents: insertMany()</h3>
                                 <ul>
+                                    <li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.insertMany/" target="_blank">Inserts multiple documents</a> into a collection.</li>
+                                    <li>To insert many we start with any array</li>
+                                    <li><img src="Images/Insert Many.png" alt=""></li>
+                                    <li>The insert many commad works very similiar to the insert 1. </li>
+                                    <li>You can do a ordered insert or unordered insert. The default is a ordered insert unless you specify otherwise. 
+                                        <br><img src="Images/insert Ordered.png" alt="">
+                                        <br><img src="Images/insert Ordered 2.png" alt=""></li>
+                                    <li>When inserting many documents if two documents have the same ID than you will hit a error. At the point you hit that error no further documents below will be inserted.</li>
+                                    <li>After the intial array you create to hold the multiple documents for can specify if you would like the import to be ordered or not. </li>
+                                    <li>When setting the optional ordered value to false you will find the documents that are duplicates will error but the import will go through all the documents and not stop
+                                        <br><img src="Images/insert Ordered 3.png" alt=""></li>
+                                </ul>
+
+                            <h3>Reading Documents: Scalar Fields - Nested Field Search</h3>
+                                <ul>
+                                    <li>A scalar field is a field whose value is neither a document nor an array; e.g. a field whose value is a string or an integer is a scalar field. A scalar field can be a field nested in a document, as long as the field itself is not an array or a document.</li>
+                                    <li>You can make the filter in compass as complicated as you would like
+                                        <br><img src="Images/m db filter.png" alt=""></li>
+                                    <li>To perform the same filtered search in shell it is called find. You start by ensuring you are using the correct database and this can be checked by using <b>db</b></li>
+                                    <li>The command will go something like <b>db.movies.find({mpaaRating: "PG-13"}).pretty()</b>. The <b>.pretty</b> displays the returned infomation in a more readable manner</li>
+                                    <li>A example of a more complex filter through shell would be <b>db.movies.find({mpaaRating: "PG-13", year: 2009}).pretty()</b></li>
+                                    <li>To perform a embedded filter search which is were the search looks are values that are within a vlaue like a object, you will state the field that is the object and than a dot and than the embedded field. Example <b>{wind.type: "C"}</b>
+                                    <br><img src="Images/Nested filter COmpass.png" alt=""></li>
+                                    <li>You can drill down further into more nested fields 
+                                        <br><img src="Images/Nested filter COmpass 2.png" alt=""></li>
+                                    <li>When doing the same search in shell you have to wrap the key in "", as it is looking at a sub category.</li>
+                                    <li>Again in the shell ensure you are using the correct database.</li>
+                                    <li>The command in shell <b>db.data.find({"wind.direction.angel": 290}).pretty()</b></li>
+                                    <li>Below is an exmaple of using a <a href="https://docs.mongodb.com/manual/reference/method/cursor.count/" target="_blank">count method</a> for searching in the shell. This uses the query applied and comes back with a number of how many.
+                                        <br><img src="Images/shell count 2.jpg" alt=""></li>
+                                </ul>
+                            
+                            <h3>Reading Documents: Array Fields - Search</h3>
+                                <ul>
+                                    <li>When searching for data that are held in an array you can look for exactly the array.</li>
+                                    <li>You can also look for information thats is placed exactly in the location of the array. Below example displays a search in an array for a actor that is the main actor for the movie. The database holds this information as the main actor is the first actor in the array
+                                        <br><img src="Images/array search.png" alt=""></li>
+                                    <li>The above completed in the shell is as below
+                                        <br><img src="Images/array search 2.png" alt=""></li>
+                                    <li><img src="Images/array search 3.png" alt=""></li>
+                                    <li><img src="Images/array search 4.png" alt=""></li>
+                                </ul>
+
+                            <h3>Cursors</h3>
+                                <ul>
+                                    <li>More on the <a href="https://docs.mongodb.com/manual/tutorial/iterate-a-cursor/index.html" target="_blank">Cursor</a> in MongoDB Shell</li>
+                                    <li>More on the <a href="https://docs.mongodb.com/manual/reference/command/getMore/#dbcmd.getMore" target="_blank">getMore</a></li>
+                                    <li>Find returns a cursor and a cursor is essentially a pointer to the current location in a result set.</li>
+                                    <li>When running a query we recieve the documents in batches and the cursor itterates through the batch. The normal batch will load 20 and we can ask for more documents to itterate through.</li>
+                                    <li>If there are more records to see you will be shown this at the bottom
+                                        <br><img src="Images/it mongo.png" alt=""></li>
+                                </ul>
+
+                            <h3>Projections</h3>
+                                <ul>
+                                    <li><a href="https://www.tutorialspoint.com/mongodb/mongodb_projection.htm#:~:text=In%20MongoDB%2C%20projection%20means%20selecting,only%203%20fields%20from%20them." target="_blank">MongoDB - Projection</a>. In MongoDB, projection means selecting only the necessary data rather than selecting whole of the data of a document. If a document has 5 fields and you need to show only 3, then select only 3 fields from them.</li>
+                                    <li>A projection is added to a find method to limit the resource used and for the query to not return all records for every document.</li>
+                                    <li>The below example states - return all that meets the query but only display the title for each document.
+                                        <br><img src="Images/Projection mongo.png" alt=""></li>
+                                    <li>A projection is the second argument in your query. You will always have the ID returned with each document unless specified</li>
+                                    <li>To include a field we use a 1 in the argument and if we want to exlucde a field we use a 0.
+                                        <br>Example to show title and no id - <b>{title: 1, _id: 0}</b>. This is added at the end of the find query</li>
                                     <li></li>
+                                </ul>
+
+                            <h3>Updating Documents: updateOne()</h3>
+                                <ul>
+                                    <li>We use the method <a href="https://docs.mongodb.com/manual/reference/method/db.collection.updateOne/" target="_blank">updateone</a> to update one document in a database</li>
+                                    <li>In Compass it is easy to add the field as you just edit the document
+                                    <br><img src="Images/Edit Document Compass.png" alt=""></li>
+                                    <li>Below is some syntax to when updating a document with a new field/record. First specify a filter which will find the document or documents we want to uodate. Update One will only update the first document it finds. The best filter would be to use the ID to ensure the correct document is updated.
+                                        <br><img src="Images/Document Update.png" alt=""></li>
+                                    <li>After finding the document you need you have to use a <a href="https://docs.mongodb.com/manual/reference/operator/update/" target="_blank">Update Operator, above we have used set to set a value for a field in the document</a>.</li>
+                                    <li>If what you are updating doesnt already exist than that field will be created</li>
+                                    <li>The acknowledgement of updating a document
+                                        <br><img src="Images/update doc.png" alt=""></li>
+                                    <li>Another Example
+                                        <br><img src="Images/update doc 2.png" alt=""></li>                                    
+                                </ul>
+                            
+                            <h3>Update Operators</h3>
+                                <ul>
+                                    <li>The <a href="https://docs.mongodb.com/manual/reference/operator/update/" target="_blank">update operators web page can be used as a ref</a></li>
+                                    <li><img src="Images/Update Operators.png" alt=""></li>
+                                    <li><img src="Images/Update Operators Example.png" alt=""></li>
                                 </ul>
                     </section>
 
