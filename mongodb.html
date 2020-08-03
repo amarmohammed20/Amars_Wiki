@@ -23,6 +23,10 @@
                         <p>A document is a record</p>
                         <p><a href="https://docs.mongodb.com/manual/reference/glossary/" target="_blank">Mongo DB Glossary</a></p>
                         <p>A list of compass query <a href="https://docs.mongodb.com/manual/reference/operator/query/" target="_blank">operators</a></p>
+                        <p>When first strating out ensure that shell and compass are displaying the same data buy doing a quick test.</p>
+                        <p>In the shell you can use JavaScript. An example of this is were you can assign a variable like below and than call that variable.
+                            <br><b>martian = db.movieDetails.findOne({title: "The Martian"})</b>
+                            <br>So now when we type in martian that query is ran</p>
 
                         <h2>MongoDB Exam</h2>
                             <ul>
@@ -102,7 +106,7 @@
                                     <br><img src="Images/JSON Keys and values.png" alt=""></li>
                                 <li>All keys must be surrounded in double quotes</li>
                                 <li>To separate a key and value is to use a :</li>
-                                <li>A field is a kay and value pair and are sperated by using a comma</li>
+                                <li>A field is a key and value pair and are sperated by using a comma</li>
                                 <li>Below are the supported value types in JSON
                                     <br><img src="Images/JSON value Types.png" alt=""></li>
                                 <li>White space outside quotes is not part of the JSON document. </li>
@@ -334,9 +338,139 @@
                             
                             <h3>Update Operators</h3>
                                 <ul>
+                                    <li>First specify a filter which will find the document or documents we want to uodate. Update One will only update the first document it finds. The best filter would be to use the ID to ensure the correct document is updated. See previous section</li>
                                     <li>The <a href="https://docs.mongodb.com/manual/reference/operator/update/" target="_blank">update operators web page can be used as a ref</a></li>
                                     <li><img src="Images/Update Operators.png" alt=""></li>
+                                    <li>You have the set operator which replaces the value stored. This is not always the best solution as you have the inc operator which increments the value of the field saving you from getting any calculations wrong.</li>
                                     <li><img src="Images/Update Operators Example.png" alt=""></li>
+                                    <li>The below example hold the review in a variable. Than performs a update to the movieDetials collection pushing onto the current array which the detials under review.
+                                        <br><img src="Images/Update Operators array Example.png" alt=""></li>
+                                    <li>The operator push not only pushes onto an exisitng array but if the array does not exisit it will add the array</li>
+                                    <li>The $each modifier is available for use with the $addToSet operator and the $push operator. If we dont use the each operator all the reviews would be added as a single element.
+                                        <br><img src="Images/each operator.png" alt=""></li>
+                                </ul>
+
+                            <h3>Updating Documents: updateMany()</h3>
+                                <ul>
+                                    <li>All the same principles apply to from the last section.</li>
+                                    <li>Updates all documents that match the specified filter for a collection. This is rather than the previous which just updates the one document</li>
+                                    <li>More on <a href="https://docs.mongodb.com/manual/reference/method/db.collection.updateMany/" target="_blank">update many()</a></li>
+                                    <li><img src="Images/update many operator.png" alt=""></li>
+                                </ul>
+
+                            <h3>Upserts</h3>
+                                <ul>
+                                    <li>The below is an example were we use a upsert to either create a field or leave the field as it is. By upsert being equal to true if the document existed it would be replaced with exactly the same detials. If it didnt exist updateOne performed a upsert. By using updateOne and upsert we dont have to query to see if the document exists and than query again to upsert both actions are done at once. Here they are three paramters against updateOne
+                                        <br><b style="color: red;"> Basically update documents and if there isnt one upsert will add one. </b></li>
+                                    <li><img src="Images/upsert Example.png" alt=""></li>
+                                </ul>
+
+                            <h3>replaceOne()</h3>
+                                <ul>
+                                    <li><a href="https://docs.mongodb.com/manual/reference/method/db.collection.replaceOne/" target="_blank">replaceOne</a> Replaces a single document within the collection based on the filter.</li>
+                                    <li>The below example shows the natural behaviour of a application. Line 13 is the search syntax using let variables set above.
+                                        <br><img src="Images/replace one example.png" alt=""></li>
+                                    <li></li>
+                                </ul>
+
+                            <h3>Deleting Documents</h3>
+                                <ul>
+                                    <li>You have the two options to delete a document <a href="https://docs.mongodb.com/manual/reference/method/db.collection.deleteMany/#db.collection.deleteMany" target="_blank"><b>db.collection.deleteMany()</b></a> and <a href="https://docs.mongodb.com/manual/reference/method/db.collection.deleteOne/#db.collection.deleteOne" target="_blank"><b>db.collection.deleteOne()</b></a> </li>
+                                    <li>Here we deleted one single record that was identified through the ID which is unique to that record.
+                                        <br><img src="Images/delete one.png" alt=""></li>
+                                    <li>Here we deleted many records that was identified through the ReviewerID which is unique to those records.
+                                        <img src="Images/delete Many.png" alt=""></li>
+                                </ul>
+
+                    </section>
+                    
+                    <section>
+                        <h2>Deeper Dive into MongoDB Query Lanuage</h2>
+                        <p>Mongos info for all <a href="https://docs.mongodb.com/manual/reference/operator/query/" target="_blank"><b style="color: red;">Query and Projection Operators</b></a></p>
+                        <p><img src="Images/Qurey Operator MongoDB.png" alt=""></p>
+
+                            <h3>Comparison Operators</h3>
+                                <ul>
+                                    <li>A list of <a href="https://docs.mongodb.com/manual/reference/operator/query/" target="_blank">Qury and Projection Operators</a> can be found on the mongo website</li>
+                                    <li>You will find a e at the end of some of the operators, this adds equal to the operator</li>
+                                    <li>An example we need to find all movies that have a runtime greater than 90
+                                        <br><b>db.movieDetails.find({runtime: {$gt: 90}})</b></li>
+                                    <li>The above returns a lot of information for each document that meets that meets the search. We can just return the title in this instance.
+                                        <br><b>db.movieDetails.find({runtime: {$gt: 90}}, {_id: 0, title: 1, runtime: 1})</b>
+                                        <br>In the above we are saying on return documents that have a runtime <b>greater than</b> 90. Than we are saying dont show the _id but show the title and runtime fields. </li>
+                                    <li>The below example is for movies that have the runtime greater than 90 mins and less than 120 mins 
+                                        <br><b>db.movieDetails.find({runtime: {$gt: 90, $lt: 120}}, {_id: 0, title: 1, runtime: 1})</b></li>
+                                    <li>The below example now inccludes the equal to also 
+                                        <br><b>db.movieDetails.find({runtime: {$gte: 90, $lte: 120}}, {_id: 0, title: 1, runtime: 1})</b></li>
+                                    <li>The below example is similiar to the above but looks at a embedded document. The document being tomato and a embedded field being meter. 
+                                        <br><b>db.movieDetails.find({runtime: {$gte: 180}, "tomato.meter": {$gte: 95}}, {_id: 0, title: 1, runtime: 1})</b>                                    <br><img src="Images/embedded doc.png" alt="">
+                                        <br><img src="Images/embedded doc shell.png" alt=""></li>
+                                    <li>Another example but this time using the <a href="https://docs.mongodb.com/manual/reference/operator/query/ne/#op._S_ne" target="_blank">$ne</a> operator, selects the documents where the value of the field is not equal to the specified value. This includes documents that do not contain the field. Documents that dont have a rated field at all will also be returned. 
+                                    <br><b>db.movieDetails.find({rated: {$ne: "UNRATED"}}, {_id: 0, title: 1, rated:1}) </b></li>
+                                    <li>The <a href="https://docs.mongodb.com/manual/reference/operator/query/in/#op._S_in" target="_blank">$in</a> operator selects the documents where the value of a field equals any value in the specified array. The values for this operator must be in an array.
+                                    <br>An exmaple of this is <b>db.movieDetails.find({rated: {$in: ["G", "PG"]}}, {_id: 0, title: 1, rated:1})</b></li>
+                                </ul>
+
+                            <h3>Element Operators</h3>
+                                <ul>
+                                    <li>There are two element operators 
+                                        <br><a href="https://docs.mongodb.com/manual/reference/operator/query/exists/#op._S_exists" target="_blank">$exists</a>
+                                        <br><a href="https://docs.mongodb.com/manual/reference/operator/query/type/#op._S_type" target="_blank">$type</a></li>
+                                    <li>You can populate keys that have no vlaue with null. This way when you search using a $exists for null in a field it will display both anything with null or any document that doesnt have the field included.</li>
+                                    <li>$type selects documents where the value of the field is an instance of the specified BSON type(s). Querying by data type is useful when dealing with highly unstructured data where data types are not predictable.</li>
+                                    <li>An example of a type operator is the below, were we ask to see all viewerRating that have a interger. The viewerRating has different data types inserted.
+                                        <br><img src="Images/type example.png" alt=""></li>
+                                    <li>Here are a list of all the <a href="https://docs.mongodb.com/manual/reference/operator/query/type/" target="_blank">available types</a> you can filter on for the $type operator.</li>
+                                </ul>
+
+                            <h3>Logical Operators</h3>
+                                <ul>
+                                    <li>There are four types of logical operators
+                                        <br><img src="Images/Logical Operators Mongo List.png" alt=""></li>
+                                    <li>Below is an example of the or operator were we look at the ratings of a movie from the public and critics. In this example we only return the two fields required and the title of the movie to make it easy to digest the information.
+                                        <br>The $or operator take in selectors as an array. The elements of the array are query selectors, anyone of which can be true.
+                                        <br><img src="Images/OR operator Mongo.png" alt=""></li>
+                                    <li>The $and ensures that both selectors chose in the array have to be true.
+                                        <br><img src="Images/and operator Mongo.png" alt="">
+                                        <br><b style="color: red;">If you use a simple find you can bound multiple quries into one string by using the comma. We use the $and for times when we have to specify the same field more than once.</b>
+                                        <br><img src="Images/and operator Mongo 2.png" alt=""></li>
+                                    <li>If we can the above exmaple without an $and the last instanc eof the key would be used and not the first</li>
+                                </ul>
+
+                            <h3>Array Operator: <a href="https://docs.mongodb.com/manual/reference/operator/query/all/#op._S_all" target="_blank">$all</a></h3>
+                                <ul>
+                                    <li>The $all operator selects the documents where the value of a field is an array that contains all the specified elements.</li>
+                                    <li><img src="Images/$all.png" alt=""></li>
+                                    <li>Everything in the array has to be in the array field in the document.</li>
+                                    <li>They dont have to be in the order you specify in your search.</li>
+                                    <li>Take note we specify the field we are looking at first</li>
+                                    <li>For $all you will also find other values in the array for a record</li>
+                                    <li>Example
+                                        <br><img src="Images/$all example.png" alt="">
+                                        <br><img src="Images/$all example 2.png" alt=""></li>
+                                </ul>
+
+                            <h3>Array Operators: <a href="https://docs.mongodb.com/manual/reference/operator/query/size/#op._S_size" target="_blank">$size</a></h3>
+                                <ul>
+                                    <li>The $size operator matches any array with the number of elements specified by the argument.</li>
+                                    <li>The below example we look at the size of the array for the countries field which specifies how many countries were filmed in for that movie 
+                                        <br><img src="Images/$size.png" alt=""></li>
+                                    <li>If we want a count of the results we can also use this <b>db.movieDetails.find({countries: {$size: 1}}).count()</b></li>
+                                </ul>
+
+                            <h3>Array Operators: <a href="https://docs.mongodb.com/manual/reference/operator/query/elemMatch/#op._S_elemMatch" target="_blank">$elemMatch</a></h3>
+                                <ul>
+                                    <li>The $elemMatch operator matches documents that contain an array field with at least one element that matches all the specified query criteria.</li>
+                                    <li>The example when we need to use $elemMatch would be when we need to find a number/value which is embeded in an array.</li>
+                                    <li>Below we are looking to see if the country Germany in the boxoffice field has a revenue greater than 17
+                                        <br><img src="Images/$elemMatch Example.png" alt=""></li>
+                                    <li>It actually doesnt but soemthing will still be returned as other countries have values greater than 17
+                                        <br><img src="Images/$elemMatch Example 2.png" alt=""></li>
+                                    <li>The below is the correct way to search for a single value in an embedded array. Specify the field you want to filter on, $elemMatch expects a document as its value and in that document you specify selecters that will be used for the query. 
+                                        <br><img src="Images/$elemMatch Example 3.png" alt=""></li>
+                                    <li>Example
+                                        <br><img src="Images/$elemMatch Example 4.png" alt="">
+                                        <br><img src="Images/$elemMatch Example 5.png" alt=""></li>
                                 </ul>
                     </section>
 
