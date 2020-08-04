@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MongoDB</title>
+        <title>MongoDB Basics</title>
         <link rel="stylesheet" href="style.css">
         <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="wrapper">
             <header>
-                <h1><a href="Docs/mongodb_ the definitive guide - kristina chodorow_1401.pdf">MongoDB</a></h1>
+                <h1><a href="Docs/mongodb_ the definitive guide - kristina chodorow_1401.pdf">MongoDB Basics - M001</a></h1>
             </header>
 
                 <main>    
@@ -464,7 +464,7 @@
                                     <li>The example when we need to use $elemMatch would be when we need to find a number/value which is embeded in an array.</li>
                                     <li>Below we are looking to see if the country Germany in the boxoffice field has a revenue greater than 17
                                         <br><img src="Images/$elemMatch Example.png" alt=""></li>
-                                    <li>It actually doesnt but soemthing will still be returned as other countries have values greater than 17
+                                    <li>It actually doesnt but something will still be returned as other countries have values greater than 17
                                         <br><img src="Images/$elemMatch Example 2.png" alt=""></li>
                                     <li>The below is the correct way to search for a single value in an embedded array. Specify the field you want to filter on, $elemMatch expects a document as its value and in that document you specify selecters that will be used for the query. 
                                         <br><img src="Images/$elemMatch Example 3.png" alt=""></li>
@@ -472,6 +472,23 @@
                                         <br><img src="Images/$elemMatch Example 4.png" alt="">
                                         <br><img src="Images/$elemMatch Example 5.png" alt=""></li>
                                 </ul>
+
+                            <h3><a href="https://docs.mongodb.com/manual/reference/operator/query/regex/#op._S_regex" target="_blank">$regex Operator</a></h3>
+                                <ul>
+                                    <li>Basically used to find fields that start with a particular set of charecters in a string or something similiar.</li>
+                                    <li>$regex - Selects documents where values match a specified regular expression.</li>
+                                    <li>It is worth looking at <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions#:~:text=Regular%20expressions%20are%20patterns%20used,split()%20methods%20of%20String%20." target="_blank">regular expressions</a> when dealign with $regex</li>
+                                    <li>In the below example we have the field that is embedded in the awards field, awards.text. This field is a string but normally follows a structure for the text. 
+                                        <br><img src="Images/$regex example.png" alt=""> </li>
+                                    <li>We use the below to find us records that start with the same three letters specified with any any number of charecters after. The dot being any charecters and the * being any number of times.
+                                        <br>What the image doesnt show is a space after Won as we want to ensure we are only finding strings that start with Won.
+                                        <br><img src="Images/$regex example 2.png" alt="">
+                                        <br><img src="Images/$regex example 3.png" alt=""></li>
+                                </ul>
+
+                            <h3>Test Example</h3>
+                            <p><img src="Images/text example.png" alt=""></p>
+                            <p><img src="Images/text example 2.png" alt=""></p>
                     </section>
 
                 </main>
