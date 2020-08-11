@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>React</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>React JS Crash Course</h1>
+            </header>
+
+                <main>
+                    
+                    <!-- Start - Table of contents -->
+                <div id="toc_container">
+                    <p class="toc_title">Contents</p>
+                    <ul class="toc_list">
+                        <li><a href="#General Pointers">1 General Pointers</a></li>
+                        <li><a href="#What is REACT?">2 What Is REACT</a></li>
+                        <li><a href="#deven">3 Dev Environment Setup</a></li>
+                        <li><a href="#First REACT App">4 First REACT App</a></li>
+                        <li><a href="#Hello World">5 Hello World</a></li>
+                        <li><a href="#Class Component">3 Component</a></li>
+                        <li><a href="#State">4 State</a></li>
+                        <li><a href="#Passing State as Prop to Component">5 Passing State as Prop to Component</a></li>
+                        <li><a href="#Looping Through Props and Outputs">6 Looping Through Props and Outputs</a></li>
+                        <li><a href="#Adding Key to List Item">7 Adding Key to List Item</a></li>
+                        <li><a href="#PropTypes">8 PropTypes</a></li>
+                        <li><a href="#Style Components">9 Style Components</a></li>
+                        <li><a href="#Add Style To a Method">10 Add Style To a Method</a></li>
+                        <li><a href="#Why Arrow Functions and .bind(this)">11 Why Arrow Functions and .bind(this)</a></li>
+                        <li><a href="#Component Drilling">12 Component Drilling</a></li>
+                        <li><a href="#Passing Props Through Methods Using Component Drilling">13 Passing Props Through Methods Using Component Drilling</a></li>
+                        <li><a href="#Deconstructing">14 Deconstructing</a></li>
+                        <li><a href="#Updating State Through a Method">15 Updating State Through a Method</a></li>
+                        <li><a href="#Toggle State">16 Toggle State</a></li>
+                        <li><a href="#Submit Events">17 Submit Events</a></li>
+                        <li><a href="#React Router">18 React Router</a></li>
+                        <li><a href="#Links">19 Links</a></li>
+                        <li><a href="#Http GET Request">20 Http GET Request</a></li>
+                        <li><a href="#Http POST Request">21 Http POST Request</a></li>
+                        <li><a href="#Http DELETE Request">22 Http DELETE Request</a></li>
+                        <li><a href="#Adding PropTypes">23 Adding PropTypes</a></li>
+                      </ul>
+                  </div>
+                  <!-- End - Table of contents -->
+
+
+                    <section class="openingSection" id="General Pointers">
+                        <h2>General Pointers</h2> 
+                        <p>The source of this pages information is <a href="https://www.youtube.com/watch?feature=youtu.be&v=Ke90Tje7VS0&app=desktop" target="_blank">HERE</a></p>
+                        <p>Angular is a complete framework while React is a JavaScript Library. Find out more <a href="https://programmingwithmosh.com/react/react-vs-angular/" target="_blank">HERE</a></p>
+                        <p>Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.</p>
+                        <p><a href="https://reactjs.org/docs/context.html" target="_blank">Context</a> provides a way to pass data through the component tree without having to pass props down manually at every level.</p>
+                        
+                    </section> 
+
+                    <section id="What is REACT?">
+                        <h2>What is REACT?</h2>
+                            <ul>
+                                <li><img src="Images/What is REACT.png" alt=""></li>
+                                <li>React runs on the front end such as the broweser. Other lanuages like PHP or python run on the server</li>
+                                <li>By running on the browser you get some benifits such as a faster running time. This is becuase when a change a occurs only that part of the page reloads and not the whole page.</li>
+                                <li>React uses the concept of plugins for more advanced things which makes it very lightweight</li>
+                                <li>React is the most popular framework in the industry right now - 2019</li>
+                                <li>Why you should use REACT instead of vanilla JavaScript:
+                                    <img src="Images/Why use React.png" alt=""></li>
+                                <li>REACT uses <a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX</a> which stands for JavaScript XML.
+                                <br><a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX</a> allows us to write HTML in React.
+                                <br>JSX makes it easier to write and add HTML in React.</li>
+                                <li>What you should know before learning REACT:
+                                    <img src="Images/know before react.png" alt=""></li>
+                                <li>REACT thinks in components as shown in the below example:
+                                    <img src="Images/REACT Thinking in components.png" alt=""></li>
+                                <li>The above example can be done through vanilla JavaScript but it would be  alot more code and more complex</li>
+                                <li>Components can have a state and the component changes when the state changes. An exmaple could be that a box has a red border when the questions inside is answered correctly.  
+                                    <br><img src="Images/React state.png" alt=""></li>
+                                <li>React at its heart is ran by components, below is an example were we have a website that is built of components. We can reuse some components on other pages like tweet like and nav bar
+                                    <br><img src="Images/react compo.png" alt=""></li>
+                                <li>To manage states we can also use <a href="https://redux.js.org/" target="_blank">Redux</a> - Redux is a predictable state container for JavaScript applications. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. Simply put, Redux is a state management tool.</li>
+                                <li>You can use <a href="https://github.com/facebook/create-react-app" target="_blank">Create REACT APP</a> to get started to build a react app. This creates a boiler plate app we can build from.</li>
+                                <li>An example or Anatomy of a component - Below is a class based componenet which can have a <a href="https://reactjs.org/docs/state-and-lifecycle.html" target="_blank">life cycle</a>.
+                                    <br>Used is a javascript class which has two methods state and rendor:
+                                    <br><ul>
+                                        <li>State is the data we want to display when the component is rendered</li>
+                                        <li>Render describes how the UI should look like</li>
+                                    </ul>
+                                    <br><img src="Images/react compo 2.png" alt="">
+                                    <br><img src="Images/Anatomy of a component.png" alt=""></li>
+                                <li>The output of the render is a REACT element which inturn is like a HTML element</li>
+                                <li>React’s use of a virtual DOM is one of its features that makes it so blazingly fast.
+                                    <br><img src="Images/vir dom.png" alt=""></li>
+                                <li>When we change the state of a componenet we get a new React element. React than compares this componenet to the previous and updates the real HTML DOM 
+                                    <br><img src="Images/vir dom html dom.png" alt=""></li>
+                                <li>We no longer have to write long winded complex Javascript to interact with the dom
+                                    <br><img src="Images/old JS vs react.png" alt=""></li>
+                            </ul>
+
+                    </section>
+
+                    <section id="deven">
+                        <h2>Dev Environment Setup</h2>
+                            <ol>
+                                <li>To install react you will need to have <a href="https://nodejs.org/en/download/" target="_blank">nodejs</a> installed. 
+                                    <br><img src="Images/Create React App.png" alt=""></li>
+                                <li>We will be using npm to install third party libraries.</li>
+                                <li>Once nodejs is installed open the terminal and use the following <b>npm i -g create-react-app</b>. i is for install and -g is for global and create react app will give us a boiler app for react on the latest specified version. Normally you shouldnt have to specify the version.
+                                <br>Once completed you will get a confirmation of the number of packages installed.</li>
+                                <li>Open up VS code and install the following two extensions - <a href="https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets" target="_blank">Simple React Snippets</a> and <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Prettier - Code formatter</a>. Reload VS code after</li>
+                            </ol>
+                    </section>
+
+                    <section id="First REACT App">
+                        <h2>First REACT App</h2>
+                        <p><a href="https://create-react-app.dev/docs/getting-started/" target="_blank">Create REACT App</a></p>
+                            <ul>
+                                <li>Back in the terminal we can create our first REACT app - <b>npx create-react-app test-react-app</b> - test-react-app being the name I gave to the new react app.</li>
+                                <li><img src="Images/create react app terminal.png" alt=""></li>
+                                <li>The above command does everything for you so you dont need to worry about anything:
+                                    <br><img src="Images/zero config.png" alt=""></li>
+                                <li>If you want t ocustomize some of the setting you can use <b>npm run eject</b></li>
+                                <li>Navigate to the new folder called test-react-app and than run the following command <b>npm start</b>. This should open up the browser with the localhost and port 3000
+                                <br><img src="Images/React running.png" alt=""></li>
+                                <li>In VS code we will have a folder called node modules which will hold all the third party libraries as well as REACT itself. We should never have to touch this folder.</li>
+                                <li>We have a public folder that holds our public assests such as our browser icon main index html page </li>
+                                <li>In the HTML page <b>index.html</b> you will see some standard html boiler code. What you need to look for is in the body, a div that has the id of root. This is were our react application will start from, live and grow.
+                                <br><img src="Images/HTML react boiler.png" alt=""></li>
+                                <li>We have a app.test.js file which holds and controls the component we see on the opening page the black banner. The output of that component in app.test.js is what you see in the black banner. 
+                                    <br><img src="Images/app_test_js.png" alt=""></li>
+                                <li>You will see in the file app.js we are using es6 classes. You will see a meathod called render which you will see spits out JSX (JavaScriptXML), not HTML or JS.
+                                    <br><img src="Images/class app.png" alt=""></li>
+                                <li>To make JSX work we have to pass it through <a href="https://babeljs.io/" target="_blank">babel</a> which is a modern JS compiller
+                                <br><img src="Images/babel.png" alt=""></li>
+                            </ul>
+                    </section>
+
+                    <section id="Hello World">
+                        <h2>Hello World</h2>
+                            <ul>
+                                <li>Start of by removing all the files in the source folder (src) so we can start from scratch</li>
+                            </ul>
+                    </section>
+
+                    <section id="Class Component">
+                        <h2>Component</h2>
+                    </section>
+
+                    <section id="State">
+                        <h2>State</h2>
+                    </section>
+
+                    <section id="Passing State as Prop to Component">
+                        <h2>Passing State as Prop to Component</h2>
+                    </section>
+
+                    <section id="Looping Through Props and Outputs">
+                        <h2>Looping Through Props and Outputs</h2>
+                    </section>
+
+                    <section id="Adding Key to List Item">
+                        <h2>Adding Key to List Item</h2>
+                    </section>
+
+                    <section id="PropTypes">
+                        <h2>PropTypes</h2>
+                    </section>
+
+                    <section id="Style Components">
+                        <h2>Style Components</h2>
+                    </section>
+
+                    <section id="Add Style To a Method">
+                        <h2>Add Style To a Method</h2>
+                    </section>
+
+                    <section id="Why Arrow Functions and .bind(this)">
+                        <h2>Why Arrow Functions and .bind(this)</h2>
+                    </section>
+
+                    <section id="Component Drilling">
+                        <h2>Component Drilling</h2>
+                    </section>
+
+                    <section id="Passing Props Through Methods Using Component Drilling">
+                        <h2>Passing Props Through Methods Using Component Drilling</h2>
+                    </section>
+
+                    <section id="Deconstructing">
+                        <h2>Deconstructing</h2>
+                    </section>
+
+                    <section id="Updating State Through a Method">
+                        <h2>Updating State Through a Method</h2>
+                    </section>
+
+                    <section id="Toggle State">
+                        <h2>Toggle State</h2>
+                    </section>
+
+                    <section id="Submit Events">
+                        <h2>Submit Events</h2>
+                    </section>
+
+                    <section id="React Router">
+                        <h2>React Router</h2>
+                    </section>
+
+                    <section id="Links">
+                        <h2>Links</h2>
+                    </section>
+
+                    <section id="Http GET Request">
+                        <h2>Http GET Request</h2>
+                    </section>
+
+                    <section id="Http POST Request">
+                        <h2>Http POST Request</h2>
+                    </section>
+
+                    <section id="Http DELETE Request">
+                        <h2>Http DELETE Request</h2>
+                    </section>
+
+                    <section id="Adding PropTypes">
+                        <h2>Adding PropTypes</h2>
+                    </section>
+
+                    
+                </main>
+
+            <footer>
+                <p>&copy;2020 HTML Basics, Amar's Learning</p>
+            </footer>
+        </div>
+    </body>
+</html>

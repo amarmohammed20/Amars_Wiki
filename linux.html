@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Linux</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>Linux</h1>
+            </header>
+
+                <main>    
+                    <section class="openingSection">
+                        <h2>General Pointers</h2>
+                        <p>Command <a href="https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/#5_8211_FILE_AND_DIRECTORY_COMMANDS" target="_blank">Cheet Sheet</a></p> 
+                        
+                    </section>
+
+                    <section>
+                        <h2>Basic Intro for Mongo</h2>
+                        <p>Below is a brief explanation of Linux, enough to have a basic understanding to operate Mongo DB</p>
+                            
+                            <h3>Basics of Linux Directory Structure</h3>
+                                <ul>
+                                    <li>Linux based operating systems are very different from Windows operating systems. We will start with the difference between the directory structure of these two operating systems.</li>
+                                    <li>In Windows operating systems, all the files are stored in different data drives like C: D: E:. But in Linux, files are ordered in a tree structure starting with the root directory represented by a forward slash (/). The root directory contains all other directories and files on the system.</li>
+                                    <li>It is called root because it is at the very top of the directory tree.
+                                        <br><img src="Images/Linux root diagram.png" alt=""></li>
+                                    <li>Some top level directories that are part of the root directory by default are /bin, /etc, /tmp, /usr, /home, /root and /var. You can read more about these directories <a href="https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard" target="_blank">here</a>. We will briefly discuss some common top level directories that you need to be aware of :
+                                        <br><img src="Images/Linux Directories.png" alt=""></li>
+                                </ul>
+
+                            <h3>Important Definitions</h3>
+                                <ul>
+                                    <li>Current Working Directory : It is the directory in which the user is currently working in. By default, when you log into your linux system, your current working directory is set to your home directory. In this course, it will be /root/workspace. You can check your current working directory by running the pwd (Print Working Directory) command. pwd will print out the absolute path to this directory.</li>
+                                    <li>What is an absolute path?
+                                        <ul>
+                                            <li>Path : A unique location to a file or a folder in a file system of an OS.</li>
+                                            <li>Absolute Path : The complete path of a file or directory in the filesystem from the root (/) directory.</li>
+                                            <li>Relative Path : The path of a file or directory relative to the current working directory.</li>
+                                        </ul>
+                                    </li>
+                                    <li>In the diagram shown below, mongodb is our Current Working Directory. Let's say that we want to find the path to the db1 directory. The Absolute Path of the db1 directory - /data/mongodb/database/db1. The Relative Path to the db1 directory from the Current Working Directory of mongodb - database/db1
+                                        <br><img src="Images/Linux Mongo root diagram.png" alt=""></li>
+                                </ul>
+
+                            <h3>Concept of users in linux</h3>
+                                <ul>
+                                    <li>Linux is a multi-user operating system, which means that more than one user can use the Linux machine at the same time.</li>
+                                    <li>here are three types of users in Linux - root, regular and service. In this tutorial we will discuss only two types of user root and regular.</li>
+                                    <li>root user: This is the main user account in the Linux system. This user is automatically created during the installation and has the highest privileges in the system. The user can perform any administrative task, and is therefore, also known as superuser or administrator. In this course, you will run commands as the root user.</li>
+                                    <li>regular user: This is the normal user account with moderate privileges. This user does not have all the privileges of root. For instance, the root user can install new softwares, change the ownership of files, and manage other users' accounts.</li>
+                                </ul>
+
+                            <h3>What is `sudo` and when to use it ?</h3>
+                                <p><a href="https://kb.iu.edu/d/amyi" target="_blank">sudo</a> stands for "superuser do" and is a program that allows you to run programs with the security privileges of another user (by default, as the superuser). It allows you to execute a command with elevated privileges (usually as root). With "sudo", you continue to use your user account, but with root privileges. Sudo creates a thorough audit trail, so everything users do gets logged. You should use it when you are required to perform some administrative task that you cannot perform as a normal user.</p>
+
+                            <h3>Permissions</h3>
+                            <p>What makes one user different from another user on a Linux machine are the permissions. Permissions are the "rights" to act on a file or directory. The basic rights are read, write and execute.</p>
+                                <ul>
+                                    <li>Read permission on a file allows the user to view the content of a file.</li>
+                                    <li>Write permission on a file allows the user to modify the content of that file.</li>
+                                    <li>Execute permission on a file allows the user to run the file and execute a program or script.</li>
+                                </ul>
+                                <p>Permissions can be changed using the <a href="https://en.wikipedia.org/wiki/Chmod" target="_blank">chmod</a> command.</p>
+                                <ul>
+                                    <li>chmod command is used to change the permission of a file or directory. Permissions could be Read, Write or Execute. In this course you will be using the file permission of 400 for granting read-only access to the user.
+                                        <br><img src="Images/chmod.png" alt=""></li>
+                                    <li>Using flags such as 400 is an easy and short form to set permissions. If you want to know more what the numbers in chmod mean, please visit <a href="https://www.december.com/unix/ref/chmod.html" target="_blank">this page</a>.</li>
+                                    <li>For example, this command will change the permission of m103-keyfile file to read only.
+                                        <br><img src="Images/chmod 2.png" alt=""></li>
+                                </ul>
+
+                            <h3>Ownership</h3>
+                                <ul>
+                                    <li>Every file is owned by a specific user and a specific group in Linux. In this course the files will be mostly owned by the root user.</li>
+                                    <li>Ownership can be changed using the <a href="https://linuxize.com/post/linux-chown-command/" target="_blank">chown command</a>.</li>
+                                    <li><img src="Images/chown.png" alt=""></li>
+                                </ul>
+
+                            <h3>Commands You Should Know</h3>
+                            <p><a href="https://www.linuxtrainingacademy.com/linux-commands-cheat-sheet/" target="_blank">Cheat Sheet</a></p>
+                                <ul>
+                                    <li>The <a href="https://www.computerhope.com/unix/umkdir.htm" target="_blank">mkdir</a> command creates new directories in the file system. The general syntax is
+                                        <br><img src="Images/mkdir.png" alt=""> </li>
+                                    <li>The -p modifier creates the parent directory as necessary. For example :
+                                        <br><img src="Images/mkdir 2.png" alt=""> </li>
+                                    <li>If db directory already exists then this command will create only mongodb_data directory. Otherwise it will create the missing directory as well. Sometimes, you will create directories inside a parent directory which is owned by root then you can use the sudo command.
+                                        <br><img src="Images/mkdir 3.png" alt=""></li>
+                                    <li>Deleting a directory - The rm command is used for removing or deleting files and directories in the Linux operating system.
+                                        <br><img src="Images/deleting a directory.png" alt=""></li>
+                                    <li></li>
+                                </ul>
+
+                            <h3>Linux process management</h3>
+                            <p><img src="Images/kill mongo linux.png" alt=""></p>
+
+                    </section>
+                </main>
+
+            <footer>
+                <p>&copy;2020 Linux, Amar's Learning</p>
+            </footer>
+        </div>
+    </body>
+</html>

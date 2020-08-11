@@ -14,7 +14,26 @@
       </header>
 
         <main>
-          <section class="openingSection">
+          <!-- Start - Table of contents -->
+          <div id="toc_container">
+            <p class="toc_title">Contents</p>
+              <ul class="toc_list">
+                <li><a href="#generalPointers">1 General Pointers</a>
+                <li><a href="#landscapeOfJavascript">2 Lanscape Of JavaScript</a></li>
+                <li><a href="#jsConsole">3 JavaScript Console</a></li>
+
+                <ul>
+                  <li><a href="#First_Sub_Point_1">1.1 First Sub Point 1</a></li>
+                  <li><a href="#First_Sub_Point_2">1.2 First Sub Point 2</a></li>
+                </ul>
+              </li>
+              <li><a href="#Second_Point_Header">2 Second Point Header</a></li>
+              <li><a href="#Third_Point_Header">3 Third Point Header</a></li>
+              </ul>
+            </div>
+            <!-- End - Table of contents -->
+
+          <section class="openingSection" id="generalPointers">
             <h2> General Pointers </h2>
               <p>Important to learn the native <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank">objects</a> for JavaScript, it will open many doors - Udemy course <a href="https://www.udemy.com/course/modern-javascript-from-the-beginning/" target="_blank">Modern JavaScript From The Beginning</a></p>
               <p>Next progress onto learning TypeScript as this will keep your JS clean and error free, ready for Angular</p>
@@ -27,7 +46,7 @@
               <p>The undefined property indicates that a variable has not been assigned a value, or not declared at all.</p>
           </section>
 
-          <section>
+          <section id="landscapeOfJavascript">
             <h2>The landscape of Javascript</h2>
             <p>JavaScript is everywhere and used in all phases of development from software to hardware.</p>
               <ul>
@@ -80,13 +99,13 @@
               </ul>
           </section>
 
-          <section>
+          <section id="jsConsole">
             <h2>JavaScript Console</h2>
             <p>Javascript has a console area that provides feedback and information on your website and related linked files</p>
               <ul>
                   <li>On Google chrome you can open up the console by using the Control Shift and I key</li>
                   <li>Used to trouble shoot and test your code</li>
-                  <li>More info on Google <a href="https://developers.google.com/web/tools/chrome-devtools/console" target="_blank"></a>Console</li>
+                  <li>More info on Google <a href="https://developers.google.com/web/tools/chrome-devtools/console" target="_blank">Console</a></li>
                   <li>You can use console.log to print out variables, arrays objects and so on. A good way to check what you think something is actually is that</li>
                   <li>You can use console.table which prints out the information in a table. 
                     <br><img src="Images/console table.jpg" alt=""></li>
@@ -99,7 +118,7 @@
           
           <section>
             <h2>JavaScript Variables</h2>
-            <p>Javascript has three types of variables Const, Let and var</p>
+            <p>Javascript has three types of variables Const, Let and var. See more ES6 info on this at <a href="JS_ES6.html"></a></p>
               <ul>
                   <li>The let and const variables were introduced in ES6. VAR is the oldest type of variable.</li>
                   <li>To reassign a value in javascript you can use +=</li>
@@ -261,7 +280,7 @@
                 <li>You can contenate two variables using +</li>
                 <li>By using a = against a variable you override the variable but by using a += you append to that variable. 
                   <br><img src="Images/String append.jpg" alt=""></li>
-                <li>Exmaple of a string with variables. In ES6 you can use Template Literals instead.  
+                <li>Example of a string with variables. In ES6 you can use Template Literals instead.  
                   <br><img src="Images/String concat.jpg" alt=""></li>
                 <li><a href="https://www.freeformatter.com/javascript-escape.html" target="_blank">Escaping</a> in Javascript is when you ignore a charectors preseved action by javascript. So not treating a ' as closing a strings when used in a word.</li>
                 <li>A <a href="https://www.w3schools.com/js/js_string_methods.asp" target="_blank">string</a> has many properties and methods in JavaScript. Example would be .length. toUpperCase() and toLowerCase() are methods that change the case of the string</li>
@@ -553,28 +572,7 @@
               <h3>Arrow Functions</h3>
               <p>Arrow functions were introduced in ES6. Arrow functions allow us to write shorter function syntax:
                 <br><img src="Images/arrow function basics.jpg" alt=""></p>
-                <ul>
-                  <li>Arrow function expressions - Here you remove the function word in a function expression and add <b>=></b> after the ()
-                    <br><img src="images/arrow%20function%20example.jpg" alt=""></li>
-                  <li>First change a function declaration to a function expression, putting the function in a varaible
-                    <br>Than remove the word function after the const/let variable and add => after the paranthasis ()
-                    <br><img src="images/arrow%20function%20example%202.jpg" alt=""></li>
-                  <li>Example of arrow function without return and {} while returning a value - <img src="images/another%20arrow%20function.jpg" alt=""></li>
-                  <li>Arrow functions are anonymous as they dont have a name and you call or referrence the function using the variable name</li>
-                  <li>Arrow functions are not hosted to the top of the code, they are only ran when the code reaches them</li>
-                  <li>Arrow functions are not meant to replace function decalaration or expressions just newer syntax</li>
-                  <li>Example one parameter - <img src="images/arrow%201%20param.jpg" alt=""></li>
-                  <li>Example multiple parameter - <img src="images/arrow%20multiple%20param.jpg" alt=""></li>
-                  <li>Example arrow function one line statement - <img src="images/arrow%20one%20line%20statement.jpg" alt=""></li>
-                  <li>Single-line Functions with No Parameters - <img src="images/single%20line%20function%20with%20no%20params.jpg" alt=""> </li>
-                  <li>If a paramter isnt passed to a function you will get <b>undefined!</b>. Means there is no value</li>
-                  <li>To assign a default value to for your paramter for the function - <b>function sayGreeting(name = "student")
-                    </b><img src="images/Defualt%20value%20function%20param.jpg" alt=""></li>
-                  <li>If you have placed mutiple defualt value for multiple parameters and you want to define only one paramter use undefined to blank out the other paramters.</li>
-                  <li>There is a standard syntax you can use to document functions -- it's known as <a href = "https://jsdoc.app/index.html">JSDoc</a>, and the format looks like this:</li>
-                  <li><img src="images/Javascript%20commenting.jpg" alt=""></li>
-                  <li><img src="images/Javascript%20commenting%202.jpg" alt=""></li>
-                </ul>
+              <p>See <a href="JS_ES6.html">JavaScript ES6 for more info</a></p>
           </section>
 
 <!-- **********************END OF FUNCTIONS********************** -->

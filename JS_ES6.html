@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JavaScript ES6</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                <h1>JavaScript ES6</h1>
+            </header>
+
+                <main>
+                <!-- Start - Table of contents -->
+                <div id="toc_container">
+                  <p class="toc_title">Contents</p>
+                  <ul class="toc_list">
+                      <li><a href="#generalPointers">1 General Pointers</a>
+                      <li><a href="#varletconst">2 Let and Const Variables</a></li>
+                      <li><a href="#arrowfunctions">3 Arrow Functions</a></li>
+                      <li><a href="#concatination">4 Concatination</a></li>
+                        <ul>
+                        <li><a href="#First_Sub_Point_1">5.1 Sub Classes</a></li>
+                        </ul>
+                      <li><a href="#constructors">6 Constructors & the 'this' Keyword</a></li>
+                        <ul>
+                        <li><a href="#builtinconstructors">6.1 Built In Constructors</a></li>
+                        </ul>
+                      <li><a href="#prototypes">7 Prototypes Explained</a></li>
+                        <ul>
+                        <li><a href="#prototypalinheritance">7.1 Prototypal Inheritance</a></li>
+                        </ul>
+                      <li><a href="#objectcreate">8 Using Object Create</a></li>
+                      <li><a href="#class">9 Classes</a></li>
+                      <li><a href="#jsConsole">6 Destructuring</a></li>
+                      <li><a href="#defaultparameters">7 Default Parameters</a></li>
+                      <li><a href="#objectliterals">9 Object Literals</a></li>
+                      <li><a href="#arrayfunctions">10 Array Functions - forEach, Map and Filter</a></li>
+                        <ul>
+                        <li><a href="#foreach">10.1 forEach</a></li>
+                        <li><a href="#map">10.2 Map</a></li>
+                        <li><a href="#filter">10.3 Filter</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+                <!-- End - Table of contents -->
+
+                  <section class="openingSection">
+                    <h2>General Pointers</h2> 
+                    <p>More info can be found on this material on<a href="https://www.youtube.com/watch?v=WZQc7RUAg18" target="_blank">HERE</a></p>
+                  </section>
+
+                  <section id="varletconst">
+                    <h2>Let and Const Variables</h2>
+                      <p>Javascript has three types of variables Const, Let and var</p>
+                      <ul>
+                          <li>The let and const variables were introduced in ES6. VAR is the oldest type of variable.</li>
+                          <li>To reassign a value in javascript you can use +=</li>
+                          <li>const variables - The value of the variable should remain constant. Example <b>const name = "Amar";</b>. Once assigned a value you cant later down the code assign another value to that variable. 
+                            <br> What you can do though is add values in a object that is assigned to a const variable. Same rule applys for arrays against a const variable. You can update the array.
+                            <br><img src="Images/const object.jpg" alt=""></li>
+                          <li>Let and Const resolves the issue we had with var variables were you could redeclare the variable later. You can still ant redeclare the variable later but can reassign the variable using Let and add to the variable Const</li>
+                          <li>Let and Const are block scope variables. This means that if we declare a variable inside the brackets {} it can not be used outside the block. ES5 would allow you to use that variable outside of the block scope.</li>
+                          <li>Let and Const are block scope variables</li>
+                          <li>let variables lets you update/reassign the value of the variable.</li>
+                          <li>For a const variable you have to assign a value</li>
+                          <li>A variable name can only include letters, numbers, _ and $</li>
+                          <li>A variable name cannot start with a number</li>
+                          <li>For multi word variables you use camel case which is the second,third and so on word starts with a captial</li> 
+                      </ul>
+                  </section>
+
+                  <section id="arrowfunctions">
+                    <h2>Arrow Functions</h2>
+                    <p>Arrow functions were introduced in ES6. Arrow functions allow us to write shorter function syntax:
+                      <br><img src="Images/arrow function basics.jpg" alt=""></p>
+                      <ul>
+                        <li>Arrow function expressions - Here you remove the function word in a function expression and add <b>=></b> after the ()
+                          <br><img src="images/arrow%20function%20example.jpg" alt=""></li>
+                        <li>First change a function declaration to a function expression, putting the function in a varaible
+                          <br>Than remove the word function after the const/let variable and add => after the paranthasis ()
+                          <br><img src="images/arrow%20function%20example%202.jpg" alt=""></li>
+                        <li>Example of arrow function without return and {} while returning a value - <img src="images/another%20arrow%20function.jpg" alt=""></li>
+                        <li>Arrow functions are anonymous as they dont have a name and you call or referrence the function using the variable name</li>
+                        <li>Arrow functions are not hosted to the top of the code, they are only ran when the code reaches them</li>
+                        <li>Arrow functions are not meant to replace function decalaration or expressions just newer syntax</li>
+                        <li>Example one parameter - <img src="images/arrow%201%20param.jpg" alt=""></li>
+                        <li>Example multiple parameter - <img src="images/arrow%20multiple%20param.jpg" alt=""></li>
+                        <li>Example arrow function one line statement - <img src="images/arrow%20one%20line%20statement.jpg" alt=""></li>
+                        <li>Single-line Functions with No Parameters - <img src="images/single%20line%20function%20with%20no%20params.jpg" alt=""> </li>
+                        <li>If a parameter isnt passed to a function you will get <b>undefined!</b>. Means there is no value</li>
+                        <li>To assign a default value to for your paramter for the function - <b>function sayGreeting(name = "student")
+                          </b><img src="images/Defualt%20value%20function%20param.jpg" alt=""></li>
+                        <li>If you have placed mutiple default value for multiple parameters and you want to define only one paramter use undefined to blank out the other paramters.</li>
+                        <li>There is a standard syntax you can use to document functions -- it's known as <a href = "https://jsdoc.app/index.html">JSDoc</a>, and the format looks like this:</li>
+                        <li><img src="images/Javascript%20commenting.jpg" alt=""></li>
+                        <li><img src="images/Javascript%20commenting%202.jpg" alt=""></li>
+                        <li>Another Example:
+                          <br><img src="Images/arrow function example 3.jpg.png" alt=""></li>
+                      </ul>
+                  </section>
+
+                  <section id="concatination">
+                    <h2>Concatination</h2>
+                      <ul>
+                        <li>Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them.</li>
+                        <li>In ES5 you could contenate two variables using +</li>
+                        <li>By using a = against a variable you override the variable but by using a += you append to that variable. 
+                          <br><img src="Images/String append.jpg" alt=""></li>
+                        <li>In ES6 you can use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals" target="_blank">Template Literals</a> instead.  
+                          <br><img src="Images/String concat.jpg" alt=""></li>
+                      </ul>
+                  </section>
+
+                  <section id="constructors">
+                    <h2>Constructors & the 'this' Keyword</h2>
+                    <p>The JavaScript <a href="https://www.w3schools.com/js/js_this.asp" target="_blank">this</a> keyword refers to the object it belongs to.
+                      <br><img src="Images/js this.jpg" alt=""></p>
+                      <ul>
+                        <li>To create a object constructor you would do function Object() {}. Ensure to give the object a capital letter to start with and the internal will look like a object literal but using this. before each property
+                          <br><img src="Images/Object Constructor Example.jpg" alt="">                </li>
+                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes" target="_blank">JavaScript classes</a>, introduced in ECMAScript 2015, are primarily syntactical sugar over JavaScript's existing prototype-based inheritance. The class syntax does not introduce a new object-oriented inheritance model to JavaScript.</li>
+                        <li>It is considered good practice to name constructor functions with an upper-case first letter.</li>
+                        <li>The difference between <a href="https://medium.com/@mandeepkaur1/object-literal-vs-constructor-in-javascript-df143296b816" target="_blank">object literals and object Constructors</a> boils down to if we need multiple instances of our object or not; object defined with a constructor let us have multiple instances of that object. Object literals are basically singletons with variables that are all public.
+                        <br><img src="Images/object literal and object constructor.png" alt=""> </li>
+                        <li>Object literals have key value pairs, fine to deal with one object but not multiple. 
+                          <br><img src="Images/Object literal 2.jpg" alt=""></li>
+                        <li>Object Constructors/function deal with multiple instances. You always start with a capital. <b>this.</b> is a associated property to that object   </li>
+                        <li>You can create a new object using the new keyword</li>
+                        <li><b style="color: red;">YOU CANNOT ADD A NEW PROPERTY TO AN EXISTING OBJECT CONSTRUCTOR</b>.  To add a property to a object literal outside of the object you would do <b>object.NEWPROPERTY = '';</b> - person below being the object and nationality being the property.
+                        <br><img src="Images/new prop.png" alt=""></li>
+                        <li>If you use this. outside of the function scope which is the Global scope you will get the windows object. Mainly used in the function scope</li>
+                        <li>You can build a function inside a object. The below example shows a function being used in a object to get the age. This calls the this birthday which is another property associated to the object 
+                          <br><img src="Images/object function example.jpg" alt=""></li>
+                        <li>In a object you dont have to use the new keyword for the math object.</li>
+                      </ul>
+                  </section>
+        
+                    <section id="builtinconstructors">
+                      <h3>Built In Constructors</h3>
+                        <ul>
+                          <li>You can create a string in two ways. You wouldnt create a string as a object as the string will be classed as a object not a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Primitive" target="_blank">primative value.</a> This would result in the === not working but the == would work if string is compared to another string. 
+                            <br><img src="Images/string as object and normal .jpg" alt=""></li>
+                          <li>Th same applys to numbers, booleans, arrays, objects literals, regular expressions and functions as above.</li>
+                          <li><img src="Images/built in constructors.jpg" alt=""></li>
+                          <li>Proceed as you would normally instead of using the new method as explained above.</li>
+                        </ul>
+                    </section>
+        
+                  <section id="prototypes">
+                    <h2>Prototypes Explained</h2>
+                    <p>All JavaScript objects inherit properties and methods from a <a href="https://www.w3schools.com/js/js_object_prototypes.asp" target="_blank">prototype</a>.</p>
+                      <ul>
+                        <li>All JavaScript objects inherit properties and methods from a prototype:</li>
+                          <ul>
+                            <li>Date objects inherit from Date.prototype</li>
+                            <li>Array objects inherit from Array.prototype</li>
+                            <li>Person objects inherit from Person.prototype</li>
+                            <li>The Object.prototype is on the top of the prototype inheritance chain: Date objects, Array objects, and Person objects inherit from Object.prototype.</li>
+                          </ul>
+                        <li>The proto type against a object will be displays __proto__:object. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto" target="_blank">__proto__</a> property of Object.prototype is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed.
+                          <br><img src="Images/proto property.jpg" alt=""></li>
+                        <li>Properties that can change within the object should not be in the prototype and things that dont change like a calcualtion for the age of someone will need to be place into the prototype</li>
+                        <li>To place something into the prototype of a object you do object.prototype.property = ;. This could be a function of a string or what ever you like.
+                          <br><img src="Images/proto Example.jpg" alt=""></li>
+                        <li>When you console log the object the property that is placed into the prototype wont be seen but will be under __proto__</li>
+                        <li>You can manipulate the properties in prototype. This will only work if you reference a property from the object and this property is later changed or reassigned.</li>
+                        <li>WHY USE A PROTOTYPE?</li>
+                      </ul>
+                  </section>
+        
+                    <section id="prototypalinheritance">
+                      <h2>Prototypal Inheritance</h2>
+                        <ul>
+                          <li>This is were one objects inherits the prototypes of another object</li>
+                          <li>You can use <a href="https://www.w3schools.com/js/js_function_call.asp" target="_blank">.call</a> to call another function within another function.
+                            <br><img src="Images/call method.jpg" alt=""></li>
+                          <li>Call is used in the first part of inheritance in a object constructor which will have the first paramter as this, and than any paramters that are used in the object it is inherting. 
+                            <br><img src="Images/call method inheritance.jpg" alt=""></li>
+                          <li>For inheritance we use object.prototype = Object.create(object.prototype);. This returns the inherited object against __proto__ and we want the current object to be displayed. To change this we use Object.proptotype.constructor = Customer;
+                            <br>What this does it uses __proto__ and pulls in the associated properties into the new object constructor</li>
+                          <li>You can override or create new prototypes that have been inherited. This doesnt override the prototype that you have inheritied.</li>
+                          <li>An example were we have used <b>.call</b> to pull some info from a constructor function in a new function. This example only brought the functions and not the properties.  
+                          <br><img src="Images/call on a object.png" alt=""></li>
+                          </ul>
+                    </section>
+        
+                  <section id="objectcreate">
+                    <h2>Using Object.create</h2>
+                    <p>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank">Object.create()</a> method creates a new object, using an existing object as the prototype of the newly created object.</p>
+                      <ul>
+                        <li>When using the object.create you can create a variable and use Object.create(EXISTING_OBJECT). In the existing project you dont have to add any properties or pramaters to the function as this will be done later. You than specify the properties doing object(variable name).property = '';. 
+                          <br><img src="Images/object create example.jpg" alt=""></li>
+                        <li>You can also achieve the above using the syntax below:
+                          <br><img src="Images/object create example 2.jpg" alt=""></li>
+                      </ul>
+                  </section>
+        
+                  <section>
+                    <h2>ES6 Classes</h2>
+                    <p><a href="https://www.w3schools.com/js/js_classes.asp" target="_blank">Classes</a> is based on the above Object Constructors. The class concept is used in other lanuages such as C sharp, php, phython and Java and <a href="https://en.wikipedia.org/wiki/Category:Class-based_programming_languages" target="_blank">so on</a></p>
+                      <ul>
+                        <li>This is built with the structure class, constructor method and properties.</li>
+                        <li>A class always starts with a captial letter</li>
+                        <li>Pass the properties into the class as parameters and than define the properties with this.property.</li>
+                        <li>An example of a class - 
+                          <br><img src="Images/Class Example.jpg" alt=""></li>
+                        <li>You will see this works exactly the same as the earlier explained object constructor. This can be seen in the __proto__ property of the object</li>
+                        <li>This is why we call class syntaxtic sugar as its only the syntax is different not the fundementals</li>
+                        <li>A method can be called and will be inserted in the constructor {}</li>
+                        <li><img src="Images/Class Example 2.jpg" alt=""></li>
+                        <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" target="_blank">static</a> keyword defines a static method for a class. Static methods aren't called on instances of the class. Instead, they're called on the class itself. These are often utility functions, such as functions to create or clone objects.</li>
+                      </ul>
+                  </section>
+        
+                  <section>
+                    <h2>Sub Classes</h2>
+                      <ul>
+                        <li>A sub class is used to extend a class. You would have a person class and you would extend this class with a customer class.</li>
+                        <li>To do this you would do class NEW_CLASS extends CURRENT_CLASS {}</li>
+                        <li>The new class would take in the same paramters and new paramters. This only extends one way</li>
+                        <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" target="_blank">super</a> keyword is used to access and call functions on an object's parent. The super.prop and super[expr] expressions are valid in any method definition in both classes and object literals.</li>
+                        <li>Super replaces the object.prototype = Object.create(object.prototype); and Object.proptotype.constructor = Customer; used earlier for inhertiance. </li>
+                        <li><img src="Images/Class example inheritance.jpg" alt=""></li>
+                      </ul>
+                  </section>
+
+                  <section id="defaultparameters">
+                    <h2>Default Parameters</h2>
+                      <ul>
+                        <li>Below we see that we can easily assign default values using a arrow function if the paramters are not set or given a value when calling the function.
+                          <br><img src="Images/Default Parameter Arrow Function.png" alt=""></li>
+                        <li>The es5 way to do the above is as below:
+                          <br><img src="Images/old Default Parameter Arrow Function.png" alt=""></li>
+                      </ul>
+                  </section>
+
+                  <section id="arrayfunctions">
+                    <h2>Array Functions</h2>
+                    
+                      <h3 id="foreach">forEach</h3>
+                      <p><a href="https://www.w3schools.com/jsref/jsref_foreach.asp" target="_blank">forEach()</a> method calls a function once for each element in an array, in order. Note: the function is not executed for array elements without values.</p>
+                        <ul>
+                        <li>The paramters used in a foreach loop is as below:
+                          <br><img src="Images/For each Parameter Values.jpg" alt=""></li>
+                        <li>The map is used to created a new array. The below example created a ids arrays after looping through the users object. Its a dynamic way to create a array as it will update when you update the users object. 
+                          <br><img src="Images/for each map.jpg" alt=""></li>
+                        </ul>
+
+                      <h3 id="map">Map</h3>
+                        <ul>
+                          <li>The <a href="https://www.w3schools.com/jsref/jsref_map.asp" target="">map()</a> method creates a new array with the results of calling a function for every array element.</li>
+                          <li>The map() method calls the provided function once for each element in an array, in order.</li>
+                          <li>An example:
+                            <br><img src="Images/map example.png" alt=""></li>
+                          <li><img src="Images/map example 2.png" alt=""></li>
+                        </ul>
+
+                      <h3 id="filter">Filter</h3>
+                        <ul>
+                          <li>The <a href="https://www.w3schools.com/jsref/jsref_filter.asp" target="">filter()</a> method creates an array filled with all array elements that pass a test (provided as a function).</li>
+                          <li>The map() method calls the provided function once for each element in an array, in order.</li>
+                          <li>An example:
+                            <br><img src="Images/Filter Example.png" alt=""></li>
+                          <li><img src="Images/Filter Example 2.png" alt=""></li>
+                        </ul>
+                  </section>
+
+                  <section id="objectliterals">
+                    <h2>Object Literals</h2>
+                      <ul>
+                        <li>In the below example we have a issue with object literals when we call two functions within a object we get a issue with calling <b>this.</b> multiple times. Arrow functions resolve this issue
+                          <br><img src="Images/Object literal issue.png" alt=""></li>
+                        <li>In ES6 in a object literal we dont have to specify each variable as we use to in ES5 the below is sufficient:
+                          <br><img src="Images/ES6 object lit.png" alt=""></li>
+                        <li>We have a enhanced shortcut for ES6 for function were we dont have to specify function when stateing a function in a object literal.
+                          <br><img src="Images/ES6 object lit 2.png" alt=""></li>
+                      </ul>
+                  </section>
+
+
+
+
+                   
+                </main>
+
+            <footer>
+                <p>&copy;2020 JavaScript ES6, Amar's Learning</p>
+            </footer>
+        </div>
+    </body>
+</html>

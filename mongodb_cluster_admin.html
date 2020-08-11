@@ -19,6 +19,325 @@
                         <p>Mongod is what handles data requests and data access</p>
                         <p>MongoDB scales horizontally through sharding. <a href="https://docs.mongodb.com/manual/sharding/" target="_blank">Sharding</a> is a method for distributing data across multiple machines. MongoDB uses sharding to support deployments with very large data sets and high throughput operations.</p>
                         <p>It is good to have a basic understanding of linux when dealing with MongoDB Cluster Admin as you will be working on linux servers</p>
+                        <p style="color: red;"> YAML files require consistent tabulation space for each section of the file. See <a href="">Python</a> code tabulation as YAML files follow the same spec</p>
+                        <p>The log file collects detials of events caused on the server and the profiler collects information about the actual db commands. Profiler is used more for slow operations.</p>
+                        <p>Info on <a href="https://docs.mongodb.com/manual/reference/configuration-options/#processManagement.fork" target="_blank">fork</a></p>
+                        <p>The difference between mongodump and mongoexport is that, Mongodump outputs BSON, but mongoexport outputs JSON, By default, mongoexport sends output to standard output, but mongodump writes to a file and Mongodump can create a data file and a metadata file, but mongoexport just creates a data file.</p>
+                    </section>
+
+                    <section>
+                        <h2>The Mongod</h2>
+                        <p><a href="https://docs.mongodb.com/manual/reference/program/mongod/" target="_blank"></a> mongod is the primary daemon process for the MongoDB system. It handles data requests, manages data access, and performs background management operations.</p>
+                            <ul>
+                                <li>Daemon - In multitasking computer operating systems, a daemon is a computer program that runs as a background process, rather than being under the direct control of an interactive user.</li>
+                                <li>A daemon normally has a d appended to thier name which gives us the name Mongod. </li>
+                                <li>mongod is the main daemon process for Mongo, it is the core part of the database handling connections, requests and persisting your data.</li>
+                                <li>You database is normally replicated over multiple servers and the mongod process is ran on each server</li>
+                                <li>When start up mongo on a data base we start up mongod process on the database. We than use a client to interact with Mongod
+                                    <br><img src="Images/mongod server.png" alt="">
+                                    <br><img src="Images/mongod server 2.png" alt=""></li>
+                                <li>To start a mongod process you type <b>mongod</b> in the terminal. This starts the mongod service but we can interact with it directly. We have to leave this running and open a new terminal window and use the client to interact with mongo d</li>
+                                <li>Default Configuration
+                                    <ul>
+                                        <li>Port: 27017</li>
+                                        <li>The default db path is /data/db</li>
+                                        <li>bind_ip:localhost</li>
+                                        <li>auth: disabled</li>
+                                    </ul>
+                                </li>
+                                <li>We use the Mongo shell as the client to interact with the Mongod
+                                    <br><img src="Images/Mongo Shell and Mongod.png" alt=""></li>
+                                <li>To get the Mongo shell started we simply type <b>mongo</b> in the temrinal after we have started the mongod server.</li>
+                                <li>To confirm our mongo shell is successfully connected we can see something like the below in monogd terminal 
+                                    <br><img src="Images/mongo shell confirmation.jpg" alt=""></li>
+                                <li>As you start to run commands in the shell you will see the activity in the mongod terminal</li>
+                                <li>When finished we can quit the shell and shutdown mongod by using <b>db.shutdownServer()</b> and than <b>exit</b></li>
+                                <li>The other ways to connect to MongoDB. MongoDB <a href="https://docs.mongodb.com/drivers/" target="_blank">drivers</a> are supported in many different lanuages.
+                                    <br><img src="Images/otherways to connect Mongo.png" alt=""></li>
+                            </ul>
+
+                        <h3>Mongod Options</h3>
+                            <ul>
+                                <li><b>mongod --help</b>  -  This command will output the various options for mongod with a description of their functionality.</li>
+                                <li>The dbpath is the directory where all the data files for your database are stored. The dbpath also contains journaling logs to provide durability in case of a crash. As we saw before, the default dbpath is /data/db; however, you can specify any directory that exists on your machine. The directory must have read/write permissions since database and journaling files will be written to the directory. To use the dbpath option, include the dbpath flag and specify the name of your directory:
+                                    <br><b>mongod --dbpath &lt;directory path&gt;</b></li>
+                                <li>The port option allows us to specify the port on which mongod will listen for client connections. If we don't specify a port, it will default to 27017. Database clients should specify the same port to connect to mongod. To specify a port, run:
+                                    <br><b>mongod --port &lt;port number&gt;</b></li>
+                                <li>auth enables authentication to control which users can access the database. When auth is specified, all database clients who want to connect to mongod first need to authenticate.
+                                <br>Before any database users have been configured, a Mongo shell running on localhost will have access to the database. We can then configure users and their permission levels using the shell. Once one or more users have been configured, the shell will no longer have default access. To enable authentication, run mongod with the auth option:
+                                <br><b>mongod --auth</b></li>
+                                <li>The bind_ip option allows us to specify which IP addresses mongod should bind to. When mongod binds to an IP address, clients from that address are able to connect to mongod. For instance, if we wanted to allow clients on IP address 123.123.123.123 to access our database, we'd use the following command:
+                                    <br><b>mongod --bind_ip 123.123.123.123</b>
+                                    <br>To bind to multiple addresses and/or hosts, you can specify them in a comma-separated list:
+                                    <br><b>mongod --bind_ip localhost,123.123.123.123</b>
+                                </li>
+                            </ul>
+
+                        <h3>Configuration File</h3>
+                            <p>It is good practice to use a configuration file. Storing your mongod options. A configuration file stops you from having to state the required config everytime you start up mongod. Its clean and easy to understand in a config file.</p>
+                            <p><img src="Images/Command Line Options.png" alt=""></p>
+                            <p>See MongoDB documentation for more information about <a href="https://docs.mongodb.com/manual/reference/program/mongod/#options" target="_blank">command line options</a> and <a href="https://docs.mongodb.com/manual/reference/configuration-options" target="_blank">configuration file options</a>.</p>
+                            <p>When creating a config file we create a YAML file - YAML Ain't Markup Language</p>
+                            <br>
+                            <p>Below is a breakdown of how we create our config file</p>    
+                            <ul>
+                                <li>Launch mongod using default configuration:
+                                    <br><b>mongod</b></li>
+                                <li>Launch mongod with specified --dbpath and --logpath:
+                                    <br><b>mongod --dbpath /data/db --logpath /data/log/mongod.log</b></li>
+                                <li>Launch mongod and fork the process: - Forking the process enables you to still use the current terminal window and not having to open a new window while mongod runs on that window.
+                                    <br><b>mongod --dbpath /data/db --logpath /data/log/mongod.log --fork</b></li>
+                                <li>Launch mongod with many configuration options:
+                                    <br>Note that all "ssl" options have been edited to use "tls" instead. As of MongoDB 4.2, options using "ssl" have been deprecated.
+                                    <br><b>mongod --dbpath /data/db --logpath /data/log/mongod.log --fork --replSet "M103" --keyFile /data/keyfile --bind_ip "127.0.0.1,192.168.103.100" --tlsMode requireTLS --tlsCAFile "/etc/tls/TLSCA.pem" --tlsCertificateKeyFile "/etc/tls/tls.pem"</b></li>
+                                <li><img src="Images/Example Config File Mongo.png" alt=""></li>
+                                <li>In our YAML file we have a top level key which represents a logical grouping of options. Below we have a nested element which is associated information</li>
+                                <li>We can have multiple nested elements to the key, see the documentation</li>
+                                <li>You can add comments to a the config file but using <b> # </b></li>
+                                <li>Example config file - See system log has two embedded attributes.
+                                    <br>Below is how you enable auth 
+                                    <br><img src="Images/config file auth.png" alt="">
+                                    <br><img src="Images/Example Config File Mongo 2.png" alt=""></li>
+                                <li>We will need to use one command line option for this config file to work. They might already be a config file in the location whcih you can edit
+                                    <br><b>mongod --config mongod.conf</b>
+                                    <br><b>mongod -f mongod.conf</b>
+                                </li>
+                            </ul>
+
+                            <p>How to create a admin user
+                                <br><img src="Images/create admin user Mongo.png" alt=""></p>
+
+                        <h3>File Structure</h3>
+                            <ul>
+                                <li>Some common commands you will use in Linux searching through a file Structure
+                                    <br><img src="Images/Linux file structure.png" alt=""></li>
+                                <li>Files that should not be touched by user 
+                                    <br><img src="Images/DO NOT TOUCH.png" alt=""></li>
+                                <li>WiredTiger is a NoSQL, Open Source extensible platform for data management. It is released under version 2 or 3 of the GNU General Public License. WiredTiger uses MultiVersion Concurrency Control (MVCC) architecture.
+                                <br>MongoDB acquired WiredTiger Inc. on December 16, 2014. The WiredTiger storage engine is the default storage engine starting in MongoDB version 3.2. It provides a document-level concurrency model, checkpointing, and compression, among other features. In MongoDB Enterprise, WiredTiger also supports Encryption At Rest.</li>
+                            </ul>
+
+                        <h3>Basic Commands</h3>
+                        <p>The mongo shell help can be found <a href="https://docs.mongodb.com/manual/tutorial/access-mongo-shell-help/" target="_blank">HERE</a></p>
+                            <ul>
+                                <li>Here you can find a  list of all the <a href="https://docs.mongodb.com/manual/reference/method/" target="_blank">Shell Methods</a> you will need. This will be anything from creating a new user to renaming a collection.</li>
+                                <li>You have basic helper groups, called shell helpers:
+                                    <ul>
+                                        <li><b>db.&lt;method&gt;()</b> - These are for commands that interact with the database, like creating a user.</li>
+                                        <li><b>sh.&lt;collection&gt;.&lt;method&gt;()</b> - These are for commands that interact with the particlar collection of a database</li>
+                                        <li><b>rs.&lt;method&gt;()</b> - These are for commands that control replica set deployment and management, replication</li>
+                                        <li><b>sh.&lt;method&gt;()</b> - These are for commands that control shareded cluster deployment and management</li>
+                                    </ul>
+                                </li>
+                                <li>For user management you have the below:
+                                    <br><img src="Images/Shell user management.png" alt=""></li>
+                                <li>Many more relevant ones can be found <a href="https://docs.mongodb.com/manual/reference/method/#user-management" target="_blank">HERE</a></li>
+                            </ul>
+                            <p><b>db.runCommand()</b> - Provides a helper to run specified database commands. This is the preferred method to issue database commands, as it provides a consistent interface between the shell and drivers.</p>
+
+                        <h3>Logging Basics</h3>
+                        <p>More info on <a href="https://docs.mongodb.com/manual/release-notes/4.2/#logging-and-diagnostics" target="_blank"> Logging and Diagnostics</a></p>
+                            <ul>
+                                <li><img src="Images/process log.png" alt=""></li>
+                                <li>Change the logging level:
+                                    <br><b>mongo admin --host 192.168.103.100:27000 -u m103-admin -p m103-pass --eval '
+                                    <br>  db.setLogLevel(0, "index")
+                                     <br> '</b>     </li>
+                                <li>View the logs through the command line:
+                                    <br><b>tail -f /data/db/mongod.log</b></li>
+                                <li><a href="https://docs.mongodb.com/master/reference/log-messages/index.html#verbosity-levels" target="_blank">Verbosity Levels</a> - You can specify the logging verbosity level to increase or decrease the the amount of log messages MongoDB outputs. Verbosity levels can be adjusted for all components together, or for specific named components individually.</li>
+                                <li>The higher the number the more verbos you messages are, The operation sets the default verbosity to 1: <b>db.setLogLevel(1)</b>
+                                <br><img src="Images/verbos.png" alt=""></li>
+                                <li>View the logs through the Mongo shell:
+                                    <br><b>db.adminCommand({ "getLog": "global" })</b> </li>
+                                <li>A log file broken down
+                                    <ul>
+                                        <li>A log file has a time stamp at every event on the log.</li>
+                                        <li>Next is the severity level of the event - you have 5 types
+                                            <br><img src="Images/sev levels.png" alt=""></li>
+                                        <li>Next is the log component, which can be something like command</li>
+                                        <li>Following is the connection the event occured on</li>
+                                        <li></li>
+                                        <li>The app name and this can be the mongo shell or compass</li>
+                                        <li>Then its the operation</li>
+                                    </ul></li>
+                            </ul>
+
+                        <h3>Profiling the Database</h3>
+                            <ul>
+                                <li>The <a href="https://docs.mongodb.com/manual/tutorial/manage-the-database-profiler/" target="_blank">database profiler</a> collects detailed information about Database Commands executed against a running mongod instance. This <b style="color: red;"> includes CRUD operations as well as configuration and administration commands </b>. </li>
+                                <li>This level of information is not held in the logs</li>
+                                <li><img src="Images/profiler.png" alt=""></li>
+                                <li><b>db.getProfilingLevel()</b> - This brings back the profiling level</li>
+                                <li><b>db.setProfilingLevel(2)</b> - THis sets the profiling level</li>
+                                <li><b>db.system.profile.find().pretty()</b> - This returns what is in the profile</li>
+                            </ul>
+
+                        <h3>Basic Security</h3>
+                            <ul>
+                                <li>Mongodb starts of with the following checks
+                                    <br><img src="Images/Mongo checks.png" alt=""></li>
+                                <li>Client authentication
+                                    <br><img src="Images/Client Auth.png" alt=""></li>
+                                <li>Cluster authentication - A secret handshake is used to join the cluster
+                                    <br><img src="Images/Cluster Auth.png" alt=""></li>
+                                <li>Role base access
+                                    <br><img src="Images/role based auth.png" alt="">
+                                    <br><img src="Images/role based auth 2.png" alt=""></li>
+                                <li>Start by checking your configuration file, seeing if security authorization has been enabled. This enables role based access control on the cluster and it also implicity enables authentication. You cannot have one without the other</li>
+                                <li>Print configuration file: <b>cat /etc/mongod.conf</b></li>
+                                <li>When starting out you might not have made a user than. so when trying to login you can be authenticated as a user does not exist. In this instance you will use the Localhost Exception
+                                    <br><img src="Images/Local Host Ex.png" alt=""></li>
+                                <li>The Localhost Exception closes once you create your first user.</li>
+                                <li>Connecting to the local host use the following command - <b>mongo --host 127.0.0.1:27017</b>
+                                <br><img src="Images/Local Host conect.png" alt=""></li>
+                                <li>Make the admin Super User called <b>root</b> on the admin database - <b>use admin</b>
+                                <br><img src="Images/root user.png" alt=""></li>
+                            </ul>
+
+                        <h3>Built In Roles</h3>
+                            <ul>
+                                <li><img src="Images/roles mongo.png" alt=""></li>
+                                <li>The structure of a role is as below:
+                                    <br><img src="Images/Role structure.png" alt=""></li>
+                                <li>The resources your role can look at:
+                                    <br><img src="Images/resources.png" alt=""></li>
+                                <li><img src="Images/privilege.png" alt=""></li>
+                                <li>A role can inherit roles from another role
+                                    <br><img src="Images/Role structure 2.png" alt=""></li>
+                                <li>You can also apply restriction or access to a user to were they can connect 
+                                    <br><img src="Images/Role structure 3.png" alt=""></li>
+                                <li>Mongodb provides a set of built in roles
+                                    <br><img src="Images/built in roles.png" alt=""></li>
+                                <li>All the roles below are per database </li>
+                                <li>
+                                    <ul>
+                                        <li>Database User - Read, readwrite</li>
+                                        <li>Database administration - Read, readwrite, dbadmin, userAdmin, dbOwner</li>
+                                        <li>Cluster administration - Database administration - Read, readwrite, dbadmin, userAdmin, dbOwner, clusteradmin, clustermanager, clustermonitor, hostmanager</li>
+                                        <li>backup/restore - Database administration - Read, readwrite, dbadmin, userAdmin, dbOwner, clusteradmin, clustermanager, clustermonitor, hostmanager, backup, restore</li>
+                                        <li>Super User - backup/restore - Database administration - Read, readwrite, dbadmin, userAdmin, dbOwner, clusteradmin, clustermanager, clustermonitor, hostmanager, backup, restore, root</li>
+                                    </ul>
+                                </li>
+                                <li>There are roles that are for all databases, database level
+                                    <br><img src="Images/database roles.png" alt=""></li>
+                                <li>start of by loging in with a user you have created, here is a root user that was previously created <b>mongo admin -u &lt;USERNAME&gt; -p &lt;PASSWORD&gt;</b></li>
+                                <li>Its good to start off by creating a security office user for all databases. This user can not do anything with data administration.
+                                    <br><img src="Images/Security office Roles.png" alt="">
+                                    <br><img src="Images/Security office.png" alt=""></li>
+                                <li>Now use the security office user to create another user to administor the database. This is the dbadmin user. This user cannot read/write any user data at all. 
+                                    <br><img src="Images/dbadmin.png" alt="">
+                                    <br>Here you see that we create this user on the admin database for the use of another database called m103. This is advised to do it this way for simplicity.  
+                                    <br><img src="Images/dbadmin created.png" alt=""></li>
+                                <li><a href="https://docs.mongodb.com/manual/reference/method/db.grantRolesToUser/" target="_blank"><b>db.grantRolesToUser(username, roles, writeConcern)</b></a> - Grants additional roles to a user.</li>
+
+                                <li>Start a already running instance of mongod
+                                    <br> <b> mongo --host 127.0.0.1:27000 -u “m103-admin” -p “m103-pass” --authenticationDatabase “admin”</b></li>
+                            </ul>
+
+                        <h3>Server Tools Overview</h3>
+                            <ul>
+                                <li>These are tools you get when you download the mongodb package:
+                                    <ul>
+                                        <li>Mongod - the core database process the deamon.</li>
+                                        <li>Mongo - Also known as the interactive mongo shell</li>
+                                    </ul>
+                                </li>
+                                <li>To see all the toolls we get when we download Mongodb we can use the command <b>find /usr/bin/ -name "mongo*"</b></li>
+                                <li><a href="https://docs.mongodb.com/manual/reference/program/mongostat/" target="_blank">mongostat</a> -  The mongostat utility provides a quick overview of the status of a currently running mongod or mongos instance. mongostat is functionally similar to the UNIX/Linux file system utility vmstat, but provides data regarding mongod and mongos instances.</li>
+                                <li>To run mongostat you use the code - <b>mongostat --port &lt;PORTNUMBER&gt;</b> - This command will keep running until you stop it</li>
+                                <li><a href="https://docs.mongodb.com/manual/reference/program/mongorestore/" target="_blank">mongorestore</a> - The mongorestore tool imports content from an Extended JSON, CSV, or TSV export created by mongoexport, or potentially, another third-party export tool.</li>
+                                <li><img src="Images/mongorestore.png" alt=""></li>
+                                <li><a href="https://docs.mongodb.com/manual/reference/program/mongodump/" target="_blank">mongodump</a> - mongodump is a utility for creating a binary export of the contents of a database. mongodump can export data from either mongod or mongos instances; i.e. can export data from standalone, replica set, and sharded cluster deployments.</li>
+                                <li><img src="Images/mongodump.png" alt=""></li>
+                                <li><a href="https://docs.mongodb.com/manual/reference/program/mongoexport/" target="_blank">mongoexport</a> - mongoexport is a command-line tool that produces a JSON or CSV export of data stored in a MongoDB instance.</li>
+                                <li><img src="Images/mongoexport.png" alt=""></li>
+                                <li><a href="https://docs.mongodb.com/manual/reference/program/mongoimport/" target="_blank">mongoimport</a> - The mongoimport tool imports content from an Extended JSON, CSV, or TSV export created by mongoexport, or potentially, another third-party export tool.</li>
+                                <li><img src="Images/mongoimport.png" alt=""></li>
+                                <br>
+                                <li>Example to import a file
+                                    <br><img src="Images/mongoimport example .png" alt="">
+                                    <br>The code used was <b style="color: red;">mongoimport --db applicationData --collection products --port 27000 -u "m103-application-user" -p "m103-application-pass" --authenticationDatabase "admin" --file "/dataset/products.json"</b></li>
+                            </ul>
+
+                        <h2>Replication</h2>
+                        <p>MongoDB uses asynchronous, statement-based replication because it's platform independent and allows more flexibility within a replica set.</p>
+                            <ul>
+                                <li>MongoDB uses statement-based replication, not binary replication.</li>
+                                <li>Replication is the concept of maintaining multiple copies of your data.</li>
+                                <li>The main reason why replication is necessary is because you can never assume that all of your servers will always be available.</li>
+                                <li>The point of replication is to make sure that in the event your server goes down, you can still access your data. This concept is called availability.</li>
+                                <li>A database that does not use replication only has a single database server, and we refer to these as standalone nodes.</li>
+                                <li>In MongoDB, a group of nodes that each have copies of the same data is called a replica set. And in a replica set, all data is handled by default in one of the nodes, and it's up to the remaining nodes in the set to sync up with it and replicate any new data that's been written through an asynchronous mechanism.</li>
+                                <li>The node where data is sent is called the primary node, and all the other nodes are referred to as secondary nodes.</li>
+                                <li><b>Binary Replication</b> - The main mechanism used in replication is the binary log. If binary logging is enabled, all updates to the database (data manipulation and data definition) are written into the binary log as binlog events. Slaves read the binary log from each master in order to access the data to replicate.
+                                <br><b style="color: red;">In a binary replication you assume all nodes are on the same OS. All the nodes have to be configured exactly the same.</b></li>
+                                <li><b>Statement-Based Replication</b> - when a command is excuted to the database it is saved in the <a href="https://docs.mongodb.com/manual/core/replica-set-oplog#:~:text=The%20oplog%20(operations%20log)%20is,data%20stored%20in%20your%20databases." target="_blank">Oplog</a>. All nodes sync there Oplog to the primary to replicate the chnages.
+                                    <br><b style="color: red;">This wroks regardless of the nodes configuration on the nodes. </b> </li>
+                                <li>We can achieve data consistency through <a href="http://clh.io/2018/03/idempotency-and-patterns-for-mongodb/#:~:text=In%20Computer%20Science%20an%20idempotent,changing%20state%20within%20a%20system.&text=Idempotent%20operations%20are%20great%20for,like%20traditional%20SQL%20databases%20do*." target="_blank">Idempotence</a></li>
+                                <li>Summary:
+                                    <br><img src="Images/Summary replication.png" alt=""></li>
+                            </ul>
+
+                        <h3>MongoDB Replica Sets</h3>
+                        
+                            <ul>
+                                <li>Replica sets or groups of mongods that share copies of the same information between them.</li>
+                                <li>Replica set members can have one of two different roles. The either can be primary node where all reads and all writes are served by this node. Or secondary node where the responsibility of this node is to replicate all of the information, and then serve as a high availability to node in case of failure of the primary.</li>
+                                <li>The secondaries will get the data from the primary through an asynchronous replication mechanism.</li>
+                                <li>Every time an application writes some data to the replica set, that right is handled by the primary node. And then data gets replicated to the secondary nodes.</li>
+                                <li>The nodes use the oplog to ensure all data is synced correctly
+                                    <br><img src="Images/oplog.png" alt=""></li>
+                                <li><a href="https://docs.mongodb.com/manual/core/replica-set-arbiter/" target="_blank">Replica Set Arbiter</a> - In some circumstances (such as you have a primary and a secondary but cost constraints prohibit adding another secondary), you may choose to add an arbiter to your replica set. An arbiter does not have a copy of data set and cannot become a primary. However, an arbiter participates in elections for primary. An arbiter has exactly 1 election vote.</li>
+                                <li>It is advised to have a odd number of nodes in your replica set. </li>
+                                <li>Replica Sets can go up to 50 numbers and can be spred all across the world</li>
+                                <li><a href="https://docs.mongodb.com/manual/core/replica-set-delayed-member/" target="_blank">Delayed Replica Set Members</a> - Delayed members contain copies of a replica set’s data set. However, a delayed member’s data set reflects an earlier, or delayed, state of the set. For example, if the current time is 09:52 and a member has a delay of an hour, the delayed member has no operation more recent than 08:52.</li>
+                                <li><a href="Docs/Mongo Replication.txt"><b>SEE FULL NOTES ON REPLICATION</b></a></li>
+                            </ul>
+
+                        <h3>Setting up a Replica Set</h3>
+                        <p><a href="Docs/Set Up Replica Set.txt"><b>SEE FULL NOTES ON REPLICATION</b></a></p>
+                            <ul>
+                                <li>Start of by launching three independant mongod processes. These will run independant until we connect them</li>
+                                <li>Below is a config file we will be using for <a href="Docs/Node 1 config replication.txt">node 1</a></li>
+                                <li>You will see a <a href="https://docs.mongodb.com/manual/tutorial/deploy-replica-set-with-keyfile-access-control/" target="_blank">key file authentication</a> under security that is being used to across all nodes, enabling them to authenticate they are all in the same cluster. This key file needs to be created.</li>
+                                <li>To create this key file we do the following:
+                                    <ul>
+                                        <li>Make a location for it to live - <b>sudo mkdir -p /var/mongodb/pki/</b></li>
+                                        <li>Than something to do with vagrant which is virtulisation - <b>sudo chown vagrant:vagrant /var/mongodb/pki/</b></li>
+                                        <li>Create the actual key file - <b>openssl rand -base64 741 > /var/mongodb/pki/m103-keyfile</b></li>
+                                        <li>We change the permissions to allow the mongod's to read from the key file - <b>chmod 400 /var/mongodb/pki/m103-keyfile</b></li>
+                                        <li>Below is the part of the config file we use to first authenticate with the client and than authentication with the other nodes in the cluster.
+                                            <br><img src="Images/node 1 rep.png" alt=""></li>
+                                        <li>The below is used to specify the replica set this node is part of: 
+                                            <br> replication:
+                                            <br>replSetName: m103-example</li>
+                                        <li>Start the mongod using the config file - <b>mongod -f node1.conf</b>. f is used fork of the mongod service enabling us to keep working on the same terminal using the monogo shell.</li>
+                                        <li>This will successfully start one node and just need to start two more to create a cluster.</li>
+                                        <li>To make things easier we can copy the config file for node one for the second and third node - <b>cp node1.conf node2.conf</b> and <b>cp node1.conf node3.conf</b></li>
+                                        <li>We will need to edit these file and we can use the command - <b>vi node2.conf</b>. To exist this and save your changes use - <b>:wq</b></li>
+                                        <li>The chnages will need to be - db path - port number and the log path. Some thing like <a href="Docs/Node 2 config replication.txt">THIS</a></li>
+                                        <li>Before you start the second node dont forget to make the path - <b>mkdir -p /var/mongodb/db/node2</b>. Than start the node <b>mongod -f node2.conf</b></li>
+                                        <li>Do the same for the third node - node 3</li>
+                                        <li>This example you will find that all three nodes reference the same key file. Normal the other nodes will be running on different machines so we would have to copy over the key file to every machine</li>
+                                        <li>Still at this point all three nodes are not connected and are not aware of one another</li>
+                                        <li>To start the replication between the nodes connect to the first node - <b>mongo --port 27011</b></li>
+                                        <li>Use the command to intiate the replication - <b>rs.initiate()</b></li>
+                                        <li>Now to add other nodes to the rteplication we need to use the admin db and create a user
+                                            <br><img src="Images/create admin user Mongo.png" alt=""></li>
+                                        <li>We need to now exit out of this particular mongod and log back into the entire replica set:
+                                            <br>to exit we use - <b>exit</b>
+                                            <br>to connect to the replicate set we use - <b>mongo --host "m103-example/192.168.103.100:27011" -u "m103-admin" -p "m103-pass" --authenticationDatabase "admin"</b> </li>
+                                        <li>the command <b>rs.status()</b> is a useful way to get the status on the replica set.</li>
+                                        <li>We can now start adding the other nodes to our replica set - <b>rs.add("m103:27012")</b> and <b>rs.add("m103:27013")</b></li>
+                                        <li>Now might be a good time to get a overview of the replica set topology - <b>rs.isMaster()</b></li>
+                                        <li>In any cluster we will have a primary node. To swap this and force the current primary down we use - <b>rs.stepDown()</b></li>
+                                        <li>After a change like this it is good to check things are ok by using - <b>rs.isMaster()</b></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
                     </section>
 
                 </main>
