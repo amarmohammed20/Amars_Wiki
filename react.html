@@ -20,11 +20,32 @@
                     <p class="toc_title">Contents</p>
                     <ul class="toc_list">
                         <li><a href="#General Pointers">1 General Pointers</a></li>
-                        <li><a href="#What is REACT?">2 What Is REACT</a></li>
-                        <li><a href="#deven">3 Dev Environment Setup</a></li>
-                        <li><a href="#First REACT App">4 First REACT App</a></li>
-                        <li><a href="#Hello World">5 Hello World</a></li>
-                        <li><a href="#Class Component">3 Component</a></li>
+                        <li><a href="Getting Started"></a>2 Getting Started</li>
+                            <ul>
+                                <li><a href="#What is REACT?">2.1 What Is REACT</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#deven">2.2 Dev Environment Setup</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#First REACT App">2.3 First REACT App</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#Hello World">2.4 Hello World</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#Custom Configs">2.5 Custom Configs</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#Full-stack Architecture">2.6 Full-stack Architecture</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#ES6 JS Refresher">2.7 ES6 Refresher</a></li>
+                            </ul>
+                        <li><a href="#Class Component">3 Components</a></li>
+                            <ul>
+                                <li><a href="#Introduction">3.1 Introduction</a></li>
+                            </ul>
                         <li><a href="#State">4 State</a></li>
                         <li><a href="#Passing State as Prop to Component">5 Passing State as Prop to Component</a></li>
                         <li><a href="#Looping Through Props and Outputs">6 Looping Through Props and Outputs</a></li>
@@ -52,102 +73,160 @@
 
                     <section class="openingSection" id="General Pointers">
                         <h2>General Pointers</h2> 
-                        <p>The source of this pages information is <a href="https://www.youtube.com/watch?feature=youtu.be&v=Ke90Tje7VS0&app=desktop" target="_blank">HERE</a></p>
+                        <p>The source of this pages information is <a href="https://codewithmosh.com/courses/enrolled/357787" target="_blank">HERE</a></p>
                         <p>Angular is a complete framework while React is a JavaScript Library. Find out more <a href="https://programmingwithmosh.com/react/react-vs-angular/" target="_blank">HERE</a></p>
+                        <p>Developed by Facebook in 2011 and the current two other JS frameworks are <a href="https://vuejs.org/" target="_blank">Vue</a> and <a href="https://angular.io/" target="_blank">Angular</a></p>
                         <p>Redux is a predictable state container for JavaScript apps. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. You can use Redux together with React, or with any other view library. It is tiny (2kB, including dependencies), but has a large ecosystem of addons available.</p>
                         <p><a href="https://reactjs.org/docs/context.html" target="_blank">Context</a> provides a way to pass data through the component tree without having to pass props down manually at every level.</p>
+                        <p>Useful link to a explination of <a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX Expressions</a></p>
+                        <p>To get a easy backend to your REACT app you can use <a href="https://firebase.google.com/" target="_blank">Firebase</a></p>
                         
-                    </section> 
-
-                    <section id="What is REACT?">
-                        <h2>What is REACT?</h2>
-                            <ul>
-                                <li><img src="Images/What is REACT.png" alt=""></li>
-                                <li>React runs on the front end such as the broweser. Other lanuages like PHP or python run on the server</li>
-                                <li>By running on the browser you get some benifits such as a faster running time. This is becuase when a change a occurs only that part of the page reloads and not the whole page.</li>
-                                <li>React uses the concept of plugins for more advanced things which makes it very lightweight</li>
-                                <li>React is the most popular framework in the industry right now - 2019</li>
-                                <li>Why you should use REACT instead of vanilla JavaScript:
-                                    <img src="Images/Why use React.png" alt=""></li>
-                                <li>REACT uses <a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX</a> which stands for JavaScript XML.
-                                <br><a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX</a> allows us to write HTML in React.
-                                <br>JSX makes it easier to write and add HTML in React.</li>
-                                <li>What you should know before learning REACT:
-                                    <img src="Images/know before react.png" alt=""></li>
-                                <li>REACT thinks in components as shown in the below example:
-                                    <img src="Images/REACT Thinking in components.png" alt=""></li>
-                                <li>The above example can be done through vanilla JavaScript but it would be  alot more code and more complex</li>
-                                <li>Components can have a state and the component changes when the state changes. An exmaple could be that a box has a red border when the questions inside is answered correctly.  
-                                    <br><img src="Images/React state.png" alt=""></li>
-                                <li>React at its heart is ran by components, below is an example were we have a website that is built of components. We can reuse some components on other pages like tweet like and nav bar
-                                    <br><img src="Images/react compo.png" alt=""></li>
-                                <li>To manage states we can also use <a href="https://redux.js.org/" target="_blank">Redux</a> - Redux is a predictable state container for JavaScript applications. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. Simply put, Redux is a state management tool.</li>
-                                <li>You can use <a href="https://github.com/facebook/create-react-app" target="_blank">Create REACT APP</a> to get started to build a react app. This creates a boiler plate app we can build from.</li>
-                                <li>An example or Anatomy of a component - Below is a class based componenet which can have a <a href="https://reactjs.org/docs/state-and-lifecycle.html" target="_blank">life cycle</a>.
-                                    <br>Used is a javascript class which has two methods state and rendor:
-                                    <br><ul>
-                                        <li>State is the data we want to display when the component is rendered</li>
-                                        <li>Render describes how the UI should look like</li>
-                                    </ul>
-                                    <br><img src="Images/react compo 2.png" alt="">
-                                    <br><img src="Images/Anatomy of a component.png" alt=""></li>
-                                <li>The output of the render is a REACT element which inturn is like a HTML element</li>
-                                <li>React’s use of a virtual DOM is one of its features that makes it so blazingly fast.
-                                    <br><img src="Images/vir dom.png" alt=""></li>
-                                <li>When we change the state of a componenet we get a new React element. React than compares this componenet to the previous and updates the real HTML DOM 
-                                    <br><img src="Images/vir dom html dom.png" alt=""></li>
-                                <li>We no longer have to write long winded complex Javascript to interact with the dom
-                                    <br><img src="Images/old JS vs react.png" alt=""></li>
-                            </ul>
-
+                        
                     </section>
+                    
+                    <h2 id="Getting Started">Getting Started</h2>
 
-                    <section id="deven">
-                        <h2>Dev Environment Setup</h2>
-                            <ol>
-                                <li>To install react you will need to have <a href="https://nodejs.org/en/download/" target="_blank">nodejs</a> installed. 
-                                    <br><img src="Images/Create React App.png" alt=""></li>
-                                <li>We will be using npm to install third party libraries.</li>
-                                <li>Once nodejs is installed open the terminal and use the following <b>npm i -g create-react-app</b>. i is for install and -g is for global and create react app will give us a boiler app for react on the latest specified version. Normally you shouldnt have to specify the version.
-                                <br>Once completed you will get a confirmation of the number of packages installed.</li>
-                                <li>Open up VS code and install the following two extensions - <a href="https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets" target="_blank">Simple React Snippets</a> and <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Prettier - Code formatter</a>. Reload VS code after</li>
-                            </ol>
-                    </section>
+                        <section id="What is REACT?">
+                            <h3>What is REACT?</h3>
+                                <ul>
+                                    <li><img src="Images/What is REACT.png" alt=""></li>
+                                    <li>React runs on the front end such as the broweser. Other lanuages like PHP or python run on the server</li>
+                                    <li>By running on the browser you get some benifits such as a faster running time. This is becuase when a change a occurs only that part of the page reloads and not the whole page.</li>
+                                    <li>React uses the concept of plugins for more advanced things which makes it very lightweight</li>
+                                    <li>React is the most popular framework in the industry right now - 2019</li>
+                                    <li>Why you should use REACT instead of vanilla JavaScript:
+                                        <br><img src="Images/Why use React.png" alt=""></li>
+                                    <li>REACT uses <a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX</a> which stands for JavaScript XML.
+                                    <br><a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">JSX</a> allows us to write HTML in React.
+                                    <br>JSX makes it easier to write and add HTML in React.</li>
+                                    <li>What you should know before learning REACT:
+                                        <br><img src="Images/know before react.png" alt=""></li>
+                                    <li>REACT thinks in components as shown in the below example:
+                                        <br><img src="Images/REACT Thinking in components.png" alt=""></li>
+                                    <li>The above example can be done through vanilla JavaScript but it would be  alot more code and more complex</li>
+                                    <li>Components can have a state and the component changes when the state changes. An exmaple could be that a box has a red border when the questions inside is answered correctly.  
+                                        <br><img src="Images/React state.png" alt=""></li>
+                                    <li>React at its heart is ran by components, below is an example were we have a website that is built of components. We can reuse some components on other pages like tweet like and nav bar
+                                        <br><img src="Images/react compo.png" alt=""></li>
+                                    <li>To manage states we can also use <a href="https://redux.js.org/" target="_blank">Redux</a> - Redux is a predictable state container for JavaScript applications. It helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test. Simply put, Redux is a state management tool.</li>
+                                    <li>You can use <a href="https://github.com/facebook/create-react-app" target="_blank">Create REACT APP</a> to get started to build a react app. This creates a boiler plate app we can build from.</li>
+                                    <li>THe boiler plater REACT package gives you a index.html. In this file you will get a div in the body called root. All your components should be child componenets of this.</li>
+                                    <li>An example or Anatomy of a component - Below is a class based componenet which can have a <a href="https://reactjs.org/docs/state-and-lifecycle.html" target="_blank">life cycle</a>.
+                                        <br>Used is a javascript class which has two methods state and rendor:
+                                        <br><ul>
+                                            <li>State is the data we want to display when the component is rendered</li>
+                                            <li>Render describes how the UI should look like</li>
+                                        </ul>
+                                        <br><img src="Images/react compo 2.png" alt="">
+                                        <br><img src="Images/Anatomy of a component.png" alt=""></li>
+                                    <li>The output of the render is a REACT element which inturn is like a HTML element</li>
+                                    <li>React’s use of a virtual DOM is one of its features that makes it so blazingly fast.
+                                        <br><img src="Images/vir dom.png" alt=""></li>
+                                    <li>When we change the state of a componenet we get a new React element. React than compares this componenet to the previous and updates the real HTML DOM 
+                                        <br><img src="Images/vir dom html dom.png" alt=""></li>
+                                    <li>We no longer have to write long winded complex Javascript to interact with the dom
+                                        <br><img src="Images/old JS vs react.png" alt=""></li>
+                                </ul>
+                        </section>
 
-                    <section id="First REACT App">
-                        <h2>First REACT App</h2>
-                        <p><a href="https://create-react-app.dev/docs/getting-started/" target="_blank">Create REACT App</a></p>
-                            <ul>
-                                <li>Back in the terminal we can create our first REACT app - <b>npx create-react-app test-react-app</b> - test-react-app being the name I gave to the new react app.</li>
-                                <li><img src="Images/create react app terminal.png" alt=""></li>
-                                <li>The above command does everything for you so you dont need to worry about anything:
-                                    <br><img src="Images/zero config.png" alt=""></li>
-                                <li>If you want t ocustomize some of the setting you can use <b>npm run eject</b></li>
-                                <li>Navigate to the new folder called test-react-app and than run the following command <b>npm start</b>. This should open up the browser with the localhost and port 3000
-                                <br><img src="Images/React running.png" alt=""></li>
-                                <li>In VS code we will have a folder called node modules which will hold all the third party libraries as well as REACT itself. We should never have to touch this folder.</li>
-                                <li>We have a public folder that holds our public assests such as our browser icon main index html page </li>
-                                <li>In the HTML page <b>index.html</b> you will see some standard html boiler code. What you need to look for is in the body, a div that has the id of root. This is were our react application will start from, live and grow.
-                                <br><img src="Images/HTML react boiler.png" alt=""></li>
-                                <li>We have a app.test.js file which holds and controls the component we see on the opening page the black banner. The output of that component in app.test.js is what you see in the black banner. 
-                                    <br><img src="Images/app_test_js.png" alt=""></li>
-                                <li>You will see in the file app.js we are using es6 classes. You will see a meathod called render which you will see spits out JSX (JavaScriptXML), not HTML or JS.
-                                    <br><img src="Images/class app.png" alt=""></li>
-                                <li>To make JSX work we have to pass it through <a href="https://babeljs.io/" target="_blank">babel</a> which is a modern JS compiller
-                                <br><img src="Images/babel.png" alt=""></li>
-                            </ul>
-                    </section>
+                        <section id="deven">
+                            <h3>Dev Environment Setup</h3>
+                                <ol>
+                                    <li>To install react you will need to have <a href="https://nodejs.org/en/download/" target="_blank">nodejs</a> installed. 
+                                        <br><img src="Images/Create React App.png" alt=""></li>
+                                    <li>We will be using npm to install third party libraries.</li>
+                                    <li>Once nodejs is installed open the terminal and use the following <b>npm i -g create-react-app</b>. i is for install and -g is for global and create react app will give us a boiler app for react on the latest specified version. Normally you shouldnt have to specify the version.
+                                    <br>Once completed you will get a confirmation of the number of packages installed.</li>
+                                    <li>Open up VS code and install the following two extensions - <a href="https://marketplace.visualstudio.com/items?itemName=burkeholland.simple-react-snippets" target="_blank">Simple React Snippets</a> and <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" target="_blank">Prettier - Code formatter</a>. Reload VS code after</li>
+                                </ol>
+                        </section>
 
-                    <section id="Hello World">
-                        <h2>Hello World</h2>
-                            <ul>
-                                <li>Start of by removing all the files in the source folder (src) so we can start from scratch</li>
-                            </ul>
-                    </section>
+                        <section id="First REACT App">
+                            <h3>First REACT App</h3>
+                            <p><a href="https://create-react-app.dev/docs/getting-started/" target="_blank">Create REACT App</a></p>
+                                <ul>
+                                    <li>Back in the terminal we can create our first REACT app - <b>npx create-react-app test-react-app</b> - test-react-app being the name I gave to the new react app.</li>
+                                    <li><img src="Images/create react app terminal.png" alt=""></li>
+                                    <li>The above command does everything for you so you dont need to worry about anything:
+                                        <br><img src="Images/zero config.png" alt=""></li>
+                                    <li>If you want t ocustomize some of the setting you can use <b>npm run eject</b></li>
+                                    <li>Navigate to the new folder called test-react-app and than run the following command <b>npm start</b>. This should open up the browser with the localhost and port 3000
+                                    <br><img src="Images/React running.png" alt=""></li>
+                                    <li>In VS code we will have a folder called node modules which will hold all the third party libraries as well as REACT itself. We should never have to touch this folder.</li>
+                                    <li>We have a public folder that holds our public assests such as our browser icon main index html page </li>
+                                    <li>In the HTML page <b>index.html</b> you will see some standard html boiler code. What you need to look for is in the body, a div that has the id of root. This is were our react application will start from, live and grow.
+                                    <br><img src="Images/HTML react boiler.png" alt=""></li>
+                                    <li>We have a app.test.js file which holds and controls the component we see on the opening page the black banner. The output of that component in app.test.js is what you see in the black banner. 
+                                        <br><img src="Images/app_test_js.png" alt=""></li>
+                                    <li>You will see in the file app.js we are using es6 classes. You will see a meathod called render which you will see spits out JSX (JavaScriptXML), not HTML or JS.
+                                        <br><img src="Images/class app.png" alt=""></li>
+                                    <li>To make JSX work we have to pass it through <a href="https://babeljs.io/" target="_blank">babel</a> which is a modern JS compiller
+                                    <br><img src="Images/babel.png" alt=""></li>
+                                </ul>
+                        </section>
 
-                    <section id="Class Component">
-                        <h2>Component</h2>
-                    </section>
+                        <section id="Hello World">
+                            <h3>Hello World</h3>
+                                <ul>
+                                    <li>Start of by removing all the files in the source folder (src) so we can start from scratch</li>
+                                    <li>Create a new index.js file and start importing in what is required. We are importing the object from the module.
+                                        <br><img src="Images/import module.png" alt=""></li>
+                                    <li>The output of a JSX expression can be found in a object in the console log. So when you do a console.log(); in JS you will see the below:
+                                        <br><img src="Images/JSX Object.png" alt="">
+                                        <br>You see the type of this element is a h1</li>
+                                    <li>The object above described is part of the virtual DOM that REACT interacts with.</li>
+                                    <li>When the state of this objects changes react will get a new element</li>
+                                    <li>To render what we have in the console log we use the render meathod, passing first the element we want to render and secondly specify as the second argument were in the real DOM do we want to display this. We have the div in the body that wil hold everything react so we will be using that.
+                                        <br><img src="Images/render jsx.png" alt=""> 
+                                        <br><img src="Images/render jsx 2.png" alt=""></li>
+                                    <li>This is very simple but normally we would have many componeents that would live as children in the root div in the HTML.</li>
+                                </ul>
+                        </section>
+
+                        <section id="Custom Configs">
+                            <h3>Custom Configs</h3>
+                                <ul>
+                                    <li>To perform any customizations to the standard setup REACT gives you you use the command <b>npm run eject</b>.</li>
+                                    <li style="color: red;">Ejecting is a oneway street once one it cannot be undone.</li>
+                                    <li>Before you eject your package.json file would look simple as REACT package would hide the complex things like web pack
+                                        <br><img src="Images/before eject.png" alt=""></li>
+                                    <li>After you have ejected you will see all packages and thier configuration. We will also get a new folder called config.
+                                        <br><img src="Images/After eject.png" alt=""></li>
+                                </ul>
+                        </section>
+
+                        <section id="Full-stack Architecture">
+                            <h3>Full-stack Architecture</h3>
+                                <ul>
+                                    <li>Every App has two parts a front end and back end. Our focus is on the front end as REACT is a front end library
+                                        <br><img src="Images/2 parts.png" alt=""></li>
+                                    <li>To get a easy backend to your REACT app you can use <a href="https://firebase.google.com/" target="_blank">Firebase</li>
+                                    <li>Your REACT app will normally talk to a backend which will hold a database.</li>
+                                    <li>The best resources you should use for the back end are nodeJS and express.</li>
+                                </ul>
+                        </section>
+
+                        <section id="ES6 JS Refresher">
+                            <h3>ES6 JS Refresher</h3>
+                            <p>At this point it will be good to ensure you refresh on the ES6 features on JavaScript. See <a href="JS_ES6.html">HERE</a> for a full donwload of what to cover</p>
+                            <p>Things that will be covered are as below:
+                                <br><img src="Images/ES6 Refresher.png" alt=""></p>
+                        </section>
+
+                    <h2>Components</h2>
+                        <p><a href="https://www.w3schools.com/react/react_components.asp" target="_blank">Components</a> are like functions that return HTML elements.</p>
+                        <p>Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and returns HTML via a render function.
+                            <br>Components come in two types, Class components and Function components, in this tutorial we will concentrate on Class components.</p>
+                        
+                        <section id="Introduction">
+                            <h3>Introduction</h3>
+                                <ul>
+                                    <li>We will be building the below example were we have a shopping cart and we are able to increase the quantity on each line
+                                        <br><img src="Images/Build Example.png" alt=""></li>
+                                    <li>The above app is interactive were any changes are reflected in the number near the title navbar.</li>
+                                </ul>
+                        </section>
+
 
                     <section id="State">
                         <h2>State</h2>

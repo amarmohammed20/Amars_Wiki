@@ -22,9 +22,11 @@
                       <li><a href="#varletconst">2 Let and Const Variables</a></li>
                       <li><a href="#arrowfunctions">3 Arrow Functions</a></li>
                       <li><a href="#concatination">4 Concatination</a></li>
+                      <li><a href="#class">5 Classes</a></li>
                         <ul>
-                        <li><a href="#First_Sub_Point_1">5.1 Sub Classes</a></li>
+                        <li><a href="#First_Sub_Point_1">5.1 Sub Classes - Extends - Inhertiance</a></li>
                         </ul>
+                      <li><a href="#Modules"></a>6 Modules</li>
                       <li><a href="#constructors">6 Constructors & the 'this' Keyword</a></li>
                         <ul>
                         <li><a href="#builtinconstructors">6.1 Built In Constructors</a></li>
@@ -34,15 +36,15 @@
                         <li><a href="#prototypalinheritance">7.1 Prototypal Inheritance</a></li>
                         </ul>
                       <li><a href="#objectcreate">8 Using Object Create</a></li>
-                      <li><a href="#class">9 Classes</a></li>
-                      <li><a href="#jsConsole">6 Destructuring</a></li>
-                      <li><a href="#defaultparameters">7 Default Parameters</a></li>
+                      <li><a href="#Object Destructuring">6 Object Destructuring</a></li>
                       <li><a href="#objectliterals">9 Object Literals</a></li>
-                      <li><a href="#arrayfunctions">10 Array Functions - forEach, Map and Filter</a></li>
+                      <li><a href="#defaultparameters">7 Default Parameters</a></li>
+                      <li><a href="#arrayfunctions">10 Array Functions - forEach, Map, Spread and Filter</a></li>
                         <ul>
                         <li><a href="#foreach">10.1 forEach</a></li>
                         <li><a href="#map">10.2 Map</a></li>
-                        <li><a href="#filter">10.3 Filter</a></li>
+                        <li><a href="#Spread">10.3 Spread</a></li>
+                        <li><a href="#filter">10.4 Filter</a></li>
                         </ul>
                       </li>
                     </ul>
@@ -58,6 +60,7 @@
                     <h2>Let and Const Variables</h2>
                       <p>Javascript has three types of variables Const, Let and var</p>
                       <ul>
+                          <li>var is global scope and let is block scope. Always use let instead of var</li>
                           <li>The let and const variables were introduced in ES6. VAR is the oldest type of variable.</li>
                           <li>To reassign a value in javascript you can use +=</li>
                           <li>const variables - The value of the variable should remain constant. Example <b>const name = "Amar";</b>. Once assigned a value you cant later down the code assign another value to that variable. 
@@ -204,28 +207,61 @@
                     <h2>ES6 Classes</h2>
                     <p><a href="https://www.w3schools.com/js/js_classes.asp" target="_blank">Classes</a> is based on the above Object Constructors. The class concept is used in other lanuages such as C sharp, php, phython and Java and <a href="https://en.wikipedia.org/wiki/Category:Class-based_programming_languages" target="_blank">so on</a></p>
                       <ul>
+                        <li>The words <b>class</b> and <b>constructor</b> are reserved words and <b style="color: red;">MUST</b> be used within a class</li>
+                        <li>A class is a blue print of a object constructor</li>
                         <li>This is built with the structure class, constructor method and properties.</li>
                         <li>A class always starts with a captial letter</li>
                         <li>Pass the properties into the class as parameters and than define the properties with this.property.</li>
+                        <li><img src="Images/Class Example 3.png" alt=""></li>
                         <li>An example of a class - 
                           <br><img src="Images/Class Example.jpg" alt=""></li>
                         <li>You will see this works exactly the same as the earlier explained object constructor. This can be seen in the __proto__ property of the object</li>
                         <li>This is why we call class syntaxtic sugar as its only the syntax is different not the fundementals</li>
                         <li>A method can be called and will be inserted in the constructor {}</li>
                         <li><img src="Images/Class Example 2.jpg" alt=""></li>
+                        <li>When creating a new object uisng that class you create we use the new word ebfore the class name. Than you pass in the paramters in the parenthasis after the class
+                          <br><img src="Images/New Class Example.png" alt=""> </li>
+                        <li>The benifit of using a class is that you create a sinlg epoint of failure which is the blue print/class</li>
                         <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static" target="_blank">static</a> keyword defines a static method for a class. Static methods aren't called on instances of the class. Instead, they're called on the class itself. These are often utility functions, such as functions to create or clone objects.</li>
                       </ul>
                   </section>
         
-                  <section>
-                    <h2>Sub Classes</h2>
+                    <section>
+                      <h3>Sub Classes - Extends - Inhertiance</h3>
+                        <ul>
+                          <li>A sub class is used to extend a class. You would have a person class and you would extend this class with a customer class.</li>
+                          <li>To do this you would do class NEW_CLASS extends CURRENT_CLASS {}</li>
+                          <li>The new class would take in the same paramters and new paramters. This only extends one way</li>
+                          <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" target="_blank">super</a> keyword is used to access and call functions on an object's parent. The super.prop and super[expr] expressions are valid in any method definition in both classes and object literals.</li>
+                          <li>Super replaces the object.prototype = Object.create(object.prototype); and Object.proptotype.constructor = Customer; used earlier for inhertiance. </li>
+                          <li><img src="Images/Class example inheritance.jpg" alt=""></li>
+                          <li>When we call a constructor in a child/sub class we need to call the constructor of its parent class. To do this we use <b>super()</b>
+                          <br><img src="Images/sub class super.png" alt=""></li>
+                        </ul>
+                    </section>
+
+                  <section id="Modules">
+                    <h2>Modules</h2>
                       <ul>
-                        <li>A sub class is used to extend a class. You would have a person class and you would extend this class with a customer class.</li>
-                        <li>To do this you would do class NEW_CLASS extends CURRENT_CLASS {}</li>
-                        <li>The new class would take in the same paramters and new paramters. This only extends one way</li>
-                        <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super" target="_blank">super</a> keyword is used to access and call functions on an object's parent. The super.prop and super[expr] expressions are valid in any method definition in both classes and object literals.</li>
-                        <li>Super replaces the object.prototype = Object.create(object.prototype); and Object.proptotype.constructor = Customer; used earlier for inhertiance. </li>
-                        <li><img src="Images/Class example inheritance.jpg" alt=""></li>
+                        <li>Above you see how things in sub classes can get messy having classes and than child/sub classes.</li>
+                        <li>We split our code into multiple files and each file is called a module</li>
+                        <li>ES6 natively brought in the concept of modules into JS</li>
+                        <li>The objects in a module are private so by default other modules cant see the objects</li>
+                        <li>To make the modules public we have to export the module first and than import it into the required module</li>
+                        <li><img src="Images/export module.png" alt=""></li>
+                        <li><img src="Images/import module class.png" alt=""></li>
+                      </ul>
+                  </section>
+
+                  <section id="Object Destructuring">
+                    <h2>Object Destructuring</h2>
+                      <ul>
+                        <li>The old way to pull out values from a object into variables:
+                          <br><img src="Images/object destructuring.png" alt=""></li>
+                        <li>Below circled in red is the new meathod which creates a new variable for each property populating that property with the new value placed in the object. You dont have to list all the properties only the ones you are intrested in. 
+                          <br><img src="Images/object destructuring 2.png" alt=""></li>
+                        <li>If you feel you want to name the variables something else you can apply a alias which will become the variable name:
+                          <br><img src="Images/object destructuring 3.png" alt=""></li>
                       </ul>
                   </section>
 
@@ -258,6 +294,22 @@
                           <li>An example:
                             <br><img src="Images/map example.png" alt=""></li>
                           <li><img src="Images/map example 2.png" alt=""></li>
+                          <li>Another example that would be common in REACT would be were we recreate an array but this tile adding in some HTML.
+                            <br><img src="Images/map example 3.png" alt=""></li>
+                        </ul>
+
+                        <h3 id="Spread">Spread</h3>
+                        <ul>
+                          <li>Spread is used to concatenate two arrays toghther. Previously we would do the below:
+                            <br><img src="Images/concat old.png" alt=""></li>
+                          <li>The spread operator is presented by using three dots. 
+                            <br><img src="Images/concat new.png" alt=""></li>
+                          <li>With spread we can add a element in the middle of the two concatenated arrays. 
+                            <br><img src="Images/concat spread.png" alt=""></li>
+                          <li>The above can be done also to join two objects
+                            <br><img src="Images/spread object.png" alt=""></li>
+                          <li>You can use the spread operator to clone a object also
+                            <br><img src="Images/spread object clone.png" alt=""></li>
                         </ul>
 
                       <h3 id="filter">Filter</h3>
